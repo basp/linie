@@ -3,9 +3,10 @@ Linie is a ray tracing kernel library.
 
 ## features
 * 4D or 3D mode
-* Local epsilon
-* Rays
-* Transforms
+* local epsilon
+* rays
+* transforms
+* extras
 
 ### 4D or 3D mode
 Linie is designed for two basic modes of operandi:
@@ -86,7 +87,6 @@ comparers can also be cached since you will only need one of them for each type
 and they are thread safe because they have no mutable state.
 
 Approximate equality using local epsilon is supported for the following types:
-
 * `Point2`
 * `Point3`
 * `Vector2`
@@ -96,4 +96,15 @@ Approximate equality using local epsilon is supported for the following types:
 * `Matrix4x4`
 
 ### transforms
+Builtin transformations provide `Matrix4x4` helpers to assist with scene
+composition:
+
+* `Translate`
+* `Scale`
+* `RotateX`
+* `RotateY`
+* `RotateZ`
+* `Shear`
+
+### extras
 TODO
