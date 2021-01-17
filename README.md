@@ -83,7 +83,7 @@ Since every calculation can work in its own epsilon domain it is easy to
 incorporate this into your rendering architecture. Whether you're using a
 global epsilon or something more granular like an epsilon per object. Equality
 comparers can also be cached since you will only need one of them for each type
-and they are thread safe sicne they have no mutable state.
+and they are thread safe because they have no mutable state.
 
 ### transforms
 TODO
