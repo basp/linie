@@ -63,6 +63,12 @@ namespace Linie
                 a.Z / s,
                 a.W / s);
 
+        public static explicit operator Point3(Vector4 u) =>
+            new Point3(u.X, u.Y, u.Z);
+
+        public static explicit operator Vector3(Vector4 u) =>
+            new Vector3(u.X, u.Y, u.Z);
+
         public static double MagnitudeSquared(Vector4 a) =>
             (a.X * a.X) +
             (a.Y * a.Y) +

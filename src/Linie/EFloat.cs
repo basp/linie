@@ -5,7 +5,7 @@ namespace Linie
     using System;
     using System.Diagnostics;
 
-    public class EFloat
+    internal class EFloat // experimental
     {
         private float v;
 
