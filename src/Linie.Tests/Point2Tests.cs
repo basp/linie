@@ -1,4 +1,4 @@
-namespace Linsi.Tests
+namespace Linie.Tests
 {
     using Xunit;
 
