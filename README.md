@@ -1,7 +1,7 @@
 # Linie
 Linie is a ray tracing kernel library.
 
-## Overview
+## Features
 * 4D or 3D mode
 * Local epsilon
 * Transforms
@@ -24,7 +24,7 @@ your interface.
 > positions, directions, colors and normals while others may prefer a more formal
 > distinction.
 
-Going from a 3D point to a 4D vector is implicit:
+Going from a 3D to a 4D position is implicit:
 ```
 var a = new Point3(1, 2, 3);
 Vector4 u = a;
@@ -35,7 +35,7 @@ Assert.Equal(3, u.Z);
 Assert.Equal(1, u.W); // 4D points have W = 1
 ```
 
-And going from a 3D vector to a 4D vector is similar:
+And going from a 3D to a 4D direction is similar:
 ```
 var u = new Vector3(1, 2, 3);
 Vector4 v = u;
