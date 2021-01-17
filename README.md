@@ -85,5 +85,14 @@ global epsilon or something more granular like an epsilon per object. Equality
 comparers can also be cached since you will only need one of them for each type
 and they are thread safe because they have no mutable state.
 
+Approximate equality is supported for the following types:
+* `Matrix4x4`
+* `Normal3`
+* `Point2`
+* `Point3`
+* `Vector2`
+* `Vector3`
+* `Vector4`
+
 ### transforms
 TODO
