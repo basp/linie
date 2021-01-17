@@ -85,7 +85,7 @@ global epsilon or something more granular like an epsilon per object. Equality
 comparers can also be cached since you will only need one of them for each type
 and they are thread safe because they have no mutable state.
 
-Approximate equality is supported for the following types:
+Approximate equality using local epsilon is supported for the following types:
 
 * `Point2`
 * `Point3`
