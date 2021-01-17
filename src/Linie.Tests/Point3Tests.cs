@@ -79,5 +79,17 @@ namespace Linie.Tests
             var cmp = Point3.GetEqualityComparer(epsilon: 0.011);
             Assert.True(cmp.Equals(a, b));
         }
+
+        [Fact]
+        public void TestImplicitVector4()
+        {
+            var a = new Point3(0, 0, 1);
+            Vector4 u = a;
+            Assert.True(u.IsPosition);
+            Assert.Equal(0, u.X);
+            Assert.Equal(0, u.Y);
+            Assert.Equal(1, u.Z);
+            Assert.Equal(1, u.W);
+        }
     }
 }

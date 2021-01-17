@@ -24,10 +24,21 @@ your interface.
 > positions, directions, colors and normals while others may prefer a more formal
 > distinction.
 
-Going from 4D mode to 3D mode and back:
+Going from a 3D point to a 4D vector is implicit:
 ```
-var u4 = Vector4.CreateDirection(0, 1, 0);
-var a4 = Vector4.CreatePosition(1, 0, 0);
-var u3 = 
+var a = new Point3(1, 2, 3);
+Vector4 u = a;
+Assert.True(u.IsPoint);
+Assert.Equal(1, u.X);
+Assert.Equal(2, u.Y);
+Assert.Equal(3, u.Z);
+Assert.Equal(1, u.W); // 4D points have W = 1
+```
 
+And going from a 3D vector to a 4D vector is similar:
+```
+var u = new Vector3(1, 2, 3);
+Vector4 v = u;
+Assert.True(v.IsDirection);
+...
 ```
