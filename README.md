@@ -42,3 +42,10 @@ Vector4 v = u;
 Assert.True(v.IsDirection);
 ...
 ```
+
+Going from 4D to 3D takes some care but explicit cast is supported:
+```
+var u = Vector.CreateDirection(1, 0, 0);
+var a = (Point3)u;
+var v = (Vector3)u;
+```
