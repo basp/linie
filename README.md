@@ -86,13 +86,14 @@ comparers can also be cached since you will only need one of them for each type
 and they are thread safe because they have no mutable state.
 
 Approximate equality is supported for the following types:
-* `Matrix4x4`
-* `Normal3`
+
 * `Point2`
 * `Point3`
 * `Vector2`
 * `Vector3`
+* `Normal3`
 * `Vector4`
+* `Matrix4x4`
 
 ### transforms
 TODO
