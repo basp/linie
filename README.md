@@ -4,6 +4,7 @@ Linie is a ray tracing kernel library.
 ## features
 * 4D or 3D mode
 * Local epsilon
+* Rays
 * Transforms
 
 ### 4D or 3D mode
@@ -41,6 +42,7 @@ var u = new Vector3(1, 2, 3);
 Vector4 v = u;
 Assert.True(v.IsDirection);
 ...
+Assert.Equal(0, u.W); // 4D vectors have W = 0
 ```
 
 Going from 4D to 3D takes some care but explicit cast is supported:
@@ -56,6 +58,7 @@ Normals will implicitly cast to vectors:
 var n = new Normal3(0, 1, 0);
 Vector4 u = n;
 Assert.True(u.IsDirection);
+Assert.Equal(0, u.W);
 ```
 
 Note that `Normal` values do not have to be normalized. They are never
@@ -79,4 +82,8 @@ Assert.True(cmp.Equals(u, v));
 Since every calculation can work in its own epsilon domain it is easy to
 incorporate this into your rendering architecture. Whether you're using a
 global epsilon or something more granular like an epsilon per object. Equality
-comparers can also be cached since you will only need one of them for each type.
+comparers can also be cached since you will only need one of them for each type
+and they are thread safe sicne they have no mutable state.
+
+### transforms
+TODO
