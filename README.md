@@ -1,7 +1,7 @@
-# Linie
+# linie
 Linie is a ray tracing kernel library.
 
-## Features
+## features
 * 4D or 3D mode
 * Local epsilon
 * Transforms
@@ -60,3 +60,23 @@ Assert.True(u.IsDirection);
 
 Note that `Normal` values do not have to be normalized. They are never
 normalized automatically nor are there any checks.
+
+### local epsilon
+Since ray tracing is heavy on floating point math, all the geometric types in
+Linie have a dynamic and local epsilon (wiggle room) for equality operations
+using the `IEquatable<T>` interface.
+
+All of the types also overload `Equals` but this has no approximation. In order
+to compare two values with an approximation *epsilon* the static
+`GetEqualityComparer(double)` method can be used.
+```
+var u = new Vector3(1, 0, 1);
+var v = new Vector3(1.5, 0, 1.5);
+var cmp = Vector3.GetEqualityComparer(epsilon: 1);
+Assert.True(cmp.Equals(u, v));
+```
+
+Since every calculation can work in its own epsilon domain it is easy to
+incorporate this into your rendering architecture. Whether you're using a
+global epsilon or something more granular like an epsilon per object. Equality
+comparers can also be cached since you will only need one of them for each type.
