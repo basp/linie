@@ -48,4 +48,15 @@ Going from 4D to 3D takes some care but explicit cast is supported:
 var u = Vector.CreateDirection(1, 0, 0);
 var a = (Point3)u;
 var v = (Vector3)u;
+var n = (Normal3)u;
 ```
+
+Normals will implicitly cast to vectors:
+```
+var n = new Normal3(0, 1, 0);
+Vector4 u = n;
+Assert.True(u.IsDirection);
+```
+
+Note that `Normal` values do not have to be normalized. They are never
+normalized automatically nor are there any checks.

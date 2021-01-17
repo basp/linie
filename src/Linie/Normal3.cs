@@ -42,6 +42,10 @@ namespace Linie
         public static implicit operator Vector3(Normal3 n) =>
             new Vector3(n.X, n.Y, n.Z);
 
+        public static implicit operator Vector4(Normal3 u) =>
+            // a normal is a direction so it will have W = 0
+            Vector4.CreateDirection(u.X, u.Y, u.Z);
+
         public static double MagnitudeSquared(Normal3 n) =>
             (n.X * n.X) +
             (n.Y * n.Y) +

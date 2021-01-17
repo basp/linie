@@ -69,6 +69,9 @@ namespace Linie
         public static explicit operator Vector3(Vector4 u) =>
             new Vector3(u.X, u.Y, u.Z);
 
+        public static explicit operator Normal3(Vector4 u) =>
+            new Normal3(u.X, u.Y, u.Z);
+
         public static double MagnitudeSquared(Vector4 a) =>
             (a.X * a.X) +
             (a.Y * a.Y) +

@@ -169,14 +169,34 @@ namespace Linie.Tests
         {
             var v = Vector4.CreateDirection(0, -1, 0);
             var n = Vector4.CreateDirection(
-                Math.Sqrt(2)/2,
-                Math.Sqrt(2)/2,
+                Math.Sqrt(2) / 2,
+                Math.Sqrt(2) / 2,
                 0);
             var r = v.Reflect(n);
             var expected = Vector4.CreateDirection(1, 0, 0);
             const double eps = 0.0000001;
             var comparer = Vector4.GetEqualityComparer(eps);
             Assert.Equal(expected, r, comparer);
+        }
+
+        [Fact]
+        public void TestExplicitToVector3()
+        {
+            var v = Vector4.CreatePosition(0, 1, 2);
+            var u = (Vector3)v;
+            Assert.Equal(0, u.X);
+            Assert.Equal(1, u.Y);
+            Assert.Equal(2, u.Z);
+        }
+
+        [Fact]
+        public void TestExplicitToPoint3()
+        {
+            var v = Vector4.CreateDirection(0, 1, 2);
+            var u = (Point3)v;
+            Assert.Equal(0, u.X);
+            Assert.Equal(1, u.Y);
+            Assert.Equal(2, u.Z);
         }
     }
 }
