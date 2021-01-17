@@ -1,2 +1,2 @@
-# linie
-Ray tracing kernel
+# Linsi
+Linsi is a very basic ray tracing kernel.
