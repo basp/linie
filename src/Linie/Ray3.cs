@@ -1,14 +1,12 @@
-// Licensed under the MIT license. See LICENSE file in the samples root for full license information.
-
 namespace Linie
 {
-    public struct Ray
+    public struct Ray3
     {
-        public readonly Vector4 Origin;
-        
-        public readonly Vector4 Direction;
+        public readonly Point3 Origin;
 
-        public Ray(Vector4 origin, Vector4 direction)
+        public readonly Vector3 Direction;
+
+        public Ray3(Point3 origin, Vector3 direction)
         {
             this.Origin = origin;
             this.Direction = direction;
@@ -20,7 +18,7 @@ namespace Linie
         /// <remarks>
         /// Equivalent to calling <c>GetPosition(double)</c>.
         /// </remarks>
-        public Vector4 this[double t]
+        public Point3 this[double t]
         {
             get => this.Origin + (t * this.Direction);
         }
@@ -31,6 +29,6 @@ namespace Linie
         /// <remarks>
         /// Alternative for indexer <c>this[double]</c>.
         /// </remarks>
-        public Vector4 GetPosition(double t) => this[t];
+        public Point3 GetPosition(double t) => this[t];
     }
 }

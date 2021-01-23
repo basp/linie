@@ -24,5 +24,16 @@ namespace Linie.Tests
             Assert.Equal(1, v.Z);
             Assert.Equal(0, v.W);
         }
+
+        [Fact]
+        public void TestTranslation()
+        {
+            var u = new Vector3(2, 3, 1);
+            var m = Transform.Translate(-2, -3, -4);
+            var v = m * u;
+            Assert.Equal(2, u.X);
+            Assert.Equal(3, u.Y);
+            Assert.Equal(1, u.Z);
+        }
     }
 }

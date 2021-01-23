@@ -96,8 +96,7 @@ Approximate equality using local epsilon is supported for the following types:
 * `Matrix4x4`
 
 ### transforms
-Builtin transformations provide `Matrix4x4` helpers to assist with scene
-composition:
+Builtin transformations provide `Matrix4x4` affine transformations.
 
 * `Translate`
 * `Scale`

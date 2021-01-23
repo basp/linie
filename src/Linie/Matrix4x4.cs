@@ -106,8 +106,11 @@ namespace Linie
             return new Point3(x, y, z);
         }
 
-        public static Ray operator *(Matrix4x4 a, Ray r) =>
-            new Ray(a * r.Origin, a * r.Direction);
+        public static Ray4 operator *(Matrix4x4 a, Ray4 r) =>
+            new Ray4(a * r.Origin, a * r.Direction);
+
+        public static Ray3 operator *(Matrix4x4 a, Ray3 r) =>
+            new Ray3(a * r.Origin, a * r.Direction);
 
         public static Matrix4x4 Transpose(Matrix4x4 a)
         {
