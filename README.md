@@ -22,10 +22,7 @@ will make sure that the `W` component is set to the right value.
 You can also be explicit and use any of the point, vector and normal classes when you don't want to mix your 3D tuples the wrong way or just to be more formal in
 your interface.
 
-> It's perfectly fine to mix and match or use only parts of Linie for your
-> renderer. For example, some people like to use the `Vector3` type for
-> positions, directions, colors and normals while others may prefer a more formal
-> distinction.
+It's perfectly fine to mix and match or use only parts of Linie for your renderer. For example, some people like to use the `Vector3` type for positions, directions, colors and normals while others may prefer a more formal distinction.
 
 Going from a 3D to a 4D position is implicit:
 ```
@@ -122,9 +119,7 @@ var v = Transform.Translate(3, 2, 1) * u;
 Assert.Equal(new Vector3(0, 0, 0), v);
 ```
 
-When working in 4D mode the `W` component of `Vector4` will determine whether
-it will behave as a point or vector. If the `W` component is set to `1` then it
-will behave as a point. If it is set to `0` then it will behave like a vector.
+When working in 4D mode the `W` component of `Vector4` will determine whether it will behave as a point or vector. If the `W` component is set to `1` then it will behave as a point. If it is set to `0` then it will behave like a vector.
 
 Unless absolutely necessary it is strongly recommended to always use the 
 `Vector4.CreateDirection` and `Vector4.CreatePosition` factory methods to create
