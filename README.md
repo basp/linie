@@ -132,7 +132,7 @@ new `Vector4` values. This will ensure that the `W` component is set correctly.
 ### extras
 #### The EFloat type
 There is an `EFloat` class that could potentially be used to increase the
-epsilon locality even further. The idea is that a particular calculation would use this class instead of a more global epsilon in order to maxizime accuracy.
+epsilon locality even further. The idea is that a particular calculation would use this class instead of a more global epsilon in order to maximize accuracy.
 
 However, this class is highly experimental and has not been tested at all so only use it if you are feeling adventurous.
 
