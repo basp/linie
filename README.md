@@ -6,6 +6,7 @@ Linie is a ray tracing kernel library.
 * local epsilon
 * rays
 * transforms
+* includes canvas
 * extras
 
 ### 4D or 3D mode
@@ -128,6 +129,13 @@ will behave as a point. If it is set to `0` then it will behave like a vector.
 Unless absolutely necessary it is strongly recommended to always use the 
 `Vector4.CreateDirection` and `Vector4.CreatePosition` factory methods to create
 new `Vector4` values. This will ensure that the `W` component is set correctly.
+
+### included canvas
+The canvas included with Linie is a very small wrapper over an array of `Color` values. Its purpose is to store the output of the ray tracing process and offer some basic persistance features. 
+
+At the moment there is a basic `SavePpm(string)` method that will persist the canvas as a [Netpbm](https://en.wikipedia.org/wiki/Netpbm) file on disk at the given path.
+
+The canvas can easily be read out using its indexer and includes a `Canvas.GetColorBytes` method to convert a `Color` value into a `byte` triplet. This might be useful when you need to write out the canvas to a different format.
 
 ### extras
 #### The EFloat type
