@@ -137,10 +137,10 @@ epsilon locality even further. The idea is that a particular calculation would u
 However, this class is highly experimental and has not been tested at all so only use it if you are feeling adventurous.
 
 #### The Hadamard product
-Colors support one additional operations that is uncommon to all other kind
-of vectors and points and that is the so called Hadamard product. It is defined as the entrywise multiplication of two color vectors. Its main use is to allow for easier color mixing. 
+Colors support one additional operation that is uncommon to all other kind
+of vectors and that is the so called Hadamard product. It is defined as the entrywise multiplication of two color vectors. Its main use is to allow for easier color mixing. 
 
-This operation is only defined for colors and can be used by either using the `*` (multiplication) operator on two color vectors or by calling the static `Hadamard` method directly:
+This operation can be invoked by either using the `*` (multiplication) operator on two color vectors or by calling the static `Hadamard` method directly:
 ```
 var c1 = new Color(0.2, 0.5, 0.1);
 var c2 = new Color(0.3, 0.7, 0.8);
@@ -148,3 +148,5 @@ var c3 = c1 * c2;
 var c4 = Color.Hadamard(c1, c2);
 Assert.True(c3.Equals(c4));
 ```
+
+See [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_(matrices)) for more info.
