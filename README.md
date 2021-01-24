@@ -8,6 +8,7 @@ Linie is a ray tracing kernel library.
 * transforms
 * includes canvas
 * extras
+* notes
 
 ### 4D or 3D mode
 Linie is designed for two basic modes of operandi:
@@ -153,3 +154,6 @@ Assert.True(c3.Equals(c4));
 ```
 
 See [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_(matrices)) for more info.
+
+### notes
+The 3D mode has not been extensively tested and might be buggy. If you are going to use this for anything serious then please stick to 4D mode.
