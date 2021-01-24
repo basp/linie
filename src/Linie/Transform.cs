@@ -21,6 +21,8 @@ namespace Linie
                 0, 0, z, 0,
                 0, 0, 0, 1);
 
+        public static Matrix4x4 Scale(double s) => Scale(s, s, s);
+
         public static Matrix4x4 RotateX(double r) =>
             new Matrix4x4(
                 1, 0, 0, 0,
@@ -70,6 +72,9 @@ namespace Linie
             double x,
             double y,
             double z) => Transform.Translate(x, y, z) * m;
+
+        public static Matrix4x4 Scale(this Matrix4x4 m, double s) => 
+            Scale(m, s, s, s);
 
         public static Matrix4x4 Scale(
             this Matrix4x4 m,

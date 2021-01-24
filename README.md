@@ -105,5 +105,31 @@ Builtin transformations provide `Matrix4x4` affine transformations.
 * `RotateZ`
 * `Shear`
 
+The matrix multiplication operation is supplied for all 3D and 4D types. For 
+example, to translate a `Point3` you would use something like the following:
+```
+var a = new Point3(0);
+var b = Transform.Translate(3, 2, 1) * a;
+Assert.Equal(new Point3(3, 2, 1), b);
+```
+
+A similar operation is available for `Vector3`, `Normal3` and `Vector4`. Note
+that translations have no effect on vectors though:
+```
+var u = new Vector3(0);
+var v = Transform.Translate(3, 2, 1) * u;
+Assert.Equal(new Vector3(0, 0, 0), v);
+```
+
+When working in 4D mode the `W` component of `Vector4` will determine whether
+it will behave as a point or vector. Unless absolutely necessary it is strongly
+recommended to always use the `Vector4.CreateDirection` and `Vector4.CreatePosition`
+factory methods to ensure the `W` component is set correctly.
+
 ### extras
-TODO
+There is an `EFloat` class that could potentially be used to increase the
+epsilon locality even further. The idea is that a particular calculation would
+use this class instead of a more global epsilon in order to maxizime accuracy.
+
+However, this class is highly experimental and has not been tested at all so
+only use it if you are feeling adventurous.

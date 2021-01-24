@@ -37,6 +37,14 @@ namespace Linie.Tests
         }
 
         [Fact]
+        public void TestDivideColorByScalar()
+        {
+            var c = new Color(1, 1, 1);
+            var expected = new Color(0.5, 0.5, 0.5);
+            Assert.Equal(expected, c / 2, Comparer);
+        }
+
+        [Fact]
         public void TestHadamardProduct()
         {
             var c1 = new Color(1.0, 0.2, 0.4);

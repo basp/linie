@@ -91,5 +91,13 @@ namespace Linie.Tests
             Assert.Equal(1, u.Z);
             Assert.Equal(1, u.W);
         }
+
+        [Fact]
+        public void TestTranslate()
+        {
+            var p1 = new Point3(0);
+            var p2 = Transform.Translate(3, 2, 1) * p1;
+            Assert.Equal(new Point3(3, 2, 1), p2);
+        }
     }
 }

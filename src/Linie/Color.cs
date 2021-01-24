@@ -47,6 +47,8 @@ namespace Linie
 
         public static Color operator *(double s, Color a) => a * s;
 
+        public static Color operator /(Color a, double s) => a * (1 / s);
+
         /// <summary>
         /// Hadamard (entrywise) product of two color vectors.
         /// </summary>
