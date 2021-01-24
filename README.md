@@ -122,14 +122,29 @@ Assert.Equal(new Vector3(0, 0, 0), v);
 ```
 
 When working in 4D mode the `W` component of `Vector4` will determine whether
-it will behave as a point or vector. Unless absolutely necessary it is strongly
-recommended to always use the `Vector4.CreateDirection` and `Vector4.CreatePosition`
-factory methods to ensure the `W` component is set correctly.
+it will behave as a point or vector. If the `W` component is set to `1` then it
+will behave as a point. If it is set to `0` then it will behave like a vector.
+
+Unless absolutely necessary it is strongly recommended to always use the 
+`Vector4.CreateDirection` and `Vector4.CreatePosition` factory methods to create
+new `Vector4` values. This will ensure that the `W` component is set correctly.
 
 ### extras
+#### The EFloat type
 There is an `EFloat` class that could potentially be used to increase the
-epsilon locality even further. The idea is that a particular calculation would
-use this class instead of a more global epsilon in order to maxizime accuracy.
+epsilon locality even further. The idea is that a particular calculation would use this class instead of a more global epsilon in order to maxizime accuracy.
 
-However, this class is highly experimental and has not been tested at all so
-only use it if you are feeling adventurous.
+However, this class is highly experimental and has not been tested at all so only use it if you are feeling adventurous.
+
+#### The Hadamard product
+Colors support one additional operations that is uncommon to all other kind
+of vectors and points and that is the so called Hadamard product. It is defined as the entrywise multiplication of two color vectors. Its main use is to allow for easier color mixing. 
+
+This operation is only defined for colors and can be used by either using the `*` (multiplication) operator on two color vectors or by calling the static `Hadamard` method directly:
+```
+var c1 = new Color(0.2, 0.5, 0.1);
+var c2 = new Color(0.3, 0.7, 0.8);
+var c3 = c1 * c2;
+var c4 = Color.Hadamard(c1, c2);
+Assert.True(c3.Equals(c4));
+```

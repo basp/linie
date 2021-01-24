@@ -58,6 +58,11 @@ namespace Linie
                 c1.G * c2.G,
                 c1.B * c2.B);
 
+        /// <summary>
+        /// More explicit form of <c>c1 * c2</c>.
+        /// </summary>
+        public static Color Hadamard(Color c1, Color c2) => c1 * c2;
+
         public static Color FromByteValues(byte r, byte g, byte b) =>
             new Color(r / 255.0, g / 255.0, b / 255.0);
 
