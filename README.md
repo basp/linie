@@ -25,10 +25,10 @@ your interface.
 
 It's perfectly fine to mix and match or use only parts of Linie for your renderer. For example, some people like to use the `Vector3` type for positions, directions, colors and normals while others may prefer a more formal distinction.
 
-Going from a 3D to a 4D position is implicit:
+Going from a 3D to a 4D position is explicit:
 ```
 var a = new Point3(1, 2, 3);
-Vector4 u = a;
+Vector4 u = (Vector4)a;
 Assert.True(u.IsPoint);
 Assert.Equal(1, u.X);
 Assert.Equal(2, u.Y);
@@ -53,10 +53,10 @@ var v = (Vector3)u;
 var n = (Normal3)u;
 ```
 
-Normals will implicitly cast to vectors:
+Normals explicitly cast to vectors:
 ```
 var n = new Normal3(0, 1, 0);
-Vector4 u = n;
+Vector4 u = (Vector4)n;
 Assert.True(u.IsDirection);
 Assert.Equal(0, u.W);
 ```

@@ -50,7 +50,7 @@ namespace Linie
         public static Vector3 operator -(Vector3 a) =>
             new Vector3(-a.X, -a.Y, -a.Z);
 
-        public static implicit operator Vector4(Vector3 u) =>
+        public static explicit operator Vector4(Vector3 u) =>
             Vector4.CreateDirection(u.X, u.Y, u.Z);
 
         public static double MagnitudeSquared(Vector3 a) =>

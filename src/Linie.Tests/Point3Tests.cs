@@ -81,10 +81,10 @@ namespace Linie.Tests
         }
 
         [Fact]
-        public void TestImplicitVector4()
+        public void TestExplicitVector4()
         {
             var a = new Point3(0, 0, 1);
-            Vector4 u = a;
+            Vector4 u = (Vector4)a;
             Assert.True(u.IsPosition);
             Assert.Equal(0, u.X);
             Assert.Equal(0, u.Y);

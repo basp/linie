@@ -34,7 +34,7 @@ namespace Linie
 
         public static Point3 operator *(Point3 a, double c) => c * a;
 
-        public static implicit operator Vector4(Point3 a) =>
+        public static explicit operator Vector4(Point3 a) =>
             Vector4.CreatePosition(a.X, a.Y, a.Z);
 
         public static IEqualityComparer<Point3> GetEqualityComparer(double epsilon = 0) =>

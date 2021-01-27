@@ -14,10 +14,10 @@ namespace Linie.Tests
         }
 
         [Fact]
-        public void TestImplicitVector4()
+        public void TestExplicitVector4()
         {
             var n = new Normal3(1, 2, 3);
-            Vector4 u = n;
+            Vector4 u = (Vector4)n;
             Assert.True(u.IsDirection);
             Assert.Equal(1, u.X);
             Assert.Equal(2, u.Y);
