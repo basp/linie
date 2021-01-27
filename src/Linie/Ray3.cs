@@ -29,6 +29,6 @@ namespace Linie
         /// <remarks>
         /// Alternative for indexer <c>this[double]</c>.
         /// </remarks>
-        public Point3 GetPosition(double t) => this[t];
+        public Point3 GetPosition(in double t) => this[t];
     }
 }

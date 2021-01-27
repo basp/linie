@@ -19,24 +19,24 @@ namespace Linie
         {
         }
 
-        public static Point2 operator +(Point2 a, Vector2 u) =>
+        public static Point2 operator +(in Point2 a, in Vector2 u) =>
             new Point2(a.X + u.X, a.Y + u.Y);
 
-        public static Point2 operator -(Point2 a, Vector2 u) =>
+        public static Point2 operator -(in Point2 a, in Vector2 u) =>
             new Point2(a.X - u.X, a.Y - u.Y);
 
-        public static Vector2 operator -(Point2 a, Point2 b) =>
+        public static Vector2 operator -(in Point2 a, in Point2 b) =>
             new Vector2(a.X - b.X, a.Y - b.Y);
 
-        public static Point2 operator *(double c, Point2 a) =>
+        public static Point2 operator *(in double c, in Point2 a) =>
             new Point2(c * a.X, c * a.Y);
 
-        public static Point2 operator *(Point2 a, double c) => c * a;
+        public static Point2 operator *(in Point2 a, in double c) => c * a;
 
-        public static explicit operator Vector2(Point2 a) =>
+        public static explicit operator Vector2(in Point2 a) =>
             new Vector2(a.X, a.Y);
 
-        public static IEqualityComparer<Point2> GetEqualityComparer(double epsilon = 0) =>
+        public static IEqualityComparer<Point2> GetEqualityComparer(in double epsilon = 0) =>
             new Point2EqualityComparer(epsilon);
 
         public override string ToString() => $"({this.X}, {this.Y})";

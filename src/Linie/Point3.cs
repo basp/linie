@@ -20,24 +20,24 @@ namespace Linie
         {
         }
 
-        public static Point3 operator +(Point3 a, Vector3 u) =>
+        public static Point3 operator +(in Point3 a, in Vector3 u) =>
             new Point3(a.X + u.X, a.Y + u.Y, a.Z + u.Z);
 
-        public static Point3 operator -(Point3 a, Vector3 u) =>
+        public static Point3 operator -(in Point3 a, in Vector3 u) =>
             new Point3(a.X - u.X, a.Y - u.Y, a.Z - u.Z);
 
-        public static Vector3 operator -(Point3 a, Point3 b) =>
+        public static Vector3 operator -(in Point3 a, in Point3 b) =>
             new Vector3(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
 
-        public static Point3 operator *(double c, Point3 a) =>
+        public static Point3 operator *(in double c, in Point3 a) =>
             new Point3(c * a.X, c * a.Y, c * a.Z);
 
-        public static Point3 operator *(Point3 a, double c) => c * a;
+        public static Point3 operator *(in Point3 a, in double c) => c * a;
 
-        public static explicit operator Vector4(Point3 a) =>
+        public static explicit operator Vector4(in Point3 a) =>
             Vector4.CreatePosition(a.X, a.Y, a.Z);
 
-        public static IEqualityComparer<Point3> GetEqualityComparer(double epsilon = 0) =>
+        public static IEqualityComparer<Point3> GetEqualityComparer(in double epsilon = 0) =>
             new Point3EqualityComparer(epsilon);
 
         public override string ToString() => $"({this.X}, {this.Y}, {this.Z})";

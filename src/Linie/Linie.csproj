@@ -2,7 +2,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <PackageId>Linie</PackageId>
-        <Version>0.6.4</Version>
+        <Version>0.6.41</Version>
         <Authors>Bas Pennings</Authors>
     </PropertyGroup>
 </Project>
