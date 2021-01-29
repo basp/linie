@@ -7,7 +7,9 @@ The main goal of this project was to battle test `Linie` and see if it could
 help. It did. You can now ray trace in a day (or a few hours even).
 
 The code contains the example scene from refraction and the final scene of the 
-book.
+book but was built op using the reference images from the book to verify the 
+results. Each and every step of the book can now be reproduced using `Linie` as
+a base to start from.
 
 ## Notes
 * The `hittable` abstract was renamed to `IGeometricObject` 
