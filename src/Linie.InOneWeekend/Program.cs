@@ -57,7 +57,6 @@
         static void Main(string[] args)
         {
             // image
-            // const double aspectRatio = 3.0 / 2;
             const double aspectRatio = 16.0 / 9;
             const int imageWidth = 1600;
             const int imageHeight = (int)(imageWidth / aspectRatio);
