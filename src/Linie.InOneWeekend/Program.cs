@@ -70,12 +70,9 @@
             // camera
             var viewportHeight = 2.0;
             var viewportWidth = aspectRatio * viewportHeight;
-            // var lookFrom = new Point3(3, 3, 2);
             var lookFrom = new Point3(13, 2, 3);
-            // var lookAt = new Point3(0, 0, -1);
             var lookAt = new Point3(0, 0, 0);
             var vup = new Vector3(0, 1, 0);
-            // var focusDistance = (lookFrom - lookAt).Magnitude();
             var focusDistance = 10.0;
             var aperture = 0.02;
             var cam = new Camera(
