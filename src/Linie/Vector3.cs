@@ -106,6 +106,8 @@ namespace Linie
 
         public Vector3 Reflect(in Vector3 n) => Vector3.Reflect(this, n);
 
+        public Vector3 Reflect(in Normal3 n) => Vector3.Reflect(this, n);
+
         public override string ToString() =>
             $"({this.X}, {this.Y}, {this.Z})";
 

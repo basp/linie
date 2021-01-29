@@ -8,7 +8,7 @@ namespace Linie.InOneWeekend
             in Ray3 rIn, 
             in ShadeRecord rec,
             in Random rng, 
-            ref Color attenuation, 
+            out Color attenuation, 
             out Ray3 scattered);
     }
 }

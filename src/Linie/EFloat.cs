@@ -226,7 +226,7 @@ namespace Linie
             EFloat.Validate(v, vp, low, high);
             return new EFloat(v, vp, low, high);
 #else
-            return new Efloat(v, low, high);
+            return new EFloat(v, low, high);
 #endif
         }
 

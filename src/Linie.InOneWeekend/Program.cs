@@ -7,22 +7,7 @@
 
     class Program
     {
-        static double HitSphere(in Point3 center, in double radius, in Ray3 r)
-        {
-            var oc = r.Origin - center;
-            var a = Vector3.Dot(r.Direction, r.Direction);
-            var b = 2 * Vector3.Dot(oc, r.Direction);
-            var c = Vector3.Dot(oc, oc) - radius * radius;
-            var discriminant = (b * b) - (4 * a * c);
-            if (discriminant < 0)
-            {
-                return -1;
-            }
-
-            return (-b - Math.Sqrt(discriminant)) / (2 * a);
-        }
-
-        static Color ScaleColor(in Color c, int samplesPerPixel = 1)
+        static Color GetScaledColor(in Color c, int samplesPerPixel)
         {
             var scale = 1.0 / samplesPerPixel;
 
@@ -33,25 +18,36 @@
             return new Color(r, g, b);
         }
 
-        static Color RayColor(in Ray3 r, Group world, int depth, Random rng)
+        static Color Sample(
+            in Ray3 ray,
+            Group world,
+            int depth,
+            Random rng)
         {
             if (depth <= 0)
             {
                 return new Color(0);
             }
 
-            if (world.TryIntersect(r, 0.001, double.PositiveInfinity, out var sr))
+            const double tmin = 0.0001;
+            const double tmax = double.PositiveInfinity;
+
+            if (world.TryIntersect(ray, tmin, tmax, out var sr))
             {
-                Color attenuation = new Color(0);
-                if (sr.Material.Scatter(r, sr, rng, ref attenuation, out var scattered))
+                if (sr.Material.Scatter(
+                    ray,
+                    sr,
+                    rng,
+                    out var attenuation,
+                    out var scattered))
                 {
-                    return attenuation * RayColor(scattered, world, depth - 1, rng);
+                    return attenuation * Sample(scattered, world, depth - 1, rng);
                 }
 
                 return new Color(0);
             }
 
-            var unitDirection = Vector3.Normalize(r.Direction);
+            var unitDirection = Vector3.Normalize(ray.Direction);
             var t = 0.5 * (unitDirection.Y + 1);
             var white = new Color(1, 1, 1);
             var blueish = new Color(0.5, 0.7, 1.0);
@@ -61,44 +57,37 @@
         static void Main(string[] args)
         {
             // image
+            // const double aspectRatio = 3.0 / 2;
             const double aspectRatio = 16.0 / 9;
-            const int imageWidth = 400;
+            const int imageWidth = 800;
             const int imageHeight = (int)(imageWidth / aspectRatio);
-            const int samplesPerPixel = 100;
-            const int maxDepth = 50;
+            const int samplesPerPixel = 4;
+            const int maxDepth = 16;
 
             // world
-            var materialGround= new Lambertian(new Color(0.8, 0.8, 0.0));
-            var materialCenter = new Lambertian(new Color(0.7, 0.3, 0.3));
-            var materialLeft = new Metal(new Color(0.8, 0.8, 0.8), 0.3);
-            var materialRight = new Metal(new Color(0.8, 0.6, 0.2), 1.0);
-
-            var world = new Group();
-            world.Objects.Add(
-                new Sphere(new Point3(0, -100.5, -1), 100, materialGround));
-            world.Objects.Add(
-                new Sphere(new Point3(0, 0, -1), 0.5, materialCenter));
-            world.Objects.Add(
-                new Sphere(new Point3(-1, 0, -1), 0.5, materialLeft));
-            world.Objects.Add(
-                new Sphere(new Point3(1, 0, -1), 0.5, materialRight));
+            var world = CreateRandomScene();
 
             // camera
             var viewportHeight = 2.0;
             var viewportWidth = aspectRatio * viewportHeight;
-            var focalLength = 1.0;
-
-            var origin = new Point3(0, 0, 0);
-            var horizontal = new Vector3(viewportWidth, 0, 0);
-            var vertical = new Vector3(0, viewportHeight, 0);
-            var lowerLeftCorner = origin -
-                (horizontal / 2) -
-                (vertical / 2) -
-                new Vector3(0, 0, focalLength);
+            // var lookFrom = new Point3(3, 3, 2);
+            var lookFrom = new Point3(13, 2, 3);
+            // var lookAt = new Point3(0, 0, -1);
+            var lookAt = new Point3(0, 0, 0);
+            var vup = new Vector3(0, 1, 0);
+            // var focusDistance = (lookFrom - lookAt).Magnitude();
+            var focusDistance = 10.0;
+            var aperture = 0.02;
+            var cam = new Camera(
+                lookFrom,
+                lookAt,
+                vup,
+                vfov: 20,
+                aspectRatio,
+                aperture,
+                focusDistance);
 
             var img = new Canvas(imageWidth, imageHeight);
-            var cam = new Camera();
-
             using (var progressBar = new ProgressBar(imageHeight, "rendering"))
             {
                 Parallel.For(0, imageHeight, j =>
@@ -117,11 +106,11 @@
                         {
                             var u = (i + rng.RandomDouble()) / (imageWidth - 1);
                             var v = (j + rng.RandomDouble()) / (imageHeight - 1);
-                            var r = cam.GetRay(u, v);
-                            color += RayColor(r, world, maxDepth, rng);
+                            var r = cam.GetRay(u, v, rng);
+                            color += Sample(r, world, maxDepth, rng);
                         }
 
-                        img[i, j] = ScaleColor(color, samplesPerPixel);
+                        img[i, j] = GetScaledColor(color, samplesPerPixel);
                     }
 
                     progressBar.Tick();
@@ -129,6 +118,91 @@
             }
 
             img.SavePpm(@".\out.ppm");
+        }
+
+        static Group CreateRandomScene()
+        {
+            var rng = new Random(2);
+
+            var world = new Group();
+
+            var groundMaterial = new Lambertian(new Color(0.5, 0.5, 0.5));
+            world.Objects.Add(
+                new Sphere(new Point3(0, -1000, 0), 1000, groundMaterial));
+
+            for (var a = -11; a < 11; a++)
+            {
+                for (var b = -11; b < 11; b++)
+                {
+                    var chooseMat = rng.RandomDouble();
+                    var center = new Point3(
+                        a + 0.9 * rng.RandomDouble(),
+                        0.2,
+                        b + 0.9 * rng.RandomDouble());
+
+                    var refPoint = new Point3(4, 0.2, 0);
+                    if ((center - refPoint).Magnitude() > 0.9)
+                    {
+                        if (chooseMat < 0.8)
+                        {
+                            // diffuse
+                            var albedo = rng.RandomColor() * rng.RandomColor();
+                            var mat = new Lambertian(albedo);
+                            world.Objects.Add(new Sphere(center, 0.2, mat));
+                        }
+                        else if (chooseMat < 0.95)
+                        {
+                            // metal
+                            var albedo = rng.RandomColor();
+                            var fuzz = rng.RandomDouble(0, 0.5);
+                            var mat = new Metal(albedo, fuzz);
+                            world.Objects.Add(new Sphere(center, 0.2, mat));
+                        }
+                        else
+                        {
+                            // glass
+                            var mat = new Dielectric(1.5);
+                            world.Objects.Add(new Sphere(center, 0.2, mat));
+                        }
+                    }
+                }
+            }
+
+            var mat1 = new Dielectric(1.5);
+            var mat2 = new Lambertian(new Color(0.4, 0.2, 0.1));
+            var mat3 = new Metal(new Color(0.7, 0.6, 0.5));
+
+            world.Objects.Add(
+                new Sphere(new Point3(0, 1, 0), 1, mat1));
+            world.Objects.Add(
+                new Sphere(new Point3(-4, 1, 0), 1, mat2));
+            world.Objects.Add(
+                new Sphere(new Point3(4, 1, 0), 1, mat3));
+
+            return world;
+        }
+
+        static Group CreateTestScene()
+        {
+            var materialGround = new Lambertian(new Color(0.8, 0.8, 0.0));
+            var materialCenter = new Lambertian(new Color(0.1, 0.2, 0.5));
+            var materialLeft = new Dielectric(1.5);
+            var materialRight = new Metal(new Color(0.8, 0.6, 0.2));
+
+            var world = new Group();
+
+            world.Objects.Add(
+                new Sphere(new Point3(0, -100.5, -1), 100, materialGround));
+            world.Objects.Add(
+                new Sphere(new Point3(0, 0, -1), 0.5, materialCenter));
+            world.Objects.Add(
+                new Sphere(new Point3(-1, 0, -1), 0.5, materialLeft));
+            world.Objects.Add(
+                new Sphere(new Point3(-1, 0, -1), -0.4, materialLeft));
+            world.Objects.Add(
+                new Sphere(new Point3(1, 0, -1), 0.5, materialRight));
+
+            return world;
         }
     }
 }

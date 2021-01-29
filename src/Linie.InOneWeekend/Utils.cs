@@ -4,6 +4,18 @@ namespace Linie.InOneWeekend
 
     public static class Utils
     {
+        public static Vector3 Refract(
+            this Vector3 uv,
+            Normal3 n,
+            double etaiOverEtat)
+        {
+            var cosTheta = Math.Min(Vector3.Dot(-uv, n), 1);
+            var rOutPerp = etaiOverEtat * (uv + cosTheta * n);
+            var rOutParallel = -Math.Sqrt(
+                Math.Abs(1.0 - Vector3.MagnitudeSquared(rOutPerp))) * n;
+            return rOutPerp + rOutParallel;
+        }
+
         public static double Clamp(in double x, in double min, in double max)
         {
             if (x < min)
@@ -28,6 +40,12 @@ namespace Linie.InOneWeekend
                 Math.Abs(u.Z) < s;
         }
 
+        public static Color RandomColor(this Random rng) =>
+            new Color(
+                rng.RandomDouble(),
+                rng.RandomDouble(),
+                rng.RandomDouble());
+
         public static Vector3 RandomVector(this Random rng) =>
             new Vector3(
                 rng.RandomDouble(),
@@ -42,6 +60,24 @@ namespace Linie.InOneWeekend
 
         public static Vector3 RandomUnitVector(this Random rng) =>
             Vector3.Normalize(rng.RandomInUnitSphere());
+
+        public static Vector3 RandomInUnitDisk(this Random rng)
+        {
+            while(true)
+            {
+                var p = new Vector3(
+                    rng.RandomDouble(-1, 1),
+                    rng.RandomDouble(-1, 1),
+                    0);
+
+                if(Vector3.MagnitudeSquared(p) > 1)
+                {
+                    continue;
+                }
+
+                return p;
+            }
+        }
 
         public static Vector3 RandomInHemisphere(this Random rng, in Normal3 n)
         {
