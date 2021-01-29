@@ -18,7 +18,7 @@
             return new Color(r, g, b);
         }
 
-        static Color Sample(
+        static Color Shade(
             in Ray3 ray,
             Group world,
             int depth,
@@ -41,7 +41,7 @@
                     out var attenuation,
                     out var scattered))
                 {
-                    return attenuation * Sample(scattered, world, depth - 1, rng);
+                    return attenuation * Shade(scattered, world, depth - 1, rng);
                 }
 
                 return new Color(0);
@@ -107,7 +107,7 @@
                             var u = (i + rng.RandomDouble()) / (imageWidth - 1);
                             var v = (j + rng.RandomDouble()) / (imageHeight - 1);
                             var r = cam.GetRay(u, v, rng);
-                            color += Sample(r, world, maxDepth, rng);
+                            color += Shade(r, world, maxDepth, rng);
                         }
 
                         img[i, j] = GetScaledColor(color, samplesPerPixel);
