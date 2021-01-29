@@ -15,4 +15,5 @@ book.
 * Some methods and variables might have slight renames as well. However these
 should be self-explanatory in the context where they are used.
 * Most changes are inspired by 
-[Ray Tracing from the Ground Up](http://www.raytracegroundup.com/).
+[Ray Tracing from the Ground Up](http://www.raytracegroundup.com/) by Kevin
+Suffern.
