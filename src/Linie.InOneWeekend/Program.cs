@@ -59,10 +59,10 @@
             // image
             // const double aspectRatio = 3.0 / 2;
             const double aspectRatio = 16.0 / 9;
-            const int imageWidth = 800;
+            const int imageWidth = 1600;
             const int imageHeight = (int)(imageWidth / aspectRatio);
-            const int samplesPerPixel = 4;
-            const int maxDepth = 16;
+            const int samplesPerPixel = 64;
+            const int maxDepth = 64;
 
             // world
             var world = CreateRandomScene();
@@ -88,34 +88,67 @@
                 focusDistance);
 
             var img = new Canvas(imageWidth, imageHeight);
-            using (var progressBar = new ProgressBar(imageHeight, "rendering"))
+
+            void RenderParallel()
             {
-                Parallel.For(0, imageHeight, j =>
+                using (var progressBar = new ProgressBar(imageHeight, "rendering"))
                 {
-                    // make sure to give each parallel body its 
-                    // own uniquely seeded RNG
-                    var rng = new Random();
-
-                    // we need `j` to be descending (imageWidth..0]
-                    j = imageHeight - 1 - j;
-
-                    for (var i = 0; i < imageWidth; i++)
+                    Parallel.For(0, imageHeight, j =>
                     {
-                        var color = new Color(0);
-                        for (var s = 0; s < samplesPerPixel; s++)
+                        // make sure to give each parallel body its 
+                        // own uniquely seeded RNG
+                        var rng = new Random();
+
+                        // we need `j` to be descending (imageWidth..0]
+                        j = imageHeight - 1 - j;
+
+                        for (var i = 0; i < imageWidth; i++)
                         {
-                            var u = (i + rng.RandomDouble()) / (imageWidth - 1);
-                            var v = (j + rng.RandomDouble()) / (imageHeight - 1);
-                            var r = cam.GetRay(u, v, rng);
-                            color += Shade(r, world, maxDepth, rng);
+                            var color = new Color(0);
+                            for (var s = 0; s < samplesPerPixel; s++)
+                            {
+                                var u = (i + rng.RandomDouble()) / (imageWidth - 1);
+                                var v = (j + rng.RandomDouble()) / (imageHeight - 1);
+                                var r = cam.GetRay(u, v, rng);
+                                color += Shade(r, world, maxDepth, rng);
+                            }
+
+                            img[i, j] = GetScaledColor(color, samplesPerPixel);
                         }
 
-                        img[i, j] = GetScaledColor(color, samplesPerPixel);
-                    }
-
-                    progressBar.Tick();
-                });
+                        progressBar.Tick();
+                    });
+                }
             }
+
+            void RenderSequential()
+            {
+                var rng = new Random();
+                using (var progressBar = new ProgressBar(imageHeight, "rendering"))
+                {
+                    for (var j = imageHeight - 1; j >= 0; j--)
+                    {
+                        for (var i = 0; i < imageWidth; i++)
+                        {
+                            var color = new Color(0);
+                            for (var s = 0; s < samplesPerPixel; s++)
+                            {
+                                var u = (i + rng.RandomDouble()) / (imageWidth - 1);
+                                var v = (j + rng.RandomDouble()) / (imageHeight - 1);
+                                var r = cam.GetRay(u, v, rng);
+                                color += Shade(r, world, maxDepth, rng);
+                            }
+
+                            img[i, j] = GetScaledColor(color, samplesPerPixel);
+                        }
+
+                        progressBar.Tick();
+                    }
+                }
+            }
+
+            RenderParallel();
+            // RenderSequential();
 
             img.SavePpm(@".\out.ppm");
         }
