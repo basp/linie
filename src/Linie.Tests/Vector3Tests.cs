@@ -1,5 +1,6 @@
 namespace Linie.Tests
 {
+    using System;
     using Xunit;
 
     public class Vector3Tests
@@ -34,6 +35,30 @@ namespace Linie.Tests
             Assert.Equal(2, u.X);
             Assert.Equal(3, u.Y);
             Assert.Equal(1, u.Z);
+        }
+
+        [Fact]
+        public void TestMagnitudeSquared()
+        {
+            var u = new Vector3(2, 2, 2);
+            var expected = 12;
+            Assert.Equal(expected, Vector3.MagnitudeSquared(u));
+        }
+
+        [Fact]
+        public void TestNormalize()
+        {
+            const double epsilon = 0.000001;
+            var cmp = Vector3.GetEqualityComparer(epsilon);
+            var u = new Vector3(2, 2, 2);
+            var v = Vector3.Normalize(u);
+            var mag = u.Magnitude();
+            var expected = new Vector3(
+                u.X / mag,
+                u.Y / mag,
+                u.Z / mag);
+
+            Assert.Equal(expected, v, cmp);
         }
     }
 }
