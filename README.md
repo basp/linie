@@ -1,14 +1,14 @@
 # linie
-Linie is a ray tracing kernel library.
+Linie is a minimalistic ray tracing library.
 
 ## features
 * 4D or 3D mode
+* 2D types
 * local epsilon
 * rays
 * transforms
-* includes canvas
-* extras
-* notes
+* canvas
+* utils
 
 ### 4D or 3D mode
 Linie is designed for a broad spectrum of use cases. On the one extreme you can
