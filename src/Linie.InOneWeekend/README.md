@@ -18,7 +18,7 @@ The ray tracer as proposed in the book writes directly to `stdout` and is presum
 
 This intermediate storage was required since we cannot write out the results directly to `stdout` if we are rendering lines in parallel. In the end it turns out that using this memory storage is a huge win even when running sequentially. Because we are not writing to a stream for every pixel the whole process naturally is a lot faster. 
 
-And now that we have intermediate storage we can also render out lines in (embarrasingly parralel)[https://en.wikipedia.org/wiki/Embarrassingly_parallel] fashion. Technically we could easily do this on a pixel basis but it turns out the switching overhead is prohibitive on a general CPU (with the current sampling complexity). 
+And now that we have intermediate storage we can also render out lines in [embarrasingly parralel](https://en.wikipedia.org/wiki/Embarrassingly_parallel) fashion. Technically we could easily do this on a pixel basis but it turns out the switching overhead is prohibitive on a general CPU (with the current sampling complexity). 
 
 Rendering a line seems about the right granularity to parallelize givent he current .NET scheduler implementation. This turns out to be a huge win where an image can be rendered in (on average) 30% percent of the time versus the sequential algorithm. 
 
