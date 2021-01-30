@@ -4,7 +4,7 @@ This is a pretty straightforward port of the ray tracer described in
 by Peter Shirley.
 
 The main goal of this project was to battle test `Linie` and see if it could 
-help. You can now ray trace in a day (or a few hours even).
+help to implement the ray tracer more quicly. You can now ray trace in a day (or a few hours even).
 
 The code contains the example scene from refraction and the final scene of the 
 book. It was was built up using the reference images from the book to verify the 
