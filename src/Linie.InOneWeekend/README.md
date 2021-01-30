@@ -20,7 +20,7 @@ This intermediate storage was required since we cannot write out the results dir
 
 And now that we have intermediate storage we can also render out lines in [embarrasingly parralel](https://en.wikipedia.org/wiki/Embarrassingly_parallel) fashion. Technically we could easily do this on a pixel basis but it turns out the switching overhead is prohibitive on a general CPU (with the current sampling complexity). 
 
-Rendering a line seems about the right granularity to parallelize givent he current .NET scheduler implementation. This turns out to be a huge win where an image can be rendered in (on average) 30% percent of the time versus the sequential algorithm. 
+Rendering a line seems about the right granularity to parallelize givent he current .NET scheduler implementation. This turns out to be a huge win where an image can be rendered in (on average) 30% percent of the time versus the sequential algorithm (observed on 6 cores). 
 
 Both the `RenderSequental` and `RenderParallel` implementations are included so that one can easily switch and observe the difference.
 
