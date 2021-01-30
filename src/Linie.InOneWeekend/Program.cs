@@ -29,11 +29,14 @@
                 return new Color(0);
             }
 
-            const double tmin = 0.0001;
+            const double tmin = 0.001;
             const double tmax = double.PositiveInfinity;
 
             if (world.TryIntersect(ray, tmin, tmax, out var sr))
             {
+                // check if we get a scattered ray and if we do
+                // send a new ray back into the world with attenuation
+                // along the scatter direction
                 if (sr.Material.Scatter(
                     ray,
                     sr,
@@ -58,10 +61,10 @@
         {
             // image
             const double aspectRatio = 16.0 / 9;
-            const int imageWidth = 1600;
+            const int imageWidth = 1280;
             const int imageHeight = (int)(imageWidth / aspectRatio);
-            const int samplesPerPixel = 64;
-            const int maxDepth = 64;
+            const int samplesPerPixel = 1024;
+            const int maxDepth = 256;
 
             // world
             var world = CreateRandomScene();
@@ -73,7 +76,7 @@
             var lookAt = new Point3(0, 0, 0);
             var vup = new Vector3(0, 1, 0);
             var focusDistance = 10.0;
-            var aperture = 0.02;
+            var aperture = 0.05;
             var cam = new Camera(
                 lookFrom,
                 lookAt,
@@ -151,7 +154,7 @@
 
         static Group CreateRandomScene()
         {
-            var rng = new Random(2);
+            var rng = new Random(3);
 
             var world = new Group();
 
