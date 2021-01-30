@@ -69,11 +69,12 @@ normalized automatically nor are there any checks.
 ### local epsilon
 Since ray tracing is heavy on floating point math, all the geometric types in
 Linie have a dynamic and local epsilon (wiggle room) for equality operations
-using the `IEquatable<T>` interface.
+using the `GetEqualityComparer` method.
 
-All of the types also overload `Equals` but this has no approximation. In order
-to compare two values with an approximation *epsilon* the static
-`GetEqualityComparer(double)` method can be used.
+All of the types also overload `Equals` but this has no approximation - it just
+delgates to the `==` operator on the individual components. In order to compare 
+two values with an approximation *epsilon*, the static `GetEqualityComparer(double)` 
+method can be used. This is supported by all vectorized types.
 ```
 var u = new Vector3(1, 0, 1);
 var v = new Vector3(1.5, 0, 1.5);
