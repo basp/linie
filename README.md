@@ -147,7 +147,7 @@ There is an `EFloat` class that could potentially be used to increase the
 epsilon locality even further. The idea is that a particular calculation would use this class instead of a more global epsilon in order to maximize accuracy.
 
 However, this class is highly experimental and has not been tested at all so only use it if you are feeling adventurous. Additionally, we cannot use it with vectorized types so that makes it
-even more useless in general. Bascially just don't use it. 
+even more useless. Bascially just don't use it. 
 
 There has been some work on general math using Linie which would potentially allow
 for `Vector2<T>`, `Vector3<T>` and `Vector4<T>` types. They could potentially eventually
