@@ -140,6 +140,14 @@ The canvas included with Linie is a very small wrapper over an array of `Color` 
 At the moment there is a `SavePpm(string)` method that will persist the canvas as a [Netpbm](https://en.wikipedia.org/wiki/Netpbm) file on disk at the given path.
 
 The canvas can easily be read out using its indexer and includes a `Canvas.GetColorBytes` method to convert a `Color` value into a `byte` triplet. This might be useful when you need to write out the canvas to a different format.
+```
+const int width = 400;
+const int height = 200;
+var img = new Canvas(width, height);
+img[200, 50] = new Color(0.5, 0.3, 0.6);
+...
+img.SavePpm(@".\out.ppm");
+```
 
 ### extras
 #### The EFloat type
