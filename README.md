@@ -137,7 +137,7 @@ new `Vector4` values. This will ensure that the `W` component is set correctly.
 ### included canvas
 The canvas included with Linie is a very small wrapper over an array of `Color` values. Its purpose is to store the output of the ray tracing process and offer some basic persistance features. 
 
-At the moment there is a basic `SavePpm(string)` method that will persist the canvas as a [Netpbm](https://en.wikipedia.org/wiki/Netpbm) file on disk at the given path.
+At the moment there is a `SavePpm(string)` method that will persist the canvas as a [Netpbm](https://en.wikipedia.org/wiki/Netpbm) file on disk at the given path.
 
 The canvas can easily be read out using its indexer and includes a `Canvas.GetColorBytes` method to convert a `Color` value into a `byte` triplet. This might be useful when you need to write out the canvas to a different format.
 
