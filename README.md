@@ -144,7 +144,10 @@ The canvas can easily be read out using its indexer and includes a `Canvas.GetCo
 const int width = 400;
 const int height = 200;
 var img = new Canvas(width, height);
-img[200, 50] = new Color(0.5, 0.3, 0.6);
+...
+var row = 200;
+var col = 50;
+img[row, col] = new Color(0.5, 0.3, 0.6);
 ...
 img.SavePpm(@".\out.ppm");
 ```
