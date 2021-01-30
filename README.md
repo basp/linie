@@ -151,8 +151,8 @@ even more useless. Bascially just don't use it.
 
 There has been some work on general math using Linie which would potentially allow
 for `Vector2<T>`, `Vector3<T>` and `Vector4<T>` types. They could potentially eventually
-use the `EFloat` as well but this work is still very much experimental as well and
-should not be used for production code.
+use the `EFloat` but this work is still very much experimental and should not be 
+used for production code.
 
 #### The Hadamard product
 Colors support one additional operation that is uncommon to all other kind
