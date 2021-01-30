@@ -11,10 +11,13 @@ Linie is a ray tracing kernel library.
 * notes
 
 ### 4D or 3D mode
-Linie is designed for two basic modes of operandi:
+Linie is designed for a broad spectrum of use cases. On the one extreme you can
+have all 4D operations and use `Vector4.CreatePosition` and `Vector4.CreateDirecton`
+methods and on the other hand you can have `Point3` and `Vector3` types and even `Normal3`
+while still being able to switch between the two systems.
 
-* Use all 4D vectors where a position has `W = 1` and a direction has `W = 0`
-* Use explicit point, vector and normal types
+Additionally `Linie` also includes some 2D types that should be usuful during texture
+and pattern mapping as well as for generating camera and sampler rays.
 
 When using 4D vectors it is recommended to use the `Vector4.CreatePosition` and
 `Vector4.CreateDirection` methods to create points and vectors respectively. This
