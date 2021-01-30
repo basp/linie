@@ -142,7 +142,12 @@ There is an `EFloat` class that could potentially be used to increase the
 epsilon locality even further. The idea is that a particular calculation would use this class instead of a more global epsilon in order to maximize accuracy.
 
 However, this class is highly experimental and has not been tested at all so only use it if you are feeling adventurous. Additionally, we cannot use it with vectorized types so that makes it
-even more useless in general. Bascially just don't use it.
+even more useless in general. Bascially just don't use it. 
+
+There has been some work on general math using Linie which would potentially allow
+for `Vector2<T>`, `Vector3<T>` and `Vector4<T>` types. They could potentially eventually
+use the `EFloat` as well but this work is still very much experimental as well and
+should not be used for production code.
 
 #### The Hadamard product
 Colors support one additional operation that is uncommon to all other kind
@@ -158,6 +163,3 @@ Assert.True(c3.Equals(c4));
 ```
 
 See [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_(matrices)) for more info.
-
-### notes
-The 3D mode has not been extensively tested and might be buggy. If you are going to use this for anything serious then please stick to 4D mode.
