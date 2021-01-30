@@ -98,7 +98,10 @@ Approximate equality using local epsilon is supported for the following types:
 * `Matrix4x4`
 
 ### transforms
-Builtin transformations provide `Matrix4x4` affine transformations.
+Builtin transformations provide `Matrix4x4` affine transformations. Depending on
+the architecture of your ray tracer you might not even need them. It is important
+to note that 4x4 matrix transformations are supported over all vectorized
+types.
 
 * `Translate`
 * `Scale`
