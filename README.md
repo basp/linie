@@ -141,7 +141,8 @@ The canvas can easily be read out using its indexer and includes a `Canvas.GetCo
 There is an `EFloat` class that could potentially be used to increase the
 epsilon locality even further. The idea is that a particular calculation would use this class instead of a more global epsilon in order to maximize accuracy.
 
-However, this class is highly experimental and has not been tested at all so only use it if you are feeling adventurous.
+However, this class is highly experimental and has not been tested at all so only use it if you are feeling adventurous. Additionally, we cannot use it with vectorized types so that makes it
+even more useless in general. Bascially just don't use it.
 
 #### The Hadamard product
 Colors support one additional operation that is uncommon to all other kind
