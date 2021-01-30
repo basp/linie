@@ -24,6 +24,23 @@ Rendering a line seems about the right granularity to parallelize givent he curr
 
 Both the `RenderSequental` and `RenderParallel` implementations are included so that one can easily switch and observe the difference.
 
+## Running
+This is targeting .NET 5 so you will need that runtime to run it. Probably.
+
+Next, you want to inspect the following constants in `Program.cs` and tweak them:
+* `imageWidth` is pretty self-explanatory. Set this to your desired width, height will be calculated using the `aspectRatio`.
+* `aspectRatio` is the ratio between width and height of your image. `16/9` or `3/2` are common values.
+* `samplesPerPixel` is the amount of rays we shoot into the scene for each pixel. Setting this to `1` will give a really grainy image that still has a certain quality. Setting it to `100` or above will generally produce a good quality image. Higher means better quality in this case. It is not uncommon to shoot 1000+ rays for every pixel in production renders.
+* `maxDepth` is the amount of times that a ray can bounce within the environment. The `RayColor` method is recursive in that it will shoot of more rays in all kinds of directions and call itself with those new rays in order to get a color value. This value determines how many times it can call itself in order to get a result.
+
+After you're happy with all those things you just run:
+```
+cd .\Linie.InOneWeekend
+dotnet run -c Release
+```
+
+I have added the `-c Release` flag because if you run in `Debug` mode (as is default) the code will be at least 2x slower. However, when you're developing your ray tracer you typically don't run with 1024 super sampling and 256 ray recursion at a resolution width of 1280. It's more common to render test images at 400 width with low values of 32 for super sampling and ray recursion. In those cases you can easily run in `Debug` and your images still render in less then a few seconds.
+
 ## Notes
 * The `hittable` abstract was renamed to `IGeometricObject`.
 * The `hit_record` type was renamed to `ShadeRecord`.
