@@ -100,7 +100,8 @@ Approximate equality using local epsilon is supported for the following types:
 ### transforms
 Builtin transformations provide `Matrix4x4` affine transformations. Depending on
 the architecture of your ray tracer you might not even need them. 4x4 matrix 
-transformations are supported for all 3D and 4D types.
+transformations are supported for all 3D and 4D types. The current built in
+transformations are:
 
 * `Translate`
 * `Scale`
@@ -108,6 +109,8 @@ transformations are supported for all 3D and 4D types.
 * `RotateY`
 * `RotateZ`
 * `Shear`
+
+We do not support rotate over an abitrary axis yet but we might some day.
 
 The matrix multiplication operation is supplied for all 3D and 4D types. For 
 example, to translate a `Point3` you would use something like the following:
