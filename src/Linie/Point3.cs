@@ -20,6 +20,20 @@ namespace Linie
         {
         }
 
+        public double this[int i]
+        {
+            get
+            {
+                switch(i)
+                {
+                    case 0: return this.X;
+                    case 1: return this.Y;
+                    case 2: return this.Z;
+                    default: throw new IndexOutOfRangeException();
+                }
+            }
+        }
+
         public static Point3 operator +(in Point3 a, in Vector3 u) =>
             new Point3(a.X + u.X, a.Y + u.Y, a.Z + u.Z);
 

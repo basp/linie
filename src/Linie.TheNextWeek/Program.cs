@@ -1,4 +1,4 @@
-﻿namespace Linie.InOneWeekend
+﻿namespace Linie.TheNextWeek
 {
     using System;
     using System.Threading.Tasks;
@@ -19,7 +19,7 @@
         }
 
         static Color Shade(
-            in Ray3 ray,
+            in Ray ray,
             Group world,
             int depth,
             Random rng)
@@ -61,13 +61,13 @@
         {
             // image
             const double aspectRatio = 16.0 / 9;
-            const int imageWidth = 1280;
+            const int imageWidth = 400;
             const int imageHeight = (int)(imageWidth / aspectRatio);
-            const int samplesPerPixel = 1;
-            const int maxDepth = 256;
+            const int samplesPerPixel = 100;
+            const int maxDepth = 50;
 
             // world
-            var world = CreateRandomScene();
+            var world = CreateTwoPerlinSpheres();
 
             // camera
             var viewportHeight = 2.0;
@@ -76,15 +76,17 @@
             var lookAt = new Point3(0, 0, 0);
             var vup = new Vector3(0, 1, 0);
             var focusDistance = 10.0;
-            var aperture = 0.05;
+            var aperture = 0.1;
             var cam = new Camera(
                 lookFrom,
                 lookAt,
                 vup,
-                vfov: 10,
+                vfov: 20,
                 aspectRatio,
                 aperture,
-                focusDistance);
+                focusDistance,
+                time0: 0,
+                time1: 1);
 
             var img = new Canvas(imageWidth, imageHeight);
 
@@ -152,15 +154,35 @@
             img.SavePpm(@".\out.ppm");
         }
 
+        static Group CreateTwoPerlinSpheres()
+        {
+            var rng = new Random();
+            var pertext = new NoiseTexture(4);
+            var world = new Group();
+            world.Objects.Add(
+                new Sphere(
+                    new Point3(0, -1000, 0), 1000, new Lambertian(pertext)));
+            world.Objects.Add(
+                new Sphere(
+                    new Point3(0, 2, 0), 2, new Lambertian(pertext)));
+            return world;
+        }
+
         static Group CreateRandomScene()
         {
             var rng = new Random(3);
 
             var world = new Group();
 
-            var groundMaterial = new Lambertian(new Color(0.5, 0.5, 0.5));
+            var checker = new CheckerTexture(
+                new Color(0.2, 0.3, 0.1),
+                new Color(0.9, 0.9, 0.9));
+            var groundMaterial = new Lambertian(checker);
             world.Objects.Add(
-                new Sphere(new Point3(0, -1000, 0), 1000, groundMaterial));
+                new Sphere(
+                    new Point3(0, -1000, 0), 
+                    1000, 
+                    groundMaterial));
 
             for (var a = -11; a < 11; a++)
             {
@@ -180,7 +202,9 @@
                             // diffuse
                             var albedo = rng.RandomColor() * rng.RandomColor();
                             var mat = new Lambertian(albedo);
-                            world.Objects.Add(new Sphere(center, 0.2, mat));
+                            var center2 = center + new Vector3(0, rng.RandomDouble(0, 0.5), 0);
+                            world.Objects.Add(
+                                new MovingSphere(center, center2, 0, 1, 0.2, mat));
                         }
                         else if (chooseMat < 0.95)
                         {
@@ -188,13 +212,15 @@
                             var albedo = rng.RandomColor();
                             var fuzz = rng.RandomDouble(0, 0.5);
                             var mat = new Metal(albedo, fuzz);
-                            world.Objects.Add(new Sphere(center, 0.2, mat));
+                            world.Objects.Add(
+                                new Sphere(center, 0.2, mat));
                         }
                         else
                         {
                             // glass
                             var mat = new Dielectric(1.5);
-                            world.Objects.Add(new Sphere(center, 0.2, mat));
+                            world.Objects.Add(
+                                new Sphere(center, 0.2, mat));
                         }
                     }
                 }
