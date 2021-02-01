@@ -33,9 +33,11 @@ This is supported by `Vector3<T>`, `Vector4<T>`, etc.
 > Note that this is still a work in progress so no all `Math` methods and operators are implemented yet.
 
 ## overview
-The goal of Genie is to support vector arithmetic over general floating point types in a reasonably speedy fashion. In order to accomplish this, a lot of interfaces are implicit and not directly specified by the code.
+The goal of Genie is to support vector arithmetic over general floating point types in a reasonably speedy fashion. In order to accomplish this, a lot of interfaces are implicit and not directly specified by the code. The reason for this is that `Genie` depends on **statically** compiling the arithmetic your code will use.
 
-Genie works by depending on the .NET runtime to compile our arithmetic delegates in `static` constructors. 
+> This means that eventually all *primitive* types that can be used **will** have to implement implicit `Math` interface for a large part.
+
+This mainly works by depending on the .NET runtime to compile our arithmetic delegates in `static` constructors. 
 
 > The compilation of those delegates is wrapped up in various forms of `Lazy<T>` and internally exposed as static fields. All of this is contained by the `internal Operations<T>` class.
 
