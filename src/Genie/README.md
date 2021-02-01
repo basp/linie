@@ -54,6 +54,10 @@ This way we don't have to explicitly specify our `T` (and `U`) parameters since 
 
 > In essence, `Operations<T>` is a JIT compiler layer for `Operations`. Client code calling `Operations` will force `Operations<T>` delegates to be compiled and used in process. Not that even though `Operations<T>` calculations are `Lazy<T>` this all happens statically. Any lazy values are resolved at the same time. See the statics in `Operations` and `Operations<T>` in order to see how these two layers interact in detail.
 
+## notes
+* `EFloat` uses `float` and `double` for *value* (`v`) and *very precise value* (`vp`) repsectively in contrast to PBRT where a quad is used for `vp`.
+
 ## credits
+* Greatly inspired by *The Ray Tracer Challenge*, *Ray Tracing From the Ground Up*, *Ray Tracing in a Weekend*, *Ray Tracing the Next Week* and the veneragble *PBRT book*.
 * Greatly inspired by [HelloKitty/Generic.Math](https://github.com/HelloKitty/Generic.Math) which in turn builds on John Skeet's `MiscUtil` library for the expression compilation helpers.
-* `EFloat` implementation is mostly taken straight from PBRT and translated to .NET C# code. This uses `float` and `double` for *very precise* value since we don't have builtin support for quad precision in .NET and I did not want to depend on something exotic.
+* `EFloat` and lots of `Utils` implementation is mostly taken straight from PBRT and translated to .NET C# code. 
