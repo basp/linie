@@ -66,7 +66,7 @@
             // const double aspectRatio = 16.0 / 9;
             const int imageWidth = 400;
             const int imageHeight = (int)(imageWidth / aspectRatio);
-            const int samplesPerPixel = 3000;
+            const int samplesPerPixel = 4096;
             const int maxDepth = 64;
 
             // world

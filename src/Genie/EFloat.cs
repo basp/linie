@@ -3,7 +3,12 @@
     using System;
     using System.Diagnostics;
 
-    public class EFloat // experimental
+    /// <summary>
+    /// An experimental struct that can be used to keep track
+    /// of local calculation errors. Can be used as an alternative
+    /// to a global epsilon.
+    /// </summary>
+    public struct EFloat : IComparable<EFloat>
     {
         private float v;
 
@@ -47,14 +52,16 @@
             this.v = v;
             this.low = low;
             this.high = high;
+            this.vp = 0;
         }
 
+#if DEBUG
         private EFloat(float v, double vp, float low, float high)
             : this(v, low, high)
         {
             this.vp = vp;
         }
-
+#endif
         public float LowerBound => this.low;
 
         public float UpperBound => this.high;
@@ -107,14 +114,14 @@
             };
 
             var low = Utils.NextFloatDown(
-                Math.Min(
-                    Math.Min(prod[0], prod[1]),
-                    Math.Min(prod[2], prod[3])));
+                MathF.Min(
+                    MathF.Min(prod[0], prod[1]),
+                    MathF.Min(prod[2], prod[3])));
 
             var high = Utils.NextFloatUp(
-                Math.Max(
-                    Math.Max(prod[0], prod[1]),
-                    Math.Max(prod[2], prod[3])));
+                MathF.Max(
+                    MathF.Max(prod[0], prod[1]),
+                    MathF.Max(prod[2], prod[3])));
 
 #if DEBUG
             var vp = a.vp * b.vp;
@@ -148,14 +155,14 @@
                 };
 
                 low = Utils.NextFloatDown(
-                    Math.Min(
-                        Math.Min(div[0], div[1]),
-                        Math.Min(div[2], div[3])));
+                    MathF.Min(
+                        MathF.Min(div[0], div[1]),
+                        MathF.Min(div[2], div[3])));
 
                 high = Utils.NextFloatUp(
-                    Math.Max(
-                        Math.Max(div[0], div[1]),
-                        Math.Max(div[2], div[3])));
+                    MathF.Max(
+                        MathF.Max(div[0], div[1]),
+                        MathF.Max(div[2], div[3])));
             }
 
 #if DEBUG
@@ -213,12 +220,51 @@
 
         public static EFloat operator /(float a, EFloat b) => new EFloat(a) / b;
 
-        // Negative values of `f` are not supported
+        public static EFloat Abs(EFloat f)
+        {
+            float v, low, high;
+            double vp;
+
+            // the entire interval is greater than zero
+            if (f.low >= 0)
+            {
+                return f;
+            }
+
+            // the entire interval is less than zero
+            if (f.high <= 0)
+            {
+                v = -f.v;
+                low = -f.high;
+                high = -f.low;
+#if DEBUG
+                vp = -f.vp;
+                return new EFloat(v, vp, low, high);
+#else
+                return new EFloat(v, low, high);
+#endif
+            }
+
+            // the interval straddles zero
+            v = MathF.Abs(f.v);
+            low = 0;
+            high = MathF.Max(-f.low, f.high);
+#if DEBUG
+            vp = Math.Abs(f.vp);
+            EFloat.Validate(v, vp, low, high);
+            return new EFloat(v, vp, low, high);
+#else
+            return new EFloat(v, low, high);
+#endif
+
+        }
+
+        // Negative values of `f` are not supported (yet)
         public static EFloat Sqrt(EFloat f)
         {
-            var v = (float)Math.Sqrt(f.v);
-            var low = Utils.NextFloatDown((float)Math.Sqrt(f.low));
-            var high = Utils.NextFloatUp((float)Math.Sqrt(f.high));
+            var v = MathF.Sqrt(f.v);
+            var low = Utils.NextFloatDown(MathF.Sqrt(f.low));
+            var high = Utils.NextFloatUp(MathF.Sqrt(f.high));
 #if DEBUG
             var vp = Math.Sqrt(f.vp);
             EFloat.Validate(v, vp, low, high);
@@ -230,16 +276,24 @@
 
         public float GetAbsoluteError() =>
             Utils.NextFloatUp(
-                Math.Max(
-                    Math.Abs(this.high - this.v),
-                    Math.Abs(this.v - this.low)));
+                MathF.Max(
+                    MathF.Abs(this.high - this.v),
+                    MathF.Abs(this.v - this.low)));
 
 #if DEBUG
         public float GetRelativeError() =>
             (float)Math.Abs((this.vp - this.v) / this.vp);
 #else
         public float GetRelativeError() =>
-            throw new NotImplementedException();
+            throw new NotImplementedException();            
+#endif
+
+#if DEBUG
+        public override string ToString() =>
+            $"EFloat({this.v}, vp: {this.vp}, eta: {this.GetRelativeError()})";
+#else
+        public override string ToString() =>
+            $"EFloat({this.v})";
 #endif
 
         private static void Validate(float v, double vp, float low, float high)
@@ -268,5 +322,9 @@
             throw new NotImplementedException();
 #endif
         }
+
+        public int CompareTo(EFloat other) =>
+            // TODO: probably should involve lower and upper bound here
+            this.v.CompareTo(other.v);
     }
 }

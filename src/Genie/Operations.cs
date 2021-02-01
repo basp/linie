@@ -6,90 +6,112 @@ namespace Genie
 
     public static class Operations
     {
+        public static U Convert<T, U>(T x)
+            where T : IComparable<T>
+            where U : IComparable<U> =>
+            Operations<T, U>.Convert(x);
+
         public static T Add<T>(in T x, in T y)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.Add(x, y);
 
         public static T Subtract<T>(in T x, in T y)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.Subtract(x, y);
 
         public static T Multiply<T>(in T x, in T y)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.Multiply(x, y);
 
         public static T Divide<T>(in T x, in T y)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.Divide(x, y);
 
         public static T Negate<T>(in T x)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.Negate(x);
 
         public static T Sqrt<T>(in T x)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.Sqrt(x);
 
         public static T Abs<T>(in T x)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.Abs(x);
 
         public static T Pow<T>(in T x, in T y)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.Pow(x, y);
 
         public static T Sin<T>(in T x)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.Sin(x);
 
         public static T Cos<T>(in T x)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.Cos(x);
 
         public static T Tan<T>(in T x)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.Tan(x);
 
         public static T Atan2<T>(in T y, in T x)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.Atan2(y, x);
 
         public static bool LessThan<T>(in T x, in T y)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.LessThan(x, y);
 
         public static bool LessThanOrEqual<T>(in T x, in T y)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.LessThanOrEqual(x, y);
 
         public static bool GreaterThan<T>(in T x, in T y)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.GreaterThan(x, y);
 
         public static bool GreaterThanOrEqual<T>(in T x, in T y)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.GreaterThanOrEqual(x, y);
 
         public static bool Equal<T>(in T x, in T y)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.Equal(x, y);
 
         public static bool NotEqual<T>(in T x, in T y)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.NotEqual(x, y);
 
         public static int CompareTo<T>(in T x, in T y)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             Operations<T>.CompareTo(x, y);
     }
 
+    internal static class Operations<T, U>
+        where T : IComparable<T>
+    {
+        private static readonly Lazy<Func<T, U>> convert;
+
+        public static Func<T, U> Convert => convert.Value;
+
+        static Operations()
+        {
+            convert = new Lazy<Func<T, U>>(() =>
+                ExpressionUtil.CreateExpression<T, U>(
+                    body => Expression.Convert(body, typeof(U))), true);
+        }
+    }
+
     internal static class Operations<T>
-        where T : IComparable<T>, IComparable
+        where T : IComparable<T>
     {
         private static IDictionary<Type, Type> providers = new Dictionary<Type, Type>
         {
             [typeof(double)] = typeof(Math),
             [typeof(float)] = typeof(MathF),
+            [typeof(int)] = typeof(Math),
+            [typeof(EFloat)] = typeof(EFloat),
         };
 
         private static Lazy<Func<T, T>> neg, abs, sqrt;

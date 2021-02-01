@@ -3,7 +3,7 @@ namespace Genie
     using System;
 
     public struct Vector4<T>
-        where T : IComparable, IComparable<T>
+        where T : IComparable<T>
     {
         public readonly T X, Y, Z, W;
 
@@ -19,7 +19,7 @@ namespace Genie
     public static class Vector4
     {
         public static Vector4<T> Create<T>(T x, T y, T z, T w)
-            where T : IComparable<T>, IComparable =>
+            where T : IComparable<T> =>
             new Vector4<T>(x, y, z, w);
     }
 }
