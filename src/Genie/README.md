@@ -43,4 +43,4 @@ From a client perspective you will be dealing with the `Operations` class instea
 
 ## credits
 * Greatly inspired by [HelloKitty/Generic.Math](https://github.com/HelloKitty/Generic.Math) which in turn builds on John Skeet's `MiscUtil` library for the expression compilation helpers.
-* `EFloat` implementation is mostly taken straight from PBRT and translated to .NET C# code.
+* `EFloat` implementation is mostly taken straight from PBRT and translated to .NET C# code. This uses `float` and `double` for *very precise* value since we don't have builtin support for quad precision in .NET and I did not want to depend on something exotic.
