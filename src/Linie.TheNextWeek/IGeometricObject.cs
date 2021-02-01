@@ -7,7 +7,7 @@ namespace Linie.TheNextWeek
             Ray ray, 
             double tmin, 
             double tmax, 
-            out ShadeRecord sr);
+            ref ShadeRecord sr);
 
         bool TryGetBoundingBox(
             double time0,

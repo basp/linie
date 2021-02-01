@@ -14,7 +14,7 @@ namespace Linie.TheNextWeek
 
         private readonly double radius;
 
-        private readonly IMaterial material;
+        private readonly Material material;
 
         public MovingSphere(
             Point3 center0,
@@ -22,7 +22,7 @@ namespace Linie.TheNextWeek
             double time0,
             double time1,
             double radius,
-            IMaterial material)
+            Material material)
         {
             this.center0 = center0;
             this.center1 = center1;
@@ -41,10 +41,8 @@ namespace Linie.TheNextWeek
             Ray ray,
             double tmin,
             double tmax,
-            out ShadeRecord sr)
+            ref ShadeRecord sr)
         {
-            sr = null;
-
             var oc = ray.Origin - this.GetCenter(ray.Time);
             var a = Vector3.MagnitudeSquared(ray.Direction);
             var halfB = Vector3.Dot(oc, ray.Direction);

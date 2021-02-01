@@ -36,16 +36,15 @@ namespace Linie.TheNextWeek
             Ray ray,
             double tmin,
             double tmax,
-            out ShadeRecord sr)
+            ref ShadeRecord sr)
         {
-            sr = null;
-
             var hitAnything = false;
             var closestSoFar = tmax;
 
+            ShadeRecord tmp = null;
             foreach (var obj in this.Objects)
             {
-                if (obj.TryIntersect(ray, tmin, closestSoFar, out var tmp))
+                if (obj.TryIntersect(ray, tmin, closestSoFar, ref tmp))
                 {
                     hitAnything = true;
                     closestSoFar = tmp.T;

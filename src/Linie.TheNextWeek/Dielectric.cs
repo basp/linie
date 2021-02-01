@@ -2,7 +2,7 @@ namespace Linie.TheNextWeek
 {
     using System;
 
-    public class Dielectric : IMaterial
+    public class Dielectric : Material
     {
         private readonly double ir;
 
@@ -11,7 +11,7 @@ namespace Linie.TheNextWeek
             this.ir = ir;
         }
 
-        public bool Scatter(
+        public override bool Scatter(
             in Ray rIn,
             in ShadeRecord rec,
             in Random rng,

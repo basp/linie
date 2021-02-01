@@ -2,7 +2,7 @@ namespace Linie.TheNextWeek
 {
     using System;
 
-    public class Lambertian : IMaterial
+    public class Lambertian : Material
     {
         private readonly ITexture albedo;
 
@@ -16,7 +16,7 @@ namespace Linie.TheNextWeek
             this.albedo = albedo;
         }
 
-        public bool Scatter(
+        public override bool Scatter(
             in Ray rIn,
             in ShadeRecord rec,
             in Random rng,

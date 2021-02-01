@@ -8,9 +8,9 @@ namespace Linie.TheNextWeek
 
         private readonly double radius;
 
-        private readonly IMaterial material;
+        private readonly Material material;
 
-        public Sphere(Point3 center, double radius, IMaterial material)
+        public Sphere(Point3 center, double radius, Material material)
         {
             this.center = center;
             this.radius = radius;
@@ -33,10 +33,8 @@ namespace Linie.TheNextWeek
             Ray ray,
             double tmin,
             double tmax,
-            out ShadeRecord sr)
+            ref ShadeRecord sr)
         {
-            sr = null;
-
             var oc = ray.Origin - this.center;
             var a = Vector3.MagnitudeSquared(ray.Direction);
             var halfB = Vector3.Dot(oc, ray.Direction);
@@ -83,7 +81,7 @@ namespace Linie.TheNextWeek
         {
             var theta = Math.Acos(-p.Y);
             var phi = Math.Atan2(-p.Z, p.X) + Math.PI;
-            var u = phi / (2 * phi);
+            var u = phi / (2 * Math.PI);
             var v = theta / Math.PI;
             return (u, v);
         }

@@ -16,7 +16,7 @@ namespace Linie.TheNextWeek
 
         public double V { get; set; }
 
-        public IMaterial Material { get; set; }
+        public Material Material { get; set; }
 
         public bool IsFrontFace { get; private set; }
 
