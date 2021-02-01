@@ -42,4 +42,5 @@ Genie works by depending on the .NET runtime to compile our arithmetic delegates
 From a client perspective you will be dealing with the `Operations` class instead for the most part. By virtue of method type inf
 
 ## credits
-Greatly inspired by [HelloKitty/Generic.Math](https://github.com/HelloKitty/Generic.Math) which in turn builds on John Skeet's `MiscUtil` library for the expression compilation helpers.
+* Greatly inspired by [HelloKitty/Generic.Math](https://github.com/HelloKitty/Generic.Math) which in turn builds on John Skeet's `MiscUtil` library for the expression compilation helpers.
+* `EFloat` implementation is mostly taken straight from PBRT and translated to .NET C# code.
