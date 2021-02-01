@@ -64,20 +64,21 @@
             // image
             const double aspectRatio = 1.0;
             // const double aspectRatio = 16.0 / 9;
-            const int imageWidth = 400;
+            const int imageWidth = 640;
             const int imageHeight = (int)(imageWidth / aspectRatio);
-            const int samplesPerPixel = 4096;
-            const int maxDepth = 64;
+            const int samplesPerPixel = 6000;
+            const int maxDepth = 128;
 
             // world
-            var world = CreateFinalScene();
+            var world = CreateCornellBox();
             // var background = new Color(0.7, 0.8, 1.0);
             var background = new Color(0);
 
             // camera
             var viewportHeight = 2.0;
             var viewportWidth = aspectRatio * viewportHeight;
-            var lookFrom = new Point3(478, 278, -600);
+            // var lookFrom = new Point3(478, 278, -600);
+            var lookFrom = new Point3(278, 278, -800);
             var lookAt = new Point3(278, 278, 0);
             // var lookFrom = new Point3(-2, 2, 1);
             // var lookAt = new Point3(0, 0, -1);
