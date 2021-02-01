@@ -67,6 +67,7 @@ namespace Genie
         {
             ParameterExpression lhs = Expression.Parameter(typeof(TArg1), "lhs");
             ParameterExpression rhs = Expression.Parameter(typeof(TArg2), "rhs");
+            
             try
             {
                 try

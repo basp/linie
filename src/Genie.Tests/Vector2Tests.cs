@@ -3,7 +3,7 @@ namespace Genie.Tests
     using System;
     using Xunit;
 
-    public class GenericMathTests
+    public class Vector2Tests
     {
         [Fact]
         public void Sandbox()

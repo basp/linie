@@ -14,4 +14,11 @@ namespace Genie
             this.Z = z;
         }
     }
+
+    public static class Vector3
+    {
+        public static Vector3<T> Create<T>(T x, T y, T z)
+            where T : IComparable<T>, IComparable =>
+            new Vector3<T>(x, y, z);
+    }
 }
