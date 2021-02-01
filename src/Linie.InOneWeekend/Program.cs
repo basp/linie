@@ -120,31 +120,31 @@
                 }
             }
 
-            void RenderSequential()
-            {
-                var rng = new Random();
-                using (var progressBar = new ProgressBar(imageHeight, "rendering"))
-                {
-                    for (var j = imageHeight - 1; j >= 0; j--)
-                    {
-                        for (var i = 0; i < imageWidth; i++)
-                        {
-                            var color = new Color(0);
-                            for (var s = 0; s < samplesPerPixel; s++)
-                            {
-                                var u = (i + rng.RandomDouble()) / (imageWidth - 1);
-                                var v = (j + rng.RandomDouble()) / (imageHeight - 1);
-                                var r = cam.GetRay(u, v, rng);
-                                color += Shade(r, world, maxDepth, rng);
-                            }
+            // void RenderSequential()
+            // {
+            //     var rng = new Random();
+            //     using (var progressBar = new ProgressBar(imageHeight, "rendering"))
+            //     {
+            //         for (var j = imageHeight - 1; j >= 0; j--)
+            //         {
+            //             for (var i = 0; i < imageWidth; i++)
+            //             {
+            //                 var color = new Color(0);
+            //                 for (var s = 0; s < samplesPerPixel; s++)
+            //                 {
+            //                     var u = (i + rng.RandomDouble()) / (imageWidth - 1);
+            //                     var v = (j + rng.RandomDouble()) / (imageHeight - 1);
+            //                     var r = cam.GetRay(u, v, rng);
+            //                     color += Shade(r, world, maxDepth, rng);
+            //                 }
 
-                            img[i, j] = GetScaledColor(color, samplesPerPixel);
-                        }
+            //                 img[i, j] = GetScaledColor(color, samplesPerPixel);
+            //             }
 
-                        progressBar.Tick();
-                    }
-                }
-            }
+            //             progressBar.Tick();
+            //         }
+            //     }
+            // }
 
             RenderParallel();
             // RenderSequential();

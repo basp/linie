@@ -1,16 +1,9 @@
 namespace Genie
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq.Expressions;
-    using System.Text;
 
-    //From JonSkeet's MiscUtil: http://www.yoda.arachsys.com/csharp/miscutil/licence.txt
-    //From: http://www.yoda.arachsys.com/csharp/miscutil/
-    /// <summary>
-    /// General purpose Expression utilities
-    /// </summary>
-    public static class ExpressionUtil
+    internal static class ExpressionUtil
     {
         public static Func<TArg1, TArg2, TResult> CreateMethodCall<TArg1, TArg2, TResult>(string methodName)
         {
@@ -49,13 +42,6 @@ namespace Genie
                 .Compile();
         }
 
-        /// <summary>
-        /// Create a function delegate representing a unary operation
-        /// </summary>
-        /// <typeparam name="TArg1">The parameter type</typeparam>
-        /// <typeparam name="TResult">The return type</typeparam>
-        /// <param name="body">Body factory</param>
-        /// <returns>Compiled function delegate</returns>
         public static Func<TArg1, TResult> CreateExpression<TArg1, TResult>(Func<Expression, UnaryExpression> body)
         {
             ParameterExpression inp = Expression.Parameter(typeof(TArg1), "inp");
@@ -70,34 +56,12 @@ namespace Genie
             }
         }
 
-        /// <summary>
-        /// Create a function delegate representing a binary operation
-        /// </summary>
-        /// <typeparam name="TArg1">The first parameter type</typeparam>
-        /// <typeparam name="TArg2">The second parameter type</typeparam>
-        /// <typeparam name="TResult">The return type</typeparam>
-        /// <param name="body">Body factory</param>
-        /// <returns>Compiled function delegate</returns>
         public static Func<TArg1, TArg2, TResult> CreateExpression<TArg1, TArg2, TResult>(
             Func<Expression, Expression, BinaryExpression> body)
         {
             return CreateExpression<TArg1, TArg2, TResult>(body, false);
         }
 
-        /// <summary>
-        /// Create a function delegate representing a binary operation
-        /// </summary>
-        /// <param name="castArgsToResultOnFailure">
-        /// If no matching operation is possible, attempt to convert
-        /// TArg1 and TArg2 to TResult for a match? For example, there is no
-        /// "decimal operator /(decimal, int)", but by converting TArg2 (int) to
-        /// TResult (decimal) a match is found.
-        /// </param>
-        /// <typeparam name="TArg1">The first parameter type</typeparam>
-        /// <typeparam name="TArg2">The second parameter type</typeparam>
-        /// <typeparam name="TResult">The return type</typeparam>
-        /// <param name="body">Body factory</param>
-        /// <returns>Compiled function delegate</returns>
         public static Func<TArg1, TArg2, TResult> CreateExpression<TArg1, TArg2, TResult>(
             Func<Expression, Expression, BinaryExpression> body, bool castArgsToResultOnFailure)
         {
@@ -111,11 +75,12 @@ namespace Genie
                 }
                 catch (InvalidOperationException)
                 {
-                    if (castArgsToResultOnFailure && !(         // if we show retry                                                        
-                            typeof(TArg1) == typeof(TResult) &&  // and the args aren't
+                    if (castArgsToResultOnFailure && !(             // if we show retry                                                        
+                            typeof(TArg1) == typeof(TResult) &&     // and the args aren't
                             typeof(TArg2) == typeof(TResult)))
-                    { // already "TValue, TValue, TValue"...
-                      // convert both lhs and rhs to TResult (as appropriate)
+                    {
+                        // already "TValue, TValue, TValue"...
+                        // convert both lhs and rhs to TResult (as appropriate)
                         Expression castLhs = typeof(TArg1) == typeof(TResult) ?
                                 (Expression)lhs :
                                 (Expression)Expression.Convert(lhs, typeof(TResult));

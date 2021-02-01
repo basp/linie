@@ -16,6 +16,8 @@
 
     public static class Vector2
     {
-        public Vector2<T> Create<T>(T x, T y) => new Vector2<T>(x, y);
+        public static Vector2<T> Create<T>(T x, T y)
+            where T : IComparable, IComparable<T> =>
+            new Vector2<T>(x, y);
     }
 }
