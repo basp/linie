@@ -58,6 +58,7 @@ This way we don't have to explicitly specify our `T` (and `U`) parameters since 
 * `EFloat` uses `float` and `double` for *value* (`v`) and *very precise value* (`vp`) repsectively in contrast to PBRT where a quad is used for `vp`.
 
 ## credits
-* Greatly inspired by *The Ray Tracer Challenge*, *Ray Tracing From the Ground Up*, *Ray Tracing in a Weekend*, *Ray Tracing the Next Week* and the veneragble *PBRT book*.
+* Inspired by *The Ray Tracer Challenge*, *Ray Tracing From the Ground Up*, *Ray Tracing in a Weekend*, *Ray Tracing the Next Week* and the veneragble *PBRT book*.
 * Greatly inspired by [HelloKitty/Generic.Math](https://github.com/HelloKitty/Generic.Math) which in turn builds on John Skeet's `MiscUtil` library for the expression compilation helpers.
-* `EFloat` and lots of `Utils` implementation is mostly taken straight from PBRT and translated to .NET C# code. 
+* `EFloat` and lots of `Utils` implementation is mostly taken straight from PBRT and translated to .NET C# code.
+* All experts who worked on this matter and made it so accessible so that even I could implement and (somewhat) understand it in the end.
