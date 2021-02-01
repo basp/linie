@@ -30,7 +30,7 @@ Assert.True(w.Y.HigherBound >= -2);
 
 Note that in this case we are using `Genie` with the included compound `Vector2<T>` structure. If you are just doing straight up math it is probably better to not use `Genie` unless you really need the `EFloat`.
 
-All `Math` operations that make sense should be `Vector3<T>`, `Vector4<T>`, etc. The library will delegate either to `Math` or `MathF` in the case of double or float respectively. It also has builtin support for the `EFloat` type and it is pretty easy to extend the *math providers* in case of exotic reqwuirements.
+All `Math` operations that make sense should be `Vector3<T>`, `Vector4<T>`, etc. The library will delegate either to `Math` or `MathF` in the case of double or float respectively. It also has builtin support for the `EFloat` type and it is pretty easy to extend the *math providers* in case of exotic requirements.
 
 > Note that this is still a work in progress so no all `Math` methods and operators are implemented yet.
 

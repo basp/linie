@@ -1,5 +1,8 @@
 namespace Linie.TheNextWeek
 {
+    // The `Ray` struct needed the `Time` field for implemenation
+    // and this is not in `Linie` yet so we just re-implement for
+    // the purposes of this example.
     public struct Ray
     {
         public readonly Point3 Origin;
