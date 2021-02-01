@@ -1,6 +1,9 @@
-namespace Linie.Generic
+﻿namespace Genie
 {
+    using System;
+
     public struct Vector2<T>
+        where T : IComparable, IComparable<T>
     {
         public readonly T X, Y;
 
@@ -13,7 +16,6 @@ namespace Linie.Generic
 
     public static class Vector2
     {
-        public static Vector2<T> Create<T>(T x, T y) =>
-            new Vector2<T>(x, y);
+        public Vector2<T> Create<T>(T x, T y) => new Vector2<T>(x, y);
     }
 }

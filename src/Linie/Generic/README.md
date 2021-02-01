@@ -1,2 +1,0 @@
-# generic math
-experimental
