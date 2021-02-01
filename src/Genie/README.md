@@ -28,7 +28,9 @@ Assert.True(w.Y.LowerBound <= -2);
 Assert.True(w.Y.HigherBound >= -2);
 ```
 
-This is supported by `Vector3<T>`, `Vector4<T>`, etc. 
+Note that in this case we are using `Genie` with the included compound `Vector2<T>` structure. If you are just doing straight up math it is probably better to not use `Genie` unless you really need the `EFloat`.
+
+All `Math` operations that make sense should be `Vector3<T>`, `Vector4<T>`, etc. The library will delegate either to `Math` or `MathF` in the case of double or float respectively. It also has builtin support for the `EFloat` type and it is pretty easy to extend the *math providers* in case of exotic reqwuirements.
 
 > Note that this is still a work in progress so no all `Math` methods and operators are implemented yet.
 
@@ -48,7 +50,7 @@ var b = Operations.Add(3, 2);
 var c = Operations.Add(3.0, 2.5);
 ```
 
-This way we don't have to explicitly specify our `T` (and `U`) parameters sincce they can be inferred.
+This way we don't have to explicitly specify our `T` (and `U`) parameters since they can be inferred.
 
 > In essence, `Operations<T>` is a JIT compiler layer for `Operations`. Client code calling `Operations` will force `Operations<T>` delegates to be compiled and used in process. Not that even though `Operations<T>` calculations are `Lazy<T>` this all happens statically. Any lazy values are resolved at the same time. See the statics in `Operations` and `Operations<T>` in order to see how these two layers interact in detail.
 
