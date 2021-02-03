@@ -1,7 +1,17 @@
 # Genie
 Genie is a generic Linie. It supports math over generic floating point types.
 
-## Example
+## problem
+Using C# it is not possible to straight port template types as you might see them in C++ code. This is good since it avoids a lot of problems but also bad in that we cannot easily overrride this if we really know what were doing.
+
+The problem is then to create fast math operations without the incurred overhead of any dynamic calls. This is not a big issue if you only want to experiment with a few numbers but if you plan to call this code in a tight loop (such as ray tracing for example) then you want to be sure than it is reasonably fast as well.
+
+* There is a way to fiddle with generics in order to get good performance see [Arithmetic in generic code](http://core.loyc.net/math/maths) but that has the huge drawback of introducing an extra `M` type argument that client code has to deal with. This basically means that the client is responsible for explicitly specifying another class that deals with the actual implementation. This might not sound like a huge burden but in practice it often is. The whole point of using a generic math library is that you do not have to worry about this.
+* An alternative (and still performant) way is to compile all the necessary math **statically** when the application starts. This way, the IL is exposed before we actually hit runtime and the .NET VM will hopefully do a good job of optimizing it. Next our application will run with all the delegates it needs already compiled and available but we do incur the cost of calling through those delegates for all the math operations we need. This cost is not insignifant since our users will be calling these methods millions of times.
+
+For Genie we haven taken the second approach for now because it is not clear how much of an actual cost we will incur during real usage scenarios. It's not unlikely we will support the first approach (using a redirection type) at some point.
+
+## example
 We can do math with `float`:
 ```
 var u = Vector2.Create(2f, 3f);
@@ -48,7 +58,7 @@ This way we don't have to explicitly specify our `T` (and `U`) parameters since 
 
 > In essence, `Operations<T>` is a JIT compiler layer for `Operations`. Client code calling `Operations` will force `Operations<T>` delegates to be compiled and used in process. Not that even though `Operations<T>` calculations are `Lazy<T>` this all happens statically. Any lazy values are resolved at the same time. See the statics in `Operations` and `Operations<T>` in order to see how these two layers interact in detail.
 
-## math delegation
+## how it works
 Genie will delegate either to `Math` or `MathF` in the case of double or float respectively by default. It can also find the correct *provider* for `EFloat`. 
 
 The way it works is that during the static constructor of `Operations<T>` it uses a type mapping from `T` to `U` to find the correct math provider `U` for type `T`. 
@@ -89,8 +99,6 @@ This will use the `ExpressionUtil` (based on `MiscUtil`) to statically compile a
 > The choice to have this be `Lazy<Func<T, T>>` is debatable since it seemed to have originated from a framework version change. See the [HelloKitty/Generic.Math readme](https://github.com/HelloKitty/Generic.Math) for some additional info.
 
 In the end, after the static constructor has been run all the required math delegates have been compiled and cached into their respective fields. The rest of the code can now use the `Operations` class and do general arithmetic where needed. Types can easily be build upon this so that end usage does not have to deal with the underlying mechanics.
-
-
 
 ## notes
 * `EFloat` uses `float` and `double` for *value* (`v`) and *very precise value* (`vp`) repsectively in contrast to PBRT where a quad is used for `vp`. 
