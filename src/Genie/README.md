@@ -55,10 +55,12 @@ This way we don't have to explicitly specify our `T` (and `U`) parameters since 
 > In essence, `Operations<T>` is a JIT compiler layer for `Operations`. Client code calling `Operations` will force `Operations<T>` delegates to be compiled and used in process. Not that even though `Operations<T>` calculations are `Lazy<T>` this all happens statically. Any lazy values are resolved at the same time. See the statics in `Operations` and `Operations<T>` in order to see how these two layers interact in detail.
 
 ## notes
-* `EFloat` uses `float` and `double` for *value* (`v`) and *very precise value* (`vp`) repsectively in contrast to PBRT where a quad is used for `vp`.
+* `EFloat` uses `float` and `double` for *value* (`v`) and *very precise value* (`vp`) repsectively in contrast to PBRT where a quad is used for `vp`. 
+
+> There is some work on a software based `DoubleDouble` to support `double` as the `v` value for `EFloat` values. Additionally, the plan is to include a more general `EFloat<T, U>` type.
 
 ## credits
-* The following books *The Ray Tracer Challenge*, *Ray Tracing From the Ground Up*, *Ray Tracing in a Weekend*, *Ray Tracing the Next Week* and the veneragble *PBRT book*, *Finite Precision Number Systems and Arithmetic*.
+* The following books *The Ray Tracer Challenge*, *Ray Tracing From the Ground Up*, *Ray Tracing in a Weekend*, *Ray Tracing the Next Week*, *PBRT book* and *Finite Precision Number Systems and Arithmetic*.
 * Greatly inspired by [HelloKitty/Generic.Math](https://github.com/HelloKitty/Generic.Math) which in turn builds on John Skeet's `MiscUtil` library for the expression compilation helpers.
 * `EFloat` and lots of `Utils` implementation is mostly taken straight from [PBRT](https://github.com/mmp/pbrt-v4) and translated to .NET C# code.
 * `DoubleDouble` is due to [Library for Double-Double and Quad-Double Arithmetic](https://web.mit.edu/tabbott/Public/quaddouble-debian/qd-2.3.4-old/docs/qd.pdf) and the [sukop/doubledouble](https://github.com/sukop/doubledouble) Python implementation.
