@@ -94,7 +94,7 @@ sqrt = new Lazy<Func<T, T>>(() =>
     ExpressionUtil.CreateStaticCall<T, T>(math, "Sqrt"));
 ```
 
-This will use the `ExpressionUtil` (based on `MiscUtil`) to statically compile a delegate and cache it in the `sqrt` field. Note that it is lazy so we will incur the compilation hit at runtime but only once and only if we need it. 
+This will use the `ExpressionUtil` (based on `MiscUtil`) to statically compile a delegate and cache it in the `sqrt` field. -Note that it is lazy so we will incur the compilation hit at runtime but only once and only if we need it.- The `Operations<T>` clas will expose actual resolve and expose the `Func<T, T>` values from all the lazies.
 
 > The choice to have this be `Lazy<Func<T, T>>` is debatable since it seemed to have originated from a framework version change. See the [HelloKitty/Generic.Math readme](https://github.com/HelloKitty/Generic.Math) for some additional info.
 
