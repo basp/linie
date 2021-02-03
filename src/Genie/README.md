@@ -41,7 +41,7 @@ Assert.True(w.Y.HigherBound >= -2);
 ## overview
 The goal of Genie is to support vector arithmetic over general numeric point types in a reasonably speedy fashion. In order to accomplish this, a lot of interfaces are implicit and not directly specified by the code. The reason for this is that `Genie` depends on **statically** compiling the arithmetic your code will use.
 
-> This means that eventually all *primitive* types that can be used **will** have to implement implicit `Math` interface for a large part.
+> This means that eventually all *primitive* types that can be used **will** have to implement an implicit `Math` interface for a large part (for now). One of the near future goals is to explicitly document what exactly it means to be a `Genie` compatible type and explicitly define the operations it needs to support.
 
 This mainly works by depending on the .NET runtime to compile our arithmetic delegates in `static` constructors. 
 
