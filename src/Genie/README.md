@@ -1,5 +1,5 @@
 # Genie
-Genie is a generic Linie. It supports math over generic floating point types.
+Genie is a generic Linie. It supports math over generic floating point types in .NET. At the same time it tries to be practical for a basic ray tracing kernel and number library. The main goal is education with reasonable performance. We try to strike a balance between understandable and still somewhat usable in a real scenario (by default). That being said, any optimization tricks are very much welcome, theres likely a way to incorporate them in a safe manner.
 
 ## problem
 Using C# it is not possible to straight port template types as you might see them in C++ code. This is good since it avoids a lot of problems but also bad in that we cannot easily overrride this if we really know what were doing.
