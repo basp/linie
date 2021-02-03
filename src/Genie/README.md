@@ -28,14 +28,8 @@ Assert.True(w.Y.LowerBound <= -2);
 Assert.True(w.Y.HigherBound >= -2);
 ```
 
-Note that in this case we are using `Genie` with the included compound `Vector2<T>` structure. If you are just doing straight up math it is probably better to not use `Genie` unless you really need the `EFloat`.
-
-All `Math` operations that make sense should be `Vector3<T>`, `Vector4<T>`, etc. The library will delegate either to `Math` or `MathF` in the case of double or float respectively. It also has builtin support for the `EFloat` type and it is pretty easy to extend the *math providers* in case of exotic requirements.
-
-> Note that this is still a work in progress so no all `Math` methods and operators are implemented yet.
-
 ## overview
-The goal of Genie is to support vector arithmetic over general floating point types in a reasonably speedy fashion. In order to accomplish this, a lot of interfaces are implicit and not directly specified by the code. The reason for this is that `Genie` depends on **statically** compiling the arithmetic your code will use.
+The goal of Genie is to support vector arithmetic over general numeric point types in a reasonably speedy fashion. In order to accomplish this, a lot of interfaces are implicit and not directly specified by the code. The reason for this is that `Genie` depends on **statically** compiling the arithmetic your code will use.
 
 > This means that eventually all *primitive* types that can be used **will** have to implement implicit `Math` interface for a large part.
 
@@ -53,6 +47,50 @@ var c = Operations.Add(3.0, 2.5);
 This way we don't have to explicitly specify our `T` (and `U`) parameters since they can be inferred.
 
 > In essence, `Operations<T>` is a JIT compiler layer for `Operations`. Client code calling `Operations` will force `Operations<T>` delegates to be compiled and used in process. Not that even though `Operations<T>` calculations are `Lazy<T>` this all happens statically. Any lazy values are resolved at the same time. See the statics in `Operations` and `Operations<T>` in order to see how these two layers interact in detail.
+
+## math delegation
+Genie will delegate either to `Math` or `MathF` in the case of double or float respectively by default. It can also find the correct *provider* for `EFloat`. 
+
+The way it works is that during the static constructor of `Operations<T>` it uses a type mapping from `T` to `U` to find the correct math provider `U` for type `T`. 
+
+So for example, when you use a `Vector3<double>` then (statically) under the hood an `Operations<double>` class will be compiled as well. The static `.ctor` of this `Operations<T>` class will then look for a type provider of type `U` for the type given for `T`. In this case `T == double`. Since `double` is pretty much the default in .NET it can simply return `System.Math` as the provider so that `U == System.Math`.
+
+Now that we have a *math provider* that (hopefully) has all the methods we need we can statically compile all the related math delegates but instead of hard wiring `System.Math` we can use our custom math provider type instead. This is how operations like `Sin`, `Pow` and `Sqrt` are redirected when they are required in the implementation of a custom type.
+
+> When implementing custom numeric types such as `EFloat` it is custom to have `T == U`. This means that the custom numeric type `T` provides its own `System.Math` equivalents. If you look at the `EFloat` class for example you'll notice it has a bunch of `static` methods that closely resemble the `Math` API. These are there so it can be used as both `T` and `U` - both a value and a provider of math operations.
+
+To make things more concrete, at the top of the `Operations<T>` class you'll find the following code:
+```
+private static IDictionary<Type, Type> providers = new Dictionary<Type, Type>
+{
+    [typeof(double)] = typeof(Math),
+    [typeof(float)] = typeof(MathF),
+    [typeof(int)] = typeof(Math),
+    [typeof(EFloat)] = typeof(EFloat),
+};
+```
+
+This is the math provider mapping. You can see that for `double` and `int` it will map to `Math` and for `float` it will map to the new `MathF`. There's a custom `EFloat` provider here (outside of the .NET framework) but included with Genie.
+
+At the start of the `static` constructor there's a single line of code that looks up the appropriate math provider:
+```
+var math = providers[typeof(T)];
+```
+> Note that `math` is a `Type` here. It's not an instance of anything and this is still static.
+
+Now when we need compile our math delegates, instead of using `System.Math` we will inject our custom type as here with the `sqrt` delegate:
+```
+sqrt = new Lazy<Func<T, T>>(() =>
+    ExpressionUtil.CreateStaticCall<T, T>(math, "Sqrt"));
+```
+
+This will use the `ExpressionUtil` (based on `MiscUtil`) to statically compile a delegate and cache it in the `sqrt` field. Note that it is lazy so we will incur the compilation hit at runtime but only once and only if we need it. 
+
+> The choice to have this be `Lazy<Func<T, T>>` is debatable since it seemed to have originated from a framework version change. See the [HelloKitty/Generic.Math readme](https://github.com/HelloKitty/Generic.Math) for some additional info.
+
+In the end, after the static constructor has been run all the required math delegates have been compiled and cached into their respective fields. The rest of the code can now use the `Operations` class and do general arithmetic where needed. Types can easily be build upon this so that end usage does not have to deal with the underlying mechanics.
+
+
 
 ## notes
 * `EFloat` uses `float` and `double` for *value* (`v`) and *very precise value* (`vp`) repsectively in contrast to PBRT where a quad is used for `vp`. 
