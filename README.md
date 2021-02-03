@@ -1,6 +1,9 @@
 # linie
 Linie is a minimalistic ray tracing library.
 
+## update
+If you are looking for a more generic library you might want to check out [Genie](https://github.com/basp/linie/tree/main/src/Genie) instead (this has `Vector3<T>` for example where `T` can be any type that supports the (implicit) `Genie` contract). However, if you are trying get best performance you are in the right place and/or if you just want to get some stuff done you probably should stay as well.
+
 ## features
 * 4D or 3D mode
 * 2D types
