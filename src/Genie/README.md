@@ -88,7 +88,7 @@ var math = providers[typeof(T)];
 ```
 > Note that `math` is a `Type` here and we are still running in static constructor.
 
-Now when we need compile our math delegates, instead of using `System.Math` we will inject our custom type as here with the `sqrt` delegate:
+Now when we need compile our math delegates, instead of using `System.Math` we will inject our custom type. Below we are telling the `CreateStaticCall<T, T>` method to use our `math` type for the `Sqrt` operation instead of using the default `System.Math` type.
 ```
 sqrt = new Lazy<Func<T, T>>(() =>
     ExpressionUtil.CreateStaticCall<T, T>(math, "Sqrt"));
@@ -96,9 +96,13 @@ sqrt = new Lazy<Func<T, T>>(() =>
 
 This will use the `ExpressionUtil` (based on `MiscUtil`) to statically compile a delegate and cache it in the `sqrt` field. It will do the same for all other operations that would otherwise be handled by either an `operator` or `Math` call (or at least the subset of operations that `Genie` currently supports).
 
-> The choice to have this be `Lazy<Func<T, T>>` is debatable since it seemed to have originated from a framework version change. See the [HelloKitty/Generic.Math readme](https://github.com/HelloKitty/Generic.Math) for some additional info.
+> The choice to have this be `Lazy<Func<T, T>>` is debatable since it seemed to have originated from a framework version change that involved inmplicit behavior. See the [HelloKitty/Generic.Math readme](https://github.com/HelloKitty/Generic.Math) for some additional info.
 
-In the end, after the static constructor has been run all the required math delegates have been compiled and cached into their respective fields. The rest of the code can now use the `Operations` class and do general arithmetic where needed. Types can easily be build upon this so that end usage does not have to deal with the underlying mechanics.
+In the end, after the static constructor has been run all the required math delegates have been compiled and cached into their respective fields. The rest of the code can now use the `Operations` class and do general arithmetic where needed. 
+
+> The `Operations` class has overloads to support method type inference and tries to unify all the various `T` types so that any client code can be more generic.
+
+Types can easily be build upon this so that end usage does not have to deal with the underlying mechanics. In other words, it is not hard to implement a completely new and foreign arithmetic if a client would want to do so. The only problem is that the current API is underdocumented.
 
 ## notes
 * `EFloat` uses `float` and `double` for *value* (`v`) and *very precise value* (`vp`) repsectively in contrast to PBRT where a quad is used for `vp`. 
