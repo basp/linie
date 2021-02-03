@@ -56,7 +56,7 @@ var c = Operations.Add(3.0, 2.5);
 
 This way we don't have to explicitly specify our `T` (and `U`) parameters since they can be inferred.
 
-> In essence, `Operations<T>` is a JIT compiler layer for `Operations`. Client code calling `Operations` will force `Operations<T>` delegates to be compiled and used in process. Not that even though `Operations<T>` calculations are `Lazy<T>` this all happens statically. Any lazy values are resolved at the same time. See the statics in `Operations` and `Operations<T>` in order to see how these two layers interact in detail.
+> In essence, `Operations<T>` is a JIT compiler layer for `Operations`. Client code calling `Operations` will force `Operations<T>` delegates to be compiled and used in process. Even though `Operations<T>` calculations are `Lazy<T>` this all happens statically. Any lazy values are resolved at the same time. See the statics in `Operations` and `Operations<T>` in order to see how these two layers interact in detail.
 
 ## how it works
 Genie will delegate either to `Math` or `MathF` in the case of double or float respectively by default. It can also find the correct *provider* for `EFloat`. 
