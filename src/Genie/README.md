@@ -65,7 +65,7 @@ The way it works is that during the static constructor of `Operations<T>` it use
 
 So for example, when you use a `Vector3<double>` then (statically) under the hood an `Operations<double>` class will be compiled as well. The static `.ctor` of this `Operations<T>` class will then look for a type provider of type `U` for the type given for `T`. In this case `T == double`. Since `double` is pretty much the default in .NET it can simply return `System.Math` as the provider so that `U == System.Math`.
 
-Now that we have a *math provider* that (hopefully) has all the methods we need we can statically compile all the related math delegates but instead of hard wiring `System.Math` we can use our custom math provider type instead. This is how operations like `Sin`, `Pow` and `Sqrt` are redirected when they are required in the implementation of a custom type.
+Now that we have a *math provider* that (hopefully) has all the methods we need we can statically compile all the related math delegates. Instead of hard wiring `System.Math` for compliation we can just use our custom type instead. This is how operations like `Sin`, `Pow` and `Sqrt` are redirected when they are required in the implementation of a custom type.
 
 > When implementing custom numeric types such as `EFloat` it is custom to have `T == U`. This means that the custom numeric type `T` provides its own `System.Math` equivalents. If you look at the `EFloat` class for example you'll notice it has a bunch of `static` methods that closely resemble the `Math` API. These are there so it can be used as both `T` and `U` - both a value and a provider of math operations.
 
