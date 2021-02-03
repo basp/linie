@@ -86,7 +86,7 @@ At the start of the `static` constructor there's a single line of code that look
 ```
 var math = providers[typeof(T)];
 ```
-> Note that `math` is a `Type` here. It's not an instance of anything and this is still static.
+> Note that `math` is a `Type` here and we are still running in static constructor.
 
 Now when we need compile our math delegates, instead of using `System.Math` we will inject our custom type as here with the `sqrt` delegate:
 ```
