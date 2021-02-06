@@ -40,6 +40,10 @@ namespace Genie
         }
     }
 
+    public static class Matrix4x4
+    {
+    }
+
     public static class Matrix4x4Extensions
     {
         public static Matrix4x4<T> Inverse<T>(this Matrix4x4<T> a)
