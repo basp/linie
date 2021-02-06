@@ -153,6 +153,47 @@ namespace Genie
             return r;
         }
 
+        public static bool TryParse(string s, out DoubleDouble x)
+        {
+            x = Zero;
+            s = s.Trim();
+            var point = -1;
+            var nd = 0;
+            var e = 0;
+            foreach (var ch in s)
+            {
+                if (ch >= '0' && ch <= '9')
+                {
+                    var d = ch - '0';
+                    x *= 10;
+                    x += d;
+                    nd++;
+                    continue;
+                }
+
+                switch (ch)
+                {
+                    case '.':
+                        point = nd;
+                        break;
+                    default:
+                        return false;
+                }
+            }
+
+            if (point >= 0)
+            {
+                e -= (nd - point);
+            }
+
+            if (e != 0)
+            {
+                x *= DoubleDouble.Pow(new DoubleDouble(10), e);
+            }
+
+            return true;
+        }
+
         public override string ToString() => ((float)this).ToString();
 
         public override bool Equals(object obj)

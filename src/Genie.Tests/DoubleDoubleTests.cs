@@ -67,5 +67,13 @@ namespace Genie.Tests
             Assert.Equal(3.0, v.X);
             Assert.Equal(1.4, v.Y);
         }
+
+        [Fact]
+        public void TryParse()
+        {
+            var s = "3.14";
+            Assert.True(DoubleDouble.TryParse(s, out var a));
+            Assert.Equal(3.14, (double)a);
+        }
     }
 }
