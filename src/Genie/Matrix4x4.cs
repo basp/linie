@@ -4,6 +4,7 @@ namespace Genie
     using System.Linq;
 
     public class Matrix4x4<T>
+        where T : IComparable<T>
     {
         private readonly T[] data;
 
@@ -38,10 +39,6 @@ namespace Genie
             get => this.data[(row * 4) + col];
             set => this.data[(row * 4) + col] = value;
         }
-    }
-
-    public static class Matrix4x4
-    {
     }
 
     public static class Matrix4x4Extensions

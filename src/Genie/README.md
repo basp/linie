@@ -116,6 +116,5 @@ Types can easily be build upon this so that end usage does not have to deal with
 ## credits
 * The following books *The Ray Tracer Challenge*, *Ray Tracing From the Ground Up*, *Ray Tracing in a Weekend*, *Ray Tracing the Next Week*, *PBRT* and *Finite Precision Number Systems and Arithmetic*.
 * [HelloKitty/Generic.Math](https://github.com/HelloKitty/Generic.Math) which in turn builds on John Skeet's `MiscUtil` library for the expression compilation helpers showed how to do generic `T` math operators in C# with reasonable performance.
-* `EFloat` and lots of `Utils` implementation is mostly taken straight from [PBRT](https://github.com/mmp/pbrt-v4) and translated to .NET C# code.
-* `DoubleDouble` is due to [Library for Double-Double and Quad-Double Arithmetic](https://web.mit.edu/tabbott/Public/quaddouble-debian/qd-2.3.4-old/docs/qd.pdf) and the [sukop/doubledouble](https://github.com/sukop/doubledouble) Python implementation.
-* All experts who worked on this matter and made it so accessible so that even I could implement and (somewhat) understand it in the end.
+* `EFloat` and related `Utils` implementation are mostly taken straight from [PBRT](https://github.com/mmp/pbrt-v4).
+* `DoubleDouble` is due to [Library for Double-Double and Quad-Double Arithmetic](https://web.mit.edu/tabbott/Public/quaddouble-debian/qd-2.3.4-old/docs/qd.pdf), the [sukop/doubledouble](https://github.com/sukop/doubledouble) Python implementation and [A floating-point technique for extending the available precision](https://link.springer.com/article/10.1007/BF01397083) by Dekker.

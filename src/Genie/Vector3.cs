@@ -45,23 +45,6 @@ namespace Genie
                 Operations.Divide(u.X, s),
                 Operations.Divide(u.Y, s),
                 Operations.Divide(u.Z, s));
-
-        public static T Dot(Vector3<T> u, Vector3<T> v) =>
-            Operations.Add(
-                Operations.Multiply(u.X, v.X),
-                Operations.Add(
-                    Operations.Multiply(u.Y, v.Y),
-                    Operations.Multiply(u.Z, v.Z)));
-
-        public static T MagnitudeSquared(Vector3<T> u) =>
-            Operations.Add(
-                Operations.Multiply(u.X, u.X),
-                Operations.Add(
-                    Operations.Multiply(u.Y, u.Y),
-                    Operations.Multiply(u.Z, u.Z)));
-
-        public static T Magnitude(Vector3<T> u) =>
-            Operations.Sqrt(MagnitudeSquared(u));
     }
 
     public static class Vector3
