@@ -53,6 +53,10 @@ namespace Genie
 
     public static class Normal3
     {
+        public static Normal3<T> Create<T>(T x, T y, T z)
+            where T : IComparable<T> =>
+            new Normal3<T>(x, y, z);
+
         public static T Dot<T>(Normal3<T> n, Normal3<T> m)
             where T : IComparable<T> =>
             Operations.Add(
