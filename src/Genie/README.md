@@ -1,7 +1,7 @@
-# Genie
+# genie
 Genie is a generic Linie. It supports math over generic floating point types in .NET. At the same time it tries to be practical for a basic ray tracing kernel and number library. The main goal is education with reasonable performance. We try to strike a balance between understandable and still somewhat usable in a real scenario (by default). That being said, any optimization tricks are very much welcome, theres likely a way to incorporate them in a safe manner.
 
-## problem
+## context
 Using C# it is not possible to straight port template types as you might see them in C++ code. This is good since it avoids a lot of problems but also bad in that we cannot easily overrride this if we really know what were doing.
 
 The problem is then to create fast math operations without the incurred overhead of any dynamic calls. This is not a big issue if you only want to experiment with a few numbers but if you plan to call this code in a tight loop (such as ray tracing for example) then you want to be sure than it is reasonably fast as well.
@@ -9,9 +9,11 @@ The problem is then to create fast math operations without the incurred overhead
 * There is a way to fiddle with generics in order to get good performance see [Arithmetic in generic code](http://core.loyc.net/math/maths) but that has the huge drawback of introducing an extra `M` type argument that client code has to deal with. This basically means that the client is responsible for explicitly specifying another class that deals with the actual implementation. This might not sound like a huge burden but in practice it often is. The whole point of using a generic math library is that you do not have to worry about this.
 * An alternative (and still performant) way is to compile all the necessary math **statically** when the application starts. This way, the IL is exposed before we actually hit runtime and the .NET VM will hopefully do a good job of optimizing it. Next our application will run with all the delegates it needs already compiled and available but we do incur the cost of calling through those delegates for all the math operations we need. 
 
-This cost is significant since our target use case will be calling these methods millions of times. However, some preliminary benchmarks have shown that expected performance is in the same order of magnitude. When we take `Linie` performance as a reference, the `Genie` performance on matrix inversion (a demanding operation) is about `0.09` times slower when benchmarked in a tight loop of a million iterations (`29.19` and `32` seconds for `Linie` and `Genie` respectively on my machine measured in [LINQPad](https://www.linqpad.net/)).
+This cost is significant since our target use case will be calling these methods millions of times. However, some preliminary benchmarks have shown that expected performance is in the same order of magnitude. When we take `Linie` performance as a reference, the `Genie` performance on matrix inversion (a demanding operation) is about `0.09` times slower when benchmarked in a tight loop of a million iterations (`29.19` and `32` seconds for `Linie` and `Genie` respectively on my machine measured in [LINQPad](https://www.linqpad.net/)). This compared `Linie.Matrix4x4` (which uses `double`) to the `Genie.Matrix4x4<double>` generic implementation. On my 64 bit machine, using a `Genie.Matrix4x4<float>` is a little bit slower (33s) but still well within the same order.
 
-For Genie we haven taken the second approach for now because it is not clear how much of an actual cost we will incur during real usage scenarios. It's not unlikely we will support the first approach (using a redirection type) at some point.
+> For Genie we haven taken the second approach for now because it is not clear how much of an actual cost we will incur during real usage scenarios. It's not unlikely we will support the first approach (using a redirection type) at some point.
+
+Note that `float` and `double` yield mostly the same results compared to `Linie` so for those use cases it is pretty safe to use either one of them. However, when you use a custom type for `T` in `Genie` then you need to be careful about the performance of this `T` implementation. For example, when we run the same benchmark with `DoubleDouble` we get different results.
 
 ## example
 We can do math with `float`:
