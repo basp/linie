@@ -27,7 +27,7 @@ When we take `Linie` performance as a reference, the `Genie` performance on matr
 
 As a basic rule of thumb we can say that:
 ```
-t_genie = 1.1 * t_linie
+time_genie = 1.1 * time_linie
 ```
 
 So `Genie` is about 10% slower compared to `Linie`.
