@@ -110,6 +110,7 @@ private static IDictionary<Type, Type> providers = new Dictionary<Type, Type>
     [typeof(float)] = typeof(MathF),
     [typeof(int)] = typeof(Math),
     [typeof(EFloat)] = typeof(EFloat),
+    [typeof(DoubleDouble)] = typeof(DoubleDouble),
 };
 ```
 
