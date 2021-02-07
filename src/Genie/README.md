@@ -114,7 +114,7 @@ private static IDictionary<Type, Type> providers = new Dictionary<Type, Type>
 };
 ```
 
-This is the math provider mapping. You can see that for `double` and `int` it will map to `Math` and for `float` it will map to the new `MathF`. There's a custom `EFloat` provider here (outside of the .NET framework) but included with Genie.
+This is the math provider mapping. You can see that for `double` and `int` it will map to `Math` and for `float` it will map to the new `MathF`. For `EFloat` and `DoubleDouble` we have a straight mapping to their types which (should) support all the required static math methods. 
 
 At the start of the `static` constructor there's a single line of code that looks up the appropriate math provider:
 ```
