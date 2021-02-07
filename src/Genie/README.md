@@ -36,6 +36,10 @@ As a basic rule we can say that `Genie` is about 10% slower than using the `Lini
 > This compared `Linie.Matrix4x4` (which uses `double`) to the `Genie.Matrix4x4<double>` generic implementation. Another benchmark ran using a `Genie.Matrix4x4<float>` which is a little bit slower (33s) but still well within the same order of magnitude.
 
 Note that `float` and `double` yield mostly the same results compared to `Linie` so for those use cases it is pretty safe to use either one of them. However, when you use a custom type for `T` in `Genie` then you need to be careful about the performance of this `T` implementation. For example, when we run the same benchmark with `DoubleDouble` we get different results.
+```
+Linie.Matrix4x4(double)       : 29.53s
+Genie.Matrix4x4<DoubleDouble> : 52.52s
+```
 
 ## example
 We can do math with `float`:
