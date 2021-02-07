@@ -41,6 +41,8 @@ Linie.Matrix4x4(double)       : 29.53s
 Genie.Matrix4x4<DoubleDouble> : 52.52s
 ```
 
+So we can also say that using a `DoubleDouble` is about twice as slow as using a regular `double`. Which is not all that bad if you all the extra operations that are required to get the extra precision.
+
 ## example
 We can do math with `float`:
 ```
