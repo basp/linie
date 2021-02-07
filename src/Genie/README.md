@@ -142,6 +142,9 @@ Types can easily be build upon this so that end usage does not have to deal with
 
 > There is some work on a software based `DoubleDouble` to support `double` as the `v` value for `EFloat` values. Additionally, the plan is to include a more general `EFloat<T, U>` type.
 
+## todo
+* `Vector4<T>` is unfinshed and not usable.
+
 ## credits
 * The following books *The Ray Tracer Challenge*, *Ray Tracing From the Ground Up*, *Ray Tracing in a Weekend*, *Ray Tracing the Next Week*, *PBRT* and *Finite Precision Number Systems and Arithmetic*.
 * [HelloKitty/Generic.Math](https://github.com/HelloKitty/Generic.Math) which in turn builds on John Skeet's `MiscUtil` library for the expression compilation helpers showed how to do generic `T` math operators in C# with reasonable performance.
