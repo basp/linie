@@ -51,17 +51,17 @@ namespace Linie
             }
         }
 
+        public static Tuple<int, int, int> GetColorBytes(Color c) =>
+            Tuple.Create(
+                Clamp((int)(c.R * 255), 0, 255),
+                Clamp((int)(c.G * 255), 0, 255),
+                Clamp((int)(c.B * 255), 0, 255));
+
         private static int Clamp(int v, int min, int max)
         {
             if (v < min) return min;
             if (v > max) return max;
             return v;
         }
-
-        public static Tuple<int, int, int> GetColorBytes(Color c) =>
-            Tuple.Create(
-                Clamp((int)(c.R * 255), 0, 255),
-                Clamp((int)(c.G * 255), 0, 255),
-                Clamp((int)(c.B * 255), 0, 255));
     }
 }

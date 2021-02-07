@@ -69,10 +69,6 @@ Now that we have a *math provider* that (hopefully) has all the methods we need 
 
 > When implementing custom numeric types such as `EFloat` it is custom to have `T == U`. This means that the custom numeric type `T` provides its own `System.Math` equivalents. If you look at the `EFloat` class for example you'll notice it has a bunch of `static` methods that closely resemble the `Math` API. These are there so it can be used as both `T` and `U` - both a value and a provider of math operations.
 
-> The point here is that we need to somehow rewire these static calls into the `operator` and `Math` class in order to eventually support a unified interface. The last thing we want is to incur some runtime overhead. Even the .NET runtime does not optimize our calls we still want to make sure it will eventually. If we can be `static` that will definitely help since this all is going to be called in many tight loops. 
-
-> The point is definitely not to make everything `static` so "it will go faster". It's ironic how people that think binary are the least suitable programmers.
-
 To make things more concrete, at the top of the `Operations<T>` class you'll find the following code:
 ```
 private static IDictionary<Type, Type> providers = new Dictionary<Type, Type>
