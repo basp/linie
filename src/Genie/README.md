@@ -5,7 +5,7 @@ education. The secondary goal is to support implementing generic ray tracing alg
 ## context
 Using C# it is not possible to straight port template types as you might see them in C++ code. This is good since it avoids a lot of problems but also bad in that porting is not straightforward. 
 
-The main area were this problem manifests is when you want to have generic math operators and operations. In C++ you can use templates for this since the macro system is not checked. In C# we don't have an equivalent and when you try to overload operators for a generic type `T` the compiler will (usually) complain.
+The main area were this problem manifests is when you want to have generic math operators and operations. In C++ you can use templates for this since the macro system is not checked. In C# we don't have an equivalent and when you try to overload operators for a generic type `T` the compiler will complain.
 
 For example, this `+` operator definition will not compile, no matter what kind of `where` constraints you put on it.
 ```
