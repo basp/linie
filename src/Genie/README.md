@@ -1,6 +1,6 @@
 # genie
 **Genie** is a generic [Linie](https://github.com/basp/linie). It supports math over generic point, vector, normal and matrix types in .NET. The primary goal is
-education. The secondary goal is to support implementing generic ray tracing algorithms in such a way that they do not depend on a particular floating point implementation. This requires implementing a math subset that is valid for generic types and still be performant.
+education. The secondary goal is to support implementing generic ray tracing algorithms in such a way that they do not depend on a particular number implementation. These goals require implementing a math subset that is understandable and valid for generic types while still being performant and suited for real world scenarios.
 
 ## context
 Using C# it is not possible to straight port template types as you might see them in C++ code. This is good since it avoids a lot of problems but also bad in that porting is not straightforward. 
