@@ -144,6 +144,7 @@ Types can easily be build upon this so that end usage does not have to deal with
 
 ## todo
 * `Vector4<T>` is unfinshed and not usable.
+* Lots more other stuff and bugs that are not apparent yet.
 
 ## credits
 * The following books *The Ray Tracer Challenge*, *Ray Tracing From the Ground Up*, *Ray Tracing in a Weekend*, *Ray Tracing the Next Week*, *PBRT* and *Finite Precision Number Systems and Arithmetic*.
