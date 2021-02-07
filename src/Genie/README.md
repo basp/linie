@@ -2,7 +2,7 @@
 **Genie** is a generic `Linie`. It supports math over generic floating point types in .NET. At the same time it tries to be practical for a basic ray tracing kernel and number library. The main goal is education with reasonable performance. We try to strike a balance between understandable and still somewhat usable in a real scenario (by default). That being said, any optimization tricks are very much welcome, theres likely a way to incorporate them in manner that will not interfere with the primary goals.
 
 ## context
-Using C# it is not possible to straight port template types as you might see them in C++ code. This is good since it avoids a lot of problems but also bad in that we cannot easily overrride this if we really know what were doing.
+Using C# it is not possible to straight port template types as you might see them in C++ code. This is good since it avoids a lot of problems but also bad in that porting is not straightforward.
 
 The problem is then to create fast math operations without the incurred overhead of any dynamic calls. This is not a big issue if you only want to experiment with a few numbers but if you plan to call this code in a tight loop (such as ray tracing for example) then you want to be sure than it is reasonably fast as well.
 
