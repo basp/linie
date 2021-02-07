@@ -2,11 +2,21 @@
 **Genie** is a generic `Linie`. It supports math over generic floating point types in .NET. At the same time it tries to be practical for a basic ray tracing kernel and number library. The main goal is education with reasonable performance. We try to strike a balance between understandable and still somewhat usable in a real scenario (by default). That being said, any optimization tricks are very much welcome, theres likely a way to incorporate them in manner that will not interfere with the primary goals.
 
 ## context
-Using C# it is not possible to straight port template types as you might see them in C++ code. This is good since it avoids a lot of problems but also bad in that porting is not straightforward.
+Using C# it is not possible to straight port template types as you might see them in C++ code. This is good since it avoids a lot of problems but also bad in that porting is not straightforward. 
 
-The problem is then to create fast math operations without the incurred overhead of any dynamic calls. This is not a big issue if you only want to experiment with a few numbers but if you plan to call this code in a tight loop (such as ray tracing for example) then you want to be sure than it is reasonably fast as well.
+The main area were this problem manifests is when you want to have generic math operators and operations. In C++ you can use templates for this since the macro system is not checked. In C# we don't have an equivalent and when you try to overload operators for a generic type `T` the compiler will (usually) complain.
+
+For example, this `+` operator definition will not compile, no matter what kind of `where` constraints you put on it.
+```
+static operator T +<T>(T u, T v) => u + v;
+```
+
+A possible solution is to define all the math operations and use dynamic dispatch to call them but the overhead is so prohibitive that this cannot really be used outside sandbox scenarios. 
+
+The problem is then to create fast math operations without the incurred overhead of any dynamic calls. 
 
 * There is a way to fiddle with generics in order to get good performance see [Arithmetic in generic code](http://core.loyc.net/math/maths) but that has the huge drawback of introducing an extra `M` type argument that client code has to deal with. This basically means that the client is responsible for explicitly specifying another class that deals with the actual implementation. This might not sound like a huge burden but in practice it often is. The whole point of using a generic math library is that you do not have to worry about this.
+
 * An alternative (and still performant) way is to compile all the necessary math **statically** when the application starts. This way, the IL is exposed before we actually hit runtime and the .NET VM will hopefully do a good job of optimizing it. Next our application will run with all the delegates it needs already compiled and available but we do incur the cost of calling through those delegates for all the math operations we need. 
 
 > For Genie we haven taken the second approach for now because it is not clear how much of an actual cost we will incur during real usage scenarios. It's not unlikely we will support the first approach (using a redirection type) at some point.
