@@ -21,11 +21,18 @@ The problem is then to create fast math operations without the incurred overhead
 
 > For Genie we haven taken the second approach for now because it is not clear how much of an actual cost we will incur during real usage scenarios. It's not unlikely we will support the first approach (using a redirection type) at some point.
 
-This cost is significant since our target use case will be calling these methods millions of times. However, some preliminary benchmarks have shown that expected performance is in the same order of magnitude. When we take `Linie` performance as a reference, the `Genie` performance on matrix inversion (a demanding operation) is about 0.09 times slower when benchmarked in a tight loop of a million iterations (29.19s and 32s for `Linie` and `Genie` respectively in [LINQPad](https://www.linqpad.net/)). 
+This cost is significant since our target use case will be calling these methods millions of times. However, some preliminary benchmarks are promising and have shown that expected performance is in the same order of magnitude. 
 
-> t_genie = 1.09 * t_linie
+When we take `Linie` performance as a reference, the `Genie` performance on matrix inversion (a demanding operation) is about 0.09 times slower when benchmarked in a tight loop of a million iterations (29.19s and 32s for `Linie` and `Genie` respectively in [LINQPad](https://www.linqpad.net/)). 
 
-This compared `Linie.Matrix4x4` (which uses `double`) to the `Genie.Matrix4x4<double>` generic implementation. Using a `Genie.Matrix4x4<float>` is a little bit slower (33s) but still well within the same order of magnitude.
+As a basic rule of thumb we can say that:
+```
+t_genie = 1.1 * t_linie
+```
+
+So `Genie` is about 10% slower compared to `Linie`.
+
+> This compared `Linie.Matrix4x4` (which uses `double`) to the `Genie.Matrix4x4<double>` generic implementation. Another benchmark ran using a `Genie.Matrix4x4<float>` which is a little bit slower (33s) but still well within the same order of magnitude.
 
 Note that `float` and `double` yield mostly the same results compared to `Linie` so for those use cases it is pretty safe to use either one of them. However, when you use a custom type for `T` in `Genie` then you need to be careful about the performance of this `T` implementation. For example, when we run the same benchmark with `DoubleDouble` we get different results.
 
