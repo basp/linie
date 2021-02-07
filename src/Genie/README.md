@@ -23,14 +23,15 @@ The problem is then to create fast math operations without the incurred overhead
 
 This cost is significant since our target use case will be calling these methods millions of times. However, some preliminary benchmarks are promising and have shown that expected performance is in the same order of magnitude. 
 
-When we take `Linie` performance as a reference, the `Genie` performance on matrix inversion (a demanding operation) is about 0.09 times slower when benchmarked in a tight loop of a million iterations (29.19s and 32s for `Linie` and `Genie` respectively in [LINQPad](https://www.linqpad.net/)). 
-
-As a basic rule of thumb we can say that:
+When we take `Linie` performance as a reference, the `Genie` performance on matrix inversion (a demanding operation) is about 0.09 times slower when benchmarked in a tight loop of a million iterations:
 ```
-time_genie = 1.1 * time_linie
+Linie.Matrix4x4(double) : 30.27s
+Genie.Matrix4x4<double> : 32.92s
 ```
 
-So `Genie` is about 10% slower compared to `Linie`.
+As measured with [LINQPad](https://www.linqpad.net/).
+
+As a basic rule we can say that `Genie` is about 10% slower than using the `Linie` equivalent. 
 
 > This compared `Linie.Matrix4x4` (which uses `double`) to the `Genie.Matrix4x4<double>` generic implementation. Another benchmark ran using a `Genie.Matrix4x4<float>` which is a little bit slower (33s) but still well within the same order of magnitude.
 
