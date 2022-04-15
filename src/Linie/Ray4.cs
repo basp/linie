@@ -2,6 +2,9 @@
 
 namespace Linie;
 
+/// <summary>
+/// Represents a ray in 4D space.
+/// </summary>
 public record Ray4(Vector4 Origin, Vector4 Direction)
 {
     /// <summary>

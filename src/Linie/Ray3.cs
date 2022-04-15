@@ -2,6 +2,9 @@
 
 namespace Linie;
 
+/// <summary>
+/// Represents a ray in 3D space.
+/// </summary>
 public record Ray3(Point3 Origin, Vector3 Direction)
 {
     /// <summary>

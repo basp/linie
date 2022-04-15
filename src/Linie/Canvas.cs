@@ -15,7 +15,7 @@ public class Canvas
     private Color[] data;
 
     /// <summary>
-    /// Constructs a new <see cref="Canvs"/> with given dimensions.
+    /// Initializes a new <see cref="Canvas"/> instance of given size.
     /// </summary>
     public Canvas(int width, int height)
     {
@@ -25,7 +25,7 @@ public class Canvas
     }
 
     /// <summary>
-    /// Returns the color of the pixel at given coordinates.
+    /// Gets the color of the pixel at given coordinates.
     /// </summary>
     public Color this[int x, int y]
     {
