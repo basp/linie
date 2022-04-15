@@ -8,8 +8,26 @@ namespace Linie
     /// <summary>
     /// Represents an x- and y-coordinate in 2D space.
     /// </summary>
-    public record Point2(double X, double Y)
+    public struct Point2 : IEquatable<Point2>
     {
+        public readonly double X, Y;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Point2"/> structure.
+        /// </summary>
+        public Point2(double x, double y)
+        {
+            this.X = x;
+            this.Y = y;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Point2"/> structure.
+        /// </summary>
+        public Point2(double a) : this(a, a)
+        {
+        }
+
         /// <summary>
         /// Gets the element at specified index.
         /// </summary>
@@ -52,5 +70,9 @@ namespace Linie
         /// this <see cref="Point2"/> structure.
         /// </summary>
         public override string ToString() => $"({this.X}, {this.Y})";
+
+        public bool Equals(Point2 other) =>
+            this.X == other.X &&
+            this.Y == other.Y;
     }
 }

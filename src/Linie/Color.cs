@@ -8,11 +8,23 @@ namespace Linie
     /// <summary>
     /// Represents a RGB (red, green, blue) color.
     /// </summary>
-    public record Color(double R, double G, double B)
+    public struct Color
     {
         public static Color White => new Color(1, 1, 1);
 
         public static Color Black => new Color(0, 0, 0);
+
+        public readonly double R, G, B;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Color"/> structure.
+        /// </summary>
+        public Color(double r, double g, double b)
+        {
+            this.R = r;
+            this.G = g;
+            this.B = b;
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Color"/> structure.

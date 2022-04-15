@@ -8,8 +8,21 @@ namespace Linie
     /// <summary>
     /// Represents a displacement in 4D space.
     /// </summary>
-    public record Vector4(double X, double Y, double Z, double W)
+    public struct Vector4 : IEquatable<Vector4>
     {
+        public readonly double X, Y, Z, W;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Vector4"/> structure.
+        /// </summary>
+        public Vector4(double x, double y, double z, double w)
+        {
+            this.X = x;
+            this.Y = y;
+            this.Z = z;
+            this.W = w;
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Vector4"/> structure.
         /// </summary>
@@ -142,5 +155,11 @@ namespace Linie
         /// </summary>
         public override string ToString() =>
             $"({this.X}, {this.Y}, {this.Z}, {this.W})";
+
+        public bool Equals(Vector4 other) =>
+            this.X == other.X &&
+            this.Y == other.Y &&
+            this.Z == other.Z &&
+            this.W == other.W;
     }
 }

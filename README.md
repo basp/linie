@@ -1,2 +1,2 @@
 # linie
-Linie is a minimalistic toolkit for writing ray tracers.
+Linie provides primitives for writing ray tracers.
