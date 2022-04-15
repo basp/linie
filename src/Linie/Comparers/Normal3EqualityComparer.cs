@@ -1,23 +1,22 @@
 // Licensed under the MIT license. See LICENSE file in the samples root for full license information.
 
-namespace Linie
+namespace Linie;
+
+using System;
+
+internal class Normal3EqualityComparer : ApproxEqualityComparer<Normal3>
 {
-    using System;
+    private const double id = 13;
 
-    internal class Normal3EqualityComparer : ApproxEqualityComparer<Normal3>
+    public Normal3EqualityComparer(double epsilon = 0) : base(epsilon)
     {
-        private const double id = 13;
-
-        public Normal3EqualityComparer(double epsilon = 0) : base(epsilon)
-        {
-        }
-
-        public override bool Equals(Normal3 n, Normal3 m) =>
-            this.ApproxEqual(n.X, m.X) &&
-            this.ApproxEqual(n.Y, m.Y) &&
-            this.ApproxEqual(n.Z, m.Z);
-
-        public override int GetHashCode(Normal3 obj) =>
-            HashCode.Combine(id, obj.X, obj.Y, obj.Z);
     }
+
+    public override bool Equals(Normal3 n, Normal3 m) =>
+        this.ApproxEqual(n.X, m.X) &&
+        this.ApproxEqual(n.Y, m.Y) &&
+        this.ApproxEqual(n.Z, m.Z);
+
+    public override int GetHashCode(Normal3 obj) =>
+        HashCode.Combine(id, obj.X, obj.Y, obj.Z);
 }

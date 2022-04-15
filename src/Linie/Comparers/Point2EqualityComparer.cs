@@ -1,22 +1,21 @@
 // Licensed under the MIT license. See LICENSE file in the samples root for full license information.
 
-namespace Linie
+namespace Linie;
+
+using System;
+
+internal class Point2EqualityComparer : ApproxEqualityComparer<Point2>
 {
-    using System;
+    private const double id = 11;
 
-    internal class Point2EqualityComparer : ApproxEqualityComparer<Point2>
+    public Point2EqualityComparer(double epsilon = 0) : base(epsilon)
     {
-        private const double id = 11;
-
-        public Point2EqualityComparer(double epsilon = 0) : base(epsilon)
-        {
-        }
-
-        public override bool Equals(Point2 a, Point2 b) =>
-            this.ApproxEqual(a.X, b.X) &&
-            this.ApproxEqual(a.Y, b.Y);
-
-        public override int GetHashCode(Point2 p) =>
-            HashCode.Combine(id, p.X, p.Y);
     }
+
+    public override bool Equals(Point2 a, Point2 b) =>
+        this.ApproxEqual(a.X, b.X) &&
+        this.ApproxEqual(a.Y, b.Y);
+
+    public override int GetHashCode(Point2 p) =>
+        HashCode.Combine(id, p.X, p.Y);
 }
