@@ -6,12 +6,15 @@ namespace Linie
     using System.Collections.Generic;
 
     /// <summary>
-    /// Vector of 4 <c>double</c> values.
+    /// Represents a displacement in 4D space.
     /// </summary>
     public struct Vector4 : IEquatable<Vector4>
     {
         public readonly double X, Y, Z, W;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Vector4"/> structure.
+        /// </summary>
         public Vector4(double x, double y, double z, double w)
         {
             this.X = x;
@@ -20,6 +23,9 @@ namespace Linie
             this.W = w;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Vector4"/> structure.
+        /// </summary>
         public Vector4(double a) : this(a, a, a, a)
         {
         }
@@ -143,6 +149,10 @@ namespace Linie
 
         public Vector4 Reflect(in Vector4 n) => Vector4.Reflect(this, n);
 
+        /// <summary>
+        /// Creates a <see cref="String"/> representation of 
+        /// this <see cref="Vector4"/> structure.
+        /// </summary>
         public override string ToString() =>
             $"({this.X}, {this.Y}, {this.Z}, {this.W})";
 

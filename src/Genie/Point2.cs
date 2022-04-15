@@ -2,11 +2,18 @@ namespace Genie
 {
     using System;
 
+    
+    /// <summary>
+    /// Represents an x- and y-coordinate in 2D space.
+    /// </summary>
     public struct Point2<T>
         where T : IComparable<T>
     {
         public readonly T X, Y;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Point2"/> structure.
+        /// </summary>
         public Point2(T x, T y)
         {
             this.X = x;

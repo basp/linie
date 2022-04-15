@@ -6,12 +6,15 @@ namespace Linie
     using System.Collections.Generic;
 
     /// <summary>
-    /// Vector of 3 <c>double</c> values.
+    /// Represents a displacement in 3D space.
     /// </summary>
     public struct Vector3 : IEquatable<Vector3>
     {
         public readonly double X, Y, Z;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Vector3"/> structure.
+        /// </summary>
         public Vector3(double x, double y, double z)
         {
             this.X = x;
@@ -19,6 +22,9 @@ namespace Linie
             this.Z = z;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Vector3"/> structure.
+        /// </summary>
         public Vector3(double a) : this(a, a, a)
         {
         }
@@ -27,7 +33,7 @@ namespace Linie
         {
             get
             {
-                switch(i)
+                switch (i)
                 {
                     case 0: return this.X;
                     case 1: return this.Y;
@@ -122,6 +128,10 @@ namespace Linie
 
         public Vector3 Reflect(in Normal3 n) => Vector3.Reflect(this, n);
 
+        /// <summary>
+        /// Creates a <see cref="String"/> representation of 
+        /// this <see cref="Vector3"/> structure.
+        /// </summary>
         public override string ToString() =>
             $"({this.X}, {this.Y}, {this.Z})";
 

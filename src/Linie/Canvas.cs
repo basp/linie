@@ -6,7 +6,7 @@ namespace Linie
     using System.IO;
 
     /// <summary>
-    /// A canvas is used by to store an image.
+    /// Represents an rectangular drawing surface.
     /// </summary>
     public class Canvas
     {

@@ -6,7 +6,7 @@ namespace Linie
     using System.Collections.Generic;
 
     /// <summary>
-    /// A RGB color triple.
+    /// Represents a RGB (red, green, blue) color.
     /// </summary>
     public struct Color
     {
@@ -16,6 +16,9 @@ namespace Linie
 
         public readonly double R, G, B;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Color"/> structure.
+        /// </summary>
         public Color(double r, double g, double b)
         {
             this.R = r;
@@ -23,6 +26,9 @@ namespace Linie
             this.B = b;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Color"/> structure.
+        /// </summary>
         public Color(double a) : this(a, a, a)
         {
         }
@@ -50,7 +56,7 @@ namespace Linie
         public static Color operator /(Color a, double s) => a * (1 / s);
 
         /// <summary>
-        /// Hadamard (entrywise) product of two color vectors.
+        /// Hadamard (entrywise) product of two color instances.
         /// </summary>
         public static Color operator *(Color c1, Color c2) =>
             new Color(
@@ -59,16 +65,21 @@ namespace Linie
                 c1.B * c2.B);
 
         /// <summary>
-        /// More explicit form of <c>c1 * c2</c>.
+        /// Hadamard (entrywise) product of two color instances.
         /// </summary>
         public static Color Hadamard(Color c1, Color c2) => c1 * c2;
 
+        // var f = 1 / 255.0; new Color(r * f, g * f, b * f);
         public static Color FromByteValues(byte r, byte g, byte b) =>
             new Color(r / 255.0, g / 255.0, b / 255.0);
 
         public static IEqualityComparer<Color> GetEqualityComparer(double epsilon = 0.0) =>
             new ApproxColorEqualityComparer(epsilon);
 
+        /// <summary>
+        /// Creates a <see cref="String"/> representation of 
+        /// this <see cref="Color"/> structure.
+        /// </summary>
         public override string ToString() =>
             $"({this.R}, {this.G}, {this.B})";
     }

@@ -154,8 +154,8 @@ namespace Linie
     public static class Matrix4x4Extensions
     {
         /// <summary>
-        /// Calculates the determinant of given matrix `a` using Laplace
-        /// expansion.
+        /// Calculates the determinant of given matrix `a` using 
+        /// Laplace expansion.
         /// </summary>
         public static double Determinant(this Matrix4x4 a) =>
             (a[0, 0] * a.Cofactor(0, 0)) +

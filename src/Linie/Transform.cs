@@ -105,7 +105,6 @@ namespace Linie
         public static Matrix4x4 Scale(this Matrix4x4 m, double s) =>
             Scale(m, s, s, s);
 
-
         /// <summary>
         /// Applies a scale matrix to an existing matrix.
         /// </summary>

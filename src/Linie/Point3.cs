@@ -5,10 +5,16 @@ namespace Linie
     using System;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Represents an x-, y-, and z-coordinate in 3D space.
+    /// </summary>
     public struct Point3 : IEquatable<Point3>
     {
         public readonly double X, Y, Z;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Point3"/> structure.
+        /// </summary>
         public Point3(double x, double y, double z)
         {
             this.X = x;
@@ -16,15 +22,21 @@ namespace Linie
             this.Z = z;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Point3"/> structure.
+        /// </summary>
         public Point3(double a) : this(a, a, a)
         {
         }
 
-        public double this[int i]
+        /// <summary>
+        /// Gets the element at specified index.
+        /// </summary>
+        public double this[int index]
         {
             get
             {
-                switch(i)
+                switch (index)
                 {
                     case 0: return this.X;
                     case 1: return this.Y;
@@ -54,6 +66,10 @@ namespace Linie
         public static IEqualityComparer<Point3> GetEqualityComparer(in double epsilon = 0) =>
             new Point3EqualityComparer(epsilon);
 
+        /// <summary>
+        /// Creates a <see cref="String"/> representation of 
+        /// this <see cref="Point3"/> structure.
+        /// </summary>
         public override string ToString() => $"({this.X}, {this.Y}, {this.Z})";
 
         public bool Equals(Point3 other) =>

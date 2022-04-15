@@ -6,18 +6,24 @@ namespace Linie
     using System.Collections.Generic;
 
     /// <summary>
-    /// Vector of 2 <c>double</c> values.
+    /// Represents a displacement in 2D space.
     /// </summary>
     public struct Vector2 : IEquatable<Vector2>, IFormattable
     {
         public readonly double X, Y;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Vector2"/> structure.
+        /// </summary>
         public Vector2(double x, double y)
         {
             this.X = x;
             this.Y = y;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Vector2"/> structure.
+        /// </summary>
         public Vector2(double a) : this(a, a)
         {
         }
@@ -76,6 +82,10 @@ namespace Linie
             this.X == other.X &&
             this.Y == other.Y;
 
+        /// <summary>
+        /// Creates a <see cref="String"/> representation of 
+        /// this <see cref="Vector2"/> structure.
+        /// </summary>
         public string ToString(string format, IFormatProvider formatProvider) =>
             $"({this.X.ToString(format, formatProvider)} {this.Y.ToString(format, formatProvider)}";
     }
