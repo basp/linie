@@ -4,7 +4,7 @@ namespace Linie
 {
     using System;
 
-    public static class Transform
+    public static class Affine
     {
 #pragma warning disable SA1117 // ParametersMustBeOnSameLineOrSeparateLines
 
@@ -96,7 +96,7 @@ namespace Linie
             this Matrix4x4 m,
             double x,
             double y,
-            double z) => Transform.Translate(x, y, z) * m;
+            double z) => Affine.Translate(x, y, z) * m;
 
         /// <summary>
         /// Applies a scale matrix to an existing matrix using 
@@ -112,25 +112,25 @@ namespace Linie
             this Matrix4x4 m,
             double x,
             double y,
-            double z) => Transform.Scale(x, y, z) * m;
+            double z) => Affine.Scale(x, y, z) * m;
 
         /// <summary>
         /// Applies a x-axis rotation matrix to a given matrix.
         /// </summary>
         public static Matrix4x4 RotateX(this Matrix4x4 m, double r) =>
-            Transform.RotateX(r) * m;
+            Affine.RotateX(r) * m;
 
         /// <summary>
         /// Applies an y-axis rotation matrix to a given matrix.
         /// </summary>
         public static Matrix4x4 RotateY(this Matrix4x4 m, double r) =>
-            Transform.RotateY(r) * m;
+            Affine.RotateY(r) * m;
 
         /// <summary>
         /// Applies a z-axis rotation matrix to a given matrix.
         /// </summary>
         public static Matrix4x4 RotateZ(this Matrix4x4 m, double r) =>
-            Transform.RotateZ(r) * m;
+            Affine.RotateZ(r) * m;
 
         /// <summary>
         /// Applies a shear matrix to a given matrix.
@@ -142,6 +142,6 @@ namespace Linie
             double yx,
             double yz,
             double zx,
-            double zy) => Transform.Shear(xy, xz, yx, yz, zx, zy) * m;
+            double zy) => Affine.Shear(xy, xz, yx, yz, zx, zy) * m;
     }
 }

@@ -28,7 +28,7 @@ namespace Linie.Tests
         public void TestTranslateRay()
         {
             var r = new Ray4(Vector4.CreatePosition(1, 2, 3), Vector4.CreateDirection(0, 1, 0));
-            var t = Transform.Translate(3, 4, 5);
+            var t = Affine.Translate(3, 4, 5);
             var r2 = t * r;
             Assert.Equal(Vector4.CreatePosition(4, 6, 8), r2.Origin);
             Assert.Equal(Vector4.CreateDirection(0, 1, 0), r2.Direction);
@@ -38,7 +38,7 @@ namespace Linie.Tests
         public void TestScaleRay()
         {
             var r = new Ray4(Vector4.CreatePosition(1, 2, 3), Vector4.CreateDirection(0, 1, 0));
-            var t = Transform.Scale(2, 3, 4);
+            var t = Affine.Scale(2, 3, 4);
             var r2 = t * r;
             Assert.Equal(Vector4.CreatePosition(2, 6, 12), r2.Origin);
             Assert.Equal(Vector4.CreateDirection(0, 3, 0), r2.Direction);

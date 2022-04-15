@@ -8,19 +8,8 @@ namespace Linie
     /// <summary>
     /// Represents a displacement in 2D space.
     /// </summary>
-    public struct Vector2 : IEquatable<Vector2>, IFormattable
+    public record Vector2(double X, double Y) : IFormattable
     {
-        public readonly double X, Y;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Vector2"/> structure.
-        /// </summary>
-        public Vector2(double x, double y)
-        {
-            this.X = x;
-            this.Y = y;
-        }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="Vector2"/> structure.
         /// </summary>
@@ -77,10 +66,6 @@ namespace Linie
         public Vector2 Reflect(in Vector2 n) => Vector2.Reflect(this, n);
 
         public override string ToString() => $"({this.X} {this.Y})";
-
-        public bool Equals(Vector2 other) =>
-            this.X == other.X &&
-            this.Y == other.Y;
 
         /// <summary>
         /// Creates a <see cref="String"/> representation of 

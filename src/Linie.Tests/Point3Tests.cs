@@ -96,7 +96,7 @@ namespace Linie.Tests
         public void TestTranslate()
         {
             var p1 = new Point3(0);
-            var p2 = Transform.Translate(3, 2, 1) * p1;
+            var p2 = Affine.Translate(3, 2, 1) * p1;
             Assert.Equal(new Point3(3, 2, 1), p2);
         }
     }

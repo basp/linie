@@ -8,20 +8,8 @@ namespace Linie
     /// <summary>
     /// Represents an x-, y-, and z-coordinate in 3D space.
     /// </summary>
-    public struct Point3 : IEquatable<Point3>
+    public record Point3(double X, double Y, double Z)
     {
-        public readonly double X, Y, Z;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Point3"/> structure.
-        /// </summary>
-        public Point3(double x, double y, double z)
-        {
-            this.X = x;
-            this.Y = y;
-            this.Z = z;
-        }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="Point3"/> structure.
         /// </summary>
@@ -71,10 +59,5 @@ namespace Linie
         /// this <see cref="Point3"/> structure.
         /// </summary>
         public override string ToString() => $"({this.X}, {this.Y}, {this.Z})";
-
-        public bool Equals(Point3 other) =>
-            this.X == other.X &&
-            this.Y == other.Y &&
-            this.Z == other.Z;
     }
 }
