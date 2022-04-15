@@ -2,23 +2,13 @@
 
 namespace Linie;
 
-public struct Ray4
+public record Ray4(Vector4 Origin, Vector4 Direction)
 {
-    public readonly Vector4 Origin;
-
-    public readonly Vector4 Direction;
-
-    public Ray4(Vector4 origin, Vector4 direction)
-    {
-        this.Origin = origin;
-        this.Direction = direction;
-    }
-
     /// <summary>
     /// Return a position along this ray at distance t.
     /// </summary>
     /// <remarks>
-    /// Equivalent to calling <c>GetPosition(double)</c>.
+    /// Equivalent to invoking the <c>GetPosition(double)</c> method.
     /// </remarks>
     public Vector4 this[double t]
     {

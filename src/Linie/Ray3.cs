@@ -2,18 +2,8 @@
 
 namespace Linie;
 
-public struct Ray3
+public record Ray3(Point3 Origin, Vector3 Direction)
 {
-    public readonly Point3 Origin;
-
-    public readonly Vector3 Direction;
-
-    public Ray3(Point3 origin, Vector3 direction)
-    {
-        this.Origin = origin;
-        this.Direction = direction;
-    }
-
     /// <summary>
     /// Return a position along this ray at distance t.
     /// </summary>
