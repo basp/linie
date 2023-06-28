@@ -177,7 +177,7 @@ public class Vector4Tests
         var r = v.Reflect(n);
         var expected = Vector4.CreateDirection(1, 0, 0);
         const double eps = 0.0000001;
-        var comparer = Vector4.GetEqualityComparer(eps);
+        var comparer = Vector4.GetComparer(eps);
         Assert.Equal(expected, r, comparer);
     }
 

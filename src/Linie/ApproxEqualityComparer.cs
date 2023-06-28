@@ -18,8 +18,10 @@ internal abstract class ApproxEqualityComparer<T> : IEqualityComparer<T>
         this.epsilon = epsilon;
     }
 
+    /// <inheritdoc />
     public abstract bool Equals(T x, T y);
 
+    /// <inheritdoc />
     public abstract int GetHashCode(T obj);
 
     protected bool ApproxEqual(double v1, double v2) =>

@@ -10,19 +10,14 @@ public record Ray4(Vector4 Origin, Vector4 Direction)
     /// <summary>
     /// Return a position along this ray at distance t.
     /// </summary>
-    /// <remarks>
-    /// Equivalent to invoking the <c>GetPosition(double)</c> method.
-    /// </remarks>
     public Vector4 this[double t]
     {
-        get => this.Origin + (t * this.Direction);
+        get => this.At(t);
     }
 
     /// <summary>
     /// Return a position along this ray at distance t.
     /// </summary>
-    /// <remarks>
-    /// Alternative for indexer <c>this[double]</c>.
-    /// </remarks>
-    public Vector4 GetPosition(in double t) => this[t];
+    public Vector4 At(in double t) =>
+        this.Origin + (t * this.Direction);
 }

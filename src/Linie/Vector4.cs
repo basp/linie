@@ -136,7 +136,7 @@ public struct Vector4 : IEquatable<Vector4>
     public static Vector4 CreateDirection(in double x, in double y, in double z) =>
         new Vector4(x, y, z, 0);
 
-    public static IEqualityComparer<Vector4> GetEqualityComparer(in double epsilon = 0.0) =>
+    public static IEqualityComparer<Vector4> GetComparer(in double epsilon = 0.0) =>
         new Vector4EqualityComparer(epsilon);
 
     public Vector4 Cross3(Vector4 b) => Cross3(this, b);

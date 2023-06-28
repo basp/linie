@@ -65,7 +65,7 @@ public struct Color
             c1.B * c2.B);
 
     /// <summary>
-    /// Hadamard (entrywise) product of two color instances.
+    /// Hadamard (entrywise) product of two <see cref="Color"/> values.
     /// </summary>
     public static Color Hadamard(Color c1, Color c2) => c1 * c2;
 
@@ -73,7 +73,7 @@ public struct Color
     public static Color FromByteValues(byte r, byte g, byte b) =>
         new Color(r / 255.0, g / 255.0, b / 255.0);
 
-    public static IEqualityComparer<Color> GetEqualityComparer(double epsilon = 0.0) =>
+    public static IEqualityComparer<Color> GetComparer(double epsilon = 0.0) =>
         new ApproxColorEqualityComparer(epsilon);
 
     /// <summary>

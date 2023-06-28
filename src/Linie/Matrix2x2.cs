@@ -36,7 +36,7 @@ internal class Matrix2x2
         set => this.data[(row * 2) + col] = value;
     }
 
-    public static IEqualityComparer<Matrix2x2> GetEqualityComparer(double epsilon = 0.0) =>
+    public static IEqualityComparer<Matrix2x2> GetComparer(double epsilon = 0.0) =>
         new Matrix2x2EqualityComparer(epsilon);
 
     public override string ToString() =>

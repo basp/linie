@@ -40,7 +40,7 @@ internal class Matrix3x3
         set => this.data[(row * 3) + col] = value;
     }
 
-    public static IEqualityComparer<Matrix3x3> GetEqualityComparer(double epsilon = 0.0) =>
+    public static IEqualityComparer<Matrix3x3> GetComparer(double epsilon = 0.0) =>
         new Matrix3x3EqualityComparer(epsilon);
 }
 

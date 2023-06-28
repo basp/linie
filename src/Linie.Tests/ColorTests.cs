@@ -10,7 +10,7 @@ public class ColorTests
     const double epsilon = 0.000001;
 
     static readonly IEqualityComparer<Color> Comparer =
-        Color.GetEqualityComparer(epsilon);
+        Color.GetComparer(epsilon);
 
     [Fact]
     public void TestAddColors()

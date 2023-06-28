@@ -19,7 +19,7 @@ public class AffineTests
     [Fact]
     public void TestMultiplyByInverseOfTranslationMatrix()
     {
-        var t = Affine.Translate(5, -3, 2).Inverse();
+        var t = Affine.Translate(5, -3, 2).Invert();
         var p = Vector4.CreatePosition(-3, 4, 5);
         var expected = Vector4.CreatePosition(-8, 7, 3);
         Assert.Equal(expected, t * p);
@@ -54,7 +54,7 @@ public class AffineTests
     [Fact]
     public void TestMultiplyByTheInverseOfScalingMatrix()
     {
-        var t = Affine.Scale(2, 3, 4).Inverse();
+        var t = Affine.Scale(2, 3, 4).Invert();
         var v = Vector4.CreateDirection(-4, 6, 8);
         var expected = Vector4.CreateDirection(-2, 2, 2);
         Assert.Equal(expected, t * v);
@@ -78,7 +78,7 @@ public class AffineTests
         var halfExpected = Vector4.CreatePosition(0, Math.Sqrt(2) / 2, Math.Sqrt(2) / 2);
         var fullExpected = Vector4.CreatePosition(0, 0, 1);
         const double eps = 0.0000001;
-        var comparer = Vector4.GetEqualityComparer(eps);
+        var comparer = Vector4.GetComparer(eps);
         Assert.Equal(halfExpected, halfQuarter * p, comparer);
         Assert.Equal(fullExpected, fullQuarter * p, comparer);
     }
@@ -87,10 +87,10 @@ public class AffineTests
     public void TestInverseOfXRotationRotatesInOppositeDirection()
     {
         var p = Vector4.CreatePosition(0, 1, 0);
-        var halfQuarterInv = Affine.RotateX(Math.PI / 4).Inverse();
+        var halfQuarterInv = Affine.RotateX(Math.PI / 4).Invert();
         var expected = Vector4.CreatePosition(0, Math.Sqrt(2) / 2, -Math.Sqrt(2) / 2);
         const double eps = 0.0000001;
-        var comparer = Vector4.GetEqualityComparer(eps);
+        var comparer = Vector4.GetComparer(eps);
         Assert.Equal(expected, halfQuarterInv * p, comparer);
     }
 
@@ -103,7 +103,7 @@ public class AffineTests
         var halfExpected = Vector4.CreatePosition(Math.Sqrt(2) / 2, 0, Math.Sqrt(2) / 2);
         var fullExpected = Vector4.CreatePosition(1, 0, 0);
         const double eps = 0.0000001;
-        var comparer = Vector4.GetEqualityComparer(eps);
+        var comparer = Vector4.GetComparer(eps);
         Assert.Equal(halfExpected, halfQuarter * p, comparer);
         Assert.Equal(fullExpected, fullQuarter * p, comparer);
     }
@@ -118,7 +118,7 @@ public class AffineTests
         var halfExpected = Vector4.CreatePosition(-Math.Sqrt(2) / 2, Math.Sqrt(2) / 2, 0);
         var fullExpected = Vector4.CreatePosition(-1, 0, 0);
         const double eps = 0.0000001;
-        var comparer = Vector4.GetEqualityComparer(eps);
+        var comparer = Vector4.GetComparer(eps);
         Assert.Equal(halfExpected, halfQuarter * p, comparer);
         Assert.Equal(fullExpected, fullQuarter * p, comparer);
     }
@@ -188,7 +188,7 @@ public class AffineTests
         var p3 = b * p2;
         var p4 = c * p3;
         const double eps = 0.000001;
-        var comparer = Vector4.GetEqualityComparer(eps);
+        var comparer = Vector4.GetComparer(eps);
         Assert.Equal(Vector4.CreatePosition(1, -1, 0), p2, comparer);
         Assert.Equal(Vector4.CreatePosition(5, -5, 0), p3, comparer);
         Assert.Equal(Vector4.CreatePosition(15, 0, 7), p4, comparer);
@@ -206,7 +206,7 @@ public class AffineTests
         // than if we would apply the transformations in sequence like
         // in the previous test case.
         const double eps = 0.0000001;
-        var comparer = Vector4.GetEqualityComparer(eps);
+        var comparer = Vector4.GetComparer(eps);
         Assert.Equal(Vector4.CreatePosition(15, 0, 7), t * p, comparer);
     }
 
@@ -256,7 +256,7 @@ public class AffineTests
                 -0.35857, 0.59761, -0.71714, 0.00000,
                 0.00000, 0.00000, 0.00000, 1.00000);
         const double epsilon = 0.00001;
-        var comparer = Matrix4x4.GetEqualityComparer(epsilon);
+        var comparer = Matrix4x4.GetComparer(epsilon);
         Assert.Equal(expected, t, comparer);
     }
 }

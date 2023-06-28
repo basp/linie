@@ -41,7 +41,7 @@ public class Matrix4x4Tests
             9, 8, 7, 6,
             5, 4, 3, 2);
 
-        var comparer = Matrix4x4.GetEqualityComparer(epsilon);
+        var comparer = Matrix4x4.GetComparer(epsilon);
         Assert.Equal(b, a, comparer);
     }
 
@@ -60,7 +60,7 @@ public class Matrix4x4Tests
             8, 7, 6, 5,
             4, 3, 2, 1);
 
-        var comparer = Matrix4x4.GetEqualityComparer(epsilon);
+        var comparer = Matrix4x4.GetComparer(epsilon);
         Assert.NotEqual(b, a, comparer);
     }
 
@@ -85,7 +85,7 @@ public class Matrix4x4Tests
             40, 58, 110, 102,
             16, 26, 46, 42);
 
-        var comparer = Matrix4x4.GetEqualityComparer(epsilon);
+        var comparer = Matrix4x4.GetComparer(epsilon);
         Assert.Equal(expected, a * b, comparer);
     }
 
@@ -101,7 +101,7 @@ public class Matrix4x4Tests
         var t = new Vector4(1, 2, 3, 1);
 
         var expected = new Vector4(18, 24, 33, 1);
-        var comparer = Vector4.GetEqualityComparer(epsilon);
+        var comparer = Vector4.GetComparer(epsilon);
         Assert.Equal(expected, a * t, comparer);
     }
 
@@ -114,7 +114,7 @@ public class Matrix4x4Tests
             2, 4, 8, 16,
             4, 8, 16, 32);
 
-        var comparer = Matrix4x4.GetEqualityComparer(epsilon);
+        var comparer = Matrix4x4.GetComparer(epsilon);
         Assert.Equal(a, a * Matrix4x4.Identity, comparer);
     }
 
@@ -122,7 +122,7 @@ public class Matrix4x4Tests
     public void TestMultiplyIdentityMatrixByTuple()
     {
         var t = new Vector4(1, 2, 3, 4);
-        var comparer = Vector4.GetEqualityComparer(epsilon);
+        var comparer = Vector4.GetComparer(epsilon);
         Assert.Equal(t, Matrix4x4.Identity * t, comparer);
     }
 
@@ -141,7 +141,7 @@ public class Matrix4x4Tests
             3, 0, 5, 5,
             0, 8, 3, 8);
 
-        var comparer = Matrix4x4.GetEqualityComparer(epsilon);
+        var comparer = Matrix4x4.GetComparer(epsilon);
         Assert.Equal(expected, m.Transpose(), comparer);
     }
 
@@ -159,7 +159,7 @@ public class Matrix4x4Tests
             -8, 8, 6,
             -7, -1, 1);
 
-        var comparer = Matrix3x3.GetEqualityComparer(epsilon);
+        var comparer = Matrix3x3.GetComparer(epsilon);
         Assert.Equal(expected, m.Submatrix(2, 1), comparer);
     }
 
@@ -213,7 +213,7 @@ public class Matrix4x4Tests
             7, 7, -6, -7,
             1, -3, 7, 4);
 
-        var b = a.Inverse();
+        var b = a.Invert();
 
         var expected = new Matrix4x4(
             0.21805, 0.45113, 0.24060, -0.04511,
@@ -227,7 +227,7 @@ public class Matrix4x4Tests
         Assert.Equal(105, a.Cofactor(3, 2));
         Assert.Equal(105.0 / 532, b[2, 3]);
 
-        var comparer = Matrix4x4.GetEqualityComparer(0.00001);
+        var comparer = Matrix4x4.GetComparer(0.00001);
         Assert.Equal(expected, b, comparer);
     }
 
@@ -240,7 +240,7 @@ public class Matrix4x4Tests
             -6, 0, 9, 6,
             -3, 0, -9, -4);
 
-        var b = a.Inverse();
+        var b = a.Invert();
 
         var expected = new Matrix4x4(
             -0.15385, -0.15385, -0.28205, -0.53846,
@@ -248,7 +248,7 @@ public class Matrix4x4Tests
             0.35897, 0.35897, 0.43590, 0.92308,
             -0.69231, -0.69231, -0.76923, -1.92308);
 
-        var comparer = Matrix4x4.GetEqualityComparer(0.00001);
+        var comparer = Matrix4x4.GetComparer(0.00001);
         Assert.Equal(expected, b, comparer);
     }
 
@@ -261,7 +261,7 @@ public class Matrix4x4Tests
             -4, 9, 6, 4,
             -7, 6, 6, 2);
 
-        var b = a.Inverse();
+        var b = a.Invert();
 
         var expected = new Matrix4x4(
             -0.04074, -0.07778, 0.14444, -0.22222,
@@ -269,7 +269,7 @@ public class Matrix4x4Tests
             -0.02901, -0.14630, -0.10926, 0.12963,
             0.17778, 0.06667, -0.26667, 0.33333);
 
-        var comparer = Matrix4x4.GetEqualityComparer(0.00001);
+        var comparer = Matrix4x4.GetComparer(0.00001);
         Assert.Equal(expected, b, comparer);
     }
 
@@ -290,7 +290,7 @@ public class Matrix4x4Tests
 
         var c = a * b;
 
-        var comparer = Matrix4x4.GetEqualityComparer(0.00001);
-        Assert.Equal(a, c * b.Inverse(), comparer);
+        var comparer = Matrix4x4.GetComparer(0.00001);
+        Assert.Equal(a, c * b.Invert(), comparer);
     }
 }

@@ -63,7 +63,7 @@ public struct Point3 : IEquatable<Point3>
     public static explicit operator Vector4(in Point3 a) =>
         Vector4.CreatePosition(a.X, a.Y, a.Z);
 
-    public static IEqualityComparer<Point3> GetEqualityComparer(in double epsilon = 0) =>
+    public static IEqualityComparer<Point3> GetComparer(in double epsilon = 0) =>
         new Point3EqualityComparer(epsilon);
 
     /// <summary>

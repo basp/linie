@@ -78,7 +78,7 @@ public class Point3Tests
     {
         var a = new Point3(1, 2, 3);
         var b = new Point3(1.0101, 2.0101, 3.005);
-        var cmp = Point3.GetEqualityComparer(epsilon: 0.011);
+        var cmp = Point3.GetComparer(epsilon: 0.011);
         Assert.True(cmp.Equals(a, b));
     }
 

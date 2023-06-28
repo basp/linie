@@ -59,7 +59,7 @@ public struct Normal3 : IEquatable<Normal3>
 
     public static Normal3 Normalize(Normal3 n) => n * (1 / n.Magnitude());
 
-    public static IEqualityComparer<Normal3> GetEqualityComparer(double epsilon = 0.0) =>
+    public static IEqualityComparer<Normal3> GetComparer(double epsilon = 0.0) =>
         new Normal3EqualityComparer(epsilon);
 
     public double Magnitude() => Magnitude(this);

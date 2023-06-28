@@ -11,7 +11,9 @@ using System.IO;
 public class Canvas
 {
     private int width;
+
     private int height;
+    
     private Color[] data;
 
     /// <summary>
@@ -43,7 +45,11 @@ public class Canvas
     /// </summary>
     public int Height => this.height;
 
-    public void SavePpm(string filename)
+    /// <summary>
+    /// Writes the <see cref="Canvas"/> instance as
+    /// a Portable Pixmap Format (PPM) file.
+    /// </summary>
+    public void WritePortablePixmap(string filename)
     {
         using (var s = File.OpenWrite(filename))
         using (var w = new StreamWriter(s))
@@ -65,7 +71,7 @@ public class Canvas
 
     /// <summary>
     /// Returns the given <see cref="Color"/> as a 3-tuple of 
-    /// clamped <c>int</c> values in the closed interval [0,255].
+    /// clamped <c>int</c> values in the interval <c>[0, 255]</c>.
     /// </summary>
     public static Tuple<int, int, int> GetColorBytes(Color c) =>
         Tuple.Create(

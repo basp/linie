@@ -61,7 +61,7 @@ public struct Point2 : IEquatable<Point2>
     public static explicit operator Vector2(in Point2 a) =>
         new Vector2(a.X, a.Y);
 
-    public static IEqualityComparer<Point2> GetEqualityComparer(
+    public static IEqualityComparer<Point2> GetComparer(
         in double epsilon = 0) =>
             new Point2EqualityComparer(epsilon);
 

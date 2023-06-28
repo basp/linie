@@ -10,7 +10,7 @@ using System.Linq;
 /// <summary>
 /// 4x4 matrix of <c>double</c> values.
 /// </summary>
-public class Matrix4x4 : IEquatable<Matrix4x4>
+public class Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
 {
     private readonly double[] data;
 
@@ -126,7 +126,7 @@ public class Matrix4x4 : IEquatable<Matrix4x4>
         return m;
     }
 
-    public static IEqualityComparer<Matrix4x4> GetEqualityComparer(double epsilon = 0.0) =>
+    public static IEqualityComparer<Matrix4x4> GetComparer(double epsilon = 0.0) =>
         new Matrix4x4EqualityComparer(epsilon);
 
     public Matrix4x4 Transpose() => Matrix4x4.Transpose(this);
@@ -149,13 +149,20 @@ public class Matrix4x4 : IEquatable<Matrix4x4>
 
         return true;
     }
+
+    public string ToString(
+        string format, 
+        IFormatProvider formatProvider)
+    {
+        throw new NotImplementedException();
+    }
 }
 
 public static class Matrix4x4Extensions
 {
     /// <summary>
-    /// Calculates the determinant of given matrix `a` using 
-    /// Laplace expansion.
+    /// Calculates the determinant of given matrix <c>a</c> using Laplace 
+    /// expansion.
     /// </summary>
     public static double Determinant(this Matrix4x4 a) =>
         (a[0, 0] * a.Cofactor(0, 0)) +
@@ -168,11 +175,11 @@ public static class Matrix4x4Extensions
 
     /// <summary>
     /// Returns the inverse of the given matrix. Note that it is up to the
-    /// client to make sure the matrix specified by argument `a` is
-    /// invertible at all. The `IsInvertible` method is provided for this
+    /// client to make sure the matrix specified by argument <c>a</c> is
+    /// invertible at all. The <c>IsInvertible</c> method is provided for this
     /// purpose.
     /// </summary>
-    public static Matrix4x4 Inverse(this Matrix4x4 a)
+    public static Matrix4x4 Invert(this Matrix4x4 a)
     {
         var m = new Matrix4x4(0);
         var d = a.Determinant();
@@ -189,7 +196,7 @@ public static class Matrix4x4Extensions
 
     // This creates a new 3x3 matrix from a 4x4 matrix by dropping one
     // row and one column. The row and column to be dropped are specified
-    // by the `dropRow` and `dropCol` arguments respectively.
+    // by the <c>dropRow</c> and <c>dropCol</c> arguments respectively.
     //
     // Ex. (dropRow = 2, dropCol = 1)
     // ---

@@ -20,7 +20,7 @@ public class Matrix3x3Tests
             -3, 2,
             0, 6);
 
-        var comparer = Matrix2x2.GetEqualityComparer(epsilon);
+        var comparer = Matrix2x2.GetComparer(epsilon);
         Assert.Equal(expected, a.Submatrix(0, 2), comparer);
     }
 
