@@ -1,0 +1,6 @@
+vec2() ::= <<
+public struct Vec2 : IEquatable<Vec2>
+{
+    public readonly float X, Y;
+}
+>>
