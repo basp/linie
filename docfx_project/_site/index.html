@@ -99,7 +99,7 @@
 </ul>
 <p>Most of the focus is on the <code>Vector4</code> and <code>Matrix4x4</code> types since it is expected these will be used most often for the cases that Linie is designed for.</p>
 <h2 id="positions-and-directions">positions and directions</h2>
-<p>Linie is designed to operate in 3D space using 4D vectors and matrices as is common in computer graphics. Positions and directions are both represented by a <code>Vector4</code> but only points have their <code>W</code> component set to anything else but zero. Directions always have their <code>W</code> component set to zero.</p>
+<p>Linie is designed to operate in 3D space using 4D vectors and matrices as is common in computer graphics. Positions and directions are both represented by a <code>Vector4</code> but only positions have their <code>W</code> component set to anything else but zero. Directions always have their <code>W</code> component set to zero. Positions have their <code>W</code> component set to one by default but any <code>Vector4</code> with a non-zero <code>W</code> component is considered a position.</p>
 <blockquote>
 <p>There have been periods in time where Linie would explicitly differentiate between a direction and a point and would not allow operations between them that would not make sense. Although this does provide some safety it was decided to drop this and leave it up to the client of the library instead.</p>
 </blockquote>
@@ -108,6 +108,7 @@
 <li>The <code>Vector4.CreatePosition</code> method creates <code>Vector4</code> instances with their <code>W</code> component set to one.</li>
 <li>The <code>Vector4.CreateDirection</code> method creates <code>Vector4</code> instances with their <code>W</code> component set to zero.</li>
 <li>The <code>IsPosition</code> and <code>IsDirection</code> properties can be used to query whether a <code>Vector4</code> is a position or direction vector.</li>
+<li>The <code>AsPosition</code> and <code>AsDirection</code> methods can be used to force any <code>Vector4</code> into a particular mode (i.e. position or direction).</li>
 </ul>
 <blockquote>
 <p>Note that Linie does not check for valid operations. If you want to add a point to a point you are free to do so. The math will work out but the results may not be what you expect.</p>
@@ -115,6 +116,22 @@
 <h3 id="performance-tradeoffs">performance tradeoffs</h3>
 <p>The Microsoft recommendation is to keep the size of a <code>struct</code> type below or equal to <code>16</code> bytes. All vectors can fit into this recommendation range so they are all implemented as a <code>struct</code>.</p>
 <p>However, the only matrix that would fit is <code>Matrix2x2</code>. In order to keep the behavior for all matrices consistent they are all implemented as reference (i.e. <code>class</code>) types.</p>
+<p>In order to mitigate some of the allocation drawbacks of managing matrices on the heap the library offers some imperative operations that mutate an existing instance. These are currently provided for expensive <code>Matrix4x4</code> operations. Their return type will be <code>void</code> and they will have a <code>ref</code> parameter to store the results. These are generally a bit faster (and also more memory efficient) than their <em>functional</em> counterparts (which return new instances).</p>
+<p>For example, the following demonstrates the function and imperative multiply operations on a <code>Matrix4x4</code> instance.</p>
+<pre><code>// Functional, result is a new instance that needs to be allocated.
+// This will allocate and is generally a bit easier to understand.
+var a = Matrix4x4.Identity;
+var b = Matrix4x4.Identity;
+var c = a * b; // Equivalent to Matrix4x4.Multiply(a, b);
+
+// Imperative, result was already allocated, mutate in place.
+// This will not allocate and is generally a bit faster if we can re-use 
+// instances.
+var a = Matrix4x4.Identity;
+var b = Matrix4x4.Identity;
+var c = new Matrix4x4();
+Matrix4x4.Multiply(a, b, ref result);
+</code></pre>
 </article>
 
         <div class="contribution d-print-none">

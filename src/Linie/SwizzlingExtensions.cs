@@ -125,56 +125,56 @@ public static class SwizzlingExtensions
         new Vector4(self.X, self.Z, self.Z, self.W);
 
     public static Vector4 YXX(this Vector4 self) =>
-        new Vector4(self.X, self.X, self.X, self.W);
+        new Vector4(self.Y, self.X, self.X, self.W);
 
     public static Vector4 YXY(this Vector4 self) =>
-        new Vector4(self.X, self.X, self.Y, self.W);
+        new Vector4(self.Y, self.X, self.Y, self.W);
 
     public static Vector4 YXZ(this Vector4 self) =>
-        new Vector4(self.X, self.X, self.Z, self.W);
+        new Vector4(self.Y, self.X, self.Z, self.W);
 
     public static Vector4 YYX(this Vector4 self) =>
-        new Vector4(self.X, self.Y, self.X, self.W);
+        new Vector4(self.Y, self.Y, self.X, self.W);
 
     public static Vector4 YYY(this Vector4 self) =>
-        new Vector4(self.X, self.Y, self.Y, self.W);
+        new Vector4(self.Y, self.Y, self.Y, self.W);
 
     public static Vector4 YYZ(this Vector4 self) =>
-        new Vector4(self.X, self.Y, self.Z, self.W);
+        new Vector4(self.Y, self.Y, self.Z, self.W);
 
     public static Vector4 YZX(this Vector4 self) =>
-        new Vector4(self.X, self.Z, self.X, self.W);
+        new Vector4(self.Y, self.Z, self.X, self.W);
 
     public static Vector4 YZY(this Vector4 self) =>
-        new Vector4(self.X, self.Z, self.Y, self.W);
+        new Vector4(self.Y, self.Z, self.Y, self.W);
 
     public static Vector4 YZZ(this Vector4 self) =>
-        new Vector4(self.X, self.Z, self.Z, self.W);        
+        new Vector4(self.Y, self.Z, self.Z, self.W);        
 
     public static Vector4 ZXX(this Vector4 self) =>
-        new Vector4(self.X, self.X, self.X, self.W);
+        new Vector4(self.Z, self.X, self.X, self.W);
 
     public static Vector4 ZXY(this Vector4 self) =>
-        new Vector4(self.X, self.X, self.Y, self.W);
+        new Vector4(self.Z, self.X, self.Y, self.W);
 
     public static Vector4 ZXZ(this Vector4 self) =>
-        new Vector4(self.X, self.X, self.Z, self.W);
+        new Vector4(self.Z, self.X, self.Z, self.W);
 
     public static Vector4 ZYX(this Vector4 self) =>
-        new Vector4(self.X, self.Y, self.X, self.W);
+        new Vector4(self.Z, self.Y, self.X, self.W);
 
     public static Vector4 ZYY(this Vector4 self) =>
-        new Vector4(self.X, self.Y, self.Y, self.W);
+        new Vector4(self.Z, self.Y, self.Y, self.W);
 
     public static Vector4 ZYZ(this Vector4 self) =>
-        new Vector4(self.X, self.Y, self.Z, self.W);
+        new Vector4(self.Z, self.Y, self.Z, self.W);
 
     public static Vector4 ZZX(this Vector4 self) =>
-        new Vector4(self.X, self.Z, self.X, self.W);
+        new Vector4(self.Z, self.Z, self.X, self.W);
 
     public static Vector4 ZZY(this Vector4 self) =>
-        new Vector4(self.X, self.Z, self.Y, self.W);
+        new Vector4(self.Z, self.Z, self.Y, self.W);
 
     public static Vector4 ZZZ(this Vector4 self) =>
-        new Vector4(self.X, self.Z, self.Z, self.W);                       
+        new Vector4(self.Z, self.Z, self.Z, self.W);                       
 }

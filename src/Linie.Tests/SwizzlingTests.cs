@@ -17,7 +17,7 @@ public class SwizzlingTests
         {
             [(1, 1)] = () => u.XX(),
             [(1, 2)] = () => u.XY(),
-            
+
             [(2, 1)] = () => u.YX(),
             [(2, 2)] = () => u.YY(),
         };
@@ -79,6 +79,27 @@ public class SwizzlingTests
         {
             var (x, y, z) = @case.Key;
             var expected = new Vector3(x, y, z);
+            var actual = @case.Value();
+            Assert.Equal(expected, actual);
+        }
+    }
+
+    [Fact]
+    public void TestVector4Swizzle()
+    {
+        var u = new Vector4(1, 2, 3, 1);
+
+        var cases = new Dictionary<(int, int, int, int), Func<Vector4>>
+        {
+            [(1, 1, 1, 1)] = () => u.XXX(),
+            [(1, 1, 2, 1)] = () => u.XXY(),
+            [(1, 1, 3, 1)] = () => u.XXZ(),
+        };
+
+        foreach (var @case in cases)
+        {
+            var (x, y, z, w) = @case.Key;
+            var expected = new Vector4(x, y, z, w);
             var actual = @case.Value();
             Assert.Equal(expected, actual);
         }

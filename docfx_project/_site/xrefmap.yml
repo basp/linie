@@ -156,19 +156,6 @@ references:
   fullName.vb: Linie.Canvas.New
   nameWithType: Canvas.Canvas
   nameWithType.vb: Canvas.New
-- uid: Linie.Canvas.GetColorBytes(Linie.Color)
-  name: GetColorBytes(Color)
-  href: api/Linie.Canvas.html#Linie_Canvas_GetColorBytes_Linie_Color_
-  commentId: M:Linie.Canvas.GetColorBytes(Linie.Color)
-  fullName: Linie.Canvas.GetColorBytes(Linie.Color)
-  nameWithType: Canvas.GetColorBytes(Color)
-- uid: Linie.Canvas.GetColorBytes*
-  name: GetColorBytes
-  href: api/Linie.Canvas.html#Linie_Canvas_GetColorBytes_
-  commentId: Overload:Linie.Canvas.GetColorBytes
-  isSpec: "True"
-  fullName: Linie.Canvas.GetColorBytes
-  nameWithType: Canvas.GetColorBytes
 - uid: Linie.Canvas.Height
   name: Height
   href: api/Linie.Canvas.html#Linie_Canvas_Height
@@ -214,22 +201,28 @@ references:
   isSpec: "True"
   fullName: Linie.Canvas.Width
   nameWithType: Canvas.Width
-- uid: Linie.Canvas.WritePortablePixmap(System.String)
-  name: WritePortablePixmap(string)
-  href: api/Linie.Canvas.html#Linie_Canvas_WritePortablePixmap_System_String_
-  commentId: M:Linie.Canvas.WritePortablePixmap(System.String)
-  name.vb: WritePortablePixmap(String)
-  fullName: Linie.Canvas.WritePortablePixmap(string)
-  fullName.vb: Linie.Canvas.WritePortablePixmap(String)
-  nameWithType: Canvas.WritePortablePixmap(string)
-  nameWithType.vb: Canvas.WritePortablePixmap(String)
-- uid: Linie.Canvas.WritePortablePixmap*
+- uid: Linie.CanvasExtensions
+  name: CanvasExtensions
+  href: api/Linie.CanvasExtensions.html
+  commentId: T:Linie.CanvasExtensions
+  fullName: Linie.CanvasExtensions
+  nameWithType: CanvasExtensions
+- uid: Linie.CanvasExtensions.WritePortablePixmap(Linie.Canvas,System.String)
+  name: WritePortablePixmap(Canvas, string)
+  href: api/Linie.CanvasExtensions.html#Linie_CanvasExtensions_WritePortablePixmap_Linie_Canvas_System_String_
+  commentId: M:Linie.CanvasExtensions.WritePortablePixmap(Linie.Canvas,System.String)
+  name.vb: WritePortablePixmap(Canvas, String)
+  fullName: Linie.CanvasExtensions.WritePortablePixmap(Linie.Canvas, string)
+  fullName.vb: Linie.CanvasExtensions.WritePortablePixmap(Linie.Canvas, String)
+  nameWithType: CanvasExtensions.WritePortablePixmap(Canvas, string)
+  nameWithType.vb: CanvasExtensions.WritePortablePixmap(Canvas, String)
+- uid: Linie.CanvasExtensions.WritePortablePixmap*
   name: WritePortablePixmap
-  href: api/Linie.Canvas.html#Linie_Canvas_WritePortablePixmap_
-  commentId: Overload:Linie.Canvas.WritePortablePixmap
+  href: api/Linie.CanvasExtensions.html#Linie_CanvasExtensions_WritePortablePixmap_
+  commentId: Overload:Linie.CanvasExtensions.WritePortablePixmap
   isSpec: "True"
-  fullName: Linie.Canvas.WritePortablePixmap
-  nameWithType: Canvas.WritePortablePixmap
+  fullName: Linie.CanvasExtensions.WritePortablePixmap
+  nameWithType: CanvasExtensions.WritePortablePixmap
 - uid: Linie.Color
   name: Color
   href: api/Linie.Color.html
@@ -460,6 +453,37 @@ references:
   isSpec: "True"
   fullName: Linie.Color.White
   nameWithType: Color.White
+- uid: Linie.ColorExtensions
+  name: ColorExtensions
+  href: api/Linie.ColorExtensions.html
+  commentId: T:Linie.ColorExtensions
+  fullName: Linie.ColorExtensions
+  nameWithType: ColorExtensions
+- uid: Linie.ColorExtensions.GetColorBytes(Linie.Color)
+  name: GetColorBytes(Color)
+  href: api/Linie.ColorExtensions.html#Linie_ColorExtensions_GetColorBytes_Linie_Color_
+  commentId: M:Linie.ColorExtensions.GetColorBytes(Linie.Color)
+  fullName: Linie.ColorExtensions.GetColorBytes(Linie.Color)
+  nameWithType: ColorExtensions.GetColorBytes(Color)
+- uid: Linie.ColorExtensions.GetColorBytes*
+  name: GetColorBytes
+  href: api/Linie.ColorExtensions.html#Linie_ColorExtensions_GetColorBytes_
+  commentId: Overload:Linie.ColorExtensions.GetColorBytes
+  isSpec: "True"
+  fullName: Linie.ColorExtensions.GetColorBytes
+  nameWithType: ColorExtensions.GetColorBytes
+- uid: Linie.Config
+  name: Config
+  href: api/Linie.Config.html
+  commentId: T:Linie.Config
+  fullName: Linie.Config
+  nameWithType: Config
+- uid: Linie.Config.DefaultEpsilon
+  name: DefaultEpsilon
+  href: api/Linie.Config.html#Linie_Config_DefaultEpsilon
+  commentId: F:Linie.Config.DefaultEpsilon
+  fullName: Linie.Config.DefaultEpsilon
+  nameWithType: Config.DefaultEpsilon
 - uid: Linie.Matrix2x2
   name: Matrix2x2
   href: api/Linie.Matrix2x2.html
@@ -2963,6 +2987,28 @@ references:
   isSpec: "True"
   fullName: Linie.Transform.Matrix
   nameWithType: Transform.Matrix
+- uid: Linie.Utils
+  name: Utils
+  href: api/Linie.Utils.html
+  commentId: T:Linie.Utils
+  fullName: Linie.Utils
+  nameWithType: Utils
+- uid: Linie.Utils.Clamp(System.Int32,System.Int32,System.Int32)
+  name: Clamp(int, int, int)
+  href: api/Linie.Utils.html#Linie_Utils_Clamp_System_Int32_System_Int32_System_Int32_
+  commentId: M:Linie.Utils.Clamp(System.Int32,System.Int32,System.Int32)
+  name.vb: Clamp(Integer, Integer, Integer)
+  fullName: Linie.Utils.Clamp(int, int, int)
+  fullName.vb: Linie.Utils.Clamp(Integer, Integer, Integer)
+  nameWithType: Utils.Clamp(int, int, int)
+  nameWithType.vb: Utils.Clamp(Integer, Integer, Integer)
+- uid: Linie.Utils.Clamp*
+  name: Clamp
+  href: api/Linie.Utils.html#Linie_Utils_Clamp_
+  commentId: Overload:Linie.Utils.Clamp
+  isSpec: "True"
+  fullName: Linie.Utils.Clamp
+  nameWithType: Utils.Clamp
 - uid: Linie.Vector2
   name: Vector2
   href: api/Linie.Vector2.html

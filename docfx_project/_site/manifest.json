@@ -25,10 +25,40 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Linie.CanvasExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.CanvasExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Linie.Color.yml",
       "output": {
         ".html": {
           "relative_path": "api/Linie.Color.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.ColorExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.ColorExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Config.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Config.html"
         }
       },
       "version": ""
@@ -169,6 +199,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Linie.Transform.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Utils.html"
         }
       },
       "version": ""
