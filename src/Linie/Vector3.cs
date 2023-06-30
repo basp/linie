@@ -128,6 +128,9 @@ public struct Vector3 : IEquatable<Vector3>
 
     public Vector3 Reflect(in Normal3 n) => Vector3.Reflect(this, n);
 
+    public override int GetHashCode() =>
+        HashCode.Combine(this.X, this.Y, this.Z);
+
     /// <summary>
     /// Creates a <see cref="String"/> representation of 
     /// this <see cref="Vector3"/> structure.

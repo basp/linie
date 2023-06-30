@@ -13,6 +13,8 @@ internal class Matrix2x2EqualityComparer : ApproxEqualityComparer<Matrix2x2>
 
     public override bool Equals(Matrix2x2 x, Matrix2x2 y)
     {
+        var inner = new DoubleEqualityComparer(this.epsilon);
+
         for (var j = 0; j < 2; j++)
         {
             for (var i = 0; i < 2; i++)

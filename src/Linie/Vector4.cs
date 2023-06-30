@@ -149,6 +149,9 @@ public struct Vector4 : IEquatable<Vector4>
 
     public Vector4 Reflect(in Vector4 n) => Vector4.Reflect(this, n);
 
+    public override int GetHashCode() =>
+        HashCode.Combine(this.X, this.Y, this.Z, this.W);
+
     /// <summary>
     /// Creates a <see cref="String"/> representation of 
     /// this <see cref="Vector4"/> structure.

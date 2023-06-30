@@ -11,21 +11,10 @@ internal class Matrix4x4EqualityComparer : ApproxEqualityComparer<Matrix4x4>
     {
     }
 
-    public override bool Equals(Matrix4x4 x, Matrix4x4 y)
-    {
-        for (var j = 0; j < 4; j++)
-        {
-            for (var i = 0; i < 4; i++)
-            {
-                if (!this.ApproxEqual(x[i, j], y[i, j]))
-                {
-                    return false;
-                }
-            }
-        }
-
-        return true;
-    }
+    public override bool Equals(Matrix4x4 x, Matrix4x4 y) =>
+        x.data.SequenceEqual(
+            y.data,
+            new DoubleEqualityComparer(this.epsilon));
 
 #pragma warning disable SA1117 // ParametersMustBeOnSameLineOrSeparateLines
     public override int GetHashCode(Matrix4x4 obj) =>

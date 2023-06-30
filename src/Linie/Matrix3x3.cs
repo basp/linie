@@ -6,8 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 
 internal class Matrix3x3
+    : IEquatable<Matrix3x3>, IFormattable
 {
-    private readonly double[] data;
+    internal readonly double[] data;
 
     public Matrix3x3(double v)
     {
@@ -54,6 +55,32 @@ internal class Matrix3x3
 
     public static IEqualityComparer<Matrix3x3> GetComparer(double epsilon = 0.0) =>
         new Matrix3x3EqualityComparer(epsilon);
+
+    public override int GetHashCode() =>
+        HashCode.Combine(
+            this.GetColumn(0).GetHashCode(),
+            this.GetColumn(1).GetHashCode(),
+            this.GetColumn(2).GetHashCode());
+
+    public bool Equals(Matrix3x3 other) =>
+        this.data.SequenceEqual(other.data);
+
+    public override string ToString() => this.ToString(null, null);
+
+    public string ToString(string format, IFormatProvider formatProvider)
+    {
+        var rows = Enumerable.Range(0, 3)
+           .Select(row =>
+           {
+               var c0 = this[row, 0].ToString(format, formatProvider);
+               var c1 = this[row, 1].ToString(format, formatProvider);
+               var c2 = this[row, 2].ToString(format, formatProvider);
+               return $"<{c0} {c1} {c2}>";
+           })
+           .ToArray();
+
+        return $"[{string.Join(" ", rows)}]";
+    }
 }
 
 public static class Matrix3x3Extensions

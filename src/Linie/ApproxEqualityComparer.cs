@@ -11,7 +11,7 @@ using System.Collections.Generic;
 /// </summary>
 internal abstract class ApproxEqualityComparer<T> : IEqualityComparer<T>
 {
-    private readonly double epsilon;
+    protected readonly double epsilon;
 
     protected ApproxEqualityComparer(double epsilon = 0)
     {

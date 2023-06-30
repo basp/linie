@@ -12,7 +12,7 @@ using System.Linq;
 /// </summary>
 public class Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
 {
-    private readonly double[] data;
+    internal readonly double[] data;
 
 #pragma warning disable SA1117 // ParametersMustBeOnSameLineOrSeparateLines
     public Matrix4x4(double v)
@@ -167,15 +167,6 @@ public class Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
 
     public Matrix4x4 Transpose() => Matrix4x4.Transpose(this);
 
-    public override string ToString()
-    {
-        var rows = Enumerable.Range(0, 4)
-            .Select(row => $"[{this[row, 0]} {this[row, 1]} {this[row, 2]} {this[row, 3]}]")
-            .ToArray();
-
-        return $"<{string.Join(", ", rows)}>";
-    }
-
     public bool Equals(Matrix4x4 other)
     {
         for (var i = 0; i < 4; i++)
@@ -192,6 +183,15 @@ public class Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
         return true;
     }
 
+    public override int GetHashCode() =>
+        HashCode.Combine(
+            this.GetColumn(0).GetHashCode(),
+            this.GetColumn(1).GetHashCode(),
+            this.GetColumn(2).GetHashCode(),
+            this.GetColumn(3).GetHashCode());
+
+    public override string ToString() => this.ToString(null, null);
+
     public string ToString(
         string format,
         IFormatProvider formatProvider)
@@ -199,15 +199,15 @@ public class Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
         var rows = Enumerable.Range(0, 4)
             .Select(row =>
             {
-                var c0 = this[row, 0].ToString(formatProvider);
-                var c1 = this[row, 1].ToString(formatProvider);
-                var c2 = this[row, 2].ToString(formatProvider);
-                var c3 = this[row, 3].ToString(formatProvider);
-                return $"[{c0} {c1} {c2} {c3}]";
+                var c0 = this[row, 0].ToString(format, formatProvider);
+                var c1 = this[row, 1].ToString(format, formatProvider);
+                var c2 = this[row, 2].ToString(format, formatProvider);
+                var c3 = this[row, 3].ToString(format, formatProvider);
+                return $"<{c0} {c1} {c2} {c3}>";
             })
             .ToArray();
 
-        return $"<{string.Join(" ", rows)}>";
+        return $"[{string.Join(" ", rows)}]";
     }
 }
 

@@ -5,8 +5,9 @@ namespace Linie;
 using System.Collections.Generic;
 
 public class Matrix2x2
+    : IEquatable<Matrix2x2>, IFormattable
 {
-    private readonly double[] data;
+    internal readonly double[] data;
 
     public Matrix2x2(double v)
     {
@@ -39,13 +40,28 @@ public class Matrix2x2
     public static IEqualityComparer<Matrix2x2> GetComparer(double epsilon = 0.0) =>
         new Matrix2x2EqualityComparer(epsilon);
 
-    public override string ToString()
+    public override int GetHashCode() =>
+        HashCode.Combine(
+            this.GetColumn(0).GetHashCode(),
+            this.GetColumn(1).GetHashCode());
+
+    public bool Equals(Matrix2x2 other) =>
+        this.data.SequenceEqual(other.data);
+
+    public override string ToString() => this.ToString(null, null);
+
+    public string ToString(string format, IFormatProvider formatProvider)
     {
         var rows = Enumerable.Range(0, 2)
-            .Select(row => $"[{this[row, 0]} {this[row, 1]}]")
-            .ToArray();
+           .Select(row =>
+           {
+               var c0 = this[row, 0].ToString(format, formatProvider);
+               var c1 = this[row, 1].ToString(format, formatProvider);
+               return $"<{c0} {c1}>";
+           })
+           .ToArray();
 
-        return $"<{string.Join(", ", rows)}>";
+        return $"[{string.Join(" ", rows)}]";
     }
 }
 

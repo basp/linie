@@ -64,7 +64,7 @@ public struct Vector2 : IEquatable<Vector2>, IFormattable
     public static Vector2 Reflect(in Vector2 a, in Vector2 n) =>
         a - (n * 2 * Dot(a, n));
 
-    public static IEqualityComparer<Vector2> GetEqualityComparer(
+    public static IEqualityComparer<Vector2> GetComparer(
         double epsilon = 0.0) =>
         new Vector2EqualityComparer(epsilon);
 
@@ -76,17 +76,24 @@ public struct Vector2 : IEquatable<Vector2>, IFormattable
 
     public Vector2 Reflect(in Vector2 n) => Vector2.Reflect(this, n);
 
-    public override string ToString() => $"({this.X} {this.Y})";
-
     /// <inheritdoc/>
     public bool Equals(Vector2 other) =>
         this.X == other.X &&
         this.Y == other.Y;
 
+    public override int GetHashCode() =>
+        HashCode.Combine(this.X, this.Y);
+
+    public override string ToString() => this.ToString(null, null);
+
     /// <summary>
     /// Creates a <see cref="String"/> representation of 
     /// this <see cref="Vector2"/> structure.
     /// </summary>
-    public string ToString(string format, IFormatProvider formatProvider) =>
-        $"({this.X.ToString(format, formatProvider)} {this.Y.ToString(format, formatProvider)}";
+    public string ToString(string format, IFormatProvider formatProvider)
+    {
+        var x = this.X.ToString(format, formatProvider);
+        var y = this.Y.ToString(format, formatProvider);
+        return $"<{x} {y}>";
+    }
 }
