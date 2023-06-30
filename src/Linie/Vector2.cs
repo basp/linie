@@ -45,9 +45,6 @@ public struct Vector2 : IEquatable<Vector2>, IFormattable
 
     public static Vector2 operator -(in Vector2 a) => new Vector2(-a.X, -a.Y);
 
-    public static explicit operator Point2(in Vector2 u) =>
-        new Point2(u.X, u.Y);
-
     public static double MagnitudeSquared(in Vector2 a) =>
         (a.X * a.X) +
         (a.Y * a.Y);

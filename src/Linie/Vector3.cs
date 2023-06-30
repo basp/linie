@@ -78,12 +78,6 @@ public struct Vector3
     public static explicit operator Vector4(in Vector3 u) =>
         Vector4.CreateDirection(u.X, u.Y, u.Z);
 
-    public static explicit operator Normal3(in Vector3 u) =>
-        new Normal3(u.X, u.Y, u.Z);
-
-    public static explicit operator Point3(in Vector3 u) =>
-        new Point3(u.X, u.Y, u.Z);
-
     public static double MagnitudeSquared(in Vector3 a) =>
         (a.X * a.X) +
         (a.Y * a.Y) +
@@ -99,9 +93,6 @@ public struct Vector3
         (a.Y * b.Y) +
         (a.Z * b.Z);
 
-    public static double Dot(in Vector3 a, in Normal3 n) =>
-        Dot(a, (Vector3)n);
-
     public static Vector3 Cross(in Vector3 a, in Vector3 b) =>
         new Vector3(
             (a.Y * b.Z) - (a.Z * b.Y),
@@ -110,9 +101,6 @@ public struct Vector3
 
     public static Vector3 Reflect(in Vector3 a, in Vector3 n) =>
         a - (n * 2 * Dot(a, n));
-
-    public static Vector3 Reflect(in Vector3 a, in Normal3 n) =>
-        Reflect(a, (Vector3)n);
 
     public static IEqualityComparer<Vector3> GetEqualityComparer(in double epsilon = 0) =>
         new Vector3EqualityComparer(epsilon);
@@ -126,8 +114,6 @@ public struct Vector3
     public Vector3 Cross(in Vector3 v) => Vector3.Cross(this, v);
 
     public Vector3 Reflect(in Vector3 n) => Vector3.Reflect(this, n);
-
-    public Vector3 Reflect(in Normal3 n) => Vector3.Reflect(this, n);
 
     /// <inheritdoc />
     public override int GetHashCode() =>

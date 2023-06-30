@@ -190,14 +190,4 @@ public class Vector4Tests
         Assert.Equal(1, u.Y);
         Assert.Equal(2, u.Z);
     }
-
-    [Fact]
-    public void TestExplicitToPoint3()
-    {
-        var v = Vector4.CreateDirection(0, 1, 2);
-        var u = (Point3)v;
-        Assert.Equal(0, u.X);
-        Assert.Equal(1, u.Y);
-        Assert.Equal(2, u.Z);
-    }
 }

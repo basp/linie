@@ -100,10 +100,7 @@
 <p>Most of the focus is on the <code>Vector4</code> and <code>Matrix4x4</code> types since it is expected these will be used most often for the cases that Linie is designed for.</p>
 <h2 id="positions-and-directions">positions and directions</h2>
 <p>Linie is designed to operate in 3D space using 4D vectors and matrices as is common in computer graphics. Positions and directions are both represented by a <code>Vector4</code> but only positions have their <code>W</code> component set to anything else but zero. Directions always have their <code>W</code> component set to zero. Positions have their <code>W</code> component set to one by default but any <code>Vector4</code> with a non-zero <code>W</code> component is considered a position.</p>
-<blockquote>
-<p>There have been periods in time where Linie would explicitly differentiate between a direction and a point and would not allow operations between them that would not make sense. Although this does provide some safety it was decided to drop this and leave it up to the client of the library instead.</p>
-</blockquote>
-<p>The library does offer a few methods that make it a little bit more explicit what we are doing.</p>
+<p>The library offers a few methods that make it a little bit more explicit what we are doing:</p>
 <ul>
 <li>The <code>Vector4.CreatePosition</code> method creates <code>Vector4</code> instances with their <code>W</code> component set to one.</li>
 <li>The <code>Vector4.CreateDirection</code> method creates <code>Vector4</code> instances with their <code>W</code> component set to zero.</li>
@@ -113,6 +110,19 @@
 <blockquote>
 <p>Note that Linie does not check for valid operations. If you want to add a point to a point you are free to do so. The math will work out but the results may not be what you expect.</p>
 </blockquote>
+<h2 id="transformations">transformations</h2>
+<p>The heart of the library is in the transformation suite. This builds upon the vector and matrix types to provide a consistent and fast toolset.</p>
+<p>The primary use case of Linie is to perform calculations on points and directions in 3D in order to facilitate computer graphics operations such as ray tracing or rasterizing. All the matrices and vectors with less than four dimensions are mostly there to support the 4D calculations. They are perfectly usuable but not considered as part of the main use cases for the package as a whole.</p>
+<p>Below is a simple example where we translate and rotate a point using the Linie transformation API.</p>
+<pre><code>var p0 = Vector4.CreatePosition(0, 0, 0);
+var t = Matrix.Identity
+    .Translate(0, 0, 1)
+    .RotateY(Math.PI / 4);
+var p1 = t * p0;
+</code></pre>
+<p>The example above creates a <em>transformation matrix</em> <code>t</code> that first translates a point by <code>&lt;0, 0, 1&gt;</code> and then rotates it <code>Math.PI / 4</code> radians along the y-axis.</p>
+<p>It is recommended to use the <em>fluent</em> API to build up transformation matrices. This will ensure the matrix multiplication order is correct and it will read well in code. If you want to build up a transformation from scratch it makes sense to start with the <em>identity</em> matrix. You can then use this as a starting point into the fluent API in order to build up the rest of the transformation before applying it to a position or direction vector like in the example above.</p>
+<p>Matrices are stored in <strong>column-major</strong> order so when you want to apply a matrix to a vector you need to put the matrix first (i.e. <code>MU</code> instead of <code>UM</code>).</p>
 <h3 id="performance-tradeoffs">performance tradeoffs</h3>
 <p>The Microsoft recommendation is to keep the size of a <code>struct</code> type below or equal to <code>16</code> bytes. All vectors can fit into this recommendation range so they are all implemented as a <code>struct</code>.</p>
 <p>However, the only matrix that would fit is <code>Matrix2x2</code>. In order to keep the behavior for all matrices consistent they are all implemented as reference (i.e. <code>class</code>) types.</p>

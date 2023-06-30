@@ -113,22 +113,6 @@ public class Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
         return new Vector3(x, y, z);
     }
 
-    public static Normal3 operator *(Matrix4x4 m, Normal3 n)
-    {
-        var x = (m[0, 0] * n.X) + (m[1, 0] * n.Y) + (m[2, 0] * n.Z);
-        var y = (m[0, 1] * n.X) + (m[1, 1] * n.Y) + (m[2, 1] * n.Z);
-        var z = (m[0, 2] * n.X) + (m[1, 2] * n.Y) + (m[2, 2] * n.Z);
-        return new Normal3(x, y, z);
-    }
-
-    public static Point3 operator *(Matrix4x4 m, Point3 p)
-    {
-        var x = (m[0, 0] * p.X) + (m[0, 1] * p.Y) + (m[0, 2] * p.Z) + m[0, 3];
-        var y = (m[1, 0] * p.X) + (m[1, 1] * p.Y) + (m[1, 2] * p.Z) + m[1, 3];
-        var z = (m[2, 0] * p.X) + (m[2, 1] * p.Y) + (m[2, 2] * p.Z) + m[2, 3];
-        return new Point3(x, y, z);
-    }
-
     public static Ray operator *(Matrix4x4 m, Ray r) =>
         new Ray(m * r.Origin, m * r.Direction);
 

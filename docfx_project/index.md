@@ -38,6 +38,23 @@ The library offers a few methods that make it a little bit more explicit what we
 ## transformations
 The heart of the library is in the transformation suite. This builds upon the vector and matrix types to provide a consistent and fast toolset.
 
+The primary use case of Linie is to perform calculations on points and directions in 3D in order to facilitate computer graphics operations such as ray tracing or rasterizing. All the matrices and vectors with less than four dimensions are mostly there to support the 4D calculations. They are perfectly usuable but not considered as part of the main use cases for the package as a whole.
+
+Below is a simple example where we translate and rotate a point using the Linie transformation API.
+```
+var p0 = Vector4.CreatePosition(0, 0, 0);
+var t = Matrix.Identity
+    .Translate(0, 0, 1)
+    .RotateY(Math.PI / 4);
+var p1 = t * p0;
+```
+
+The example above creates a *transformation matrix* `t` that first translates a point by `<0, 0, 1>` and then rotates it `Math.PI / 4` radians along the y-axis.
+
+It is recommended to use the *fluent* API to build up transformation matrices. This will ensure the matrix multiplication order is correct and it will read well in code. If you want to build up a transformation from scratch it makes sense to start with the *identity* matrix. You can then use this as a starting point into the fluent API in order to build up the rest of the transformation before applying it to a position or direction vector like in the example above.
+
+Matrices are stored in **column-major** order so when you want to apply a matrix to a vector you need to put the matrix first (i.e. `MU` instead of `UM`).
+
 ### performance tradeoffs
 The Microsoft recommendation is to keep the size of a `struct` type below or equal to `16` bytes. All vectors can fit into this recommendation range so they are all implemented as a `struct`. 
 

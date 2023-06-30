@@ -1070,24 +1070,6 @@ references:
   fullName.vb: Linie.Matrix4x4.*(Linie.Matrix4x4, Linie.Matrix4x4)
   nameWithType: Matrix4x4.operator *(Matrix4x4, Matrix4x4)
   nameWithType.vb: Matrix4x4.*(Matrix4x4, Matrix4x4)
-- uid: Linie.Matrix4x4.op_Multiply(Linie.Matrix4x4,Linie.Normal3)
-  name: operator *(Matrix4x4, Normal3)
-  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_op_Multiply_Linie_Matrix4x4_Linie_Normal3_
-  commentId: M:Linie.Matrix4x4.op_Multiply(Linie.Matrix4x4,Linie.Normal3)
-  name.vb: '*(Matrix4x4, Normal3)'
-  fullName: Linie.Matrix4x4.operator *(Linie.Matrix4x4, Linie.Normal3)
-  fullName.vb: Linie.Matrix4x4.*(Linie.Matrix4x4, Linie.Normal3)
-  nameWithType: Matrix4x4.operator *(Matrix4x4, Normal3)
-  nameWithType.vb: Matrix4x4.*(Matrix4x4, Normal3)
-- uid: Linie.Matrix4x4.op_Multiply(Linie.Matrix4x4,Linie.Point3)
-  name: operator *(Matrix4x4, Point3)
-  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_op_Multiply_Linie_Matrix4x4_Linie_Point3_
-  commentId: M:Linie.Matrix4x4.op_Multiply(Linie.Matrix4x4,Linie.Point3)
-  name.vb: '*(Matrix4x4, Point3)'
-  fullName: Linie.Matrix4x4.operator *(Linie.Matrix4x4, Linie.Point3)
-  fullName.vb: Linie.Matrix4x4.*(Linie.Matrix4x4, Linie.Point3)
-  nameWithType: Matrix4x4.operator *(Matrix4x4, Point3)
-  nameWithType.vb: Matrix4x4.*(Matrix4x4, Point3)
 - uid: Linie.Matrix4x4.op_Multiply(Linie.Matrix4x4,Linie.Ray)
   name: operator *(Matrix4x4, Ray)
   href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_op_Multiply_Linie_Matrix4x4_Linie_Ray_
@@ -2961,6 +2943,19 @@ references:
   isSpec: "True"
   fullName: Linie.Transform.Equals
   nameWithType: Transform.Equals
+- uid: Linie.Transform.GetHashCode
+  name: GetHashCode()
+  href: api/Linie.Transform.html#Linie_Transform_GetHashCode
+  commentId: M:Linie.Transform.GetHashCode
+  fullName: Linie.Transform.GetHashCode()
+  nameWithType: Transform.GetHashCode()
+- uid: Linie.Transform.GetHashCode*
+  name: GetHashCode
+  href: api/Linie.Transform.html#Linie_Transform_GetHashCode_
+  commentId: Overload:Linie.Transform.GetHashCode
+  isSpec: "True"
+  fullName: Linie.Transform.GetHashCode
+  nameWithType: Transform.GetHashCode
 - uid: Linie.Transform.Inverted
   name: Inverted
   href: api/Linie.Transform.html#Linie_Transform_Inverted
@@ -2974,6 +2969,19 @@ references:
   isSpec: "True"
   fullName: Linie.Transform.Inverted
   nameWithType: Transform.Inverted
+- uid: Linie.Transform.InvertedTransposed
+  name: InvertedTransposed
+  href: api/Linie.Transform.html#Linie_Transform_InvertedTransposed
+  commentId: P:Linie.Transform.InvertedTransposed
+  fullName: Linie.Transform.InvertedTransposed
+  nameWithType: Transform.InvertedTransposed
+- uid: Linie.Transform.InvertedTransposed*
+  name: InvertedTransposed
+  href: api/Linie.Transform.html#Linie_Transform_InvertedTransposed_
+  commentId: Overload:Linie.Transform.InvertedTransposed
+  isSpec: "True"
+  fullName: Linie.Transform.InvertedTransposed
+  nameWithType: Transform.InvertedTransposed
 - uid: Linie.Transform.Matrix
   name: Matrix
   href: api/Linie.Transform.html#Linie_Transform_Matrix
@@ -3208,25 +3216,6 @@ references:
   fullName.vb: Linie.Vector2./
   nameWithType: Vector2.operator /
   nameWithType.vb: Vector2./
-- uid: Linie.Vector2.op_Explicit(Linie.Vector2@)~Linie.Point2
-  name: explicit operator Point2(in Vector2)
-  href: api/Linie.Vector2.html#Linie_Vector2_op_Explicit_Linie_Vector2___Linie_Point2
-  commentId: M:Linie.Vector2.op_Explicit(Linie.Vector2@)~Linie.Point2
-  name.vb: CType(Vector2)
-  fullName: Linie.Vector2.explicit operator Linie.Point2(in Linie.Vector2)
-  fullName.vb: Linie.Vector2.CType(Linie.Vector2)
-  nameWithType: Vector2.explicit operator Point2(in Vector2)
-  nameWithType.vb: Vector2.CType(Vector2)
-- uid: Linie.Vector2.op_Explicit*
-  name: explicit operator
-  href: api/Linie.Vector2.html#Linie_Vector2_op_Explicit_
-  commentId: Overload:Linie.Vector2.op_Explicit
-  isSpec: "True"
-  name.vb: CType
-  fullName: Linie.Vector2.explicit operator
-  fullName.vb: Linie.Vector2.CType
-  nameWithType: Vector2.explicit operator
-  nameWithType.vb: Vector2.CType
 - uid: Linie.Vector2.op_Multiply(Linie.Vector2@,System.Double@)
   name: operator *(in Vector2, in double)
   href: api/Linie.Vector2.html#Linie_Vector2_op_Multiply_Linie_Vector2__System_Double__
@@ -3424,15 +3413,6 @@ references:
   isSpec: "True"
   fullName: Linie.Vector3.Cross
   nameWithType: Vector3.Cross
-- uid: Linie.Vector3.Dot(Linie.Vector3@,Linie.Normal3@)
-  name: Dot(in Vector3, in Normal3)
-  href: api/Linie.Vector3.html#Linie_Vector3_Dot_Linie_Vector3__Linie_Normal3__
-  commentId: M:Linie.Vector3.Dot(Linie.Vector3@,Linie.Normal3@)
-  name.vb: Dot(Vector3, Normal3)
-  fullName: Linie.Vector3.Dot(in Linie.Vector3, in Linie.Normal3)
-  fullName.vb: Linie.Vector3.Dot(Linie.Vector3, Linie.Normal3)
-  nameWithType: Vector3.Dot(in Vector3, in Normal3)
-  nameWithType.vb: Vector3.Dot(Vector3, Normal3)
 - uid: Linie.Vector3.Dot(Linie.Vector3@,Linie.Vector3@)
   name: Dot(in Vector3, in Vector3)
   href: api/Linie.Vector3.html#Linie_Vector3_Dot_Linie_Vector3__Linie_Vector3__
@@ -3617,24 +3597,6 @@ references:
   fullName.vb: Linie.Vector3./
   nameWithType: Vector3.operator /
   nameWithType.vb: Vector3./
-- uid: Linie.Vector3.op_Explicit(Linie.Vector3@)~Linie.Normal3
-  name: explicit operator Normal3(in Vector3)
-  href: api/Linie.Vector3.html#Linie_Vector3_op_Explicit_Linie_Vector3___Linie_Normal3
-  commentId: M:Linie.Vector3.op_Explicit(Linie.Vector3@)~Linie.Normal3
-  name.vb: CType(Vector3)
-  fullName: Linie.Vector3.explicit operator Linie.Normal3(in Linie.Vector3)
-  fullName.vb: Linie.Vector3.CType(Linie.Vector3)
-  nameWithType: Vector3.explicit operator Normal3(in Vector3)
-  nameWithType.vb: Vector3.CType(Vector3)
-- uid: Linie.Vector3.op_Explicit(Linie.Vector3@)~Linie.Point3
-  name: explicit operator Point3(in Vector3)
-  href: api/Linie.Vector3.html#Linie_Vector3_op_Explicit_Linie_Vector3___Linie_Point3
-  commentId: M:Linie.Vector3.op_Explicit(Linie.Vector3@)~Linie.Point3
-  name.vb: CType(Vector3)
-  fullName: Linie.Vector3.explicit operator Linie.Point3(in Linie.Vector3)
-  fullName.vb: Linie.Vector3.CType(Linie.Vector3)
-  nameWithType: Vector3.explicit operator Point3(in Vector3)
-  nameWithType.vb: Vector3.CType(Vector3)
 - uid: Linie.Vector3.op_Explicit(Linie.Vector3@)~Linie.Vector4
   name: explicit operator Vector4(in Vector3)
   href: api/Linie.Vector3.html#Linie_Vector3_op_Explicit_Linie_Vector3___Linie_Vector4
@@ -3720,24 +3682,6 @@ references:
   fullName.vb: Linie.Vector3.-
   nameWithType: Vector3.operator -
   nameWithType.vb: Vector3.-
-- uid: Linie.Vector3.Reflect(Linie.Normal3@)
-  name: Reflect(in Normal3)
-  href: api/Linie.Vector3.html#Linie_Vector3_Reflect_Linie_Normal3__
-  commentId: M:Linie.Vector3.Reflect(Linie.Normal3@)
-  name.vb: Reflect(Normal3)
-  fullName: Linie.Vector3.Reflect(in Linie.Normal3)
-  fullName.vb: Linie.Vector3.Reflect(Linie.Normal3)
-  nameWithType: Vector3.Reflect(in Normal3)
-  nameWithType.vb: Vector3.Reflect(Normal3)
-- uid: Linie.Vector3.Reflect(Linie.Vector3@,Linie.Normal3@)
-  name: Reflect(in Vector3, in Normal3)
-  href: api/Linie.Vector3.html#Linie_Vector3_Reflect_Linie_Vector3__Linie_Normal3__
-  commentId: M:Linie.Vector3.Reflect(Linie.Vector3@,Linie.Normal3@)
-  name.vb: Reflect(Vector3, Normal3)
-  fullName: Linie.Vector3.Reflect(in Linie.Vector3, in Linie.Normal3)
-  fullName.vb: Linie.Vector3.Reflect(Linie.Vector3, Linie.Normal3)
-  nameWithType: Vector3.Reflect(in Vector3, in Normal3)
-  nameWithType.vb: Vector3.Reflect(Vector3, Normal3)
 - uid: Linie.Vector3.Reflect(Linie.Vector3@,Linie.Vector3@)
   name: Reflect(in Vector3, in Vector3)
   href: api/Linie.Vector3.html#Linie_Vector3_Reflect_Linie_Vector3__Linie_Vector3__
@@ -4095,24 +4039,6 @@ references:
   fullName.vb: Linie.Vector4./
   nameWithType: Vector4.operator /
   nameWithType.vb: Vector4./
-- uid: Linie.Vector4.op_Explicit(Linie.Vector4@)~Linie.Normal3
-  name: explicit operator Normal3(in Vector4)
-  href: api/Linie.Vector4.html#Linie_Vector4_op_Explicit_Linie_Vector4___Linie_Normal3
-  commentId: M:Linie.Vector4.op_Explicit(Linie.Vector4@)~Linie.Normal3
-  name.vb: CType(Vector4)
-  fullName: Linie.Vector4.explicit operator Linie.Normal3(in Linie.Vector4)
-  fullName.vb: Linie.Vector4.CType(Linie.Vector4)
-  nameWithType: Vector4.explicit operator Normal3(in Vector4)
-  nameWithType.vb: Vector4.CType(Vector4)
-- uid: Linie.Vector4.op_Explicit(Linie.Vector4@)~Linie.Point3
-  name: explicit operator Point3(in Vector4)
-  href: api/Linie.Vector4.html#Linie_Vector4_op_Explicit_Linie_Vector4___Linie_Point3
-  commentId: M:Linie.Vector4.op_Explicit(Linie.Vector4@)~Linie.Point3
-  name.vb: CType(Vector4)
-  fullName: Linie.Vector4.explicit operator Linie.Point3(in Linie.Vector4)
-  fullName.vb: Linie.Vector4.CType(Linie.Vector4)
-  nameWithType: Vector4.explicit operator Point3(in Vector4)
-  nameWithType.vb: Vector4.CType(Vector4)
 - uid: Linie.Vector4.op_Explicit(Linie.Vector4@)~Linie.Vector3
   name: explicit operator Vector3(in Vector4)
   href: api/Linie.Vector4.html#Linie_Vector4_op_Explicit_Linie_Vector4___Linie_Vector3
