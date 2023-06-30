@@ -38,6 +38,15 @@ public class Transform : IEquatable<Transform>
         this.Matrix.Equals(other.Matrix) &&
         this.Inverted.Equals(other.Inverted);
 
+    /// <summary>
+    /// Returns a hash code based on the <c>Matrix</c> and <c>Inverted</c>
+    /// properties of this instance.
+    /// </summary>
+    /// <remarks>
+    /// The <c>InvertedTransposed</c> property is not included in the hash code
+    /// generator since it is implied by the value of <c>Inverted</c> (which can
+    /// be set by the user explicitly).
+    /// </remarks>
     public override int GetHashCode() =>
         HashCode.Combine(
             this.Matrix.GetHashCode(),

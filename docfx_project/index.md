@@ -1,4 +1,4 @@
-# Linie
+# linie
 Linie is a mathematics library that is very loosely based on [glm](https://github.com/) with an ideomatic .NET API. The main goal is to provide a foundation that can be easily integrated to your graphics related software. Linie is **not** a general purpose linear algebra library.
 
 ## features
@@ -35,6 +35,9 @@ The library offers a few methods that make it a little bit more explicit what we
 
 > Note that Linie does not check for valid operations. If you want to add a point to a point you are free to do so. The math will work out but the results may not be what you expect.
 
+## utils
+There are a few utilities included in the library. Linie supports a super lightweight `Canvas` type that can be used for drawing bitmaps. We also have a `Color` value type that is used to represent RGB color triples. In practice it is recommended to store your colors as `Vector4` with an element range of `[0..1]` during most of the computations. When finally writing your color values to the `Canvas` you can convert the `Vector4` into a `Color` instance for rendering.
+
 ## transformations
 The heart of the library is in the transformation suite. This builds upon the vector and matrix types to provide a consistent and fast toolset.
 
@@ -53,9 +56,25 @@ The example above creates a *transformation matrix* `t` that first translates a 
 
 It is recommended to use the *fluent* API to build up transformation matrices. This will ensure the matrix multiplication order is correct and it will read well in code. If you want to build up a transformation from scratch it makes sense to start with the *identity* matrix. You can then use this as a starting point into the fluent API in order to build up the rest of the transformation before applying it to a position or direction vector like in the example above.
 
-Matrices are stored in **column-major** order so when you want to apply a matrix to a vector you need to put the matrix first (i.e. `MU` instead of `UM`).
+* Matrices are stored in **column-major** order so when you want to apply a matrix to a vector you need to put the matrix first (i.e. `MU` instead of `UM`).
+* Direction vectors (with a `W` component of zero) will not be translated. Since a direction is just that it doesn't matter how you translate it, the direction will always be the same.
 
-### performance tradeoffs
+## caching
+During runtime, matrix transformations are the most memory and computationally expensive part of most algorithms. You can mitigate this by using operations that mutate an existing instance instead of returning a new one but the `Transformation` class provides an extra utility. It will store a transformation matrix, the inverse of that matrix and the transposed inverse as well. All rendered objects should probably have something that is equivalent to the `Transformation` class since it is useful to have these matrices ready.
+
+Creating a `Transformation` is easy since we only need to supply the matrix:
+```
+var m = Matrix.Identity
+    .RotateZ(Math.PI / 13)
+    .Translate(0, 0, 1);
+var t = new Transformation(m);
+Console.WriteLine(t.Inverse); // cached
+Console.WriteLine(t.InverseTransposed); // cached
+```
+
+The `Transformation` constructor will make sure the inverted, and transposed-inverted instances are cahced in the instance. This does mean the `Transformation` class takes up a lot of memory. In very large scenes it makes sense to *pool* this class in order to preserve memory.
+
+## performance tradeoffs
 The Microsoft recommendation is to keep the size of a `struct` type below or equal to `16` bytes. All vectors can fit into this recommendation range so they are all implemented as a `struct`. 
 
 However, the only matrix that would fit is `Matrix2x2`. In order to keep the behavior for all matrices consistent they are all implemented as reference (i.e. `class`) types.
@@ -79,3 +98,5 @@ var b = Matrix4x4.Identity;
 var c = new Matrix4x4();
 Matrix4x4.Multiply(a, b, ref result);
 ```
+
+How you want to use the library is up to you. It is recommended to start with the most straightforward approach and then optimize later if you run into performance bottlenecks.

@@ -3001,6 +3001,15 @@ references:
   commentId: T:Linie.Utils
   fullName: Linie.Utils
   nameWithType: Utils
+- uid: Linie.Utils.Clamp(System.Double,System.Double,System.Double)
+  name: Clamp(double, double, double)
+  href: api/Linie.Utils.html#Linie_Utils_Clamp_System_Double_System_Double_System_Double_
+  commentId: M:Linie.Utils.Clamp(System.Double,System.Double,System.Double)
+  name.vb: Clamp(Double, Double, Double)
+  fullName: Linie.Utils.Clamp(double, double, double)
+  fullName.vb: Linie.Utils.Clamp(Double, Double, Double)
+  nameWithType: Utils.Clamp(double, double, double)
+  nameWithType.vb: Utils.Clamp(Double, Double, Double)
 - uid: Linie.Utils.Clamp(System.Int32,System.Int32,System.Int32)
   name: Clamp(int, int, int)
   href: api/Linie.Utils.html#Linie_Utils_Clamp_System_Int32_System_Int32_System_Int32_

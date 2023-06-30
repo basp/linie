@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Linie </title>
+      <title>linie </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Linie ">
+      <meta name="title" content="linie ">
       
       <link rel="icon" href="favicon.ico">
       <link rel="stylesheet" href="public/docfx.min.css">
@@ -72,7 +72,7 @@
         </div>
 
         <article data-uid="">
-<h1 id="linie">Linie</h1>
+<h1 id="linie">linie</h1>
 
 <p>Linie is a mathematics library that is very loosely based on <a href="https://github.com/">glm</a> with an ideomatic .NET API. The main goal is to provide a foundation that can be easily integrated to your graphics related software. Linie is <strong>not</strong> a general purpose linear algebra library.</p>
 <h2 id="features">features</h2>
@@ -110,6 +110,8 @@
 <blockquote>
 <p>Note that Linie does not check for valid operations. If you want to add a point to a point you are free to do so. The math will work out but the results may not be what you expect.</p>
 </blockquote>
+<h2 id="utils">utils</h2>
+<p>There are a few utilities included in the library. Linie supports a super lightweight <code>Canvas</code> type that can be used for drawing bitmaps. We also have a <code>Color</code> value type that is used to represent RGB color triples. In practice it is recommended to store your colors as <code>Vector4</code> with an element range of <code>[0..1]</code> during most of the computations. When finally writing your color values to the <code>Canvas</code> you can convert the <code>Vector4</code> into a <code>Color</code> instance for rendering.</p>
 <h2 id="transformations">transformations</h2>
 <p>The heart of the library is in the transformation suite. This builds upon the vector and matrix types to provide a consistent and fast toolset.</p>
 <p>The primary use case of Linie is to perform calculations on points and directions in 3D in order to facilitate computer graphics operations such as ray tracing or rasterizing. All the matrices and vectors with less than four dimensions are mostly there to support the 4D calculations. They are perfectly usuable but not considered as part of the main use cases for the package as a whole.</p>
@@ -122,8 +124,22 @@ var p1 = t * p0;
 </code></pre>
 <p>The example above creates a <em>transformation matrix</em> <code>t</code> that first translates a point by <code>&lt;0, 0, 1&gt;</code> and then rotates it <code>Math.PI / 4</code> radians along the y-axis.</p>
 <p>It is recommended to use the <em>fluent</em> API to build up transformation matrices. This will ensure the matrix multiplication order is correct and it will read well in code. If you want to build up a transformation from scratch it makes sense to start with the <em>identity</em> matrix. You can then use this as a starting point into the fluent API in order to build up the rest of the transformation before applying it to a position or direction vector like in the example above.</p>
-<p>Matrices are stored in <strong>column-major</strong> order so when you want to apply a matrix to a vector you need to put the matrix first (i.e. <code>MU</code> instead of <code>UM</code>).</p>
-<h3 id="performance-tradeoffs">performance tradeoffs</h3>
+<ul>
+<li>Matrices are stored in <strong>column-major</strong> order so when you want to apply a matrix to a vector you need to put the matrix first (i.e. <code>MU</code> instead of <code>UM</code>).</li>
+<li>Direction vectors (with a <code>W</code> component of zero) will not be translated. Since a direction is just that it doesn't matter how you translate it, the direction will always be the same.</li>
+</ul>
+<h2 id="caching">caching</h2>
+<p>During runtime, matrix transformations are the most memory and computationally expensive part of most algorithms. You can mitigate this by using operations that mutate an existing instance instead of returning a new one but the <code>Transformation</code> class provides an extra utility. It will store a transformation matrix, the inverse of that matrix and the transposed inverse as well. All rendered objects should probably have something that is equivalent to the <code>Transformation</code> class since it is useful to have these matrices ready.</p>
+<p>Creating a <code>Transformation</code> is easy since we only need to supply the matrix:</p>
+<pre><code>var m = Matrix.Identity
+    .RotateZ(Math.PI / 13)
+    .Translate(0, 0, 1);
+var t = new Transformation(m);
+Console.WriteLine(t.Inverse); // cached
+Console.WriteLine(t.InverseTransposed); // cached
+</code></pre>
+<p>The <code>Transformation</code> constructor will make sure the inverted, and transposed-inverted instances are cahced in the instance. This does mean the <code>Transformation</code> class takes up a lot of memory. In very large scenes it makes sense to <em>pool</em> this class in order to preserve memory.</p>
+<h2 id="performance-tradeoffs">performance tradeoffs</h2>
 <p>The Microsoft recommendation is to keep the size of a <code>struct</code> type below or equal to <code>16</code> bytes. All vectors can fit into this recommendation range so they are all implemented as a <code>struct</code>.</p>
 <p>However, the only matrix that would fit is <code>Matrix2x2</code>. In order to keep the behavior for all matrices consistent they are all implemented as reference (i.e. <code>class</code>) types.</p>
 <p>In order to mitigate some of the allocation drawbacks of managing matrices on the heap the library offers some imperative operations that mutate an existing instance. These are currently provided for expensive <code>Matrix4x4</code> operations. Their return type will be <code>void</code> and they will have a <code>ref</code> parameter to store the results. These are generally a bit faster (and also more memory efficient) than their <em>functional</em> counterparts (which return new instances).</p>
@@ -142,6 +158,7 @@ var b = Matrix4x4.Identity;
 var c = new Matrix4x4();
 Matrix4x4.Multiply(a, b, ref result);
 </code></pre>
+<p>How you want to use the library is up to you. It is recommended to start with the most straightforward approach and then optimize later if you run into performance bottlenecks.</p>
 </article>
 
         <div class="contribution d-print-none">

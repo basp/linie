@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 
 /// <summary>
-/// Represents a displacement in 2D space.
+/// Represents a displacement or point in 2D space.
 /// </summary>
 public struct Vector2 : IEquatable<Vector2>, IFormattable
 {

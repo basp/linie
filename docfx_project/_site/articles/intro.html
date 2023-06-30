@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Add your introductions here! </title>
+      <title>getting started </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Add your introductions here! ">
+      <meta name="title" content="getting started ">
       
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
@@ -72,8 +72,55 @@
         </div>
 
         <article data-uid="">
-<h1 id="add-your-introductions-here">Add your introductions here!</h1>
+<h1 id="getting-started">getting started</h1>
 
+<p>We will create a new dotnet solution called <code>clock</code>.</p>
+<pre><code>&gt; mkdir clock
+&gt; cd clock
+&gt; dotnet new sln
+</code></pre>
+<p>This should create a <code>clock.sln</code> file in the current directory.</p>
+<pre><code>&gt; ls
+
+    Directory: D:\basp\clock
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          30/06/2023    21:00            441 clock.sln
+</code></pre>
+<p>Next we will create a <code>src</code> dircectory to contain the actual projects and navigate into that directory</p>
+<pre><code>&gt; mkdir src
+&gt; cd .\src
+</code></pre>
+<p>We just need a .NET project to exercise the Linie package. We'll use a console application for this.</p>
+<pre><code>&gt; dotnet new console -o .\Example
+</code></pre>
+<p>Now that we have the project we should add it to the solution:</p>
+<pre><code>&gt; cd ..
+&gt; dotnet sln add .\src\Example\Example.csproj
+</code></pre>
+<p>Make sure it builds:</p>
+<pre><code>&gt; dotnet build
+</code></pre>
+<p>Navigate back into the <code>Example</code> project directory:</p>
+<pre><code>&gt; cd .\src\Example
+</code></pre>
+<p>Add the Linie package:</p>
+<pre><code>&gt; dotnet add package Linie
+</code></pre>
+<p>Utilize the package:</p>
+<pre><code>static void Main(string[] args)
+{
+    var t = Matrix4x4.Identity
+        .Translate(2, 0, 1)
+        .RotateY(Math.PI / 3)
+        .Scale(2);
+    var p0 = Vector4.CreatePosition(0, 0, 0);
+    var p1 = t * p0;
+    ...
+}
+```f
+</code></pre>
 </article>
 
         <div class="contribution d-print-none">

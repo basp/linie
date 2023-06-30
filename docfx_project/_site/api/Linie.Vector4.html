@@ -79,7 +79,7 @@
 
   <h1 id="Linie_Vector4" data-uid="Linie.Vector4" class="text-break">
     Struct Vector4
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -87,7 +87,7 @@
   <dl><dt>Assembly</dt><dd>Linie.dll</dd></dl>
   </div>
 
-  <div class="markdown summary">Represents a displacement in 4D space.</div>
+  <div class="markdown summary">Represents a displacement or point in 4D space.</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -218,6 +218,11 @@
 
 
 
+  <h2 id="Linie_Vector4_remarks">Remarks</h2>
+  <div class="markdown level0 remarks">Even though this is technically a 4D structure, 4D vectors and matrices are
+commonly used to represent 3D space in computer graphics. Therefor it is
+best to think of this type as a fancy 3D vector or point instead of a true
+four dimensional object.</div>
 
 
   <h2 class="section" id="constructors">Constructors
@@ -228,7 +233,7 @@
 
   <h3 id="Linie_Vector4__ctor_System_Double_" data-uid="Linie.Vector4.#ctor(System.Double)">
   Vector4(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Initializes a new instance of the <a class="xref" href="Linie.Vector4.html">Vector4</a> structure.</div>
@@ -259,7 +264,7 @@
 
   <h3 id="Linie_Vector4__ctor_System_Double_System_Double_System_Double_System_Double_" data-uid="Linie.Vector4.#ctor(System.Double,System.Double,System.Double,System.Double)">
   Vector4(double, double, double, double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Initializes a new instance of the <a class="xref" href="Linie.Vector4.html">Vector4</a> structure.</div>
@@ -299,7 +304,7 @@
 
   <h3 id="Linie_Vector4_W" data-uid="Linie.Vector4.W">
   W
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -329,7 +334,7 @@
 
   <h3 id="Linie_Vector4_X" data-uid="Linie.Vector4.X">
   X
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -359,7 +364,7 @@
 
   <h3 id="Linie_Vector4_Y" data-uid="Linie.Vector4.Y">
   Y
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -389,7 +394,7 @@
 
   <h3 id="Linie_Vector4_Z" data-uid="Linie.Vector4.Z">
   Z
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -424,7 +429,7 @@
 
   <h3 id="Linie_Vector4_IsDirection" data-uid="Linie.Vector4.IsDirection">
   IsDirection
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -455,7 +460,7 @@
 
   <h3 id="Linie_Vector4_IsPosition" data-uid="Linie.Vector4.IsPosition">
   IsPosition
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -486,7 +491,7 @@
 
   <h3 id="Linie_Vector4_Zero" data-uid="Linie.Vector4.Zero">
   Zero
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -521,7 +526,7 @@
 
   <h3 id="Linie_Vector4_CreateDirection_System_Double__System_Double__System_Double__" data-uid="Linie.Vector4.CreateDirection(System.Double@,System.Double@,System.Double@)">
   CreateDirection(in double, in double, in double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L131"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L137"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Constructs a direction vector.</div>
@@ -564,7 +569,7 @@ zero and are thus unaffected by translations.</div>
 
   <h3 id="Linie_Vector4_CreatePosition_System_Double__System_Double__System_Double__" data-uid="Linie.Vector4.CreatePosition(System.Double@,System.Double@,System.Double@)">
   CreatePosition(in double, in double, in double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L124"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Constructs a point vector.</div>
@@ -607,7 +612,7 @@ zero and are thus unaffected by translations.</div>
 
   <h3 id="Linie_Vector4_Cross3_Linie_Vector4_" data-uid="Linie.Vector4.Cross3(Linie.Vector4)">
   Cross3(Vector4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L143"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -643,7 +648,7 @@ zero and are thus unaffected by translations.</div>
 
   <h3 id="Linie_Vector4_Cross3_Linie_Vector4__Linie_Vector4__" data-uid="Linie.Vector4.Cross3(Linie.Vector4@,Linie.Vector4@)">
   Cross3(in Vector4, in Vector4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L105"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Performs a cross product on two `Vector4` instances
@@ -684,7 +689,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_Dot_Linie_Vector4__" data-uid="Linie.Vector4.Dot(Linie.Vector4@)">
   Dot(in Vector4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L143"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L149"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -720,7 +725,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_Dot_Linie_Vector4__Linie_Vector4__" data-uid="Linie.Vector4.Dot(Linie.Vector4@,Linie.Vector4@)">
   Dot(in Vector4, in Vector4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L93"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -758,7 +763,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_Equals_Linie_Vector4_" data-uid="Linie.Vector4.Equals(Linie.Vector4)">
   Equals(Vector4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L155"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L161"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Indicates whether the current object is equal to another object of the same type.</div>
@@ -794,7 +799,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_GetComparer_System_Double__" data-uid="Linie.Vector4.GetComparer(System.Double@)">
   GetComparer(in double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L134"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L140"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -830,7 +835,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_GetHashCode" data-uid="Linie.Vector4.GetHashCode">
   GetHashCode()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L148"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L154"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Returns the hash code for this instance.</div>
@@ -861,7 +866,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_Magnitude" data-uid="Linie.Vector4.Magnitude">
   Magnitude()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L139"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L145"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -892,7 +897,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_Magnitude_Linie_Vector4__" data-uid="Linie.Vector4.Magnitude(Linie.Vector4@)">
   Magnitude(in Vector4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L88"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -928,7 +933,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_MagnitudeSquared_Linie_Vector4__" data-uid="Linie.Vector4.MagnitudeSquared(Linie.Vector4@)">
   MagnitudeSquared(in Vector4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L82"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -964,7 +969,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_Normalize" data-uid="Linie.Vector4.Normalize">
   Normalize()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L141"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L147"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -995,7 +1000,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_Normalize_Linie_Vector4__" data-uid="Linie.Vector4.Normalize(Linie.Vector4@)">
   Normalize(in Vector4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L91"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1031,7 +1036,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_Reflect_Linie_Vector4__" data-uid="Linie.Vector4.Reflect(Linie.Vector4@)">
   Reflect(in Vector4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L151"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1067,7 +1072,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_Reflect_Linie_Vector4__Linie_Vector4__" data-uid="Linie.Vector4.Reflect(Linie.Vector4@,Linie.Vector4@)">
   Reflect(in Vector4, in Vector4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L111"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1105,7 +1110,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_ToString" data-uid="Linie.Vector4.ToString">
   ToString()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L152"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L158"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Returns the fully qualified type name of this instance.</div>
@@ -1136,7 +1141,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_ToString_System_String_System_IFormatProvider_" data-uid="Linie.Vector4.ToString(System.String,System.IFormatProvider)">
   ToString(string, IFormatProvider)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L162"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L168"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Formats the value of the current instance using the specified format.</div>
@@ -1186,7 +1191,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_op_Addition_Linie_Vector4__Linie_Vector4__" data-uid="Linie.Vector4.op_Addition(Linie.Vector4@,Linie.Vector4@)">
   operator +(in Vector4, in Vector4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1224,7 +1229,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_op_Division_Linie_Vector4__System_Double__" data-uid="Linie.Vector4.op_Division(Linie.Vector4@,System.Double@)">
   operator /(in Vector4, in double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1262,7 +1267,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_op_Explicit_Linie_Vector4___Linie_Vector3" data-uid="Linie.Vector4.op_Explicit(Linie.Vector4@)~Linie.Vector3">
   explicit operator Vector3(in Vector4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L79"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1298,7 +1303,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_op_Multiply_Linie_Vector4__System_Double__" data-uid="Linie.Vector4.op_Multiply(Linie.Vector4@,System.Double@)">
   operator *(in Vector4, in double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L63"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1336,7 +1341,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_op_Multiply_System_Double__Linie_Vector4__" data-uid="Linie.Vector4.op_Multiply(System.Double@,Linie.Vector4@)">
   operator *(in double, in Vector4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L70"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1374,7 +1379,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_op_Subtraction_Linie_Vector4__Linie_Vector4__" data-uid="Linie.Vector4.op_Subtraction(Linie.Vector4@,Linie.Vector4@)">
   operator -(in Vector4, in Vector4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L53"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1412,7 +1417,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 
   <h3 id="Linie_Vector4_op_UnaryNegation_Linie_Vector4__" data-uid="Linie.Vector4.op_UnaryNegation(Linie.Vector4@)">
   operator -(in Vector4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1448,7 +1453,7 @@ is wrapped as a 4d direction vector (`w` = 1).</div>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L11" class="edit-link">Edit this page</a>
+          <a href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L17" class="edit-link">Edit this page</a>
         </div>
 
         

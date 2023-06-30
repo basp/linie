@@ -6,8 +6,14 @@ using System;
 using System.Collections.Generic;
 
 /// <summary>
-/// Represents a displacement in 4D space.
+/// Represents a displacement or point in 4D space.
 /// </summary>
+/// <remarks>
+/// Even though this is technically a 4D structure, 4D vectors and matrices are
+/// commonly used to represent 3D space in computer graphics. Therefor it is
+/// best to think of this type as a fancy 3D vector or point instead of a true
+/// four dimensional object.
+/// </remarks>
 public struct Vector4 
     : IEquatable<Vector4>, IFormattable
 {
