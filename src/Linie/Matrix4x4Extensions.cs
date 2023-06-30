@@ -20,12 +20,12 @@ public static class Matrix4x4Extensions
     public static bool IsInvertible(this Matrix4x4 a) =>
         a.Determinant() != 0;
 
-    public static void Invert(this Matrix4x4 a, ref Matrix4x4 m)
+    public static bool TryInvert(this Matrix4x4 a, ref Matrix4x4 m)
     {
         var d = a.Determinant();
         if (d == 0)
         {
-            throw new ArgumentException("Matrix is not invertible.", nameof(a));
+            return false;
         }
 
         for (var i = 0; i < 4; i++)
@@ -34,6 +34,16 @@ public static class Matrix4x4Extensions
             {
                 m[j, i] = a.Cofactor(i, j) / d;
             }
+        }
+
+        return true;
+    }
+
+    public static void Invert(this Matrix4x4 a, ref Matrix4x4 m)
+    {
+        if (!a.TryInvert(ref m))
+        {
+            throw new ArgumentException("Matrix is not invertible.", nameof(a));
         }
     }
 
