@@ -1,0 +1,262 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/basp/linie/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Affine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Affine.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Canvas.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Canvas.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Color.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Color.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Matrix2x2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Matrix2x2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Matrix2x2Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Matrix2x2Extensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Matrix3x3Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Matrix3x3Extensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Matrix4x4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Matrix4x4.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Matrix4x4Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Matrix4x4Extensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Normal3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Normal3.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Point2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Point2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Point3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Point3.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Ray3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Ray3.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Ray4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Ray4.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Transform.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Transform.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Vector2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Vector2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Vector3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Vector3.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Vector4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Vector4.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

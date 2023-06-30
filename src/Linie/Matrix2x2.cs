@@ -4,7 +4,7 @@ namespace Linie;
 
 using System.Collections.Generic;
 
-internal class Matrix2x2
+public class Matrix2x2
 {
     private readonly double[] data;
 
@@ -12,9 +12,9 @@ internal class Matrix2x2
     {
         this.data = new[]
         {
-                v, v,
-                v, v,
-            };
+            v, v,
+            v, v,
+        };
     }
 
 #pragma warning disable SA1117 // ParametersMustBeOnSameLineOrSeparateLines
@@ -39,12 +39,29 @@ internal class Matrix2x2
     public static IEqualityComparer<Matrix2x2> GetComparer(double epsilon = 0.0) =>
         new Matrix2x2EqualityComparer(epsilon);
 
-    public override string ToString() =>
-        $"({string.Join(", ", this.data)})";
+    public override string ToString()
+    {
+        var rows = Enumerable.Range(0, 2)
+            .Select(row => $"[{this[row, 0]} {this[row, 1]}]")
+            .ToArray();
+
+        return $"<{string.Join(", ", rows)}>";
+    }
 }
 
 public static class Matrix2x2Extensions
 {
-    internal static double Determinant(this Matrix2x2 m) =>
-        (m[0, 0] * m[1, 1]) - (m[0, 1] * m[1, 0]);
+    public static void Multiply(this Matrix2x2 self, Matrix2x2 b, ref Matrix2x2 a)
+    {
+        throw new NotImplementedException();
+    }
+
+    public static Vector2 GetRow(this Matrix2x2 self, int row) =>
+        new Vector2(self[row, 0], self[row, 1]);
+
+    public static Vector2 GetColumn(this Matrix2x2 self, int column) =>
+        new Vector2(self[0, column], self[1, column]);
+
+    public static double Determinant(this Matrix2x2 self) =>
+        (self[0, 0] * self[1, 1]) - (self[0, 1] * self[1, 0]);
 }

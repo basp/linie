@@ -14,25 +14,29 @@ public static class Affine
     /// <summary>
     /// Creates a translation matrix.
     /// </summary>
-    public static Matrix4x4 Translate(double x, double y, double z) =>
+    /// <param name="dx">The number of units to translate along the x-axis.</param>
+    /// <param name="dy">The number of units to translate along the y-axis.</param>
+    /// <param name="dz">The number of units to translate along the z-axis.</param>
+    /// <returns>A new <see cref="Matrix4x4"/> translation matrix.</returns>
+    public static Matrix4x4 Translate(double dx, double dy, double dz) =>
         new Matrix4x4(
-            1, 0, 0, x,
-            0, 1, 0, y,
-            0, 0, 1, z,
+            1, 0, 0, dx,
+            0, 1, 0, dy,
+            0, 0, 1, dz,
             0, 0, 0, 1);
 
     /// <summary>
     /// Creates a scale matrix.
     /// </summary>
-    public static Matrix4x4 Scale(double x, double y, double z) =>
+    public static Matrix4x4 Scale(double sx, double sy, double sz) =>
         new Matrix4x4(
-            x, 0, 0, 0,
-            0, y, 0, 0,
-            0, 0, z, 0,
+            sx, 0, 0, 0,
+            0, sy, 0, 0,
+            0, 0, sz, 0,
             0, 0, 0, 1);
 
     /// <summary>
-    /// Creates a scale matrix with constant scale factor in all dimensions.
+    /// Creates uniform scale matrix.
     /// </summary>
     public static Matrix4x4 Scale(double s) => Scale(s, s, s);
 
@@ -67,7 +71,7 @@ public static class Affine
             0, 0, 0, 1);
 
     /// <summary>
-    /// Creates a shear matrix.
+    /// Creates a shearing matrix.
     /// </summary>
     public static Matrix4x4 Shear(double xy, double xz, double yx, double yz, double zx, double zy) =>
         new Matrix4x4(
@@ -79,6 +83,10 @@ public static class Affine
     /// <summary>
     /// Constructs a perspective view (camera) matrix.
     /// </summary>
+    /// <param name="from">The position of the camera.</param>
+    /// <param name="to">Where the camera is pointed at.</param>
+    /// <param name="up">How the camera is oriented.</param>
+    /// <returns>A new <see cref="Matrix4x4"/> view transformation.</returns>
     public static Matrix4x4 View(Vector4 from, Vector4 to, Vector4 up)
     {
         var fwd = (to - from).Normalize();

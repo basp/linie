@@ -55,21 +55,53 @@ public class Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
         set => this.data[(row * 4) + col] = value;
     }
 
-    public static Matrix4x4 operator *(Matrix4x4 a, Matrix4x4 b)
+    public Vector4 GetRow(int i) =>
+        new Vector4(
+            this[i, 0],
+            this[i, 1],
+            this[i, 2],
+            this[i, 3]);
+
+    public Vector4 GetColumn(int j) =>
+        new Vector4(
+            this[0, j],
+            this[1, j],
+            this[2, j],
+            this[3, j]);
+
+    public static void Map(
+        Matrix4x4 a,
+        Func<int, int, double, double> mapf,
+        ref Matrix4x4 c)
     {
-        var m = new Matrix4x4(0);
+        for (var j = 0; j < 4; j++)
+        {
+            for (var i = 0; i < 4; i++)
+            {
+                c[i, j] = mapf(i, j, a[i, j]);
+            }
+        }
+    }
+
+    public static void Multiply(Matrix4x4 a, Matrix4x4 b, ref Matrix4x4 c)
+    {
         for (var i = 0; i < 4; i++)
         {
             for (var j = 0; j < 4; j++)
             {
-                m[i, j] =
+                c[i, j] =
                     (a[i, 0] * b[0, j]) +
                     (a[i, 1] * b[1, j]) +
                     (a[i, 2] * b[2, j]) +
                     (a[i, 3] * b[3, j]);
             }
         }
+    }
 
+    public static Matrix4x4 operator *(Matrix4x4 a, Matrix4x4 b)
+    {
+        var m = new Matrix4x4(0);
+        Multiply(a, b, ref m);
         return m;
     }
 
@@ -98,23 +130,22 @@ public class Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
         return new Normal3(x, y, z);
     }
 
-    public static Point3 operator *(Matrix4x4 m, Point3 a)
+    public static Point3 operator *(Matrix4x4 m, Point3 p)
     {
-        var x = (m[0, 0] * a.X) + (m[0, 1] * a.Y) + (m[0, 2] * a.Z) + m[0, 3];
-        var y = (m[1, 0] * a.X) + (m[1, 1] * a.Y) + (m[1, 2] * a.Z) + m[1, 3];
-        var z = (m[2, 0] * a.X) + (m[2, 1] * a.Y) + (m[2, 2] * a.Z) + m[2, 3];
+        var x = (m[0, 0] * p.X) + (m[0, 1] * p.Y) + (m[0, 2] * p.Z) + m[0, 3];
+        var y = (m[1, 0] * p.X) + (m[1, 1] * p.Y) + (m[1, 2] * p.Z) + m[1, 3];
+        var z = (m[2, 0] * p.X) + (m[2, 1] * p.Y) + (m[2, 2] * p.Z) + m[2, 3];
         return new Point3(x, y, z);
     }
 
-    public static Ray4 operator *(Matrix4x4 a, Ray4 r) =>
-        new Ray4(a * r.Origin, a * r.Direction);
+    public static Ray4 operator *(Matrix4x4 m, Ray4 r) =>
+        new Ray4(m * r.Origin, m * r.Direction);
 
-    public static Ray3 operator *(Matrix4x4 a, Ray3 r) =>
-        new Ray3(a * r.Origin, a * r.Direction);
+    public static Ray3 operator *(Matrix4x4 m, Ray3 r) =>
+        new Ray3(m * r.Origin, m * r.Direction);
 
-    public static Matrix4x4 Transpose(Matrix4x4 a)
+    public static void Transpose(Matrix4x4 a, ref Matrix4x4 m)
     {
-        var m = new Matrix4x4(0);
         for (var i = 0; i < 4; i++)
         {
             for (var j = 0; j < 4; j++)
@@ -122,7 +153,12 @@ public class Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
                 m[i, j] = a[j, i];
             }
         }
+    }
 
+    public static Matrix4x4 Transpose(Matrix4x4 a)
+    {
+        var m = new Matrix4x4(0);
+        Transpose(a, ref m);
         return m;
     }
 
@@ -131,8 +167,14 @@ public class Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
 
     public Matrix4x4 Transpose() => Matrix4x4.Transpose(this);
 
-    public override string ToString() =>
-        $"({string.Join(", ", this.data)})";
+    public override string ToString()
+    {
+        var rows = Enumerable.Range(0, 4)
+            .Select(row => $"[{this[row, 0]} {this[row, 1]} {this[row, 2]} {this[row, 3]}]")
+            .ToArray();
+
+        return $"<{string.Join(", ", rows)}>";
+    }
 
     public bool Equals(Matrix4x4 other)
     {
@@ -151,10 +193,21 @@ public class Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
     }
 
     public string ToString(
-        string format, 
+        string format,
         IFormatProvider formatProvider)
     {
-        throw new NotImplementedException();
+        var rows = Enumerable.Range(0, 4)
+            .Select(row =>
+            {
+                var c0 = this[row, 0].ToString(formatProvider);
+                var c1 = this[row, 1].ToString(formatProvider);
+                var c2 = this[row, 2].ToString(formatProvider);
+                var c3 = this[row, 3].ToString(formatProvider);
+                return $"[{c0} {c1} {c2} {c3}]";
+            })
+            .ToArray();
+
+        return $"<{string.Join(" ", rows)}>";
     }
 }
 
@@ -173,16 +226,14 @@ public static class Matrix4x4Extensions
     public static bool IsInvertible(this Matrix4x4 a) =>
         a.Determinant() != 0;
 
-    /// <summary>
-    /// Returns the inverse of the given matrix. Note that it is up to the
-    /// client to make sure the matrix specified by argument <c>a</c> is
-    /// invertible at all. The <c>IsInvertible</c> method is provided for this
-    /// purpose.
-    /// </summary>
-    public static Matrix4x4 Invert(this Matrix4x4 a)
+    public static void Invert(this Matrix4x4 a, ref Matrix4x4 m)
     {
-        var m = new Matrix4x4(0);
         var d = a.Determinant();
+        if (d == 0)
+        {
+            throw new ArgumentException("Matrix is not invertible.", nameof(a));
+        }
+
         for (var i = 0; i < 4; i++)
         {
             for (var j = 0; j < 4; j++)
@@ -190,7 +241,32 @@ public static class Matrix4x4Extensions
                 m[j, i] = a.Cofactor(i, j) / d;
             }
         }
+    }
 
+    public static void Invert2(this Matrix4x4 a, Matrix4x4 m)
+    {
+        var d = a.Determinant();
+        if (d == 0)
+        {
+            throw new ArgumentException("Matrix is not invertible.", nameof(a));
+        }
+
+        Parallel.For(0, 4, i =>
+        {
+            for (var j = 0; j < 4; j++)
+            {
+                m[j, i] = a.Cofactor(i, j) / d;
+            }
+        });
+    }
+
+    /// <summary>
+    /// Returns the inverse of the given matrix.
+    /// </summary>
+    public static Matrix4x4 Invert(this Matrix4x4 a)
+    {
+        var m = new Matrix4x4(0);
+        a.Invert(ref m);
         return m;
     }
 
@@ -291,5 +367,5 @@ public static class Matrix4x4Extensions
         double yx,
         double yz,
         double zx,
-        double zy) => Affine.Shear(xy, xz, yx, yz, zx, zy) * m;        
+        double zy) => Affine.Shear(xy, xz, yx, yz, zx, zy) * m;
 }

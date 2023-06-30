@@ -40,13 +40,28 @@ internal class Matrix3x3
         set => this.data[(row * 3) + col] = value;
     }
 
+    public Vector3 GetRow(int i) =>
+        new Vector3(
+            this[i, 0],
+            this[i, 1],
+            this[i, 2]);
+
+    public Vector3 GetColumn(int j) =>
+        new Vector3(
+            this[0, j],
+            this[1, j],
+            this[2, j]);
+
     public static IEqualityComparer<Matrix3x3> GetComparer(double epsilon = 0.0) =>
         new Matrix3x3EqualityComparer(epsilon);
 }
 
 public static class Matrix3x3Extensions
 {
-    internal static Matrix2x2 Submatrix(this Matrix3x3 a, int dropRow, int dropCol)
+    internal static Matrix2x2 Submatrix(
+        this Matrix3x3 a,
+        int dropRow,
+        int dropCol)
     {
         var rows = Enumerable.Range(0, 3)
             .Where(x => x != dropRow)
