@@ -75,6 +75,46 @@
 <h1 id="linie">Linie</h1>
 
 <p>Linie is a mathematics library that is very loosely based on <a href="https://github.com/">glm</a> with an ideomatic .NET API. The main goal is to provide a foundation that can be easily integrated to your graphics related software. Linie is <strong>not</strong> a general purpose linear algebra library.</p>
+<h2 id="features">features</h2>
+<ul>
+<li>Linie is 100% .NET, written in C# and has no dependencies.</li>
+<li>It is tiny and can easily be included as source.</li>
+<li>Has an ideomatic API that confirms to .NET conventions.</li>
+<li>Supports most of the common linear algebra operations.</li>
+<li>Runs completly on the CPU by design.</li>
+<li>Geared towards beginners and educational purposes.</li>
+<li>Tries to be fast but prefers ease of use over performance.</li>
+<li>All vectors are implemented as <em>value</em> types (i.e. <code>struct</code>).</li>
+<li>All matrices are implemented as <em>reference</em> types (i.e. <code>class</code>).</li>
+</ul>
+<h2 id="overview">overview</h2>
+<p>The core of Linie consists of the vector and matrix types. Since Linie is geared towards computer graphics we support fixed size vectors and matrices of the following types:</p>
+<ul>
+<li><code>Vector2</code></li>
+<li><code>Vector3</code></li>
+<li><code>Vector4</code></li>
+<li><code>Matrix2x2</code></li>
+<li><code>Matrix3x3</code></li>
+<li><code>Matrix4x4</code></li>
+</ul>
+<p>Most of the focus is on the <code>Vector4</code> and <code>Matrix4x4</code> types since it is expected these will be used most often for the cases that Linie is designed for.</p>
+<h2 id="positions-and-directions">positions and directions</h2>
+<p>Linie is designed to operate in 3D space using 4D vectors and matrices as is common in computer graphics. Positions and directions are both represented by a <code>Vector4</code> but only points have their <code>W</code> component set to anything else but zero. Directions always have their <code>W</code> component set to zero.</p>
+<blockquote>
+<p>There have been periods in time where Linie would explicitly differentiate between a direction and a point and would not allow operations between them that would not make sense. Although this does provide some safety it was decided to drop this and leave it up to the client of the library instead.</p>
+</blockquote>
+<p>The library does offer a few methods that make it a little bit more explicit what we are doing.</p>
+<ul>
+<li>The <code>Vector4.CreatePosition</code> method creates <code>Vector4</code> instances with their <code>W</code> component set to one.</li>
+<li>The <code>Vector4.CreateDirection</code> method creates <code>Vector4</code> instances with their <code>W</code> component set to zero.</li>
+<li>The <code>IsPosition</code> and <code>IsDirection</code> properties can be used to query whether a <code>Vector4</code> is a position or direction vector.</li>
+</ul>
+<blockquote>
+<p>Note that Linie does not check for valid operations. If you want to add a point to a point you are free to do so. The math will work out but the results may not be what you expect.</p>
+</blockquote>
+<h3 id="performance-tradeoffs">performance tradeoffs</h3>
+<p>The Microsoft recommendation is to keep the size of a <code>struct</code> type below or equal to <code>16</code> bytes. All vectors can fit into this recommendation range so they are all implemented as a <code>struct</code>.</p>
+<p>However, the only matrix that would fit is <code>Matrix2x2</code>. In order to keep the behavior for all matrices consistent they are all implemented as reference (i.e. <code>class</code>) types.</p>
 </article>
 
         <div class="contribution d-print-none">

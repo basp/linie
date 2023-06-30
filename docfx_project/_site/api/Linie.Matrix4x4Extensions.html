@@ -146,7 +146,7 @@
 
   <h3 id="Linie_Matrix4x4Extensions_Determinant_Linie_Matrix4x4_" data-uid="Linie.Matrix4x4Extensions.Determinant(Linie.Matrix4x4)">
   Determinant(Matrix4x4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Calculates the determinant of given matrix <code>a</code> using Laplace 
@@ -179,11 +179,87 @@ expansion.</div>
 
 
 
+  <a id="Linie_Matrix4x4Extensions_GetColumn_" data-uid="Linie.Matrix4x4Extensions.GetColumn*"></a>
+
+  <h3 id="Linie_Matrix4x4Extensions_GetColumn_Linie_Matrix4x4_System_Int32_" data-uid="Linie.Matrix4x4Extensions.GetColumn(Linie.Matrix4x4,System.Int32)">
+  GetColumn(Matrix4x4, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector4 GetColumn(this Matrix4x4 self, int j)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>self</code> <a class="xref" href="Linie.Matrix4x4.html">Matrix4x4</a></dt>
+    <dd></dd>
+    <dt><code>j</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Linie.Vector4.html">Vector4</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Linie_Matrix4x4Extensions_GetRow_" data-uid="Linie.Matrix4x4Extensions.GetRow*"></a>
+
+  <h3 id="Linie_Matrix4x4Extensions_GetRow_Linie_Matrix4x4_System_Int32_" data-uid="Linie.Matrix4x4Extensions.GetRow(Linie.Matrix4x4,System.Int32)">
+  GetRow(Matrix4x4, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector4 GetRow(this Matrix4x4 self, int i)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>self</code> <a class="xref" href="Linie.Matrix4x4.html">Matrix4x4</a></dt>
+    <dd></dd>
+    <dt><code>i</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Linie.Vector4.html">Vector4</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Linie_Matrix4x4Extensions_Invert_" data-uid="Linie.Matrix4x4Extensions.Invert*"></a>
 
   <h3 id="Linie_Matrix4x4Extensions_Invert_Linie_Matrix4x4_" data-uid="Linie.Matrix4x4Extensions.Invert(Linie.Matrix4x4)">
   Invert(Matrix4x4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L89"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Returns the inverse of the given matrix.</div>
@@ -219,7 +295,7 @@ expansion.</div>
 
   <h3 id="Linie_Matrix4x4Extensions_Invert_Linie_Matrix4x4_Linie_Matrix4x4__" data-uid="Linie.Matrix4x4Extensions.Invert(Linie.Matrix4x4,Linie.Matrix4x4@)">
   Invert(Matrix4x4, ref Matrix4x4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -252,7 +328,7 @@ expansion.</div>
 
   <h3 id="Linie_Matrix4x4Extensions_IsInvertible_Linie_Matrix4x4_" data-uid="Linie.Matrix4x4Extensions.IsInvertible(Linie.Matrix4x4)">
   IsInvertible(Matrix4x4)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -288,7 +364,7 @@ expansion.</div>
 
   <h3 id="Linie_Matrix4x4Extensions_RotateX_Linie_Matrix4x4_System_Double_" data-uid="Linie.Matrix4x4Extensions.RotateX(Linie.Matrix4x4,System.Double)">
   RotateX(Matrix4x4, double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L142"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L168"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Applies a x-axis rotation matrix to a given matrix.</div>
@@ -326,7 +402,7 @@ expansion.</div>
 
   <h3 id="Linie_Matrix4x4Extensions_RotateY_Linie_Matrix4x4_System_Double_" data-uid="Linie.Matrix4x4Extensions.RotateY(Linie.Matrix4x4,System.Double)">
   RotateY(Matrix4x4, double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L148"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L174"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Applies an y-axis rotation matrix to a given matrix.</div>
@@ -364,7 +440,7 @@ expansion.</div>
 
   <h3 id="Linie_Matrix4x4Extensions_RotateZ_Linie_Matrix4x4_System_Double_" data-uid="Linie.Matrix4x4Extensions.RotateZ(Linie.Matrix4x4,System.Double)">
   RotateZ(Matrix4x4, double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L154"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L180"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Applies a z-axis rotation matrix to a given matrix.</div>
@@ -402,7 +478,7 @@ expansion.</div>
 
   <h3 id="Linie_Matrix4x4Extensions_Scale_Linie_Matrix4x4_System_Double_" data-uid="Linie.Matrix4x4Extensions.Scale(Linie.Matrix4x4,System.Double)">
   Scale(Matrix4x4, double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L153"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Applies a scale matrix to an existing matrix using 
@@ -441,7 +517,7 @@ constant scale factor in all dimensions.</div>
 
   <h3 id="Linie_Matrix4x4Extensions_Scale_Linie_Matrix4x4_System_Double_System_Double_System_Double_" data-uid="Linie.Matrix4x4Extensions.Scale(Linie.Matrix4x4,System.Double,System.Double,System.Double)">
   Scale(Matrix4x4, double, double, double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L159"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Applies a scale matrix to an existing matrix.</div>
@@ -483,7 +559,7 @@ constant scale factor in all dimensions.</div>
 
   <h3 id="Linie_Matrix4x4Extensions_Shear_Linie_Matrix4x4_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_" data-uid="Linie.Matrix4x4Extensions.Shear(Linie.Matrix4x4,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
   Shear(Matrix4x4, double, double, double, double, double, double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L160"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L186"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Applies a shear matrix to a given matrix.</div>
@@ -531,7 +607,7 @@ constant scale factor in all dimensions.</div>
 
   <h3 id="Linie_Matrix4x4Extensions_Translate_Linie_Matrix4x4_System_Double_System_Double_System_Double_" data-uid="Linie.Matrix4x4Extensions.Translate(Linie.Matrix4x4,System.Double,System.Double,System.Double)">
   Translate(Matrix4x4, double, double, double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L143"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Applies a translation matrix to an existing matrix.</div>
@@ -565,6 +641,82 @@ constant scale factor in all dimensions.</div>
 
 
 
+
+
+
+
+  <a id="Linie_Matrix4x4Extensions_TryInvert_" data-uid="Linie.Matrix4x4Extensions.TryInvert*"></a>
+
+  <h3 id="Linie_Matrix4x4Extensions_TryInvert_Linie_Matrix4x4_Linie_Matrix4x4__" data-uid="Linie.Matrix4x4Extensions.TryInvert(Linie.Matrix4x4,Linie.Matrix4x4@)">
+  TryInvert(Matrix4x4, ref Matrix4x4)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryInvert(this Matrix4x4 a, ref Matrix4x4 m)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>a</code> <a class="xref" href="Linie.Matrix4x4.html">Matrix4x4</a></dt>
+    <dd></dd>
+    <dt><code>m</code> <a class="xref" href="Linie.Matrix4x4.html">Matrix4x4</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Linie_Matrix4x4Extensions_UnsafeInvert_" data-uid="Linie.Matrix4x4Extensions.UnsafeInvert*"></a>
+
+  <h3 id="Linie_Matrix4x4Extensions_UnsafeInvert_Linie_Matrix4x4_Linie_Matrix4x4__" data-uid="Linie.Matrix4x4Extensions.UnsafeInvert(Linie.Matrix4x4,Linie.Matrix4x4@)">
+  UnsafeInvert(Matrix4x4, ref Matrix4x4)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix4x4Extensions.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary">This does not perform the check on the determinant so
+it will blow up if that turns out to be zero.</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void UnsafeInvert(this Matrix4x4 a, ref Matrix4x4 m)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>a</code> <a class="xref" href="Linie.Matrix4x4.html">Matrix4x4</a></dt>
+    <dd></dd>
+    <dt><code>m</code> <a class="xref" href="Linie.Matrix4x4.html">Matrix4x4</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="Linie_Matrix4x4Extensions_UnsafeInvert_Linie_Matrix4x4_Linie_Matrix4x4___remarks">Remarks</h4>
+  <div class="markdown level1 remarks">This should only be used if you are dealing with a cached
+matrix that is known to be invertible (i.e. by inspecting the
+determinant or using the <code>IsInvertible</code> method.)</div>
 
 
 

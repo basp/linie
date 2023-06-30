@@ -1,4 +1,6 @@
-﻿namespace Linie.Tool;
+﻿// Licensed under the MIT license. See LICENSE file in the samples root for full license information.
+
+namespace Linie.Tool;
 
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;

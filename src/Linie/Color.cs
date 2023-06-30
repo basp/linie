@@ -6,7 +6,8 @@ using System;
 using System.Collections.Generic;
 
 /// <summary>
-/// Represents a RGB (red, green, blue) color.
+/// Represents a RGB (red, green, blue) color where the R, G and B
+/// elements are in the range of <c>[0..1]</c>.
 /// </summary>
 public struct Color
 {
@@ -69,8 +70,11 @@ public struct Color
     /// </summary>
     public static Color Hadamard(Color c1, Color c2) => c1 * c2;
 
-    // var f = 1 / 255.0; new Color(r * f, g * f, b * f);
+    /// <summary>
+    /// 
+    /// </summary>
     public static Color FromByteValues(byte r, byte g, byte b) =>
+        // var f = 1 / 255.0; new Color(r * f, g * f, b * f);
         new Color(r / 255.0, g / 255.0, b / 255.0);
 
     public static IEqualityComparer<Color> GetComparer(double epsilon = 0.0) =>

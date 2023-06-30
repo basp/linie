@@ -6,6 +6,18 @@ using System.Linq;
 
 public static class Matrix3x3Extensions
 {
+    public static Vector3 GetRow(this Matrix3x3 self, int i) =>
+        new Vector3(
+            self[i, 0],
+            self[i, 1],
+            self[i, 2]);
+
+    public static Vector3 GetColumn(this Matrix3x3 self, int j) =>
+        new Vector3(
+            self[0, j],
+            self[1, j],
+            self[2, j]);
+
     internal static Matrix2x2 Submatrix(
         this Matrix3x3 a,
         int dropRow,

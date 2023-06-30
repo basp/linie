@@ -60,20 +60,6 @@ public class Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
         set => this.data[(row * 4) + col] = value;
     }
 
-    public Vector4 GetRow(int i) =>
-        new Vector4(
-            this[i, 0],
-            this[i, 1],
-            this[i, 2],
-            this[i, 3]);
-
-    public Vector4 GetColumn(int j) =>
-        new Vector4(
-            this[0, j],
-            this[1, j],
-            this[2, j],
-            this[3, j]);
-
     public static void Map(
         in Matrix4x4 a,
         in Func<int, int, double, double> mapf,

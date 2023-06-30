@@ -13,7 +13,12 @@ internal abstract class ApproxEqualityComparer<T> : IEqualityComparer<T>
 {
     protected readonly double epsilon;
 
-    protected ApproxEqualityComparer(double epsilon = 0)
+    protected ApproxEqualityComparer()
+        : this(Config.DefaultEpsilon)
+    {
+    }
+
+    protected ApproxEqualityComparer(double epsilon)
     {
         this.epsilon = epsilon;
     }

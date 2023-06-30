@@ -545,6 +545,19 @@ references:
   isSpec: "True"
   fullName: Linie.Matrix2x2.GetHashCode
   nameWithType: Matrix2x2.GetHashCode
+- uid: Linie.Matrix2x2.Identity
+  name: Identity
+  href: api/Linie.Matrix2x2.html#Linie_Matrix2x2_Identity
+  commentId: P:Linie.Matrix2x2.Identity
+  fullName: Linie.Matrix2x2.Identity
+  nameWithType: Matrix2x2.Identity
+- uid: Linie.Matrix2x2.Identity*
+  name: Identity
+  href: api/Linie.Matrix2x2.html#Linie_Matrix2x2_Identity_
+  commentId: Overload:Linie.Matrix2x2.Identity
+  isSpec: "True"
+  fullName: Linie.Matrix2x2.Identity
+  nameWithType: Matrix2x2.Identity
 - uid: Linie.Matrix2x2.Item(System.Int32,System.Int32)
   name: this[int, int]
   href: api/Linie.Matrix2x2.html#Linie_Matrix2x2_Item_System_Int32_System_Int32_
@@ -709,22 +722,6 @@ references:
   isSpec: "True"
   fullName: Linie.Matrix3x3.Equals
   nameWithType: Matrix3x3.Equals
-- uid: Linie.Matrix3x3.GetColumn(System.Int32)
-  name: GetColumn(int)
-  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_GetColumn_System_Int32_
-  commentId: M:Linie.Matrix3x3.GetColumn(System.Int32)
-  name.vb: GetColumn(Integer)
-  fullName: Linie.Matrix3x3.GetColumn(int)
-  fullName.vb: Linie.Matrix3x3.GetColumn(Integer)
-  nameWithType: Matrix3x3.GetColumn(int)
-  nameWithType.vb: Matrix3x3.GetColumn(Integer)
-- uid: Linie.Matrix3x3.GetColumn*
-  name: GetColumn
-  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_GetColumn_
-  commentId: Overload:Linie.Matrix3x3.GetColumn
-  isSpec: "True"
-  fullName: Linie.Matrix3x3.GetColumn
-  nameWithType: Matrix3x3.GetColumn
 - uid: Linie.Matrix3x3.GetComparer(System.Double)
   name: GetComparer(double)
   href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_GetComparer_System_Double_
@@ -754,22 +751,19 @@ references:
   isSpec: "True"
   fullName: Linie.Matrix3x3.GetHashCode
   nameWithType: Matrix3x3.GetHashCode
-- uid: Linie.Matrix3x3.GetRow(System.Int32)
-  name: GetRow(int)
-  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_GetRow_System_Int32_
-  commentId: M:Linie.Matrix3x3.GetRow(System.Int32)
-  name.vb: GetRow(Integer)
-  fullName: Linie.Matrix3x3.GetRow(int)
-  fullName.vb: Linie.Matrix3x3.GetRow(Integer)
-  nameWithType: Matrix3x3.GetRow(int)
-  nameWithType.vb: Matrix3x3.GetRow(Integer)
-- uid: Linie.Matrix3x3.GetRow*
-  name: GetRow
-  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_GetRow_
-  commentId: Overload:Linie.Matrix3x3.GetRow
+- uid: Linie.Matrix3x3.Identity
+  name: Identity
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_Identity
+  commentId: P:Linie.Matrix3x3.Identity
+  fullName: Linie.Matrix3x3.Identity
+  nameWithType: Matrix3x3.Identity
+- uid: Linie.Matrix3x3.Identity*
+  name: Identity
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_Identity_
+  commentId: Overload:Linie.Matrix3x3.Identity
   isSpec: "True"
-  fullName: Linie.Matrix3x3.GetRow
-  nameWithType: Matrix3x3.GetRow
+  fullName: Linie.Matrix3x3.Identity
+  nameWithType: Matrix3x3.Identity
 - uid: Linie.Matrix3x3.Item(System.Int32,System.Int32)
   name: this[int, int]
   href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_Item_System_Int32_System_Int32_
@@ -846,6 +840,38 @@ references:
   isSpec: "True"
   fullName: Linie.Matrix3x3Extensions.Determinant
   nameWithType: Matrix3x3Extensions.Determinant
+- uid: Linie.Matrix3x3Extensions.GetColumn(Linie.Matrix3x3,System.Int32)
+  name: GetColumn(Matrix3x3, int)
+  href: api/Linie.Matrix3x3Extensions.html#Linie_Matrix3x3Extensions_GetColumn_Linie_Matrix3x3_System_Int32_
+  commentId: M:Linie.Matrix3x3Extensions.GetColumn(Linie.Matrix3x3,System.Int32)
+  name.vb: GetColumn(Matrix3x3, Integer)
+  fullName: Linie.Matrix3x3Extensions.GetColumn(Linie.Matrix3x3, int)
+  fullName.vb: Linie.Matrix3x3Extensions.GetColumn(Linie.Matrix3x3, Integer)
+  nameWithType: Matrix3x3Extensions.GetColumn(Matrix3x3, int)
+  nameWithType.vb: Matrix3x3Extensions.GetColumn(Matrix3x3, Integer)
+- uid: Linie.Matrix3x3Extensions.GetColumn*
+  name: GetColumn
+  href: api/Linie.Matrix3x3Extensions.html#Linie_Matrix3x3Extensions_GetColumn_
+  commentId: Overload:Linie.Matrix3x3Extensions.GetColumn
+  isSpec: "True"
+  fullName: Linie.Matrix3x3Extensions.GetColumn
+  nameWithType: Matrix3x3Extensions.GetColumn
+- uid: Linie.Matrix3x3Extensions.GetRow(Linie.Matrix3x3,System.Int32)
+  name: GetRow(Matrix3x3, int)
+  href: api/Linie.Matrix3x3Extensions.html#Linie_Matrix3x3Extensions_GetRow_Linie_Matrix3x3_System_Int32_
+  commentId: M:Linie.Matrix3x3Extensions.GetRow(Linie.Matrix3x3,System.Int32)
+  name.vb: GetRow(Matrix3x3, Integer)
+  fullName: Linie.Matrix3x3Extensions.GetRow(Linie.Matrix3x3, int)
+  fullName.vb: Linie.Matrix3x3Extensions.GetRow(Linie.Matrix3x3, Integer)
+  nameWithType: Matrix3x3Extensions.GetRow(Matrix3x3, int)
+  nameWithType.vb: Matrix3x3Extensions.GetRow(Matrix3x3, Integer)
+- uid: Linie.Matrix3x3Extensions.GetRow*
+  name: GetRow
+  href: api/Linie.Matrix3x3Extensions.html#Linie_Matrix3x3Extensions_GetRow_
+  commentId: Overload:Linie.Matrix3x3Extensions.GetRow
+  isSpec: "True"
+  fullName: Linie.Matrix3x3Extensions.GetRow
+  nameWithType: Matrix3x3Extensions.GetRow
 - uid: Linie.Matrix3x3Extensions.Minor(Linie.Matrix3x3,System.Int32,System.Int32)
   name: Minor(Matrix3x3, int, int)
   href: api/Linie.Matrix3x3Extensions.html#Linie_Matrix3x3Extensions_Minor_Linie_Matrix3x3_System_Int32_System_Int32_
@@ -918,22 +944,6 @@ references:
   isSpec: "True"
   fullName: Linie.Matrix4x4.Equals
   nameWithType: Matrix4x4.Equals
-- uid: Linie.Matrix4x4.GetColumn(System.Int32)
-  name: GetColumn(int)
-  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_GetColumn_System_Int32_
-  commentId: M:Linie.Matrix4x4.GetColumn(System.Int32)
-  name.vb: GetColumn(Integer)
-  fullName: Linie.Matrix4x4.GetColumn(int)
-  fullName.vb: Linie.Matrix4x4.GetColumn(Integer)
-  nameWithType: Matrix4x4.GetColumn(int)
-  nameWithType.vb: Matrix4x4.GetColumn(Integer)
-- uid: Linie.Matrix4x4.GetColumn*
-  name: GetColumn
-  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_GetColumn_
-  commentId: Overload:Linie.Matrix4x4.GetColumn
-  isSpec: "True"
-  fullName: Linie.Matrix4x4.GetColumn
-  nameWithType: Matrix4x4.GetColumn
 - uid: Linie.Matrix4x4.GetComparer(System.Double)
   name: GetComparer(double)
   href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_GetComparer_System_Double_
@@ -963,22 +973,6 @@ references:
   isSpec: "True"
   fullName: Linie.Matrix4x4.GetHashCode
   nameWithType: Matrix4x4.GetHashCode
-- uid: Linie.Matrix4x4.GetRow(System.Int32)
-  name: GetRow(int)
-  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_GetRow_System_Int32_
-  commentId: M:Linie.Matrix4x4.GetRow(System.Int32)
-  name.vb: GetRow(Integer)
-  fullName: Linie.Matrix4x4.GetRow(int)
-  fullName.vb: Linie.Matrix4x4.GetRow(Integer)
-  nameWithType: Matrix4x4.GetRow(int)
-  nameWithType.vb: Matrix4x4.GetRow(Integer)
-- uid: Linie.Matrix4x4.GetRow*
-  name: GetRow
-  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_GetRow_
-  commentId: Overload:Linie.Matrix4x4.GetRow
-  isSpec: "True"
-  fullName: Linie.Matrix4x4.GetRow
-  nameWithType: Matrix4x4.GetRow
 - uid: Linie.Matrix4x4.Identity
   name: Identity
   href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_Identity
@@ -1179,6 +1173,38 @@ references:
   isSpec: "True"
   fullName: Linie.Matrix4x4Extensions.Determinant
   nameWithType: Matrix4x4Extensions.Determinant
+- uid: Linie.Matrix4x4Extensions.GetColumn(Linie.Matrix4x4,System.Int32)
+  name: GetColumn(Matrix4x4, int)
+  href: api/Linie.Matrix4x4Extensions.html#Linie_Matrix4x4Extensions_GetColumn_Linie_Matrix4x4_System_Int32_
+  commentId: M:Linie.Matrix4x4Extensions.GetColumn(Linie.Matrix4x4,System.Int32)
+  name.vb: GetColumn(Matrix4x4, Integer)
+  fullName: Linie.Matrix4x4Extensions.GetColumn(Linie.Matrix4x4, int)
+  fullName.vb: Linie.Matrix4x4Extensions.GetColumn(Linie.Matrix4x4, Integer)
+  nameWithType: Matrix4x4Extensions.GetColumn(Matrix4x4, int)
+  nameWithType.vb: Matrix4x4Extensions.GetColumn(Matrix4x4, Integer)
+- uid: Linie.Matrix4x4Extensions.GetColumn*
+  name: GetColumn
+  href: api/Linie.Matrix4x4Extensions.html#Linie_Matrix4x4Extensions_GetColumn_
+  commentId: Overload:Linie.Matrix4x4Extensions.GetColumn
+  isSpec: "True"
+  fullName: Linie.Matrix4x4Extensions.GetColumn
+  nameWithType: Matrix4x4Extensions.GetColumn
+- uid: Linie.Matrix4x4Extensions.GetRow(Linie.Matrix4x4,System.Int32)
+  name: GetRow(Matrix4x4, int)
+  href: api/Linie.Matrix4x4Extensions.html#Linie_Matrix4x4Extensions_GetRow_Linie_Matrix4x4_System_Int32_
+  commentId: M:Linie.Matrix4x4Extensions.GetRow(Linie.Matrix4x4,System.Int32)
+  name.vb: GetRow(Matrix4x4, Integer)
+  fullName: Linie.Matrix4x4Extensions.GetRow(Linie.Matrix4x4, int)
+  fullName.vb: Linie.Matrix4x4Extensions.GetRow(Linie.Matrix4x4, Integer)
+  nameWithType: Matrix4x4Extensions.GetRow(Matrix4x4, int)
+  nameWithType.vb: Matrix4x4Extensions.GetRow(Matrix4x4, Integer)
+- uid: Linie.Matrix4x4Extensions.GetRow*
+  name: GetRow
+  href: api/Linie.Matrix4x4Extensions.html#Linie_Matrix4x4Extensions_GetRow_
+  commentId: Overload:Linie.Matrix4x4Extensions.GetRow
+  isSpec: "True"
+  fullName: Linie.Matrix4x4Extensions.GetRow
+  nameWithType: Matrix4x4Extensions.GetRow
 - uid: Linie.Matrix4x4Extensions.Invert(Linie.Matrix4x4,Linie.Matrix4x4@)
   name: Invert(Matrix4x4, ref Matrix4x4)
   href: api/Linie.Matrix4x4Extensions.html#Linie_Matrix4x4Extensions_Invert_Linie_Matrix4x4_Linie_Matrix4x4__
@@ -1319,6 +1345,38 @@ references:
   isSpec: "True"
   fullName: Linie.Matrix4x4Extensions.Translate
   nameWithType: Matrix4x4Extensions.Translate
+- uid: Linie.Matrix4x4Extensions.TryInvert(Linie.Matrix4x4,Linie.Matrix4x4@)
+  name: TryInvert(Matrix4x4, ref Matrix4x4)
+  href: api/Linie.Matrix4x4Extensions.html#Linie_Matrix4x4Extensions_TryInvert_Linie_Matrix4x4_Linie_Matrix4x4__
+  commentId: M:Linie.Matrix4x4Extensions.TryInvert(Linie.Matrix4x4,Linie.Matrix4x4@)
+  name.vb: TryInvert(Matrix4x4, Matrix4x4)
+  fullName: Linie.Matrix4x4Extensions.TryInvert(Linie.Matrix4x4, ref Linie.Matrix4x4)
+  fullName.vb: Linie.Matrix4x4Extensions.TryInvert(Linie.Matrix4x4, Linie.Matrix4x4)
+  nameWithType: Matrix4x4Extensions.TryInvert(Matrix4x4, ref Matrix4x4)
+  nameWithType.vb: Matrix4x4Extensions.TryInvert(Matrix4x4, Matrix4x4)
+- uid: Linie.Matrix4x4Extensions.TryInvert*
+  name: TryInvert
+  href: api/Linie.Matrix4x4Extensions.html#Linie_Matrix4x4Extensions_TryInvert_
+  commentId: Overload:Linie.Matrix4x4Extensions.TryInvert
+  isSpec: "True"
+  fullName: Linie.Matrix4x4Extensions.TryInvert
+  nameWithType: Matrix4x4Extensions.TryInvert
+- uid: Linie.Matrix4x4Extensions.UnsafeInvert(Linie.Matrix4x4,Linie.Matrix4x4@)
+  name: UnsafeInvert(Matrix4x4, ref Matrix4x4)
+  href: api/Linie.Matrix4x4Extensions.html#Linie_Matrix4x4Extensions_UnsafeInvert_Linie_Matrix4x4_Linie_Matrix4x4__
+  commentId: M:Linie.Matrix4x4Extensions.UnsafeInvert(Linie.Matrix4x4,Linie.Matrix4x4@)
+  name.vb: UnsafeInvert(Matrix4x4, Matrix4x4)
+  fullName: Linie.Matrix4x4Extensions.UnsafeInvert(Linie.Matrix4x4, ref Linie.Matrix4x4)
+  fullName.vb: Linie.Matrix4x4Extensions.UnsafeInvert(Linie.Matrix4x4, Linie.Matrix4x4)
+  nameWithType: Matrix4x4Extensions.UnsafeInvert(Matrix4x4, ref Matrix4x4)
+  nameWithType.vb: Matrix4x4Extensions.UnsafeInvert(Matrix4x4, Matrix4x4)
+- uid: Linie.Matrix4x4Extensions.UnsafeInvert*
+  name: UnsafeInvert
+  href: api/Linie.Matrix4x4Extensions.html#Linie_Matrix4x4Extensions_UnsafeInvert_
+  commentId: Overload:Linie.Matrix4x4Extensions.UnsafeInvert
+  isSpec: "True"
+  fullName: Linie.Matrix4x4Extensions.UnsafeInvert
+  nameWithType: Matrix4x4Extensions.UnsafeInvert
 - uid: Linie.Normal3
   name: Normal3
   href: api/Linie.Normal3.html

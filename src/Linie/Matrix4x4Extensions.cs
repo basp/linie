@@ -7,6 +7,21 @@ using System.Linq;
 
 public static class Matrix4x4Extensions
 {
+    public static Vector4 GetRow(this Matrix4x4 self, int i) =>
+        new Vector4(
+            self[i, 0],
+            self[i, 1],
+            self[i, 2],
+            self[i, 3]);
+
+    public static Vector4 GetColumn(this Matrix4x4 self, int j) =>
+        new Vector4(
+            self[0, j],
+            self[1, j],
+            self[2, j],
+            self[3, j]);
+
+
     /// <summary>
     /// Calculates the determinant of given matrix <c>a</c> using Laplace 
     /// expansion.
@@ -19,6 +34,27 @@ public static class Matrix4x4Extensions
 
     public static bool IsInvertible(this Matrix4x4 a) =>
         a.Determinant() != 0;
+
+    /// <summary>
+    /// This does not perform the check on the determinant so
+    /// it will blow up if that turns out to be zero.
+    /// </summary>
+    /// <remarks>
+    /// This should only be used if you are dealing with a cached
+    /// matrix that is known to be invertible (i.e. by inspecting the
+    /// determinant or using the <c>IsInvertible</c> method.)
+    /// </remarks>
+    public static void UnsafeInvert(this Matrix4x4 a, ref Matrix4x4 m)
+    {
+        var d = a.Determinant();
+        for (var i = 0; i < 4; i++)
+        {
+            for (var j = 0; j < 4; j++)
+            {
+                m[j, i] = a.Cofactor(i, j) / d;
+            }
+        }
+    }
 
     public static bool TryInvert(this Matrix4x4 a, ref Matrix4x4 m)
     {
@@ -45,26 +81,6 @@ public static class Matrix4x4Extensions
         {
             throw new ArgumentException("Matrix is not invertible.", nameof(a));
         }
-    }
-
-    /// <summary>
-    /// Experimental.
-    /// </summary>
-    internal static void Invert2(this Matrix4x4 a, Matrix4x4 m)
-    {
-        var d = a.Determinant();
-        if (d == 0)
-        {
-            throw new ArgumentException("Matrix is not invertible.", nameof(a));
-        }
-
-        Parallel.For(0, 4, i =>
-        {
-            for (var j = 0; j < 4; j++)
-            {
-                m[j, i] = a.Cofactor(i, j) / d;
-            }
-        });
     }
 
     /// <summary>
