@@ -8,6 +8,12 @@ using System.IO;
 /// <summary>
 /// Represents an rectangular drawing surface.
 /// </summary>
+/// <remarks>
+/// The <see cref="Canvas"/> class is included as a lightweight drawing
+/// canvas that can be used in lieux of any alternatives. It is basically
+/// a tiny wrapper around an array of <see cref="Color"/> values that can
+/// be saved as a Portable Pixmap (PPM) file.
+/// </remarks>
 public class Canvas
 {
     private int width;

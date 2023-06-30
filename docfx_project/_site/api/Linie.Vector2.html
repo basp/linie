@@ -114,9 +114,6 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
     </div>
     <div>
@@ -127,6 +124,22 @@
     </div>
   </dd></dl>
 
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XX_Linie_Vector2_">SwizzlingExtensions.XX(Vector2)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XY_Linie_Vector2_">SwizzlingExtensions.XY(Vector2)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YX_Linie_Vector2_">SwizzlingExtensions.YX(Vector2)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YY_Linie_Vector2_">SwizzlingExtensions.YY(Vector2)</a>
+  </div>
+  </dd></dl>
 
 
 
@@ -381,7 +394,7 @@
 
   <h3 id="Linie_Vector2_Equals_Linie_Vector2_" data-uid="Linie.Vector2.Equals(Linie.Vector2)">
   Equals(Vector2)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector2.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector2.cs/#L80"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Indicates whether the current object is equal to another object of the same type.</div>
@@ -413,10 +426,10 @@
 
 
 
-  <a id="Linie_Vector2_GetEqualityComparer_" data-uid="Linie.Vector2.GetEqualityComparer*"></a>
+  <a id="Linie_Vector2_GetComparer_" data-uid="Linie.Vector2.GetComparer*"></a>
 
-  <h3 id="Linie_Vector2_GetEqualityComparer_System_Double_" data-uid="Linie.Vector2.GetEqualityComparer(System.Double)">
-  GetEqualityComparer(double)
+  <h3 id="Linie_Vector2_GetComparer_System_Double_" data-uid="Linie.Vector2.GetComparer(System.Double)">
+  GetComparer(double)
   <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector2.cs/#L67"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -424,7 +437,7 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEqualityComparer&lt;Vector2&gt; GetEqualityComparer(double epsilon = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEqualityComparer&lt;Vector2&gt; GetComparer(double epsilon = 0)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -437,6 +450,37 @@
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer</a>&lt;<a class="xref" href="Linie.Vector2.html">Vector2</a>&gt;</dt>
     <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Linie_Vector2_GetHashCode_" data-uid="Linie.Vector2.GetHashCode*"></a>
+
+  <h3 id="Linie_Vector2_GetHashCode" data-uid="Linie.Vector2.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector2.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary">Returns the hash code for this instance.</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd>A 32-bit signed integer that is the hash code for this instance.</dd>
   </dl>
 
 
@@ -697,7 +741,7 @@
 
   <h3 id="Linie_Vector2_ToString" data-uid="Linie.Vector2.ToString">
   ToString()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector2.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector2.cs/#L89"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Returns the fully qualified type name of this instance.</div>
@@ -728,7 +772,7 @@
 
   <h3 id="Linie_Vector2_ToString_System_String_System_IFormatProvider_" data-uid="Linie.Vector2.ToString(System.String,System.IFormatProvider)">
   ToString(string, IFormatProvider)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector2.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector2.cs/#L95"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Creates a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> representation of 

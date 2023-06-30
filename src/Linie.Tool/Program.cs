@@ -42,13 +42,6 @@ public class InversionBenchmark
         var m = Matrix4x4.Identity;
         m.Invert(ref c);
     }
-
-    [Benchmark]
-    public void Invert2InPlace()
-    {
-        var m = Matrix4x4.Identity;
-        m.Invert2(c);
-    }
 }
 
 public class Program

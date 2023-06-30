@@ -3,9 +3,9 @@
 namespace Linie;
 
 /// <summary>
-/// Represents a ray in 4D space.
+/// Represents a ray in 3D space.
 /// </summary>
-public record Ray4(Vector4 Origin, Vector4 Direction)
+public record Ray(Vector4 Origin, Vector4 Direction)
 {
     /// <summary>
     /// Return a position along this ray at distance t.

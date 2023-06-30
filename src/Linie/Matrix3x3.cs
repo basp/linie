@@ -5,10 +5,23 @@ namespace Linie;
 using System.Collections.Generic;
 using System.Linq;
 
-internal class Matrix3x3
+#pragma warning disable SA1117 // ParametersMustBeOnSameLineOrSeparateLines
+
+public class Matrix3x3
     : IEquatable<Matrix3x3>, IFormattable
 {
     internal readonly double[] data;
+
+    public static Matrix3x3 Identity =>
+        new Matrix3x3(
+            1, 0, 0,
+            0, 1, 0,
+            0, 0, 1);
+
+    public Matrix3x3()
+        : this(0)
+    {
+    }
 
     public Matrix3x3(double v)
     {
@@ -20,7 +33,6 @@ internal class Matrix3x3
             };
     }
 
-#pragma warning disable SA1117 // ParametersMustBeOnSameLineOrSeparateLines
     public Matrix3x3(
         double m00, double m01, double m02,
         double m10, double m11, double m12,
@@ -33,7 +45,6 @@ internal class Matrix3x3
                 m20, m21, m22,
             };
     }
-#pragma warning restore SA1117 // ParametersMustBeOnSameLineOrSeparateLines
 
     public double this[int row, int col]
     {
@@ -56,17 +67,21 @@ internal class Matrix3x3
     public static IEqualityComparer<Matrix3x3> GetComparer(double epsilon = 0.0) =>
         new Matrix3x3EqualityComparer(epsilon);
 
+    /// <inheritdoc />
     public override int GetHashCode() =>
         HashCode.Combine(
             this.GetColumn(0).GetHashCode(),
             this.GetColumn(1).GetHashCode(),
             this.GetColumn(2).GetHashCode());
 
+    /// <inheritdoc />
     public bool Equals(Matrix3x3 other) =>
         this.data.SequenceEqual(other.data);
 
+    /// <inheritdoc />
     public override string ToString() => this.ToString(null, null);
 
+    /// <inheritdoc />
     public string ToString(string format, IFormatProvider formatProvider)
     {
         var rows = Enumerable.Range(0, 3)
@@ -83,41 +98,4 @@ internal class Matrix3x3
     }
 }
 
-public static class Matrix3x3Extensions
-{
-    internal static Matrix2x2 Submatrix(
-        this Matrix3x3 a,
-        int dropRow,
-        int dropCol)
-    {
-        var rows = Enumerable.Range(0, 3)
-            .Where(x => x != dropRow)
-            .ToArray();
-
-        var cols = Enumerable.Range(0, 3)
-            .Where(x => x != dropCol)
-            .ToArray();
-
-        var m = new Matrix2x2(0);
-        for (var i = 0; i < 2; i++)
-        {
-            for (var j = 0; j < 2; j++)
-            {
-                m[i, j] = a[rows[i], cols[j]];
-            }
-        }
-
-        return m;
-    }
-
-    internal static double Minor(this Matrix3x3 a, int row, int col) =>
-        a.Submatrix(row, col).Determinant();
-
-    internal static double Cofactor(this Matrix3x3 a, int row, int col) =>
-        (row + col) % 2 == 0 ? a.Minor(row, col) : -a.Minor(row, col);
-
-    internal static double Determinant(this Matrix3x3 a) =>
-        (a[0, 0] * a.Cofactor(0, 0)) +
-        (a[0, 1] * a.Cofactor(0, 1)) +
-        (a[0, 2] * a.Cofactor(0, 2));
-}
+#pragma warning restore SA1117 // ParametersMustBeOnSameLineOrSeparateLines

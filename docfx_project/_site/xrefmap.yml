@@ -466,6 +466,15 @@ references:
   commentId: T:Linie.Matrix2x2
   fullName: Linie.Matrix2x2
   nameWithType: Matrix2x2
+- uid: Linie.Matrix2x2.#ctor
+  name: Matrix2x2()
+  href: api/Linie.Matrix2x2.html#Linie_Matrix2x2__ctor
+  commentId: M:Linie.Matrix2x2.#ctor
+  name.vb: New()
+  fullName: Linie.Matrix2x2.Matrix2x2()
+  fullName.vb: Linie.Matrix2x2.New()
+  nameWithType: Matrix2x2.Matrix2x2()
+  nameWithType.vb: Matrix2x2.New()
 - uid: Linie.Matrix2x2.#ctor(System.Double,System.Double,System.Double,System.Double)
   name: Matrix2x2(double, double, double, double)
   href: api/Linie.Matrix2x2.html#Linie_Matrix2x2__ctor_System_Double_System_Double_System_Double_System_Double_
@@ -494,6 +503,19 @@ references:
   fullName.vb: Linie.Matrix2x2.New
   nameWithType: Matrix2x2.Matrix2x2
   nameWithType.vb: Matrix2x2.New
+- uid: Linie.Matrix2x2.Equals(Linie.Matrix2x2)
+  name: Equals(Matrix2x2)
+  href: api/Linie.Matrix2x2.html#Linie_Matrix2x2_Equals_Linie_Matrix2x2_
+  commentId: M:Linie.Matrix2x2.Equals(Linie.Matrix2x2)
+  fullName: Linie.Matrix2x2.Equals(Linie.Matrix2x2)
+  nameWithType: Matrix2x2.Equals(Matrix2x2)
+- uid: Linie.Matrix2x2.Equals*
+  name: Equals
+  href: api/Linie.Matrix2x2.html#Linie_Matrix2x2_Equals_
+  commentId: Overload:Linie.Matrix2x2.Equals
+  isSpec: "True"
+  fullName: Linie.Matrix2x2.Equals
+  nameWithType: Matrix2x2.Equals
 - uid: Linie.Matrix2x2.GetComparer(System.Double)
   name: GetComparer(double)
   href: api/Linie.Matrix2x2.html#Linie_Matrix2x2_GetComparer_System_Double_
@@ -510,6 +532,19 @@ references:
   isSpec: "True"
   fullName: Linie.Matrix2x2.GetComparer
   nameWithType: Matrix2x2.GetComparer
+- uid: Linie.Matrix2x2.GetHashCode
+  name: GetHashCode()
+  href: api/Linie.Matrix2x2.html#Linie_Matrix2x2_GetHashCode
+  commentId: M:Linie.Matrix2x2.GetHashCode
+  fullName: Linie.Matrix2x2.GetHashCode()
+  nameWithType: Matrix2x2.GetHashCode()
+- uid: Linie.Matrix2x2.GetHashCode*
+  name: GetHashCode
+  href: api/Linie.Matrix2x2.html#Linie_Matrix2x2_GetHashCode_
+  commentId: Overload:Linie.Matrix2x2.GetHashCode
+  isSpec: "True"
+  fullName: Linie.Matrix2x2.GetHashCode
+  nameWithType: Matrix2x2.GetHashCode
 - uid: Linie.Matrix2x2.Item(System.Int32,System.Int32)
   name: this[int, int]
   href: api/Linie.Matrix2x2.html#Linie_Matrix2x2_Item_System_Int32_System_Int32_
@@ -535,6 +570,15 @@ references:
   commentId: M:Linie.Matrix2x2.ToString
   fullName: Linie.Matrix2x2.ToString()
   nameWithType: Matrix2x2.ToString()
+- uid: Linie.Matrix2x2.ToString(System.String,System.IFormatProvider)
+  name: ToString(string, IFormatProvider)
+  href: api/Linie.Matrix2x2.html#Linie_Matrix2x2_ToString_System_String_System_IFormatProvider_
+  commentId: M:Linie.Matrix2x2.ToString(System.String,System.IFormatProvider)
+  name.vb: ToString(String, IFormatProvider)
+  fullName: Linie.Matrix2x2.ToString(string, System.IFormatProvider)
+  fullName.vb: Linie.Matrix2x2.ToString(String, System.IFormatProvider)
+  nameWithType: Matrix2x2.ToString(string, IFormatProvider)
+  nameWithType.vb: Matrix2x2.ToString(String, IFormatProvider)
 - uid: Linie.Matrix2x2.ToString*
   name: ToString
   href: api/Linie.Matrix2x2.html#Linie_Matrix2x2_ToString_
@@ -593,14 +637,14 @@ references:
   isSpec: "True"
   fullName: Linie.Matrix2x2Extensions.GetRow
   nameWithType: Matrix2x2Extensions.GetRow
-- uid: Linie.Matrix2x2Extensions.Multiply(Linie.Matrix2x2,Linie.Matrix2x2,Linie.Matrix2x2@)
-  name: Multiply(Matrix2x2, Matrix2x2, ref Matrix2x2)
-  href: api/Linie.Matrix2x2Extensions.html#Linie_Matrix2x2Extensions_Multiply_Linie_Matrix2x2_Linie_Matrix2x2_Linie_Matrix2x2__
-  commentId: M:Linie.Matrix2x2Extensions.Multiply(Linie.Matrix2x2,Linie.Matrix2x2,Linie.Matrix2x2@)
+- uid: Linie.Matrix2x2Extensions.Multiply(Linie.Matrix2x2,Linie.Matrix2x2@,Linie.Matrix2x2@)
+  name: Multiply(Matrix2x2, in Matrix2x2, ref Matrix2x2)
+  href: api/Linie.Matrix2x2Extensions.html#Linie_Matrix2x2Extensions_Multiply_Linie_Matrix2x2_Linie_Matrix2x2__Linie_Matrix2x2__
+  commentId: M:Linie.Matrix2x2Extensions.Multiply(Linie.Matrix2x2,Linie.Matrix2x2@,Linie.Matrix2x2@)
   name.vb: Multiply(Matrix2x2, Matrix2x2, Matrix2x2)
-  fullName: Linie.Matrix2x2Extensions.Multiply(Linie.Matrix2x2, Linie.Matrix2x2, ref Linie.Matrix2x2)
+  fullName: Linie.Matrix2x2Extensions.Multiply(Linie.Matrix2x2, in Linie.Matrix2x2, ref Linie.Matrix2x2)
   fullName.vb: Linie.Matrix2x2Extensions.Multiply(Linie.Matrix2x2, Linie.Matrix2x2, Linie.Matrix2x2)
-  nameWithType: Matrix2x2Extensions.Multiply(Matrix2x2, Matrix2x2, ref Matrix2x2)
+  nameWithType: Matrix2x2Extensions.Multiply(Matrix2x2, in Matrix2x2, ref Matrix2x2)
   nameWithType.vb: Matrix2x2Extensions.Multiply(Matrix2x2, Matrix2x2, Matrix2x2)
 - uid: Linie.Matrix2x2Extensions.Multiply*
   name: Multiply
@@ -609,18 +653,230 @@ references:
   isSpec: "True"
   fullName: Linie.Matrix2x2Extensions.Multiply
   nameWithType: Matrix2x2Extensions.Multiply
+- uid: Linie.Matrix3x3
+  name: Matrix3x3
+  href: api/Linie.Matrix3x3.html
+  commentId: T:Linie.Matrix3x3
+  fullName: Linie.Matrix3x3
+  nameWithType: Matrix3x3
+- uid: Linie.Matrix3x3.#ctor
+  name: Matrix3x3()
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3__ctor
+  commentId: M:Linie.Matrix3x3.#ctor
+  name.vb: New()
+  fullName: Linie.Matrix3x3.Matrix3x3()
+  fullName.vb: Linie.Matrix3x3.New()
+  nameWithType: Matrix3x3.Matrix3x3()
+  nameWithType.vb: Matrix3x3.New()
+- uid: Linie.Matrix3x3.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)
+  name: Matrix3x3(double, double, double, double, double, double, double, double, double)
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3__ctor_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_
+  commentId: M:Linie.Matrix3x3.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)
+  name.vb: New(Double, Double, Double, Double, Double, Double, Double, Double, Double)
+  fullName: Linie.Matrix3x3.Matrix3x3(double, double, double, double, double, double, double, double, double)
+  fullName.vb: Linie.Matrix3x3.New(Double, Double, Double, Double, Double, Double, Double, Double, Double)
+  nameWithType: Matrix3x3.Matrix3x3(double, double, double, double, double, double, double, double, double)
+  nameWithType.vb: Matrix3x3.New(Double, Double, Double, Double, Double, Double, Double, Double, Double)
+- uid: Linie.Matrix3x3.#ctor(System.Double)
+  name: Matrix3x3(double)
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3__ctor_System_Double_
+  commentId: M:Linie.Matrix3x3.#ctor(System.Double)
+  name.vb: New(Double)
+  fullName: Linie.Matrix3x3.Matrix3x3(double)
+  fullName.vb: Linie.Matrix3x3.New(Double)
+  nameWithType: Matrix3x3.Matrix3x3(double)
+  nameWithType.vb: Matrix3x3.New(Double)
+- uid: Linie.Matrix3x3.#ctor*
+  name: Matrix3x3
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3__ctor_
+  commentId: Overload:Linie.Matrix3x3.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Linie.Matrix3x3.Matrix3x3
+  fullName.vb: Linie.Matrix3x3.New
+  nameWithType: Matrix3x3.Matrix3x3
+  nameWithType.vb: Matrix3x3.New
+- uid: Linie.Matrix3x3.Equals(Linie.Matrix3x3)
+  name: Equals(Matrix3x3)
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_Equals_Linie_Matrix3x3_
+  commentId: M:Linie.Matrix3x3.Equals(Linie.Matrix3x3)
+  fullName: Linie.Matrix3x3.Equals(Linie.Matrix3x3)
+  nameWithType: Matrix3x3.Equals(Matrix3x3)
+- uid: Linie.Matrix3x3.Equals*
+  name: Equals
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_Equals_
+  commentId: Overload:Linie.Matrix3x3.Equals
+  isSpec: "True"
+  fullName: Linie.Matrix3x3.Equals
+  nameWithType: Matrix3x3.Equals
+- uid: Linie.Matrix3x3.GetColumn(System.Int32)
+  name: GetColumn(int)
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_GetColumn_System_Int32_
+  commentId: M:Linie.Matrix3x3.GetColumn(System.Int32)
+  name.vb: GetColumn(Integer)
+  fullName: Linie.Matrix3x3.GetColumn(int)
+  fullName.vb: Linie.Matrix3x3.GetColumn(Integer)
+  nameWithType: Matrix3x3.GetColumn(int)
+  nameWithType.vb: Matrix3x3.GetColumn(Integer)
+- uid: Linie.Matrix3x3.GetColumn*
+  name: GetColumn
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_GetColumn_
+  commentId: Overload:Linie.Matrix3x3.GetColumn
+  isSpec: "True"
+  fullName: Linie.Matrix3x3.GetColumn
+  nameWithType: Matrix3x3.GetColumn
+- uid: Linie.Matrix3x3.GetComparer(System.Double)
+  name: GetComparer(double)
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_GetComparer_System_Double_
+  commentId: M:Linie.Matrix3x3.GetComparer(System.Double)
+  name.vb: GetComparer(Double)
+  fullName: Linie.Matrix3x3.GetComparer(double)
+  fullName.vb: Linie.Matrix3x3.GetComparer(Double)
+  nameWithType: Matrix3x3.GetComparer(double)
+  nameWithType.vb: Matrix3x3.GetComparer(Double)
+- uid: Linie.Matrix3x3.GetComparer*
+  name: GetComparer
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_GetComparer_
+  commentId: Overload:Linie.Matrix3x3.GetComparer
+  isSpec: "True"
+  fullName: Linie.Matrix3x3.GetComparer
+  nameWithType: Matrix3x3.GetComparer
+- uid: Linie.Matrix3x3.GetHashCode
+  name: GetHashCode()
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_GetHashCode
+  commentId: M:Linie.Matrix3x3.GetHashCode
+  fullName: Linie.Matrix3x3.GetHashCode()
+  nameWithType: Matrix3x3.GetHashCode()
+- uid: Linie.Matrix3x3.GetHashCode*
+  name: GetHashCode
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_GetHashCode_
+  commentId: Overload:Linie.Matrix3x3.GetHashCode
+  isSpec: "True"
+  fullName: Linie.Matrix3x3.GetHashCode
+  nameWithType: Matrix3x3.GetHashCode
+- uid: Linie.Matrix3x3.GetRow(System.Int32)
+  name: GetRow(int)
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_GetRow_System_Int32_
+  commentId: M:Linie.Matrix3x3.GetRow(System.Int32)
+  name.vb: GetRow(Integer)
+  fullName: Linie.Matrix3x3.GetRow(int)
+  fullName.vb: Linie.Matrix3x3.GetRow(Integer)
+  nameWithType: Matrix3x3.GetRow(int)
+  nameWithType.vb: Matrix3x3.GetRow(Integer)
+- uid: Linie.Matrix3x3.GetRow*
+  name: GetRow
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_GetRow_
+  commentId: Overload:Linie.Matrix3x3.GetRow
+  isSpec: "True"
+  fullName: Linie.Matrix3x3.GetRow
+  nameWithType: Matrix3x3.GetRow
+- uid: Linie.Matrix3x3.Item(System.Int32,System.Int32)
+  name: this[int, int]
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_Item_System_Int32_System_Int32_
+  commentId: P:Linie.Matrix3x3.Item(System.Int32,System.Int32)
+  name.vb: this[](Integer, Integer)
+  fullName: Linie.Matrix3x3.this[int, int]
+  fullName.vb: Linie.Matrix3x3.this[](Integer, Integer)
+  nameWithType: Matrix3x3.this[int, int]
+  nameWithType.vb: Matrix3x3.this[](Integer, Integer)
+- uid: Linie.Matrix3x3.Item*
+  name: this
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_Item_
+  commentId: Overload:Linie.Matrix3x3.Item
+  isSpec: "True"
+  name.vb: this[]
+  fullName: Linie.Matrix3x3.this
+  fullName.vb: Linie.Matrix3x3.this[]
+  nameWithType: Matrix3x3.this
+  nameWithType.vb: Matrix3x3.this[]
+- uid: Linie.Matrix3x3.ToString
+  name: ToString()
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_ToString
+  commentId: M:Linie.Matrix3x3.ToString
+  fullName: Linie.Matrix3x3.ToString()
+  nameWithType: Matrix3x3.ToString()
+- uid: Linie.Matrix3x3.ToString(System.String,System.IFormatProvider)
+  name: ToString(string, IFormatProvider)
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_ToString_System_String_System_IFormatProvider_
+  commentId: M:Linie.Matrix3x3.ToString(System.String,System.IFormatProvider)
+  name.vb: ToString(String, IFormatProvider)
+  fullName: Linie.Matrix3x3.ToString(string, System.IFormatProvider)
+  fullName.vb: Linie.Matrix3x3.ToString(String, System.IFormatProvider)
+  nameWithType: Matrix3x3.ToString(string, IFormatProvider)
+  nameWithType.vb: Matrix3x3.ToString(String, IFormatProvider)
+- uid: Linie.Matrix3x3.ToString*
+  name: ToString
+  href: api/Linie.Matrix3x3.html#Linie_Matrix3x3_ToString_
+  commentId: Overload:Linie.Matrix3x3.ToString
+  isSpec: "True"
+  fullName: Linie.Matrix3x3.ToString
+  nameWithType: Matrix3x3.ToString
 - uid: Linie.Matrix3x3Extensions
   name: Matrix3x3Extensions
   href: api/Linie.Matrix3x3Extensions.html
   commentId: T:Linie.Matrix3x3Extensions
   fullName: Linie.Matrix3x3Extensions
   nameWithType: Matrix3x3Extensions
+- uid: Linie.Matrix3x3Extensions.Cofactor(Linie.Matrix3x3,System.Int32,System.Int32)
+  name: Cofactor(Matrix3x3, int, int)
+  href: api/Linie.Matrix3x3Extensions.html#Linie_Matrix3x3Extensions_Cofactor_Linie_Matrix3x3_System_Int32_System_Int32_
+  commentId: M:Linie.Matrix3x3Extensions.Cofactor(Linie.Matrix3x3,System.Int32,System.Int32)
+  name.vb: Cofactor(Matrix3x3, Integer, Integer)
+  fullName: Linie.Matrix3x3Extensions.Cofactor(Linie.Matrix3x3, int, int)
+  fullName.vb: Linie.Matrix3x3Extensions.Cofactor(Linie.Matrix3x3, Integer, Integer)
+  nameWithType: Matrix3x3Extensions.Cofactor(Matrix3x3, int, int)
+  nameWithType.vb: Matrix3x3Extensions.Cofactor(Matrix3x3, Integer, Integer)
+- uid: Linie.Matrix3x3Extensions.Cofactor*
+  name: Cofactor
+  href: api/Linie.Matrix3x3Extensions.html#Linie_Matrix3x3Extensions_Cofactor_
+  commentId: Overload:Linie.Matrix3x3Extensions.Cofactor
+  isSpec: "True"
+  fullName: Linie.Matrix3x3Extensions.Cofactor
+  nameWithType: Matrix3x3Extensions.Cofactor
+- uid: Linie.Matrix3x3Extensions.Determinant(Linie.Matrix3x3)
+  name: Determinant(Matrix3x3)
+  href: api/Linie.Matrix3x3Extensions.html#Linie_Matrix3x3Extensions_Determinant_Linie_Matrix3x3_
+  commentId: M:Linie.Matrix3x3Extensions.Determinant(Linie.Matrix3x3)
+  fullName: Linie.Matrix3x3Extensions.Determinant(Linie.Matrix3x3)
+  nameWithType: Matrix3x3Extensions.Determinant(Matrix3x3)
+- uid: Linie.Matrix3x3Extensions.Determinant*
+  name: Determinant
+  href: api/Linie.Matrix3x3Extensions.html#Linie_Matrix3x3Extensions_Determinant_
+  commentId: Overload:Linie.Matrix3x3Extensions.Determinant
+  isSpec: "True"
+  fullName: Linie.Matrix3x3Extensions.Determinant
+  nameWithType: Matrix3x3Extensions.Determinant
+- uid: Linie.Matrix3x3Extensions.Minor(Linie.Matrix3x3,System.Int32,System.Int32)
+  name: Minor(Matrix3x3, int, int)
+  href: api/Linie.Matrix3x3Extensions.html#Linie_Matrix3x3Extensions_Minor_Linie_Matrix3x3_System_Int32_System_Int32_
+  commentId: M:Linie.Matrix3x3Extensions.Minor(Linie.Matrix3x3,System.Int32,System.Int32)
+  name.vb: Minor(Matrix3x3, Integer, Integer)
+  fullName: Linie.Matrix3x3Extensions.Minor(Linie.Matrix3x3, int, int)
+  fullName.vb: Linie.Matrix3x3Extensions.Minor(Linie.Matrix3x3, Integer, Integer)
+  nameWithType: Matrix3x3Extensions.Minor(Matrix3x3, int, int)
+  nameWithType.vb: Matrix3x3Extensions.Minor(Matrix3x3, Integer, Integer)
+- uid: Linie.Matrix3x3Extensions.Minor*
+  name: Minor
+  href: api/Linie.Matrix3x3Extensions.html#Linie_Matrix3x3Extensions_Minor_
+  commentId: Overload:Linie.Matrix3x3Extensions.Minor
+  isSpec: "True"
+  fullName: Linie.Matrix3x3Extensions.Minor
+  nameWithType: Matrix3x3Extensions.Minor
 - uid: Linie.Matrix4x4
   name: Matrix4x4
   href: api/Linie.Matrix4x4.html
   commentId: T:Linie.Matrix4x4
   fullName: Linie.Matrix4x4
   nameWithType: Matrix4x4
+- uid: Linie.Matrix4x4.#ctor
+  name: Matrix4x4()
+  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4__ctor
+  commentId: M:Linie.Matrix4x4.#ctor
+  name.vb: New()
+  fullName: Linie.Matrix4x4.Matrix4x4()
+  fullName.vb: Linie.Matrix4x4.New()
+  nameWithType: Matrix4x4.Matrix4x4()
+  nameWithType.vb: Matrix4x4.New()
 - uid: Linie.Matrix4x4.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)
   name: Matrix4x4(double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double)
   href: api/Linie.Matrix4x4.html#Linie_Matrix4x4__ctor_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_
@@ -694,6 +950,19 @@ references:
   isSpec: "True"
   fullName: Linie.Matrix4x4.GetComparer
   nameWithType: Matrix4x4.GetComparer
+- uid: Linie.Matrix4x4.GetHashCode
+  name: GetHashCode()
+  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_GetHashCode
+  commentId: M:Linie.Matrix4x4.GetHashCode
+  fullName: Linie.Matrix4x4.GetHashCode()
+  nameWithType: Matrix4x4.GetHashCode()
+- uid: Linie.Matrix4x4.GetHashCode*
+  name: GetHashCode
+  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_GetHashCode_
+  commentId: Overload:Linie.Matrix4x4.GetHashCode
+  isSpec: "True"
+  fullName: Linie.Matrix4x4.GetHashCode
+  nameWithType: Matrix4x4.GetHashCode
 - uid: Linie.Matrix4x4.GetRow(System.Int32)
   name: GetRow(int)
   href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_GetRow_System_Int32_
@@ -742,14 +1011,14 @@ references:
   fullName.vb: Linie.Matrix4x4.this[]
   nameWithType: Matrix4x4.this
   nameWithType.vb: Matrix4x4.this[]
-- uid: Linie.Matrix4x4.Map(Linie.Matrix4x4,System.Func{System.Int32,System.Int32,System.Double,System.Double},Linie.Matrix4x4@)
-  name: Map(Matrix4x4, Func<int, int, double, double>, ref Matrix4x4)
-  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_Map_Linie_Matrix4x4_System_Func_System_Int32_System_Int32_System_Double_System_Double__Linie_Matrix4x4__
-  commentId: M:Linie.Matrix4x4.Map(Linie.Matrix4x4,System.Func{System.Int32,System.Int32,System.Double,System.Double},Linie.Matrix4x4@)
+- uid: Linie.Matrix4x4.Map(Linie.Matrix4x4@,System.Func{System.Int32,System.Int32,System.Double,System.Double}@,Linie.Matrix4x4@)
+  name: Map(in Matrix4x4, in Func<int, int, double, double>, ref Matrix4x4)
+  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_Map_Linie_Matrix4x4__System_Func_System_Int32_System_Int32_System_Double_System_Double___Linie_Matrix4x4__
+  commentId: M:Linie.Matrix4x4.Map(Linie.Matrix4x4@,System.Func{System.Int32,System.Int32,System.Double,System.Double}@,Linie.Matrix4x4@)
   name.vb: Map(Matrix4x4, Func(Of Integer, Integer, Double, Double), Matrix4x4)
-  fullName: Linie.Matrix4x4.Map(Linie.Matrix4x4, System.Func<int, int, double, double>, ref Linie.Matrix4x4)
+  fullName: Linie.Matrix4x4.Map(in Linie.Matrix4x4, in System.Func<int, int, double, double>, ref Linie.Matrix4x4)
   fullName.vb: Linie.Matrix4x4.Map(Linie.Matrix4x4, System.Func(Of Integer, Integer, Double, Double), Linie.Matrix4x4)
-  nameWithType: Matrix4x4.Map(Matrix4x4, Func<int, int, double, double>, ref Matrix4x4)
+  nameWithType: Matrix4x4.Map(in Matrix4x4, in Func<int, int, double, double>, ref Matrix4x4)
   nameWithType.vb: Matrix4x4.Map(Matrix4x4, Func(Of Integer, Integer, Double, Double), Matrix4x4)
 - uid: Linie.Matrix4x4.Map*
   name: Map
@@ -758,14 +1027,14 @@ references:
   isSpec: "True"
   fullName: Linie.Matrix4x4.Map
   nameWithType: Matrix4x4.Map
-- uid: Linie.Matrix4x4.Multiply(Linie.Matrix4x4,Linie.Matrix4x4,Linie.Matrix4x4@)
-  name: Multiply(Matrix4x4, Matrix4x4, ref Matrix4x4)
-  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_Multiply_Linie_Matrix4x4_Linie_Matrix4x4_Linie_Matrix4x4__
-  commentId: M:Linie.Matrix4x4.Multiply(Linie.Matrix4x4,Linie.Matrix4x4,Linie.Matrix4x4@)
+- uid: Linie.Matrix4x4.Multiply(Linie.Matrix4x4@,Linie.Matrix4x4@,Linie.Matrix4x4@)
+  name: Multiply(in Matrix4x4, in Matrix4x4, ref Matrix4x4)
+  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_Multiply_Linie_Matrix4x4__Linie_Matrix4x4__Linie_Matrix4x4__
+  commentId: M:Linie.Matrix4x4.Multiply(Linie.Matrix4x4@,Linie.Matrix4x4@,Linie.Matrix4x4@)
   name.vb: Multiply(Matrix4x4, Matrix4x4, Matrix4x4)
-  fullName: Linie.Matrix4x4.Multiply(Linie.Matrix4x4, Linie.Matrix4x4, ref Linie.Matrix4x4)
+  fullName: Linie.Matrix4x4.Multiply(in Linie.Matrix4x4, in Linie.Matrix4x4, ref Linie.Matrix4x4)
   fullName.vb: Linie.Matrix4x4.Multiply(Linie.Matrix4x4, Linie.Matrix4x4, Linie.Matrix4x4)
-  nameWithType: Matrix4x4.Multiply(Matrix4x4, Matrix4x4, ref Matrix4x4)
+  nameWithType: Matrix4x4.Multiply(in Matrix4x4, in Matrix4x4, ref Matrix4x4)
   nameWithType.vb: Matrix4x4.Multiply(Matrix4x4, Matrix4x4, Matrix4x4)
 - uid: Linie.Matrix4x4.Multiply*
   name: Multiply
@@ -801,24 +1070,15 @@ references:
   fullName.vb: Linie.Matrix4x4.*(Linie.Matrix4x4, Linie.Point3)
   nameWithType: Matrix4x4.operator *(Matrix4x4, Point3)
   nameWithType.vb: Matrix4x4.*(Matrix4x4, Point3)
-- uid: Linie.Matrix4x4.op_Multiply(Linie.Matrix4x4,Linie.Ray3)
-  name: operator *(Matrix4x4, Ray3)
-  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_op_Multiply_Linie_Matrix4x4_Linie_Ray3_
-  commentId: M:Linie.Matrix4x4.op_Multiply(Linie.Matrix4x4,Linie.Ray3)
-  name.vb: '*(Matrix4x4, Ray3)'
-  fullName: Linie.Matrix4x4.operator *(Linie.Matrix4x4, Linie.Ray3)
-  fullName.vb: Linie.Matrix4x4.*(Linie.Matrix4x4, Linie.Ray3)
-  nameWithType: Matrix4x4.operator *(Matrix4x4, Ray3)
-  nameWithType.vb: Matrix4x4.*(Matrix4x4, Ray3)
-- uid: Linie.Matrix4x4.op_Multiply(Linie.Matrix4x4,Linie.Ray4)
-  name: operator *(Matrix4x4, Ray4)
-  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_op_Multiply_Linie_Matrix4x4_Linie_Ray4_
-  commentId: M:Linie.Matrix4x4.op_Multiply(Linie.Matrix4x4,Linie.Ray4)
-  name.vb: '*(Matrix4x4, Ray4)'
-  fullName: Linie.Matrix4x4.operator *(Linie.Matrix4x4, Linie.Ray4)
-  fullName.vb: Linie.Matrix4x4.*(Linie.Matrix4x4, Linie.Ray4)
-  nameWithType: Matrix4x4.operator *(Matrix4x4, Ray4)
-  nameWithType.vb: Matrix4x4.*(Matrix4x4, Ray4)
+- uid: Linie.Matrix4x4.op_Multiply(Linie.Matrix4x4,Linie.Ray)
+  name: operator *(Matrix4x4, Ray)
+  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_op_Multiply_Linie_Matrix4x4_Linie_Ray_
+  commentId: M:Linie.Matrix4x4.op_Multiply(Linie.Matrix4x4,Linie.Ray)
+  name.vb: '*(Matrix4x4, Ray)'
+  fullName: Linie.Matrix4x4.operator *(Linie.Matrix4x4, Linie.Ray)
+  fullName.vb: Linie.Matrix4x4.*(Linie.Matrix4x4, Linie.Ray)
+  nameWithType: Matrix4x4.operator *(Matrix4x4, Ray)
+  nameWithType.vb: Matrix4x4.*(Matrix4x4, Ray)
 - uid: Linie.Matrix4x4.op_Multiply(Linie.Matrix4x4,Linie.Vector3)
   name: operator *(Matrix4x4, Vector3)
   href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_op_Multiply_Linie_Matrix4x4_Linie_Vector3_
@@ -875,21 +1135,24 @@ references:
   commentId: M:Linie.Matrix4x4.Transpose
   fullName: Linie.Matrix4x4.Transpose()
   nameWithType: Matrix4x4.Transpose()
-- uid: Linie.Matrix4x4.Transpose(Linie.Matrix4x4,Linie.Matrix4x4@)
-  name: Transpose(Matrix4x4, ref Matrix4x4)
-  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_Transpose_Linie_Matrix4x4_Linie_Matrix4x4__
-  commentId: M:Linie.Matrix4x4.Transpose(Linie.Matrix4x4,Linie.Matrix4x4@)
+- uid: Linie.Matrix4x4.Transpose(Linie.Matrix4x4@,Linie.Matrix4x4@)
+  name: Transpose(in Matrix4x4, ref Matrix4x4)
+  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_Transpose_Linie_Matrix4x4__Linie_Matrix4x4__
+  commentId: M:Linie.Matrix4x4.Transpose(Linie.Matrix4x4@,Linie.Matrix4x4@)
   name.vb: Transpose(Matrix4x4, Matrix4x4)
-  fullName: Linie.Matrix4x4.Transpose(Linie.Matrix4x4, ref Linie.Matrix4x4)
+  fullName: Linie.Matrix4x4.Transpose(in Linie.Matrix4x4, ref Linie.Matrix4x4)
   fullName.vb: Linie.Matrix4x4.Transpose(Linie.Matrix4x4, Linie.Matrix4x4)
-  nameWithType: Matrix4x4.Transpose(Matrix4x4, ref Matrix4x4)
+  nameWithType: Matrix4x4.Transpose(in Matrix4x4, ref Matrix4x4)
   nameWithType.vb: Matrix4x4.Transpose(Matrix4x4, Matrix4x4)
-- uid: Linie.Matrix4x4.Transpose(Linie.Matrix4x4)
-  name: Transpose(Matrix4x4)
-  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_Transpose_Linie_Matrix4x4_
-  commentId: M:Linie.Matrix4x4.Transpose(Linie.Matrix4x4)
-  fullName: Linie.Matrix4x4.Transpose(Linie.Matrix4x4)
-  nameWithType: Matrix4x4.Transpose(Matrix4x4)
+- uid: Linie.Matrix4x4.Transpose(Linie.Matrix4x4@)
+  name: Transpose(in Matrix4x4)
+  href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_Transpose_Linie_Matrix4x4__
+  commentId: M:Linie.Matrix4x4.Transpose(Linie.Matrix4x4@)
+  name.vb: Transpose(Matrix4x4)
+  fullName: Linie.Matrix4x4.Transpose(in Linie.Matrix4x4)
+  fullName.vb: Linie.Matrix4x4.Transpose(Linie.Matrix4x4)
+  nameWithType: Matrix4x4.Transpose(in Matrix4x4)
+  nameWithType.vb: Matrix4x4.Transpose(Matrix4x4)
 - uid: Linie.Matrix4x4.Transpose*
   name: Transpose
   href: api/Linie.Matrix4x4.html#Linie_Matrix4x4_Transpose_
@@ -938,19 +1201,6 @@ references:
   isSpec: "True"
   fullName: Linie.Matrix4x4Extensions.Invert
   nameWithType: Matrix4x4Extensions.Invert
-- uid: Linie.Matrix4x4Extensions.Invert2(Linie.Matrix4x4,Linie.Matrix4x4)
-  name: Invert2(Matrix4x4, Matrix4x4)
-  href: api/Linie.Matrix4x4Extensions.html#Linie_Matrix4x4Extensions_Invert2_Linie_Matrix4x4_Linie_Matrix4x4_
-  commentId: M:Linie.Matrix4x4Extensions.Invert2(Linie.Matrix4x4,Linie.Matrix4x4)
-  fullName: Linie.Matrix4x4Extensions.Invert2(Linie.Matrix4x4, Linie.Matrix4x4)
-  nameWithType: Matrix4x4Extensions.Invert2(Matrix4x4, Matrix4x4)
-- uid: Linie.Matrix4x4Extensions.Invert2*
-  name: Invert2
-  href: api/Linie.Matrix4x4Extensions.html#Linie_Matrix4x4Extensions_Invert2_
-  commentId: Overload:Linie.Matrix4x4Extensions.Invert2
-  isSpec: "True"
-  fullName: Linie.Matrix4x4Extensions.Invert2
-  nameWithType: Matrix4x4Extensions.Invert2
 - uid: Linie.Matrix4x4Extensions.IsInvertible(Linie.Matrix4x4)
   name: IsInvertible(Matrix4x4)
   href: api/Linie.Matrix4x4Extensions.html#Linie_Matrix4x4Extensions_IsInvertible_Linie_Matrix4x4_
@@ -1753,6 +2003,92 @@ references:
   commentId: F:Linie.Point3.Z
   fullName: Linie.Point3.Z
   nameWithType: Point3.Z
+- uid: Linie.Ray
+  name: Ray
+  href: api/Linie.Ray.html
+  commentId: T:Linie.Ray
+  fullName: Linie.Ray
+  nameWithType: Ray
+- uid: Linie.Ray.#ctor(Linie.Vector4,Linie.Vector4)
+  name: Ray(Vector4, Vector4)
+  href: api/Linie.Ray.html#Linie_Ray__ctor_Linie_Vector4_Linie_Vector4_
+  commentId: M:Linie.Ray.#ctor(Linie.Vector4,Linie.Vector4)
+  name.vb: New(Vector4, Vector4)
+  fullName: Linie.Ray.Ray(Linie.Vector4, Linie.Vector4)
+  fullName.vb: Linie.Ray.New(Linie.Vector4, Linie.Vector4)
+  nameWithType: Ray.Ray(Vector4, Vector4)
+  nameWithType.vb: Ray.New(Vector4, Vector4)
+- uid: Linie.Ray.#ctor*
+  name: Ray
+  href: api/Linie.Ray.html#Linie_Ray__ctor_
+  commentId: Overload:Linie.Ray.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Linie.Ray.Ray
+  fullName.vb: Linie.Ray.New
+  nameWithType: Ray.Ray
+  nameWithType.vb: Ray.New
+- uid: Linie.Ray.At(System.Double@)
+  name: At(in double)
+  href: api/Linie.Ray.html#Linie_Ray_At_System_Double__
+  commentId: M:Linie.Ray.At(System.Double@)
+  name.vb: At(Double)
+  fullName: Linie.Ray.At(in double)
+  fullName.vb: Linie.Ray.At(Double)
+  nameWithType: Ray.At(in double)
+  nameWithType.vb: Ray.At(Double)
+- uid: Linie.Ray.At*
+  name: At
+  href: api/Linie.Ray.html#Linie_Ray_At_
+  commentId: Overload:Linie.Ray.At
+  isSpec: "True"
+  fullName: Linie.Ray.At
+  nameWithType: Ray.At
+- uid: Linie.Ray.Direction
+  name: Direction
+  href: api/Linie.Ray.html#Linie_Ray_Direction
+  commentId: P:Linie.Ray.Direction
+  fullName: Linie.Ray.Direction
+  nameWithType: Ray.Direction
+- uid: Linie.Ray.Direction*
+  name: Direction
+  href: api/Linie.Ray.html#Linie_Ray_Direction_
+  commentId: Overload:Linie.Ray.Direction
+  isSpec: "True"
+  fullName: Linie.Ray.Direction
+  nameWithType: Ray.Direction
+- uid: Linie.Ray.Item(System.Double)
+  name: this[double]
+  href: api/Linie.Ray.html#Linie_Ray_Item_System_Double_
+  commentId: P:Linie.Ray.Item(System.Double)
+  name.vb: this[](Double)
+  fullName: Linie.Ray.this[double]
+  fullName.vb: Linie.Ray.this[](Double)
+  nameWithType: Ray.this[double]
+  nameWithType.vb: Ray.this[](Double)
+- uid: Linie.Ray.Item*
+  name: this
+  href: api/Linie.Ray.html#Linie_Ray_Item_
+  commentId: Overload:Linie.Ray.Item
+  isSpec: "True"
+  name.vb: this[]
+  fullName: Linie.Ray.this
+  fullName.vb: Linie.Ray.this[]
+  nameWithType: Ray.this
+  nameWithType.vb: Ray.this[]
+- uid: Linie.Ray.Origin
+  name: Origin
+  href: api/Linie.Ray.html#Linie_Ray_Origin
+  commentId: P:Linie.Ray.Origin
+  fullName: Linie.Ray.Origin
+  nameWithType: Ray.Origin
+- uid: Linie.Ray.Origin*
+  name: Origin
+  href: api/Linie.Ray.html#Linie_Ray_Origin_
+  commentId: Overload:Linie.Ray.Origin
+  isSpec: "True"
+  fullName: Linie.Ray.Origin
+  nameWithType: Ray.Origin
 - uid: Linie.Ray3
   name: Ray3
   href: api/Linie.Ray3.html
@@ -1925,6 +2261,577 @@ references:
   isSpec: "True"
   fullName: Linie.Ray4.Origin
   nameWithType: Ray4.Origin
+- uid: Linie.SwizzlingExtensions
+  name: SwizzlingExtensions
+  href: api/Linie.SwizzlingExtensions.html
+  commentId: T:Linie.SwizzlingExtensions
+  fullName: Linie.SwizzlingExtensions
+  nameWithType: SwizzlingExtensions
+- uid: Linie.SwizzlingExtensions.XX(Linie.Vector2)
+  name: XX(Vector2)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XX_Linie_Vector2_
+  commentId: M:Linie.SwizzlingExtensions.XX(Linie.Vector2)
+  fullName: Linie.SwizzlingExtensions.XX(Linie.Vector2)
+  nameWithType: SwizzlingExtensions.XX(Vector2)
+- uid: Linie.SwizzlingExtensions.XX*
+  name: XX
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XX_
+  commentId: Overload:Linie.SwizzlingExtensions.XX
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.XX
+  nameWithType: SwizzlingExtensions.XX
+- uid: Linie.SwizzlingExtensions.XXX(Linie.Vector3)
+  name: XXX(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XXX_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.XXX(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.XXX(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.XXX(Vector3)
+- uid: Linie.SwizzlingExtensions.XXX(Linie.Vector4)
+  name: XXX(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XXX_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.XXX(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.XXX(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.XXX(Vector4)
+- uid: Linie.SwizzlingExtensions.XXX*
+  name: XXX
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XXX_
+  commentId: Overload:Linie.SwizzlingExtensions.XXX
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.XXX
+  nameWithType: SwizzlingExtensions.XXX
+- uid: Linie.SwizzlingExtensions.XXY(Linie.Vector3)
+  name: XXY(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XXY_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.XXY(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.XXY(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.XXY(Vector3)
+- uid: Linie.SwizzlingExtensions.XXY(Linie.Vector4)
+  name: XXY(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XXY_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.XXY(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.XXY(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.XXY(Vector4)
+- uid: Linie.SwizzlingExtensions.XXY*
+  name: XXY
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XXY_
+  commentId: Overload:Linie.SwizzlingExtensions.XXY
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.XXY
+  nameWithType: SwizzlingExtensions.XXY
+- uid: Linie.SwizzlingExtensions.XXZ(Linie.Vector3)
+  name: XXZ(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XXZ_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.XXZ(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.XXZ(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.XXZ(Vector3)
+- uid: Linie.SwizzlingExtensions.XXZ(Linie.Vector4)
+  name: XXZ(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XXZ_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.XXZ(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.XXZ(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.XXZ(Vector4)
+- uid: Linie.SwizzlingExtensions.XXZ*
+  name: XXZ
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XXZ_
+  commentId: Overload:Linie.SwizzlingExtensions.XXZ
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.XXZ
+  nameWithType: SwizzlingExtensions.XXZ
+- uid: Linie.SwizzlingExtensions.XY(Linie.Vector2)
+  name: XY(Vector2)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XY_Linie_Vector2_
+  commentId: M:Linie.SwizzlingExtensions.XY(Linie.Vector2)
+  fullName: Linie.SwizzlingExtensions.XY(Linie.Vector2)
+  nameWithType: SwizzlingExtensions.XY(Vector2)
+- uid: Linie.SwizzlingExtensions.XY*
+  name: XY
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XY_
+  commentId: Overload:Linie.SwizzlingExtensions.XY
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.XY
+  nameWithType: SwizzlingExtensions.XY
+- uid: Linie.SwizzlingExtensions.XYX(Linie.Vector3)
+  name: XYX(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XYX_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.XYX(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.XYX(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.XYX(Vector3)
+- uid: Linie.SwizzlingExtensions.XYX(Linie.Vector4)
+  name: XYX(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XYX_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.XYX(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.XYX(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.XYX(Vector4)
+- uid: Linie.SwizzlingExtensions.XYX*
+  name: XYX
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XYX_
+  commentId: Overload:Linie.SwizzlingExtensions.XYX
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.XYX
+  nameWithType: SwizzlingExtensions.XYX
+- uid: Linie.SwizzlingExtensions.XYY(Linie.Vector3)
+  name: XYY(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XYY_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.XYY(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.XYY(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.XYY(Vector3)
+- uid: Linie.SwizzlingExtensions.XYY(Linie.Vector4)
+  name: XYY(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XYY_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.XYY(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.XYY(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.XYY(Vector4)
+- uid: Linie.SwizzlingExtensions.XYY*
+  name: XYY
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XYY_
+  commentId: Overload:Linie.SwizzlingExtensions.XYY
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.XYY
+  nameWithType: SwizzlingExtensions.XYY
+- uid: Linie.SwizzlingExtensions.XYZ(Linie.Vector3)
+  name: XYZ(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XYZ_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.XYZ(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.XYZ(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.XYZ(Vector3)
+- uid: Linie.SwizzlingExtensions.XYZ(Linie.Vector4)
+  name: XYZ(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XYZ_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.XYZ(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.XYZ(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.XYZ(Vector4)
+- uid: Linie.SwizzlingExtensions.XYZ*
+  name: XYZ
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XYZ_
+  commentId: Overload:Linie.SwizzlingExtensions.XYZ
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.XYZ
+  nameWithType: SwizzlingExtensions.XYZ
+- uid: Linie.SwizzlingExtensions.XZX(Linie.Vector3)
+  name: XZX(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XZX_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.XZX(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.XZX(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.XZX(Vector3)
+- uid: Linie.SwizzlingExtensions.XZX(Linie.Vector4)
+  name: XZX(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XZX_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.XZX(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.XZX(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.XZX(Vector4)
+- uid: Linie.SwizzlingExtensions.XZX*
+  name: XZX
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XZX_
+  commentId: Overload:Linie.SwizzlingExtensions.XZX
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.XZX
+  nameWithType: SwizzlingExtensions.XZX
+- uid: Linie.SwizzlingExtensions.XZY(Linie.Vector3)
+  name: XZY(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XZY_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.XZY(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.XZY(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.XZY(Vector3)
+- uid: Linie.SwizzlingExtensions.XZY(Linie.Vector4)
+  name: XZY(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XZY_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.XZY(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.XZY(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.XZY(Vector4)
+- uid: Linie.SwizzlingExtensions.XZY*
+  name: XZY
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XZY_
+  commentId: Overload:Linie.SwizzlingExtensions.XZY
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.XZY
+  nameWithType: SwizzlingExtensions.XZY
+- uid: Linie.SwizzlingExtensions.XZZ(Linie.Vector3)
+  name: XZZ(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XZZ_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.XZZ(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.XZZ(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.XZZ(Vector3)
+- uid: Linie.SwizzlingExtensions.XZZ(Linie.Vector4)
+  name: XZZ(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XZZ_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.XZZ(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.XZZ(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.XZZ(Vector4)
+- uid: Linie.SwizzlingExtensions.XZZ*
+  name: XZZ
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XZZ_
+  commentId: Overload:Linie.SwizzlingExtensions.XZZ
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.XZZ
+  nameWithType: SwizzlingExtensions.XZZ
+- uid: Linie.SwizzlingExtensions.YX(Linie.Vector2)
+  name: YX(Vector2)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YX_Linie_Vector2_
+  commentId: M:Linie.SwizzlingExtensions.YX(Linie.Vector2)
+  fullName: Linie.SwizzlingExtensions.YX(Linie.Vector2)
+  nameWithType: SwizzlingExtensions.YX(Vector2)
+- uid: Linie.SwizzlingExtensions.YX*
+  name: YX
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YX_
+  commentId: Overload:Linie.SwizzlingExtensions.YX
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.YX
+  nameWithType: SwizzlingExtensions.YX
+- uid: Linie.SwizzlingExtensions.YXX(Linie.Vector3)
+  name: YXX(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YXX_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.YXX(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.YXX(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.YXX(Vector3)
+- uid: Linie.SwizzlingExtensions.YXX(Linie.Vector4)
+  name: YXX(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YXX_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.YXX(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.YXX(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.YXX(Vector4)
+- uid: Linie.SwizzlingExtensions.YXX*
+  name: YXX
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YXX_
+  commentId: Overload:Linie.SwizzlingExtensions.YXX
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.YXX
+  nameWithType: SwizzlingExtensions.YXX
+- uid: Linie.SwizzlingExtensions.YXY(Linie.Vector3)
+  name: YXY(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YXY_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.YXY(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.YXY(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.YXY(Vector3)
+- uid: Linie.SwizzlingExtensions.YXY(Linie.Vector4)
+  name: YXY(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YXY_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.YXY(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.YXY(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.YXY(Vector4)
+- uid: Linie.SwizzlingExtensions.YXY*
+  name: YXY
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YXY_
+  commentId: Overload:Linie.SwizzlingExtensions.YXY
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.YXY
+  nameWithType: SwizzlingExtensions.YXY
+- uid: Linie.SwizzlingExtensions.YXZ(Linie.Vector3)
+  name: YXZ(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YXZ_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.YXZ(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.YXZ(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.YXZ(Vector3)
+- uid: Linie.SwizzlingExtensions.YXZ(Linie.Vector4)
+  name: YXZ(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YXZ_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.YXZ(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.YXZ(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.YXZ(Vector4)
+- uid: Linie.SwizzlingExtensions.YXZ*
+  name: YXZ
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YXZ_
+  commentId: Overload:Linie.SwizzlingExtensions.YXZ
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.YXZ
+  nameWithType: SwizzlingExtensions.YXZ
+- uid: Linie.SwizzlingExtensions.YY(Linie.Vector2)
+  name: YY(Vector2)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YY_Linie_Vector2_
+  commentId: M:Linie.SwizzlingExtensions.YY(Linie.Vector2)
+  fullName: Linie.SwizzlingExtensions.YY(Linie.Vector2)
+  nameWithType: SwizzlingExtensions.YY(Vector2)
+- uid: Linie.SwizzlingExtensions.YY*
+  name: YY
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YY_
+  commentId: Overload:Linie.SwizzlingExtensions.YY
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.YY
+  nameWithType: SwizzlingExtensions.YY
+- uid: Linie.SwizzlingExtensions.YYX(Linie.Vector3)
+  name: YYX(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YYX_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.YYX(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.YYX(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.YYX(Vector3)
+- uid: Linie.SwizzlingExtensions.YYX(Linie.Vector4)
+  name: YYX(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YYX_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.YYX(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.YYX(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.YYX(Vector4)
+- uid: Linie.SwizzlingExtensions.YYX*
+  name: YYX
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YYX_
+  commentId: Overload:Linie.SwizzlingExtensions.YYX
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.YYX
+  nameWithType: SwizzlingExtensions.YYX
+- uid: Linie.SwizzlingExtensions.YYY(Linie.Vector3)
+  name: YYY(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YYY_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.YYY(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.YYY(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.YYY(Vector3)
+- uid: Linie.SwizzlingExtensions.YYY(Linie.Vector4)
+  name: YYY(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YYY_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.YYY(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.YYY(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.YYY(Vector4)
+- uid: Linie.SwizzlingExtensions.YYY*
+  name: YYY
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YYY_
+  commentId: Overload:Linie.SwizzlingExtensions.YYY
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.YYY
+  nameWithType: SwizzlingExtensions.YYY
+- uid: Linie.SwizzlingExtensions.YYZ(Linie.Vector3)
+  name: YYZ(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YYZ_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.YYZ(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.YYZ(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.YYZ(Vector3)
+- uid: Linie.SwizzlingExtensions.YYZ(Linie.Vector4)
+  name: YYZ(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YYZ_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.YYZ(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.YYZ(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.YYZ(Vector4)
+- uid: Linie.SwizzlingExtensions.YYZ*
+  name: YYZ
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YYZ_
+  commentId: Overload:Linie.SwizzlingExtensions.YYZ
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.YYZ
+  nameWithType: SwizzlingExtensions.YYZ
+- uid: Linie.SwizzlingExtensions.YZX(Linie.Vector3)
+  name: YZX(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YZX_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.YZX(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.YZX(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.YZX(Vector3)
+- uid: Linie.SwizzlingExtensions.YZX(Linie.Vector4)
+  name: YZX(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YZX_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.YZX(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.YZX(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.YZX(Vector4)
+- uid: Linie.SwizzlingExtensions.YZX*
+  name: YZX
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YZX_
+  commentId: Overload:Linie.SwizzlingExtensions.YZX
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.YZX
+  nameWithType: SwizzlingExtensions.YZX
+- uid: Linie.SwizzlingExtensions.YZY(Linie.Vector3)
+  name: YZY(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YZY_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.YZY(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.YZY(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.YZY(Vector3)
+- uid: Linie.SwizzlingExtensions.YZY(Linie.Vector4)
+  name: YZY(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YZY_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.YZY(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.YZY(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.YZY(Vector4)
+- uid: Linie.SwizzlingExtensions.YZY*
+  name: YZY
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YZY_
+  commentId: Overload:Linie.SwizzlingExtensions.YZY
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.YZY
+  nameWithType: SwizzlingExtensions.YZY
+- uid: Linie.SwizzlingExtensions.YZZ(Linie.Vector3)
+  name: YZZ(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YZZ_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.YZZ(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.YZZ(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.YZZ(Vector3)
+- uid: Linie.SwizzlingExtensions.YZZ(Linie.Vector4)
+  name: YZZ(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YZZ_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.YZZ(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.YZZ(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.YZZ(Vector4)
+- uid: Linie.SwizzlingExtensions.YZZ*
+  name: YZZ
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YZZ_
+  commentId: Overload:Linie.SwizzlingExtensions.YZZ
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.YZZ
+  nameWithType: SwizzlingExtensions.YZZ
+- uid: Linie.SwizzlingExtensions.ZXX(Linie.Vector3)
+  name: ZXX(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZXX_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.ZXX(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.ZXX(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.ZXX(Vector3)
+- uid: Linie.SwizzlingExtensions.ZXX(Linie.Vector4)
+  name: ZXX(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZXX_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.ZXX(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.ZXX(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.ZXX(Vector4)
+- uid: Linie.SwizzlingExtensions.ZXX*
+  name: ZXX
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZXX_
+  commentId: Overload:Linie.SwizzlingExtensions.ZXX
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.ZXX
+  nameWithType: SwizzlingExtensions.ZXX
+- uid: Linie.SwizzlingExtensions.ZXY(Linie.Vector3)
+  name: ZXY(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZXY_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.ZXY(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.ZXY(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.ZXY(Vector3)
+- uid: Linie.SwizzlingExtensions.ZXY(Linie.Vector4)
+  name: ZXY(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZXY_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.ZXY(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.ZXY(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.ZXY(Vector4)
+- uid: Linie.SwizzlingExtensions.ZXY*
+  name: ZXY
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZXY_
+  commentId: Overload:Linie.SwizzlingExtensions.ZXY
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.ZXY
+  nameWithType: SwizzlingExtensions.ZXY
+- uid: Linie.SwizzlingExtensions.ZXZ(Linie.Vector3)
+  name: ZXZ(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZXZ_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.ZXZ(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.ZXZ(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.ZXZ(Vector3)
+- uid: Linie.SwizzlingExtensions.ZXZ(Linie.Vector4)
+  name: ZXZ(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZXZ_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.ZXZ(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.ZXZ(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.ZXZ(Vector4)
+- uid: Linie.SwizzlingExtensions.ZXZ*
+  name: ZXZ
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZXZ_
+  commentId: Overload:Linie.SwizzlingExtensions.ZXZ
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.ZXZ
+  nameWithType: SwizzlingExtensions.ZXZ
+- uid: Linie.SwizzlingExtensions.ZYX(Linie.Vector3)
+  name: ZYX(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZYX_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.ZYX(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.ZYX(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.ZYX(Vector3)
+- uid: Linie.SwizzlingExtensions.ZYX(Linie.Vector4)
+  name: ZYX(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZYX_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.ZYX(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.ZYX(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.ZYX(Vector4)
+- uid: Linie.SwizzlingExtensions.ZYX*
+  name: ZYX
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZYX_
+  commentId: Overload:Linie.SwizzlingExtensions.ZYX
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.ZYX
+  nameWithType: SwizzlingExtensions.ZYX
+- uid: Linie.SwizzlingExtensions.ZYY(Linie.Vector3)
+  name: ZYY(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZYY_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.ZYY(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.ZYY(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.ZYY(Vector3)
+- uid: Linie.SwizzlingExtensions.ZYY(Linie.Vector4)
+  name: ZYY(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZYY_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.ZYY(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.ZYY(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.ZYY(Vector4)
+- uid: Linie.SwizzlingExtensions.ZYY*
+  name: ZYY
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZYY_
+  commentId: Overload:Linie.SwizzlingExtensions.ZYY
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.ZYY
+  nameWithType: SwizzlingExtensions.ZYY
+- uid: Linie.SwizzlingExtensions.ZYZ(Linie.Vector3)
+  name: ZYZ(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZYZ_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.ZYZ(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.ZYZ(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.ZYZ(Vector3)
+- uid: Linie.SwizzlingExtensions.ZYZ(Linie.Vector4)
+  name: ZYZ(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZYZ_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.ZYZ(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.ZYZ(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.ZYZ(Vector4)
+- uid: Linie.SwizzlingExtensions.ZYZ*
+  name: ZYZ
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZYZ_
+  commentId: Overload:Linie.SwizzlingExtensions.ZYZ
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.ZYZ
+  nameWithType: SwizzlingExtensions.ZYZ
+- uid: Linie.SwizzlingExtensions.ZZX(Linie.Vector3)
+  name: ZZX(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZZX_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.ZZX(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.ZZX(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.ZZX(Vector3)
+- uid: Linie.SwizzlingExtensions.ZZX(Linie.Vector4)
+  name: ZZX(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZZX_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.ZZX(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.ZZX(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.ZZX(Vector4)
+- uid: Linie.SwizzlingExtensions.ZZX*
+  name: ZZX
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZZX_
+  commentId: Overload:Linie.SwizzlingExtensions.ZZX
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.ZZX
+  nameWithType: SwizzlingExtensions.ZZX
+- uid: Linie.SwizzlingExtensions.ZZY(Linie.Vector3)
+  name: ZZY(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZZY_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.ZZY(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.ZZY(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.ZZY(Vector3)
+- uid: Linie.SwizzlingExtensions.ZZY(Linie.Vector4)
+  name: ZZY(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZZY_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.ZZY(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.ZZY(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.ZZY(Vector4)
+- uid: Linie.SwizzlingExtensions.ZZY*
+  name: ZZY
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZZY_
+  commentId: Overload:Linie.SwizzlingExtensions.ZZY
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.ZZY
+  nameWithType: SwizzlingExtensions.ZZY
+- uid: Linie.SwizzlingExtensions.ZZZ(Linie.Vector3)
+  name: ZZZ(Vector3)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZZZ_Linie_Vector3_
+  commentId: M:Linie.SwizzlingExtensions.ZZZ(Linie.Vector3)
+  fullName: Linie.SwizzlingExtensions.ZZZ(Linie.Vector3)
+  nameWithType: SwizzlingExtensions.ZZZ(Vector3)
+- uid: Linie.SwizzlingExtensions.ZZZ(Linie.Vector4)
+  name: ZZZ(Vector4)
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZZZ_Linie_Vector4_
+  commentId: M:Linie.SwizzlingExtensions.ZZZ(Linie.Vector4)
+  fullName: Linie.SwizzlingExtensions.ZZZ(Linie.Vector4)
+  nameWithType: SwizzlingExtensions.ZZZ(Vector4)
+- uid: Linie.SwizzlingExtensions.ZZZ*
+  name: ZZZ
+  href: api/Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZZZ_
+  commentId: Overload:Linie.SwizzlingExtensions.ZZZ
+  isSpec: "True"
+  fullName: Linie.SwizzlingExtensions.ZZZ
+  nameWithType: SwizzlingExtensions.ZZZ
 - uid: Linie.Transform
   name: Transform
   href: api/Linie.Transform.html
@@ -2070,22 +2977,35 @@ references:
   isSpec: "True"
   fullName: Linie.Vector2.Equals
   nameWithType: Vector2.Equals
-- uid: Linie.Vector2.GetEqualityComparer(System.Double)
-  name: GetEqualityComparer(double)
-  href: api/Linie.Vector2.html#Linie_Vector2_GetEqualityComparer_System_Double_
-  commentId: M:Linie.Vector2.GetEqualityComparer(System.Double)
-  name.vb: GetEqualityComparer(Double)
-  fullName: Linie.Vector2.GetEqualityComparer(double)
-  fullName.vb: Linie.Vector2.GetEqualityComparer(Double)
-  nameWithType: Vector2.GetEqualityComparer(double)
-  nameWithType.vb: Vector2.GetEqualityComparer(Double)
-- uid: Linie.Vector2.GetEqualityComparer*
-  name: GetEqualityComparer
-  href: api/Linie.Vector2.html#Linie_Vector2_GetEqualityComparer_
-  commentId: Overload:Linie.Vector2.GetEqualityComparer
+- uid: Linie.Vector2.GetComparer(System.Double)
+  name: GetComparer(double)
+  href: api/Linie.Vector2.html#Linie_Vector2_GetComparer_System_Double_
+  commentId: M:Linie.Vector2.GetComparer(System.Double)
+  name.vb: GetComparer(Double)
+  fullName: Linie.Vector2.GetComparer(double)
+  fullName.vb: Linie.Vector2.GetComparer(Double)
+  nameWithType: Vector2.GetComparer(double)
+  nameWithType.vb: Vector2.GetComparer(Double)
+- uid: Linie.Vector2.GetComparer*
+  name: GetComparer
+  href: api/Linie.Vector2.html#Linie_Vector2_GetComparer_
+  commentId: Overload:Linie.Vector2.GetComparer
   isSpec: "True"
-  fullName: Linie.Vector2.GetEqualityComparer
-  nameWithType: Vector2.GetEqualityComparer
+  fullName: Linie.Vector2.GetComparer
+  nameWithType: Vector2.GetComparer
+- uid: Linie.Vector2.GetHashCode
+  name: GetHashCode()
+  href: api/Linie.Vector2.html#Linie_Vector2_GetHashCode
+  commentId: M:Linie.Vector2.GetHashCode
+  fullName: Linie.Vector2.GetHashCode()
+  nameWithType: Vector2.GetHashCode()
+- uid: Linie.Vector2.GetHashCode*
+  name: GetHashCode
+  href: api/Linie.Vector2.html#Linie_Vector2_GetHashCode_
+  commentId: Overload:Linie.Vector2.GetHashCode
+  isSpec: "True"
+  fullName: Linie.Vector2.GetHashCode
+  nameWithType: Vector2.GetHashCode
 - uid: Linie.Vector2.Magnitude
   name: Magnitude()
   href: api/Linie.Vector2.html#Linie_Vector2_Magnitude
@@ -2463,6 +3383,19 @@ references:
   isSpec: "True"
   fullName: Linie.Vector3.GetEqualityComparer
   nameWithType: Vector3.GetEqualityComparer
+- uid: Linie.Vector3.GetHashCode
+  name: GetHashCode()
+  href: api/Linie.Vector3.html#Linie_Vector3_GetHashCode
+  commentId: M:Linie.Vector3.GetHashCode
+  fullName: Linie.Vector3.GetHashCode()
+  nameWithType: Vector3.GetHashCode()
+- uid: Linie.Vector3.GetHashCode*
+  name: GetHashCode
+  href: api/Linie.Vector3.html#Linie_Vector3_GetHashCode_
+  commentId: Overload:Linie.Vector3.GetHashCode
+  isSpec: "True"
+  fullName: Linie.Vector3.GetHashCode
+  nameWithType: Vector3.GetHashCode
 - uid: Linie.Vector3.Item(System.Int32)
   name: this[int]
   href: api/Linie.Vector3.html#Linie_Vector3_Item_System_Int32_
@@ -2732,6 +3665,15 @@ references:
   commentId: M:Linie.Vector3.ToString
   fullName: Linie.Vector3.ToString()
   nameWithType: Vector3.ToString()
+- uid: Linie.Vector3.ToString(System.String,System.IFormatProvider)
+  name: ToString(string, IFormatProvider)
+  href: api/Linie.Vector3.html#Linie_Vector3_ToString_System_String_System_IFormatProvider_
+  commentId: M:Linie.Vector3.ToString(System.String,System.IFormatProvider)
+  name.vb: ToString(String, IFormatProvider)
+  fullName: Linie.Vector3.ToString(string, System.IFormatProvider)
+  fullName.vb: Linie.Vector3.ToString(String, System.IFormatProvider)
+  nameWithType: Vector3.ToString(string, IFormatProvider)
+  nameWithType.vb: Vector3.ToString(String, IFormatProvider)
 - uid: Linie.Vector3.ToString*
   name: ToString
   href: api/Linie.Vector3.html#Linie_Vector3_ToString_
@@ -2912,6 +3854,19 @@ references:
   isSpec: "True"
   fullName: Linie.Vector4.GetComparer
   nameWithType: Vector4.GetComparer
+- uid: Linie.Vector4.GetHashCode
+  name: GetHashCode()
+  href: api/Linie.Vector4.html#Linie_Vector4_GetHashCode
+  commentId: M:Linie.Vector4.GetHashCode
+  fullName: Linie.Vector4.GetHashCode()
+  nameWithType: Vector4.GetHashCode()
+- uid: Linie.Vector4.GetHashCode*
+  name: GetHashCode
+  href: api/Linie.Vector4.html#Linie_Vector4_GetHashCode_
+  commentId: Overload:Linie.Vector4.GetHashCode
+  isSpec: "True"
+  fullName: Linie.Vector4.GetHashCode
+  nameWithType: Vector4.GetHashCode
 - uid: Linie.Vector4.IsDirection
   name: IsDirection
   href: api/Linie.Vector4.html#Linie_Vector4_IsDirection
@@ -3170,6 +4125,15 @@ references:
   commentId: M:Linie.Vector4.ToString
   fullName: Linie.Vector4.ToString()
   nameWithType: Vector4.ToString()
+- uid: Linie.Vector4.ToString(System.String,System.IFormatProvider)
+  name: ToString(string, IFormatProvider)
+  href: api/Linie.Vector4.html#Linie_Vector4_ToString_System_String_System_IFormatProvider_
+  commentId: M:Linie.Vector4.ToString(System.String,System.IFormatProvider)
+  name.vb: ToString(String, IFormatProvider)
+  fullName: Linie.Vector4.ToString(string, System.IFormatProvider)
+  fullName.vb: Linie.Vector4.ToString(String, System.IFormatProvider)
+  nameWithType: Vector4.ToString(string, IFormatProvider)
+  nameWithType.vb: Vector4.ToString(String, IFormatProvider)
 - uid: Linie.Vector4.ToString*
   name: ToString
   href: api/Linie.Vector4.html#Linie_Vector4_ToString_
@@ -3214,3 +4178,35 @@ references:
   isSpec: "True"
   fullName: Linie.Vector4.Zero
   nameWithType: Vector4.Zero
+- uid: Linie.Vector4Extensions
+  name: Vector4Extensions
+  href: api/Linie.Vector4Extensions.html
+  commentId: T:Linie.Vector4Extensions
+  fullName: Linie.Vector4Extensions
+  nameWithType: Vector4Extensions
+- uid: Linie.Vector4Extensions.AsDirection(Linie.Vector4)
+  name: AsDirection(Vector4)
+  href: api/Linie.Vector4Extensions.html#Linie_Vector4Extensions_AsDirection_Linie_Vector4_
+  commentId: M:Linie.Vector4Extensions.AsDirection(Linie.Vector4)
+  fullName: Linie.Vector4Extensions.AsDirection(Linie.Vector4)
+  nameWithType: Vector4Extensions.AsDirection(Vector4)
+- uid: Linie.Vector4Extensions.AsDirection*
+  name: AsDirection
+  href: api/Linie.Vector4Extensions.html#Linie_Vector4Extensions_AsDirection_
+  commentId: Overload:Linie.Vector4Extensions.AsDirection
+  isSpec: "True"
+  fullName: Linie.Vector4Extensions.AsDirection
+  nameWithType: Vector4Extensions.AsDirection
+- uid: Linie.Vector4Extensions.AsPosition(Linie.Vector4)
+  name: AsPosition(Vector4)
+  href: api/Linie.Vector4Extensions.html#Linie_Vector4Extensions_AsPosition_Linie_Vector4_
+  commentId: M:Linie.Vector4Extensions.AsPosition(Linie.Vector4)
+  fullName: Linie.Vector4Extensions.AsPosition(Linie.Vector4)
+  nameWithType: Vector4Extensions.AsPosition(Vector4)
+- uid: Linie.Vector4Extensions.AsPosition*
+  name: AsPosition
+  href: api/Linie.Vector4Extensions.html#Linie_Vector4Extensions_AsPosition_
+  commentId: Overload:Linie.Vector4Extensions.AsPosition
+  isSpec: "True"
+  fullName: Linie.Vector4Extensions.AsPosition
+  nameWithType: Vector4Extensions.AsPosition

@@ -91,7 +91,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct Vector3 : IEquatable&lt;Vector3&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Vector3 : IEquatable&lt;Vector3&gt;, IFormattable</code></pre>
   </div>
 
 
@@ -102,6 +102,7 @@
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Linie.Vector3.html">Vector3</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformattable">IFormattable</a></div>
     </dd>
   </dl>
 
@@ -111,9 +112,6 @@
     <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
@@ -126,6 +124,91 @@
     </div>
   </dd></dl>
 
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XXX_Linie_Vector3_">SwizzlingExtensions.XXX(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XXY_Linie_Vector3_">SwizzlingExtensions.XXY(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XXZ_Linie_Vector3_">SwizzlingExtensions.XXZ(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XYX_Linie_Vector3_">SwizzlingExtensions.XYX(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XYY_Linie_Vector3_">SwizzlingExtensions.XYY(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XYZ_Linie_Vector3_">SwizzlingExtensions.XYZ(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XZX_Linie_Vector3_">SwizzlingExtensions.XZX(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XZY_Linie_Vector3_">SwizzlingExtensions.XZY(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_XZZ_Linie_Vector3_">SwizzlingExtensions.XZZ(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YXX_Linie_Vector3_">SwizzlingExtensions.YXX(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YXY_Linie_Vector3_">SwizzlingExtensions.YXY(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YXZ_Linie_Vector3_">SwizzlingExtensions.YXZ(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YYX_Linie_Vector3_">SwizzlingExtensions.YYX(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YYY_Linie_Vector3_">SwizzlingExtensions.YYY(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YYZ_Linie_Vector3_">SwizzlingExtensions.YYZ(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YZX_Linie_Vector3_">SwizzlingExtensions.YZX(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YZY_Linie_Vector3_">SwizzlingExtensions.YZY(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_YZZ_Linie_Vector3_">SwizzlingExtensions.YZZ(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZXX_Linie_Vector3_">SwizzlingExtensions.ZXX(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZXY_Linie_Vector3_">SwizzlingExtensions.ZXY(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZXZ_Linie_Vector3_">SwizzlingExtensions.ZXZ(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZYX_Linie_Vector3_">SwizzlingExtensions.ZYX(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZYY_Linie_Vector3_">SwizzlingExtensions.ZYY(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZYZ_Linie_Vector3_">SwizzlingExtensions.ZYZ(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZZX_Linie_Vector3_">SwizzlingExtensions.ZZX(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZZY_Linie_Vector3_">SwizzlingExtensions.ZZY(Vector3)</a>
+  </div>
+  <div>
+      <a class="xref" href="Linie.SwizzlingExtensions.html#Linie_SwizzlingExtensions_ZZZ_Linie_Vector3_">SwizzlingExtensions.ZZZ(Vector3)</a>
+  </div>
+  </dd></dl>
 
 
 
@@ -139,7 +222,7 @@
 
   <h3 id="Linie_Vector3__ctor_System_Double_" data-uid="Linie.Vector3.#ctor(System.Double)">
   Vector3(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Initializes a new instance of the <a class="xref" href="Linie.Vector3.html">Vector3</a> structure.</div>
@@ -170,7 +253,7 @@
 
   <h3 id="Linie_Vector3__ctor_System_Double_System_Double_System_Double_" data-uid="Linie.Vector3.#ctor(System.Double,System.Double,System.Double)">
   Vector3(double, double, double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Initializes a new instance of the <a class="xref" href="Linie.Vector3.html">Vector3</a> structure.</div>
@@ -208,7 +291,7 @@
 
   <h3 id="Linie_Vector3_X" data-uid="Linie.Vector3.X">
   X
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -238,7 +321,7 @@
 
   <h3 id="Linie_Vector3_Y" data-uid="Linie.Vector3.Y">
   Y
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -268,7 +351,7 @@
 
   <h3 id="Linie_Vector3_Z" data-uid="Linie.Vector3.Z">
   Z
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -303,7 +386,7 @@
 
   <h3 id="Linie_Vector3_Item_System_Int32_" data-uid="Linie.Vector3.Item(System.Int32)">
   this[int]
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -339,7 +422,7 @@
 
   <h3 id="Linie_Vector3_Zero" data-uid="Linie.Vector3.Zero">
   Zero
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -374,7 +457,7 @@
 
   <h3 id="Linie_Vector3_Cross_Linie_Vector3__" data-uid="Linie.Vector3.Cross(Linie.Vector3@)">
   Cross(in Vector3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L126"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -410,7 +493,7 @@
 
   <h3 id="Linie_Vector3_Cross_Linie_Vector3__Linie_Vector3__" data-uid="Linie.Vector3.Cross(Linie.Vector3@,Linie.Vector3@)">
   Cross(in Vector3, in Vector3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L105"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -448,7 +531,7 @@
 
   <h3 id="Linie_Vector3_Dot_Linie_Vector3__" data-uid="Linie.Vector3.Dot(Linie.Vector3@)">
   Dot(in Vector3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L123"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L124"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -484,7 +567,7 @@
 
   <h3 id="Linie_Vector3_Dot_Linie_Vector3__Linie_Normal3__" data-uid="Linie.Vector3.Dot(Linie.Vector3@,Linie.Normal3@)">
   Dot(in Vector3, in Normal3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L102"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -522,7 +605,7 @@
 
   <h3 id="Linie_Vector3_Dot_Linie_Vector3__Linie_Vector3__" data-uid="Linie.Vector3.Dot(Linie.Vector3@,Linie.Vector3@)">
   Dot(in Vector3, in Vector3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L97"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -560,7 +643,7 @@
 
   <h3 id="Linie_Vector3_Equals_Linie_Vector3_" data-uid="Linie.Vector3.Equals(Linie.Vector3)">
   Equals(Vector3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L139"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L143"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Indicates whether the current object is equal to another object of the same type.</div>
@@ -596,7 +679,7 @@
 
   <h3 id="Linie_Vector3_GetEqualityComparer_System_Double__" data-uid="Linie.Vector3.GetEqualityComparer(System.Double@)">
   GetEqualityComparer(in double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L117"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -628,11 +711,42 @@
 
 
 
+  <a id="Linie_Vector3_GetHashCode_" data-uid="Linie.Vector3.GetHashCode*"></a>
+
+  <h3 id="Linie_Vector3_GetHashCode" data-uid="Linie.Vector3.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary">Returns the hash code for this instance.</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd>A 32-bit signed integer that is the hash code for this instance.</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Linie_Vector3_Magnitude_" data-uid="Linie.Vector3.Magnitude*"></a>
 
   <h3 id="Linie_Vector3_Magnitude" data-uid="Linie.Vector3.Magnitude">
   Magnitude()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L120"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -663,7 +777,7 @@
 
   <h3 id="Linie_Vector3_Magnitude_Linie_Vector3__" data-uid="Linie.Vector3.Magnitude(Linie.Vector3@)">
   Magnitude(in Vector3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L92"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -699,7 +813,7 @@
 
   <h3 id="Linie_Vector3_MagnitudeSquared_Linie_Vector3__" data-uid="Linie.Vector3.MagnitudeSquared(Linie.Vector3@)">
   MagnitudeSquared(in Vector3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L87"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -735,7 +849,7 @@
 
   <h3 id="Linie_Vector3_Normalize" data-uid="Linie.Vector3.Normalize">
   Normalize()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L122"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -766,7 +880,7 @@
 
   <h3 id="Linie_Vector3_Normalize_Linie_Vector3__" data-uid="Linie.Vector3.Normalize(Linie.Vector3@)">
   Normalize(in Vector3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L94"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L95"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -802,7 +916,7 @@
 
   <h3 id="Linie_Vector3_Reflect_Linie_Normal3__" data-uid="Linie.Vector3.Reflect(Linie.Normal3@)">
   Reflect(in Normal3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L129"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L130"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -838,7 +952,7 @@
 
   <h3 id="Linie_Vector3_Reflect_Linie_Vector3__" data-uid="Linie.Vector3.Reflect(Linie.Vector3@)">
   Reflect(in Vector3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L128"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -874,7 +988,7 @@
 
   <h3 id="Linie_Vector3_Reflect_Linie_Vector3__Linie_Normal3__" data-uid="Linie.Vector3.Reflect(Linie.Vector3@,Linie.Normal3@)">
   Reflect(in Vector3, in Normal3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L113"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L114"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -912,7 +1026,7 @@
 
   <h3 id="Linie_Vector3_Reflect_Linie_Vector3__Linie_Vector3__" data-uid="Linie.Vector3.Reflect(Linie.Vector3@,Linie.Vector3@)">
   Reflect(in Vector3, in Vector3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L111"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -950,7 +1064,7 @@
 
   <h3 id="Linie_Vector3_ToString" data-uid="Linie.Vector3.ToString">
   ToString()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L140"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Creates a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> representation of 
@@ -978,6 +1092,52 @@ this <a class="xref" href="Linie.Vector3.html">Vector3</a> structure.</div>
 
 
 
+  <a id="Linie_Vector3_ToString_" data-uid="Linie.Vector3.ToString*"></a>
+
+  <h3 id="Linie_Vector3_ToString_System_String_System_IFormatProvider_" data-uid="Linie.Vector3.ToString(System.String,System.IFormatProvider)">
+  ToString(string, IFormatProvider)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L149"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary">Formats the value of the current instance using the specified format.</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToString(string format, IFormatProvider formatProvider)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>format</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd>The format to use.  
+
+ -or-  
+
+ A null reference (<code>Nothing</code> in Visual Basic) to use the default format defined for the type of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformattable">IFormattable</a> implementation.</dd>
+    <dt><code>formatProvider</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></dt>
+    <dd>The provider to use to format the value.  
+
+ -or-  
+
+ A null reference (<code>Nothing</code> in Visual Basic) to obtain the numeric format information from the current locale setting of the operating system.</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd>The value of the current instance in the specified format.</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="operators">Operators
 </h2>
 
@@ -986,7 +1146,7 @@ this <a class="xref" href="Linie.Vector3.html">Vector3</a> structure.</div>
 
   <h3 id="Linie_Vector3_op_Addition_Linie_Vector3__Linie_Vector3__" data-uid="Linie.Vector3.op_Addition(Linie.Vector3@,Linie.Vector3@)">
   operator +(in Vector3, in Vector3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1024,7 +1184,7 @@ this <a class="xref" href="Linie.Vector3.html">Vector3</a> structure.</div>
 
   <h3 id="Linie_Vector3_op_Division_Linie_Vector3__System_Double__" data-uid="Linie.Vector3.op_Division(Linie.Vector3@,System.Double@)">
   operator /(in Vector3, in double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L69"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1062,7 +1222,7 @@ this <a class="xref" href="Linie.Vector3.html">Vector3</a> structure.</div>
 
   <h3 id="Linie_Vector3_op_Explicit_Linie_Vector3___Linie_Normal3" data-uid="Linie.Vector3.op_Explicit(Linie.Vector3@)~Linie.Normal3">
   explicit operator Normal3(in Vector3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L81"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1098,7 +1258,7 @@ this <a class="xref" href="Linie.Vector3.html">Vector3</a> structure.</div>
 
   <h3 id="Linie_Vector3_op_Explicit_Linie_Vector3___Linie_Point3" data-uid="Linie.Vector3.op_Explicit(Linie.Vector3@)~Linie.Point3">
   explicit operator Point3(in Vector3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L84"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1134,7 +1294,7 @@ this <a class="xref" href="Linie.Vector3.html">Vector3</a> structure.</div>
 
   <h3 id="Linie_Vector3_op_Explicit_Linie_Vector3___Linie_Vector4" data-uid="Linie.Vector3.op_Explicit(Linie.Vector3@)~Linie.Vector4">
   explicit operator Vector4(in Vector3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1170,7 +1330,7 @@ this <a class="xref" href="Linie.Vector3.html">Vector3</a> structure.</div>
 
   <h3 id="Linie_Vector3_op_Multiply_Linie_Vector3__System_Double__" data-uid="Linie.Vector3.op_Multiply(Linie.Vector3@,System.Double@)">
   operator *(in Vector3, in double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1208,7 +1368,7 @@ this <a class="xref" href="Linie.Vector3.html">Vector3</a> structure.</div>
 
   <h3 id="Linie_Vector3_op_Multiply_System_Double__Linie_Vector3__" data-uid="Linie.Vector3.op_Multiply(System.Double@,Linie.Vector3@)">
   operator *(in double, in Vector3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L67"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1246,7 +1406,7 @@ this <a class="xref" href="Linie.Vector3.html">Vector3</a> structure.</div>
 
   <h3 id="Linie_Vector3_op_Subtraction_Linie_Vector3__Linie_Vector3__" data-uid="Linie.Vector3.op_Subtraction(Linie.Vector3@,Linie.Vector3@)">
   operator -(in Vector3, in Vector3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1284,7 +1444,7 @@ this <a class="xref" href="Linie.Vector3.html">Vector3</a> structure.</div>
 
   <h3 id="Linie_Vector3_op_UnaryNegation_Linie_Vector3__" data-uid="Linie.Vector3.op_UnaryNegation(Linie.Vector3@)">
   operator -(in Vector3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector3.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>

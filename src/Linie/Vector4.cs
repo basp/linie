@@ -8,7 +8,8 @@ using System.Collections.Generic;
 /// <summary>
 /// Represents a displacement in 4D space.
 /// </summary>
-public struct Vector4 : IEquatable<Vector4>
+public struct Vector4 
+    : IEquatable<Vector4>, IFormattable
 {
     public readonly double X, Y, Z, W;
 
@@ -149,15 +150,12 @@ public struct Vector4 : IEquatable<Vector4>
 
     public Vector4 Reflect(in Vector4 n) => Vector4.Reflect(this, n);
 
+    /// <inheritdoc />
     public override int GetHashCode() =>
         HashCode.Combine(this.X, this.Y, this.Z, this.W);
 
-    /// <summary>
-    /// Creates a <see cref="String"/> representation of 
-    /// this <see cref="Vector4"/> structure.
-    /// </summary>
-    public override string ToString() =>
-        $"({this.X}, {this.Y}, {this.Z}, {this.W})";
+    /// <inheritdoc />
+    public override string ToString() => this.ToString(null, null);
 
     /// <inheritdoc/>
     public bool Equals(Vector4 other) =>
@@ -165,4 +163,23 @@ public struct Vector4 : IEquatable<Vector4>
         this.Y == other.Y &&
         this.Z == other.Z &&
         this.W == other.W;
+
+    /// <inheritdoc />
+    public string ToString(string format, IFormatProvider formatProvider)
+    {
+        var x = this.X.ToString(format, formatProvider);
+        var y = this.Y.ToString(format, formatProvider);
+        var z = this.Z.ToString(format, formatProvider);
+        var w = this.W.ToString(format, formatProvider);
+        return $"<{x} {y} {z} {w}>";
+    }
+}
+
+public static class Vector4Extensions
+{
+    public static Vector4 AsPosition(this Vector4 self) =>
+        Vector4.CreatePosition(self.X, self.Y, self.Z);
+
+    public static Vector4 AsDirection(this Vector4 self) =>
+        Vector4.CreateDirection(self.X, self.Y, self.Z);
 }

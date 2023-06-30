@@ -81,9 +81,11 @@ public struct Vector2 : IEquatable<Vector2>, IFormattable
         this.X == other.X &&
         this.Y == other.Y;
 
+    /// <inheritdoc />
     public override int GetHashCode() =>
         HashCode.Combine(this.X, this.Y);
 
+    /// <inheritdoc />
     public override string ToString() => this.ToString(null, null);
 
     /// <summary>

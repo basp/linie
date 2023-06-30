@@ -42,58 +42,58 @@ public static class SwizzlingExtensions
         new Vector3(self.X, self.Z, self.Z);
 
     public static Vector3 YXX(this Vector3 self) =>
-        new Vector3(self.X, self.X, self.X);
+        new Vector3(self.Y, self.X, self.X);
 
     public static Vector3 YXY(this Vector3 self) =>
-        new Vector3(self.X, self.X, self.Y);
+        new Vector3(self.Y, self.X, self.Y);
 
     public static Vector3 YXZ(this Vector3 self) =>
-        new Vector3(self.X, self.X, self.Z);
+        new Vector3(self.Y, self.X, self.Z);
 
     public static Vector3 YYX(this Vector3 self) =>
-        new Vector3(self.X, self.Y, self.X);
+        new Vector3(self.Y, self.Y, self.X);
 
     public static Vector3 YYY(this Vector3 self) =>
-        new Vector3(self.X, self.Y, self.Y);
+        new Vector3(self.Y, self.Y, self.Y);
 
     public static Vector3 YYZ(this Vector3 self) =>
-        new Vector3(self.X, self.Y, self.Z);
+        new Vector3(self.Y, self.Y, self.Z);
 
     public static Vector3 YZX(this Vector3 self) =>
-        new Vector3(self.X, self.Z, self.X);
+        new Vector3(self.Y, self.Z, self.X);
 
     public static Vector3 YZY(this Vector3 self) =>
-        new Vector3(self.X, self.Z, self.Y);
+        new Vector3(self.Y, self.Z, self.Y);
 
     public static Vector3 YZZ(this Vector3 self) =>
-        new Vector3(self.X, self.Z, self.Z);        
+        new Vector3(self.Y, self.Z, self.Z);        
 
     public static Vector3 ZXX(this Vector3 self) =>
-        new Vector3(self.X, self.X, self.X);
+        new Vector3(self.Z, self.X, self.X);
 
     public static Vector3 ZXY(this Vector3 self) =>
-        new Vector3(self.X, self.X, self.Y);
+        new Vector3(self.Z, self.X, self.Y);
 
     public static Vector3 ZXZ(this Vector3 self) =>
-        new Vector3(self.X, self.X, self.Z);
+        new Vector3(self.Z, self.X, self.Z);
 
     public static Vector3 ZYX(this Vector3 self) =>
-        new Vector3(self.X, self.Y, self.X);
+        new Vector3(self.Z, self.Y, self.X);
 
     public static Vector3 ZYY(this Vector3 self) =>
-        new Vector3(self.X, self.Y, self.Y);
+        new Vector3(self.Z, self.Y, self.Y);
 
     public static Vector3 ZYZ(this Vector3 self) =>
-        new Vector3(self.X, self.Y, self.Z);
+        new Vector3(self.Z, self.Y, self.Z);
 
     public static Vector3 ZZX(this Vector3 self) =>
-        new Vector3(self.X, self.Z, self.X);
+        new Vector3(self.Z, self.Z, self.X);
 
     public static Vector3 ZZY(this Vector3 self) =>
-        new Vector3(self.X, self.Z, self.Y);
+        new Vector3(self.Z, self.Z, self.Y);
 
     public static Vector3 ZZZ(this Vector3 self) =>
-        new Vector3(self.X, self.Z, self.Z);
+        new Vector3(self.Z, self.Z, self.Z);
 
     public static Vector4 XXX(this Vector4 self) =>
         new Vector4(self.X, self.X, self.X, self.W);

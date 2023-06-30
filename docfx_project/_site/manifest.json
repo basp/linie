@@ -55,6 +55,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Matrix3x3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Matrix3x3.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Linie.Matrix3x3Extensions.yml",
       "output": {
         ".html": {
@@ -115,6 +125,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Ray.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Ray.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Linie.Ray3.yml",
       "output": {
         ".html": {
@@ -129,6 +149,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Linie.Ray4.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.SwizzlingExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.SwizzlingExtensions.html"
         }
       },
       "version": ""
@@ -169,6 +199,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Linie.Vector4.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Linie.Vector4Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Linie.Vector4Extensions.html"
         }
       },
       "version": ""

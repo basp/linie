@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class Matrix2x2
+      <title>Class Matrix3x3
  </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class Matrix2x2
+      <meta name="title" content="Class Matrix3x3
  ">
       
       <link rel="icon" href="../favicon.ico">
@@ -17,7 +17,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/basp/linie/new/main/apiSpec/new?filename=Linie_Matrix2x2.md&amp;value=---%0Auid%3A%20Linie.Matrix2x2%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/basp/linie/new/main/apiSpec/new?filename=Linie_Matrix3x3.md&amp;value=---%0Auid%3A%20Linie.Matrix3x3%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
   </head>
 
   <script type="module">
@@ -73,13 +73,13 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="Linie.Matrix2x2">
+        <article data-uid="Linie.Matrix3x3">
 
 
 
-  <h1 id="Linie_Matrix2x2" data-uid="Linie.Matrix2x2" class="text-break">
-    Class Matrix2x2
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix2x2.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  <h1 id="Linie_Matrix3x3" data-uid="Linie.Matrix3x3" class="text-break">
+    Class Matrix3x3
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix3x3.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -91,7 +91,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Matrix2x2 : IEquatable&lt;Matrix2x2&gt;, IFormattable</code></pre>
+    <pre><code class="lang-csharp hljs">public class Matrix3x3 : IEquatable&lt;Matrix3x3&gt;, IFormattable</code></pre>
   </div>
 
 
@@ -101,14 +101,14 @@
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">Matrix2x2</span></div>
+      <div><span class="xref">Matrix3x3</span></div>
     </dd>
   </dl>
 
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Linie.Matrix2x2.html">Matrix2x2</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Linie.Matrix3x3.html">Matrix3x3</a>&gt;</div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformattable">IFormattable</a></div>
     </dd>
   </dl>
@@ -138,16 +138,13 @@
     <dt>Extension Methods</dt>
     <dd>
   <div>
-      <a class="xref" href="Linie.Matrix2x2Extensions.html#Linie_Matrix2x2Extensions_Determinant_Linie_Matrix2x2_">Matrix2x2Extensions.Determinant(Matrix2x2)</a>
+      <a class="xref" href="Linie.Matrix3x3Extensions.html#Linie_Matrix3x3Extensions_Cofactor_Linie_Matrix3x3_System_Int32_System_Int32_">Matrix3x3Extensions.Cofactor(Matrix3x3, int, int)</a>
   </div>
   <div>
-      <a class="xref" href="Linie.Matrix2x2Extensions.html#Linie_Matrix2x2Extensions_GetColumn_Linie_Matrix2x2_System_Int32_">Matrix2x2Extensions.GetColumn(Matrix2x2, int)</a>
+      <a class="xref" href="Linie.Matrix3x3Extensions.html#Linie_Matrix3x3Extensions_Determinant_Linie_Matrix3x3_">Matrix3x3Extensions.Determinant(Matrix3x3)</a>
   </div>
   <div>
-      <a class="xref" href="Linie.Matrix2x2Extensions.html#Linie_Matrix2x2Extensions_GetRow_Linie_Matrix2x2_System_Int32_">Matrix2x2Extensions.GetRow(Matrix2x2, int)</a>
-  </div>
-  <div>
-      <a class="xref" href="Linie.Matrix2x2Extensions.html#Linie_Matrix2x2Extensions_Multiply_Linie_Matrix2x2_Linie_Matrix2x2__Linie_Matrix2x2__">Matrix2x2Extensions.Multiply(Matrix2x2, in Matrix2x2, ref Matrix2x2)</a>
+      <a class="xref" href="Linie.Matrix3x3Extensions.html#Linie_Matrix3x3Extensions_Minor_Linie_Matrix3x3_System_Int32_System_Int32_">Matrix3x3Extensions.Minor(Matrix3x3, int, int)</a>
   </div>
   </dd></dl>
 
@@ -159,18 +156,18 @@
 </h2>
 
 
-  <a id="Linie_Matrix2x2__ctor_" data-uid="Linie.Matrix2x2.#ctor*"></a>
+  <a id="Linie_Matrix3x3__ctor_" data-uid="Linie.Matrix3x3.#ctor*"></a>
 
-  <h3 id="Linie_Matrix2x2__ctor" data-uid="Linie.Matrix2x2.#ctor">
-  Matrix2x2()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix2x2.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Linie_Matrix3x3__ctor" data-uid="Linie.Matrix3x3.#ctor">
+  Matrix3x3()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix3x3.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Matrix2x2()</code></pre>
+    <pre><code class="lang-csharp hljs">public Matrix3x3()</code></pre>
   </div>
 
 
@@ -185,18 +182,18 @@
 
 
 
-  <a id="Linie_Matrix2x2__ctor_" data-uid="Linie.Matrix2x2.#ctor*"></a>
+  <a id="Linie_Matrix3x3__ctor_" data-uid="Linie.Matrix3x3.#ctor*"></a>
 
-  <h3 id="Linie_Matrix2x2__ctor_System_Double_" data-uid="Linie.Matrix2x2.#ctor(System.Double)">
-  Matrix2x2(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix2x2.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Linie_Matrix3x3__ctor_System_Double_" data-uid="Linie.Matrix3x3.#ctor(System.Double)">
+  Matrix3x3(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix3x3.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Matrix2x2(double v)</code></pre>
+    <pre><code class="lang-csharp hljs">public Matrix3x3(double v)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -216,18 +213,18 @@
 
 
 
-  <a id="Linie_Matrix2x2__ctor_" data-uid="Linie.Matrix2x2.#ctor*"></a>
+  <a id="Linie_Matrix3x3__ctor_" data-uid="Linie.Matrix3x3.#ctor*"></a>
 
-  <h3 id="Linie_Matrix2x2__ctor_System_Double_System_Double_System_Double_System_Double_" data-uid="Linie.Matrix2x2.#ctor(System.Double,System.Double,System.Double,System.Double)">
-  Matrix2x2(double, double, double, double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix2x2.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Linie_Matrix3x3__ctor_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_" data-uid="Linie.Matrix3x3.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+  Matrix3x3(double, double, double, double, double, double, double, double, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix3x3.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Matrix2x2(double m00, double m01, double m10, double m11)</code></pre>
+    <pre><code class="lang-csharp hljs">public Matrix3x3(double m00, double m01, double m02, double m10, double m11, double m12, double m20, double m21, double m22)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -236,9 +233,19 @@
     <dd></dd>
     <dt><code>m01</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
     <dd></dd>
+    <dt><code>m02</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
     <dt><code>m10</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
     <dd></dd>
     <dt><code>m11</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>m12</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>m20</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>m21</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>m22</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
     <dd></dd>
   </dl>
 
@@ -257,11 +264,11 @@
 </h2>
 
 
-  <a id="Linie_Matrix2x2_Item_" data-uid="Linie.Matrix2x2.Item*"></a>
+  <a id="Linie_Matrix3x3_Item_" data-uid="Linie.Matrix3x3.Item*"></a>
 
-  <h3 id="Linie_Matrix2x2_Item_System_Int32_System_Int32_" data-uid="Linie.Matrix2x2.Item(System.Int32,System.Int32)">
+  <h3 id="Linie_Matrix3x3_Item_System_Int32_System_Int32_" data-uid="Linie.Matrix3x3.Item(System.Int32,System.Int32)">
   this[int, int]
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix2x2.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix3x3.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -299,23 +306,23 @@
 </h2>
 
 
-  <a id="Linie_Matrix2x2_Equals_" data-uid="Linie.Matrix2x2.Equals*"></a>
+  <a id="Linie_Matrix3x3_Equals_" data-uid="Linie.Matrix3x3.Equals*"></a>
 
-  <h3 id="Linie_Matrix2x2_Equals_Linie_Matrix2x2_" data-uid="Linie.Matrix2x2.Equals(Linie.Matrix2x2)">
-  Equals(Matrix2x2)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix2x2.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Linie_Matrix3x3_Equals_Linie_Matrix3x3_" data-uid="Linie.Matrix3x3.Equals(Linie.Matrix3x3)">
+  Equals(Matrix3x3)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix3x3.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Indicates whether the current object is equal to another object of the same type.</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Equals(Matrix2x2 other)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Equals(Matrix3x3 other)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>other</code> <a class="xref" href="Linie.Matrix2x2.html">Matrix2x2</a></dt>
+    <dt><code>other</code> <a class="xref" href="Linie.Matrix3x3.html">Matrix3x3</a></dt>
     <dd>An object to compare with this object.</dd>
   </dl>
 
@@ -335,18 +342,54 @@
 
 
 
-  <a id="Linie_Matrix2x2_GetComparer_" data-uid="Linie.Matrix2x2.GetComparer*"></a>
+  <a id="Linie_Matrix3x3_GetColumn_" data-uid="Linie.Matrix3x3.GetColumn*"></a>
 
-  <h3 id="Linie_Matrix2x2_GetComparer_System_Double_" data-uid="Linie.Matrix2x2.GetComparer(System.Double)">
-  GetComparer(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix2x2.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Linie_Matrix3x3_GetColumn_System_Int32_" data-uid="Linie.Matrix3x3.GetColumn(System.Int32)">
+  GetColumn(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix3x3.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEqualityComparer&lt;Matrix2x2&gt; GetComparer(double epsilon = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public Vector3 GetColumn(int j)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>j</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Linie.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Linie_Matrix3x3_GetComparer_" data-uid="Linie.Matrix3x3.GetComparer*"></a>
+
+  <h3 id="Linie_Matrix3x3_GetComparer_System_Double_" data-uid="Linie.Matrix3x3.GetComparer(System.Double)">
+  GetComparer(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix3x3.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEqualityComparer&lt;Matrix3x3&gt; GetComparer(double epsilon = 0)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -357,7 +400,7 @@
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer</a>&lt;<a class="xref" href="Linie.Matrix2x2.html">Matrix2x2</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer</a>&lt;<a class="xref" href="Linie.Matrix3x3.html">Matrix3x3</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -371,11 +414,11 @@
 
 
 
-  <a id="Linie_Matrix2x2_GetHashCode_" data-uid="Linie.Matrix2x2.GetHashCode*"></a>
+  <a id="Linie_Matrix3x3_GetHashCode_" data-uid="Linie.Matrix3x3.GetHashCode*"></a>
 
-  <h3 id="Linie_Matrix2x2_GetHashCode" data-uid="Linie.Matrix2x2.GetHashCode">
+  <h3 id="Linie_Matrix3x3_GetHashCode" data-uid="Linie.Matrix3x3.GetHashCode">
   GetHashCode()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix2x2.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix3x3.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Serves as the default hash function.</div>
@@ -402,11 +445,47 @@
 
 
 
-  <a id="Linie_Matrix2x2_ToString_" data-uid="Linie.Matrix2x2.ToString*"></a>
+  <a id="Linie_Matrix3x3_GetRow_" data-uid="Linie.Matrix3x3.GetRow*"></a>
 
-  <h3 id="Linie_Matrix2x2_ToString" data-uid="Linie.Matrix2x2.ToString">
+  <h3 id="Linie_Matrix3x3_GetRow_System_Int32_" data-uid="Linie.Matrix3x3.GetRow(System.Int32)">
+  GetRow(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix3x3.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 GetRow(int i)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>i</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Linie.Vector3.html">Vector3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Linie_Matrix3x3_ToString_" data-uid="Linie.Matrix3x3.ToString*"></a>
+
+  <h3 id="Linie_Matrix3x3_ToString" data-uid="Linie.Matrix3x3.ToString">
   ToString()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix2x2.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix3x3.cs/#L76"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Returns a string that represents the current object.</div>
@@ -433,11 +512,11 @@
 
 
 
-  <a id="Linie_Matrix2x2_ToString_" data-uid="Linie.Matrix2x2.ToString*"></a>
+  <a id="Linie_Matrix3x3_ToString_" data-uid="Linie.Matrix3x3.ToString*"></a>
 
-  <h3 id="Linie_Matrix2x2_ToString_System_String_System_IFormatProvider_" data-uid="Linie.Matrix2x2.ToString(System.String,System.IFormatProvider)">
+  <h3 id="Linie_Matrix3x3_ToString_System_String_System_IFormatProvider_" data-uid="Linie.Matrix3x3.ToString(System.String,System.IFormatProvider)">
   ToString(string, IFormatProvider)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix2x2.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix3x3.cs/#L79"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary">Formats the value of the current instance using the specified format.</div>
@@ -483,7 +562,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/basp/linie/blob/main/src/Linie/Matrix2x2.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/basp/linie/blob/main/src/Linie/Matrix3x3.cs/#L8" class="edit-link">Edit this page</a>
         </div>
 
         

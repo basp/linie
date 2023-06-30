@@ -11,7 +11,7 @@ public class RayTests
     {
         var origin = Vector4.CreatePosition(1, 2, 3);
         var direction = Vector4.CreateDirection(4, 5, 6);
-        var r = new Ray4(origin, direction);
+        var r = new Ray(origin, direction);
         Assert.Equal(origin, r.Origin);
         Assert.Equal(direction, r.Direction);
     }
@@ -19,7 +19,7 @@ public class RayTests
     [Fact]
     public void TestComputePointFromDistance()
     {
-        var r = new Ray4(Vector4.CreatePosition(2, 3, 4), Vector4.CreateDirection(1, 0, 0));
+        var r = new Ray(Vector4.CreatePosition(2, 3, 4), Vector4.CreateDirection(1, 0, 0));
         Assert.Equal(Vector4.CreatePosition(2, 3, 4), r[0]);
         Assert.Equal(Vector4.CreatePosition(3, 3, 4), r[1]);
         Assert.Equal(Vector4.CreatePosition(1, 3, 4), r[-1]);
@@ -29,7 +29,7 @@ public class RayTests
     [Fact]
     public void TestTranslateRay()
     {
-        var r = new Ray4(Vector4.CreatePosition(1, 2, 3), Vector4.CreateDirection(0, 1, 0));
+        var r = new Ray(Vector4.CreatePosition(1, 2, 3), Vector4.CreateDirection(0, 1, 0));
         var t = Affine.Translate(3, 4, 5);
         var r2 = t * r;
         Assert.Equal(Vector4.CreatePosition(4, 6, 8), r2.Origin);
@@ -39,7 +39,7 @@ public class RayTests
     [Fact]
     public void TestScaleRay()
     {
-        var r = new Ray4(Vector4.CreatePosition(1, 2, 3), Vector4.CreateDirection(0, 1, 0));
+        var r = new Ray(Vector4.CreatePosition(1, 2, 3), Vector4.CreateDirection(0, 1, 0));
         var t = Affine.Scale(2, 3, 4);
         var r2 = t * r;
         Assert.Equal(Vector4.CreatePosition(2, 6, 12), r2.Origin);

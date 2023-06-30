@@ -8,7 +8,8 @@ using System.Collections.Generic;
 /// <summary>
 /// Represents a displacement in 3D space.
 /// </summary>
-public struct Vector3 : IEquatable<Vector3>
+public struct Vector3
+    : IEquatable<Vector3>, IFormattable
 {
     public readonly double X, Y, Z;
 
@@ -128,6 +129,7 @@ public struct Vector3 : IEquatable<Vector3>
 
     public Vector3 Reflect(in Normal3 n) => Vector3.Reflect(this, n);
 
+    /// <inheritdoc />
     public override int GetHashCode() =>
         HashCode.Combine(this.X, this.Y, this.Z);
 
@@ -135,12 +137,20 @@ public struct Vector3 : IEquatable<Vector3>
     /// Creates a <see cref="String"/> representation of 
     /// this <see cref="Vector3"/> structure.
     /// </summary>
-    public override string ToString() =>
-        $"({this.X}, {this.Y}, {this.Z})";
+    public override string ToString() => this.ToString(null, null);
 
     /// <inheritdoc/>
     public bool Equals(Vector3 other) =>
         this.X == other.X &&
         this.Y == other.Y &&
         this.Z == other.Z;
+
+    /// <inheritdoc />
+    public string ToString(string format, IFormatProvider formatProvider)
+    {
+        var x = this.X.ToString(format, formatProvider);
+        var y = this.Y.ToString(format, formatProvider);
+        var z = this.Z.ToString(format, formatProvider);
+        return $"<{x} {y} {z}>";
+    }
 }

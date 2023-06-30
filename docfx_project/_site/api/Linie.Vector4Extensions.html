@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class Matrix2x2Extensions
+      <title>Class Vector4Extensions
  </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class Matrix2x2Extensions
+      <meta name="title" content="Class Vector4Extensions
  ">
       
       <link rel="icon" href="../favicon.ico">
@@ -17,7 +17,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/basp/linie/new/main/apiSpec/new?filename=Linie_Matrix2x2Extensions.md&amp;value=---%0Auid%3A%20Linie.Matrix2x2Extensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/basp/linie/new/main/apiSpec/new?filename=Linie_Vector4Extensions.md&amp;value=---%0Auid%3A%20Linie.Vector4Extensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
   </head>
 
   <script type="module">
@@ -73,13 +73,13 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="Linie.Matrix2x2Extensions">
+        <article data-uid="Linie.Vector4Extensions">
 
 
 
-  <h1 id="Linie_Matrix2x2Extensions" data-uid="Linie.Matrix2x2Extensions" class="text-break">
-    Class Matrix2x2Extensions
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix2x2Extensions.cs/#L5"><i class="bi bi-code-slash"></i></a>
+  <h1 id="Linie_Vector4Extensions" data-uid="Linie.Vector4Extensions" class="text-break">
+    Class Vector4Extensions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L178"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -91,7 +91,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class Matrix2x2Extensions</code></pre>
+    <pre><code class="lang-csharp hljs">public static class Vector4Extensions</code></pre>
   </div>
 
 
@@ -101,7 +101,7 @@
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">Matrix2x2Extensions</span></div>
+      <div><span class="xref">Vector4Extensions</span></div>
     </dd>
   </dl>
 
@@ -142,29 +142,29 @@
 </h2>
 
 
-  <a id="Linie_Matrix2x2Extensions_Determinant_" data-uid="Linie.Matrix2x2Extensions.Determinant*"></a>
+  <a id="Linie_Vector4Extensions_AsDirection_" data-uid="Linie.Vector4Extensions.AsDirection*"></a>
 
-  <h3 id="Linie_Matrix2x2Extensions_Determinant_Linie_Matrix2x2_" data-uid="Linie.Matrix2x2Extensions.Determinant(Linie.Matrix2x2)">
-  Determinant(Matrix2x2)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix2x2Extensions.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Linie_Vector4Extensions_AsDirection_Linie_Vector4_" data-uid="Linie.Vector4Extensions.AsDirection(Linie.Vector4)">
+  AsDirection(Vector4)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L183"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double Determinant(this Matrix2x2 self)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Vector4 AsDirection(this Vector4 self)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>self</code> <a class="xref" href="Linie.Matrix2x2.html">Matrix2x2</a></dt>
+    <dt><code>self</code> <a class="xref" href="Linie.Vector4.html">Vector4</a></dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dt><a class="xref" href="Linie.Vector4.html">Vector4</a></dt>
     <dd></dd>
   </dl>
 
@@ -178,106 +178,31 @@
 
 
 
-  <a id="Linie_Matrix2x2Extensions_GetColumn_" data-uid="Linie.Matrix2x2Extensions.GetColumn*"></a>
+  <a id="Linie_Vector4Extensions_AsPosition_" data-uid="Linie.Vector4Extensions.AsPosition*"></a>
 
-  <h3 id="Linie_Matrix2x2Extensions_GetColumn_Linie_Matrix2x2_System_Int32_" data-uid="Linie.Matrix2x2Extensions.GetColumn(Linie.Matrix2x2,System.Int32)">
-  GetColumn(Matrix2x2, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix2x2Extensions.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Linie_Vector4Extensions_AsPosition_Linie_Vector4_" data-uid="Linie.Vector4Extensions.AsPosition(Linie.Vector4)">
+  AsPosition(Vector4)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L180"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Vector2 GetColumn(this Matrix2x2 self, int column)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Vector4 AsPosition(this Vector4 self)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>self</code> <a class="xref" href="Linie.Matrix2x2.html">Matrix2x2</a></dt>
-    <dd></dd>
-    <dt><code>column</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dt><code>self</code> <a class="xref" href="Linie.Vector4.html">Vector4</a></dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="Linie.Vector2.html">Vector2</a></dt>
+    <dt><a class="xref" href="Linie.Vector4.html">Vector4</a></dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Linie_Matrix2x2Extensions_GetRow_" data-uid="Linie.Matrix2x2Extensions.GetRow*"></a>
-
-  <h3 id="Linie_Matrix2x2Extensions_GetRow_Linie_Matrix2x2_System_Int32_" data-uid="Linie.Matrix2x2Extensions.GetRow(Linie.Matrix2x2,System.Int32)">
-  GetRow(Matrix2x2, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix2x2Extensions.cs/#L12"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Vector2 GetRow(this Matrix2x2 self, int row)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>self</code> <a class="xref" href="Linie.Matrix2x2.html">Matrix2x2</a></dt>
-    <dd></dd>
-    <dt><code>row</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="Linie.Vector2.html">Vector2</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Linie_Matrix2x2Extensions_Multiply_" data-uid="Linie.Matrix2x2Extensions.Multiply*"></a>
-
-  <h3 id="Linie_Matrix2x2Extensions_Multiply_Linie_Matrix2x2_Linie_Matrix2x2__Linie_Matrix2x2__" data-uid="Linie.Matrix2x2Extensions.Multiply(Linie.Matrix2x2,Linie.Matrix2x2@,Linie.Matrix2x2@)">
-  Multiply(Matrix2x2, in Matrix2x2, ref Matrix2x2)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/basp/linie/blob/main/src/Linie/Matrix2x2Extensions.cs/#L7"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Multiply(this Matrix2x2 self, in Matrix2x2 b, ref Matrix2x2 a)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>self</code> <a class="xref" href="Linie.Matrix2x2.html">Matrix2x2</a></dt>
-    <dd></dd>
-    <dt><code>b</code> <a class="xref" href="Linie.Matrix2x2.html">Matrix2x2</a></dt>
-    <dd></dd>
-    <dt><code>a</code> <a class="xref" href="Linie.Matrix2x2.html">Matrix2x2</a></dt>
-    <dd></dd>
-  </dl>
-
 
 
 
@@ -293,7 +218,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/basp/linie/blob/main/src/Linie/Matrix2x2Extensions.cs/#L5" class="edit-link">Edit this page</a>
+          <a href="https://github.com/basp/linie/blob/main/src/Linie/Vector4.cs/#L178" class="edit-link">Edit this page</a>
         </div>
 
         
