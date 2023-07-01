@@ -1,6 +1,5 @@
 // Licensed under the MIT license. See LICENSE file in the samples root for full license information.
 
-[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Linsi.Tests")]
 namespace Linie;
 
 using System;
@@ -12,10 +11,16 @@ using System.Linq;
 /// <summary>
 /// 4x4 matrix of <c>double</c> values.
 /// </summary>
-public class Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
+public class Matrix4x4 :
+    IEquatable<Matrix4x4>,
+    IFormattable
 {
     internal readonly double[] data;
 
+    /// <summary>
+    /// Initializes a new <see cref="Matrix4x4"/> instance with all
+    /// elements set to zero.
+    /// </summary>
     public Matrix4x4()
         : this(0)
     {
@@ -25,11 +30,11 @@ public class Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
     {
         this.data = new[]
         {
-                v, v, v, v,
-                v, v, v, v,
-                v, v, v, v,
-                v, v, v, v,
-            };
+            v, v, v, v,
+            v, v, v, v,
+            v, v, v, v,
+            v, v, v, v,
+        };
     }
 
     public Matrix4x4(
@@ -40,11 +45,11 @@ public class Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
     {
         this.data = new[]
         {
-                m00, m01, m02, m03,
-                m10, m11, m12, m13,
-                m20, m21, m22, m23,
-                m30, m31, m32, m33,
-            };
+            m00, m01, m02, m03,
+            m10, m11, m12, m13,
+            m20, m21, m22, m23,
+            m30, m31, m32, m33,
+        };
     }
 
     public static Matrix4x4 Identity =>

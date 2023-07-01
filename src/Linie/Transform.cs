@@ -2,8 +2,14 @@
 
 namespace Linie;
 
-public class Transform : IEquatable<Transform>
+public class Transform : 
+    IEquatable<Transform>,
+    IFormattable
 {
+    /// <summary>
+    /// Initializes a new <see cref="Transform"/> instance.
+    /// </summary>
+    /// <param name="m">The transformation matrix.</param>
     public Transform(Matrix4x4 m)
         : this(m, m.Invert())
     {
@@ -13,14 +19,14 @@ public class Transform : IEquatable<Transform>
     /// Initializes a new <see cref="Transform"/> instance using a precomputed 
     /// inversion matrix.
     /// </summary>
-    /// <remarks>
-    /// When using this constructor, the client code is responsible to proivde
-    /// a sensible inversion matrix.
-    /// </remarks>
     /// <param name="m">The transformation matrix.</param>
     /// <param name="minv">
     /// The precoumputed inverse of the transformation matrix.
     /// </param>
+    /// <remarks>
+    /// When using this constructor, the client code is responsible to proivde
+    /// a sensible inversion matrix.
+    /// </remarks>
     public Transform(Matrix4x4 m, Matrix4x4 minv)
     {
         this.Matrix = m;
@@ -28,27 +34,36 @@ public class Transform : IEquatable<Transform>
         this.InvertedTransposed = minv.Transpose();
     }
 
+    /// <summary>
+    /// Gets the transformation matrix.
+    /// </summary>
     public Matrix4x4 Matrix { get; }
 
+    /// <summary>
+    /// Gets the inverted transformation matrix.
+    /// </summary>
     public Matrix4x4 Inverted { get; }
 
+    /// <summary>
+    /// Gets the inverted transposed transformation matrix.
+    /// </summary>
     public Matrix4x4 InvertedTransposed { get; }
 
+    /// <inheritdoc />
     public bool Equals(Transform other) =>
         this.Matrix.Equals(other.Matrix) &&
         this.Inverted.Equals(other.Inverted);
 
-    /// <summary>
-    /// Returns a hash code based on the <c>Matrix</c> and <c>Inverted</c>
-    /// properties of this instance.
-    /// </summary>
-    /// <remarks>
-    /// The <c>InvertedTransposed</c> property is not included in the hash code
-    /// generator since it is implied by the value of <c>Inverted</c> (which can
-    /// be set by the user explicitly).
-    /// </remarks>
+    /// <inheritdoc />
     public override int GetHashCode() =>
         HashCode.Combine(
             this.Matrix.GetHashCode(),
             this.Inverted.GetHashCode());
+
+    /// <inheritdoc />
+    public override string ToString() => this.ToString(null, null);
+
+    /// <inheritdoc />
+    public string ToString(string format, IFormatProvider formatProvider) =>
+        this.Matrix.ToString(format, formatProvider);
 }

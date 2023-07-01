@@ -18,17 +18,14 @@ public static class Matrix3x3Extensions
             self[1, j],
             self[2, j]);
 
-    internal static Matrix2x2 Submatrix(
-        this Matrix3x3 a,
-        int dropRow,
-        int dropCol)
+    public static Matrix2x2 Submatrix(this Matrix3x3 a, int row, int col)
     {
         var rows = Enumerable.Range(0, 3)
-            .Where(x => x != dropRow)
+            .Where(x => x != row)
             .ToArray();
 
         var cols = Enumerable.Range(0, 3)
-            .Where(x => x != dropCol)
+            .Where(x => x != col)
             .ToArray();
 
         var m = new Matrix2x2(0);
