@@ -49,7 +49,7 @@ Add the Linie package:
 > dotnet add package Linie
 ```
 
-Utilize the package:
+Utilize the package (in `Program.cs`):
 ```
 static void Main(string[] args)
 {
