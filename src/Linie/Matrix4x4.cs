@@ -225,9 +225,6 @@ public class Matrix4x4 :
         }
     }
 
-    public bool TryInvert(ref Matrix4x4 m) =>
-        Matrix4x4.TryInvert(this, ref m);
-
     /// <summary>
     /// Returns the inverse of the given matrix.
     /// </summary>
@@ -237,8 +234,6 @@ public class Matrix4x4 :
         Matrix4x4.Invert(a, ref m);
         return m;
     }
-
-    public double Determinant() => Matrix4x4.Determinant(this);
 
     // This creates a new 3x3 matrix from a 4x4 matrix by dropping one
     // row and one column. The row and column to be dropped are specified
@@ -290,6 +285,8 @@ public class Matrix4x4 :
 
     public Vector4 GetColumn(int j) => Matrix4x4.GetColumn(this, j);
 
+    public bool IsInvertible() => Matrix4x4.IsInvertible(this);
+
     public Matrix3x3 Submatrix(int row, int column) =>
         Matrix4x4.Submatrix(this, row, column);
 
@@ -298,6 +295,13 @@ public class Matrix4x4 :
 
     public double Cofactor(int row, int column) =>
         Matrix4x4.Cofactor(this, row, column);
+
+    public Matrix4x4 Invert() => Matrix4x4.Invert(this);
+
+    public bool TryInvert(ref Matrix4x4 m) =>
+        Matrix4x4.TryInvert(this, ref m);
+
+    public double Determinant() => Matrix4x4.Determinant(this);
 
     public Matrix4x4 Transpose() => Matrix4x4.Transpose(this);
 

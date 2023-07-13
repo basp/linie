@@ -42,7 +42,7 @@ public class InversionBenchmark
     public void InvertInPlace()
     {
         var m = Matrix4x4.Identity;
-        m.Invert(ref c);
+        Matrix4x4.Invert(m, ref c);
     }
 }
 
