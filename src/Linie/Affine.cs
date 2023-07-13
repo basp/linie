@@ -90,15 +90,18 @@ public static class Affine
     public static Matrix4x4 View(Vector4 from, Vector4 to, Vector4 up)
     {
         var fwd = (to - from).Normalize();
-        var left = Vector4.Cross3(fwd, up.Normalize());
-        var trueUp = Vector4.Cross3(left, fwd);
+        var left = Vector3
+            .Cross(fwd.AsVector3(), up.Normalize().AsVector3())
+            .AsDirection();
+        var trueUp = Vector3
+            .Cross(left.AsVector3(), fwd.AsVector3())
+            .AsDirection();
         var orientation =
             new Matrix4x4(
                 left.X, left.Y, left.Z, 0,
                 trueUp.X, trueUp.Y, trueUp.Z, 0,
                 -fwd.X, -fwd.Y, -fwd.Z, 0,
                 0, 0, 0, 1);
-
         return orientation * Translate(-from.X, -from.Y, -from.Z);
     }
 }
