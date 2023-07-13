@@ -52,17 +52,26 @@ public class Matrix3x3
         set => this.data[(row * 3) + col] = value;
     }
 
-    public static Matrix3x3 operator *(Matrix3x3 a, Matrix3x3 b) =>
-        new Matrix3x3(
-            a.GetRow(0).Dot(b.GetColumn(0)),
-            a.GetRow(0).Dot(b.GetColumn(1)),
-            a.GetRow(0).Dot(b.GetColumn(2)),
-            a.GetRow(1).Dot(b.GetColumn(0)),
-            a.GetRow(1).Dot(b.GetColumn(1)),
-            a.GetRow(1).Dot(b.GetColumn(2)),
-            a.GetRow(2).Dot(b.GetColumn(0)),
-            a.GetRow(2).Dot(b.GetColumn(1)),
-            a.GetRow(2).Dot(b.GetColumn(2)));
+    public static Matrix3x3 operator *(Matrix3x3 a, Matrix3x3 b)
+    {
+        var c = new Matrix3x3();
+        Matrix3x3.Multiply(a, b, ref c);
+        return c;
+    }
+
+    public static void Multiply(Matrix3x3 a, Matrix3x3 b, ref Matrix3x3 c)
+    {
+        for (var i = 0; i < 3; i++)
+        {
+            for (var j = 0; j < 3; j++)
+            {
+                c[i, j] =
+                    (a[i, 0] * b[0, j]) +
+                    (a[i, 1] * b[1, j]) +
+                    (a[i, 2] * b[2, j]);
+            }
+        }
+    }
 
     public static IEqualityComparer<Matrix3x3> GetComparer(double epsilon = 0.0) =>
         new Matrix3x3EqualityComparer(epsilon);

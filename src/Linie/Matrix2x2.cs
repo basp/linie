@@ -47,8 +47,28 @@ public class Matrix2x2
         set => this.data[(row * 2) + col] = value;
     }
 
+    public static Matrix2x2 operator *(Matrix2x2 a, Matrix2x2 b)
+    {
+        var c = new Matrix2x2();
+        Matrix2x2.Multiply(a, b, ref c);
+        return c;
+    }
+
     public static IEqualityComparer<Matrix2x2> GetComparer(double epsilon = 0.0) =>
         new Matrix2x2EqualityComparer(epsilon);
+
+    public static void Multiply(Matrix2x2 a, Matrix2x2 b, ref Matrix2x2 c)
+    {
+        for (var i = 0; i < 2; i++)
+        {
+            for (var j = 0; j < 2; j++)
+            {
+                c[i, j] = 
+                    (a[i, 0] * b[0, j]) +
+                    (a[i, 1] * b[1, j]);
+            }
+        }
+    }
 
     /// <inheritdoc />
     public override int GetHashCode() =>

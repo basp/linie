@@ -97,7 +97,7 @@ public class Matrix4x4 :
     public static Matrix4x4 operator *(Matrix4x4 a, Matrix4x4 b)
     {
         var m = new Matrix4x4(0);
-        Multiply(a, b, ref m);
+        Matrix4x4.Multiply(a, b, ref m);
         return m;
     }
 
