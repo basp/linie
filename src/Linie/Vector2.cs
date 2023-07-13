@@ -96,3 +96,9 @@ public readonly struct Vector2 : IEquatable<Vector2>, IFormattable
         return $"<{x} {y}>";
     }
 }
+
+public static class Vector2Extensions
+{
+    public static Vector3 AsVector3(this Vector2 self, double z) =>
+        new Vector3(self.X, self.Y, z);
+}

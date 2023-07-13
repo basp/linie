@@ -13,7 +13,7 @@ public class Matrix2x2
 
     public static Matrix2x2 Identity =>
         new Matrix2x2(
-            1, 0, 
+            1, 0,
             0, 1);
 
     public Matrix2x2()

@@ -61,4 +61,10 @@ public class Vector3Tests
 
         Assert.Equal(expected, v, cmp);
     }
+
+    [Fact]
+    public void TestSwizzling()
+    {
+
+    }
 }

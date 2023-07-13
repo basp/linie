@@ -97,18 +97,6 @@ public readonly struct Vector4 :
         (a.Z * b.Z) +
         (a.W * b.W);
 
-    /// <summary>
-    /// Performs a cross product on two `Vector4` instances
-    /// disregarding the `W` component. Essentially treating
-    /// `a` and `b` as 3d vectors. The resulting 3d vector
-    /// is wrapped as a 4d direction vector (`w` = 1).
-    /// </summary>
-    public static Vector4 Cross3(in Vector4 a, in Vector4 b) =>
-        Vector4.CreateDirection(
-            (a.Y * b.Z) - (a.Z * b.Y),
-            (a.Z * b.X) - (a.X * b.Z),
-            (a.X * b.Y) - (a.Y * b.X));
-
     public static Vector4 Reflect(in Vector4 a, in Vector4 n) =>
         a - (n * 2 * Dot(a, n));
 
@@ -140,8 +128,6 @@ public readonly struct Vector4 :
 
     public static IEqualityComparer<Vector4> GetComparer(in double epsilon = 0.0) =>
         new Vector4EqualityComparer(epsilon);
-
-    public Vector4 Cross3(Vector4 b) => Cross3(this, b);
 
     public double Magnitude() => Vector4.Magnitude(this);
 
@@ -178,6 +164,9 @@ public readonly struct Vector4 :
 
 public static class Vector4Extensions
 {
+    public static Vector3 AsVector3(this Vector4 self) =>
+        new Vector3(self.X, self.Y, self.Z);
+
     public static Vector4 AsPosition(this Vector4 self) =>
         Vector4.CreatePosition(self.X, self.Y, self.Z);
 

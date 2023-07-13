@@ -141,3 +141,16 @@ public readonly struct Vector3 :
         return $"<{x} {y} {z}>";
     }
 }
+
+public static class Vector3Extensions
+{
+    public static Vector2 AsVector2(this Vector3 self) =>
+        new Vector2(self.X, self.Y);
+
+    public static Vector4 AsVector4(this Vector3 self, double w) =>
+        new Vector4(self.X, self.Y, self.Z, w);
+
+    public static Vector4 AsPosition(this Vector3 self) => self.AsVector4(1);
+
+    public static Vector4 AsDirection(this Vector3 self) => self.AsVector4(0);
+}

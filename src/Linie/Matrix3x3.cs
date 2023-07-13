@@ -27,10 +27,10 @@ public class Matrix3x3
     {
         this.data = new[]
         {
-                v, v, v,
-                v, v, v,
-                v, v, v,
-            };
+            v, v, v,
+            v, v, v,
+            v, v, v,
+        };
     }
 
     public Matrix3x3(
@@ -40,10 +40,10 @@ public class Matrix3x3
     {
         this.data = new[]
         {
-                m00, m01, m02,
-                m10, m11, m12,
-                m20, m21, m22,
-            };
+            m00, m01, m02,
+            m10, m11, m12,
+            m20, m21, m22,
+        };
     }
 
     public double this[int row, int col]
@@ -51,6 +51,18 @@ public class Matrix3x3
         get => this.data[(row * 3) + col];
         set => this.data[(row * 3) + col] = value;
     }
+
+    public static Matrix3x3 operator *(Matrix3x3 a, Matrix3x3 b) =>
+        new Matrix3x3(
+            a.GetRow(0).Dot(b.GetColumn(0)),
+            a.GetRow(0).Dot(b.GetColumn(1)),
+            a.GetRow(0).Dot(b.GetColumn(2)),
+            a.GetRow(1).Dot(b.GetColumn(0)),
+            a.GetRow(1).Dot(b.GetColumn(1)),
+            a.GetRow(1).Dot(b.GetColumn(2)),
+            a.GetRow(2).Dot(b.GetColumn(0)),
+            a.GetRow(2).Dot(b.GetColumn(1)),
+            a.GetRow(2).Dot(b.GetColumn(2)));
 
     public static IEqualityComparer<Matrix3x3> GetComparer(double epsilon = 0.0) =>
         new Matrix3x3EqualityComparer(epsilon);

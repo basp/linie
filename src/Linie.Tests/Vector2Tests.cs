@@ -84,4 +84,39 @@ public class Vector2Tests
             Assert.Equal(@case.W, w);
         }
     }
+
+    [Fact]
+    public void TestSwizzling()
+    {
+        var u = new Vector2(2, 3);
+        var tests = new[]
+        {
+            new
+            {
+                Op = new Func<Vector2,Vector2>(u => u.XX()),
+                W = new Vector2(2, 2),
+            },
+            new
+            {
+                Op = new Func<Vector2,Vector2>(u => u.XY()),
+                W = new Vector2(2, 3),
+            },
+            new
+            {
+                Op = new Func<Vector2,Vector2>(u => u.YX()),
+                W = new Vector2(3, 2),
+            },
+            new
+            {
+                Op = new Func<Vector2,Vector2>(u => u.YY()),
+                W = new Vector2(3, 3),
+            },
+        };
+
+        foreach (var @case in tests)
+        {
+            var w = @case.Op(u);
+            Assert.Equal(@case.W, w);
+        }
+    }
 }
