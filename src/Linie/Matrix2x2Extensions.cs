@@ -4,11 +4,6 @@ namespace Linie;
 
 public static class Matrix2x2Extensions
 {
-    public static void Multiply(this Matrix2x2 self, in Matrix2x2 b, ref Matrix2x2 a)
-    {
-        throw new NotImplementedException();
-    }
-
     public static Vector2 GetRow(this Matrix2x2 self, int row) =>
         new Vector2(self[row, 0], self[row, 1]);
 

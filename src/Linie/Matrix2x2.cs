@@ -47,6 +47,34 @@ public class Matrix2x2
         set => this.data[(row * 2) + col] = value;
     }
 
+    public static void Multiply(in Matrix2x2 a, in Matrix2x2 b, ref Matrix2x2 c)
+    {
+        for (var i = 0; i < 2; i++)
+        {
+            for (var j = 0; j < 2; j++)
+            {
+                c[i, j] =
+                    (a[i, 0] * b[0, j]) +
+                    (a[i, 1] * b[1, j]);
+            }
+        }
+    }
+
+    public static Matrix2x2 Transpose(in Matrix2x2 a)
+    {
+        var c = new Matrix2x2();
+        Matrix2x2.Transpose(a, ref c);
+        return c;
+    }
+
+    public static void Transpose(Matrix2x2 a, ref Matrix2x2 c)
+    {
+        c[0, 0] = a[0, 0];
+        c[1, 0] = a[0, 1];
+        c[0, 1] = a[1, 0];
+        c[1, 1] = a[1, 1];
+    }
+
     public static Matrix2x2 operator *(Matrix2x2 a, Matrix2x2 b)
     {
         var c = new Matrix2x2();
@@ -57,18 +85,7 @@ public class Matrix2x2
     public static IEqualityComparer<Matrix2x2> GetComparer(double epsilon = 0.0) =>
         new Matrix2x2EqualityComparer(epsilon);
 
-    public static void Multiply(Matrix2x2 a, Matrix2x2 b, ref Matrix2x2 c)
-    {
-        for (var i = 0; i < 2; i++)
-        {
-            for (var j = 0; j < 2; j++)
-            {
-                c[i, j] = 
-                    (a[i, 0] * b[0, j]) +
-                    (a[i, 1] * b[1, j]);
-            }
-        }
-    }
+    public Matrix2x2 Transpose() => Matrix2x2.Transpose(this);
 
     /// <inheritdoc />
     public override int GetHashCode() =>

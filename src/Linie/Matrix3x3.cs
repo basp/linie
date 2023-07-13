@@ -73,8 +73,30 @@ public class Matrix3x3
         }
     }
 
+    public static Matrix3x3 Transpose(Matrix3x3 a)
+    {
+        var c = new Matrix3x3();
+        Matrix3x3.Transpose(a, ref c);
+        return c;
+    }
+
+    public static void Transpose(Matrix3x3 a, ref Matrix3x3 c)
+    {
+        c[0, 0] = a[0, 0];
+        c[0, 1] = a[1, 0];
+        c[0, 2] = a[2, 0];
+        c[1, 0] = a[0, 1];
+        c[1, 1] = a[1, 1];
+        c[1, 2] = a[2, 1];
+        c[2, 0] = a[0, 2];
+        c[2, 1] = a[1, 2];
+        c[2, 2] = a[2, 2];
+    }
+
     public static IEqualityComparer<Matrix3x3> GetComparer(double epsilon = 0.0) =>
         new Matrix3x3EqualityComparer(epsilon);
+
+    public Matrix3x3 Transpose() => Matrix3x3.Transpose(this);
 
     /// <inheritdoc />
     public override int GetHashCode() =>

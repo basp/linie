@@ -103,18 +103,43 @@ public class Matrix4x4 :
 
     public static Vector4 operator *(Matrix4x4 m, Vector4 u)
     {
-        var x = (m[0, 0] * u.X) + (m[0, 1] * u.Y) + (m[0, 2] * u.Z) + (m[0, 3] * u.W);
-        var y = (m[1, 0] * u.X) + (m[1, 1] * u.Y) + (m[1, 2] * u.Z) + (m[1, 3] * u.W);
-        var z = (m[2, 0] * u.X) + (m[2, 1] * u.Y) + (m[2, 2] * u.Z) + (m[2, 3] * u.W);
-        var w = (m[3, 0] * u.X) + (m[3, 1] * u.Y) + (m[3, 2] * u.Z) + (m[3, 3] * u.W);
+        var x =
+            (m[0, 0] * u.X) +
+            (m[0, 1] * u.Y) +
+            (m[0, 2] * u.Z) +
+            (m[0, 3] * u.W);
+        var y =
+            (m[1, 0] * u.X) +
+            (m[1, 1] * u.Y) +
+            (m[1, 2] * u.Z) +
+            (m[1, 3] * u.W);
+        var z =
+            (m[2, 0] * u.X) +
+            (m[2, 1] * u.Y) +
+            (m[2, 2] * u.Z) +
+            (m[2, 3] * u.W);
+        var w =
+            (m[3, 0] * u.X) +
+            (m[3, 1] * u.Y) +
+            (m[3, 2] * u.Z) +
+            (m[3, 3] * u.W);
         return new Vector4(x, y, z, w);
     }
 
     public static Vector3 operator *(Matrix4x4 m, Vector3 u)
     {
-        var x = (m[0, 0] * u.X) + (m[0, 1] * u.Y) + (m[0, 2] * u.Z);
-        var y = (m[1, 0] * u.X) + (m[1, 1] * u.Y) + (m[1, 2] * u.Z);
-        var z = (m[2, 0] * u.X) + (m[2, 1] * u.Y) + (m[2, 2] * u.Z);
+        var x =
+            (m[0, 0] * u.X) +
+            (m[0, 1] * u.Y) +
+            (m[0, 2] * u.Z);
+        var y =
+            (m[1, 0] * u.X) +
+            (m[1, 1] * u.Y) +
+            (m[1, 2] * u.Z);
+        var z =
+            (m[2, 0] * u.X) +
+            (m[2, 1] * u.Y) +
+            (m[2, 2] * u.Z);
         return new Vector3(x, y, z);
     }
 
