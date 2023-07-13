@@ -14,8 +14,9 @@ using System.Collections.Generic;
 /// best to think of this type as a fancy 3D vector or point instead of a true
 /// four dimensional object.
 /// </remarks>
-public struct Vector4 
-    : IEquatable<Vector4>, IFormattable
+public readonly struct Vector4 :
+    IEquatable<Vector4>,
+    IFormattable
 {
     public readonly double X, Y, Z, W;
 

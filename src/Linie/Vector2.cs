@@ -8,7 +8,7 @@ using System.Collections.Generic;
 /// <summary>
 /// Represents a displacement or point in 2D space.
 /// </summary>
-public struct Vector2 : IEquatable<Vector2>, IFormattable
+public readonly struct Vector2 : IEquatable<Vector2>, IFormattable
 {
     public readonly double X, Y;
 
