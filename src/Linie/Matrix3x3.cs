@@ -7,8 +7,9 @@ using System.Linq;
 
 #pragma warning disable SA1117 // ParametersMustBeOnSameLineOrSeparateLines
 
-public class Matrix3x3
-    : IEquatable<Matrix3x3>, IFormattable
+public class Matrix3x3 :
+    IEquatable<Matrix3x3>,
+    IFormattable
 {
     internal readonly double[] data;
 

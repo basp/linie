@@ -51,5 +51,8 @@ public class Program
     public static void Main(string[] args)
     {
         // BenchmarkRunner.Run<InversionBenchmark>();
+
+        var m = Matrix4x4.Identity.Invert();
+        m.Transpose().Invert().Scale(0);
     }
 }

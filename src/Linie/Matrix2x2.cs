@@ -6,8 +6,9 @@ using System.Collections.Generic;
 
 #pragma warning disable SA1117 // ParametersMustBeOnSameLineOrSeparateLines
 
-public class Matrix2x2
-    : IEquatable<Matrix2x2>, IFormattable
+public class Matrix2x2 :
+    IEquatable<Matrix2x2>,
+    IFormattable
 {
     internal readonly double[] data;
 

@@ -3,7 +3,6 @@
 namespace Linie;
 
 using System;
-using System.Linq;
 
 public static class Matrix4x4Extensions
 {
