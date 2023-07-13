@@ -47,6 +47,12 @@ public class Matrix2x2
         set => this.data[(row * 2) + col] = value;
     }
 
+    public static Vector2 GetRow(in Matrix2x2 self, int row) =>
+        new Vector2(self[row, 0], self[row, 1]);
+
+    public static Vector2 GetColumn(in Matrix2x2 self, int column) =>
+        new Vector2(self[0, column], self[1, column]);
+
     public static void Multiply(in Matrix2x2 a, in Matrix2x2 b, ref Matrix2x2 c)
     {
         for (var i = 0; i < 2; i++)
@@ -60,6 +66,9 @@ public class Matrix2x2
         }
     }
 
+    public static double Determinant(in Matrix2x2 self) =>
+        (self[0, 0] * self[1, 1]) - (self[0, 1] * self[1, 0]);
+
     public static Matrix2x2 Transpose(in Matrix2x2 a)
     {
         var c = new Matrix2x2();
@@ -67,7 +76,7 @@ public class Matrix2x2
         return c;
     }
 
-    public static void Transpose(Matrix2x2 a, ref Matrix2x2 c)
+    public static void Transpose(in Matrix2x2 a, ref Matrix2x2 c)
     {
         c[0, 0] = a[0, 0];
         c[1, 0] = a[0, 1];
@@ -84,6 +93,12 @@ public class Matrix2x2
 
     public static IEqualityComparer<Matrix2x2> GetComparer(double epsilon = 0.0) =>
         new Matrix2x2EqualityComparer(epsilon);
+
+    public Vector2 GetRow(int i) => Matrix2x2.GetRow(this, i);
+
+    public Vector2 GetColumn(int j) => Matrix2x2.GetColumn(this, j);
+
+    public double Determinant() => Matrix2x2.Determinant(this);
 
     public Matrix2x2 Transpose() => Matrix2x2.Transpose(this);
 
