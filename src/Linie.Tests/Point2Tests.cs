@@ -3,6 +3,15 @@
 public class Point2Tests
 {
     [Fact]
+    public void TestCreateZeros()
+    {
+        var p = new Point2<int>();
+        Assert.IsType<Point2<int>>(p);
+        Assert.Equal(0, p.X);
+        Assert.Equal(0, p.Y);
+    }
+    
+    [Fact]
     public void TestCreation()
     {
         var pi = Point2.Create(1, 2);

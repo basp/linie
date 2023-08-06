@@ -89,7 +89,7 @@ public static class Vector2
     /// The second vector to add.
     /// </param>
     /// <typeparam name="T">
-    /// The type of elements int he vector. <c>T</c> can be any primitive
+    /// The type of elements in the vector. <c>T</c> can be any primitive
     /// numeric type.
     /// </typeparam>
     /// <returns>
