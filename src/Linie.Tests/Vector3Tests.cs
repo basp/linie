@@ -1,70 +1,42 @@
-// Licensed under the MIT license. See LICENSE file in the samples root for full license information.
-
-namespace Linie.Tests;
-
-using Xunit;
+﻿namespace Linie.Tests;
 
 public class Vector3Tests
 {
     [Fact]
-    public void TestCtor()
+    public void TestCreation()
     {
-        var u = new Vector3(1, 2, 3);
+        var u = Vector3.Create(1.0, 2, 3);
+
         Assert.Equal(1, u.X);
         Assert.Equal(2, u.Y);
         Assert.Equal(3, u.Z);
     }
 
     [Fact]
-    public void TestExplicitVector4()
+    public void TestIndexing()
     {
-        var u = new Vector3(0, 0, 1);
-        Vector4 v = (Vector4)u;
-        Assert.True(v.IsDirection);
-        Assert.Equal(0, v.X);
-        Assert.Equal(0, v.Y);
-        Assert.Equal(1, v.Z);
-        Assert.Equal(0, v.W);
+        var u = Vector3.Create(1.0, 2, 3);
+        
+        Assert.Equal(1, u[0]);
+        Assert.Equal(2, u[1]);
+        Assert.Equal(3, u[2]);
+
+        Assert.Equal(u[0], u.X);
+        Assert.Equal(u[1], u.Y);
+        Assert.Equal(u[2], u.Z);
     }
 
     [Fact]
-    public void TestTranslation()
+    public void TestEquality()
     {
-        var u = new Vector3(2, 3, 1);
-        var m = Affine.Translate(-2, -3, -4);
-        var v = m * u;
-        Assert.Equal(2, u.X);
-        Assert.Equal(3, u.Y);
-        Assert.Equal(1, u.Z);
-    }
+        var u = Vector3.Create(1.0, 2, 3);
+        var v = Vector3.Create(1.0, 2, 3);
+        var w = Vector3.Create(2.0, 3, 4);
 
-    [Fact]
-    public void TestMagnitudeSquared()
-    {
-        var u = new Vector3(2, 2, 2);
-        var expected = 12;
-        Assert.Equal(expected, Vector3.MagnitudeSquared(u));
-    }
+        Assert.Equal(u, v);
+        Assert.Equal(v, u);
 
-    [Fact]
-    public void TestNormalize()
-    {
-        const double epsilon = 0.000001;
-        var cmp = Vector3.GetEqualityComparer(epsilon);
-        var u = new Vector3(2, 2, 2);
-        var v = Vector3.Normalize(u);
-        var mag = u.Magnitude();
-        var expected = new Vector3(
-            u.X / mag,
-            u.Y / mag,
-            u.Z / mag);
-
-        Assert.Equal(expected, v, cmp);
-    }
-
-    [Fact]
-    public void TestSwizzling()
-    {
-
+        Assert.NotEqual(u, w);
+        Assert.NotEqual(v, w);
     }
 }

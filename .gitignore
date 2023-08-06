@@ -6,6 +6,7 @@
 docfx_project
 *.ppm
 .vscode
+.idea
 
 # User-specific files
 *.rsuser

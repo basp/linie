@@ -1,122 +1,50 @@
-// Licensed under the MIT license. See LICENSE file in the samples root for full license information.
-
-namespace Linie.Tests;
-
-using System;
-using Xunit;
+﻿namespace Linie.Tests;
 
 public class Vector2Tests
 {
     [Fact]
-    public void TestCtor()
+    public void TestCreation()
     {
-        var u = new Vector2(1, 2);
-        Assert.Equal(1, u.X);
-        Assert.Equal(2, u.Y);
+        var ud = Vector2.Create(1.0, 2);
+        var uf = Vector2.Create(1.0f, 2);
+        var ui = Vector2.Create(1, 2);
+
+        Assert.IsType<Vector2<double>>(ud);
+        Assert.Equal(1.0, ud.X);
+        Assert.Equal(2.0, ud.Y);
+        
+        Assert.IsType<Vector2<float>>(uf);
+        Assert.Equal(1.0f, uf.X);
+        Assert.Equal(2.0f, uf.Y);
+        
+        Assert.IsType<Vector2<int>>(ui);
+        Assert.Equal(1, ui.X);
+        Assert.Equal(2, ui.Y);
     }
 
     [Fact]
-    public void TestAdditionAndSubtraction()
+    public void TestIndexing()
     {
-        var tests = new[]
-        {
-            new
-            {
-                U = new Vector2(2, 3),
-                V = new Vector2(-2, -3),
-                Op = new Func<Vector2, Vector2, Vector2>((x, y) => x + y),
-                W = new Vector2(0, 0),
-            },
-            new
-            {
-                U = new Vector2(2, 3),
-                V = new Vector2(-2, -3),
-                Op = new Func<Vector2, Vector2, Vector2>((x, y) => x - y),
-                W = new Vector2(4, 6),
-            },
-        };
-
-        foreach (var @case in tests)
-        {
-            var w = @case.Op(@case.U, @case.V);
-            Assert.Equal(@case.W, w);
-        }
+        var u = Vector2.Create(1, 2);
+        
+        Assert.Equal(1, u[0]);
+        Assert.Equal(2, u[1]);
+        
+        Assert.Equal(u[0], u.X);
+        Assert.Equal(u[1], u.Y);
     }
 
     [Fact]
-    public void TestMultiplicationAndDivision()
+    public void TestEquality()
     {
-        var tests = new[]
-        {
-            new
-            {
-                U = new Vector2(2, 3),
-                S = 2.0,
-                Op = new Func<Vector2,double,Vector2>((u, s) => u * s),
-                W = new Vector2(4, 6),
-            },
-            new
-            {
-                U = new Vector2(2, 3),
-                S = 0.5,
-                Op = new Func<Vector2,double,Vector2>((u, s) => u * s),
-                W = new Vector2(1, 1.5),
-            },
-            new
-            {
-                U = new Vector2(2, 3),
-                S = 2.0,
-                Op = new Func<Vector2,double,Vector2>((u, s) => u / s),
-                W = new Vector2(1, 1.5),
-            },
-            new
-            {
-                U = new Vector2(2, 3),
-                S = 0.5,
-                Op = new Func<Vector2,double,Vector2>((u, s) => u / s),
-                W = new Vector2(4, 6),
-            },
-        };
-
-        foreach (var @case in tests)
-        {
-            var w = @case.Op(@case.U, @case.S);
-            Assert.Equal(@case.W, w);
-        }
-    }
-
-    [Fact]
-    public void TestSwizzling()
-    {
-        var u = new Vector2(2, 3);
-        var tests = new[]
-        {
-            new
-            {
-                Op = new Func<Vector2,Vector2>(u => u.XX()),
-                W = new Vector2(2, 2),
-            },
-            new
-            {
-                Op = new Func<Vector2,Vector2>(u => u.XY()),
-                W = new Vector2(2, 3),
-            },
-            new
-            {
-                Op = new Func<Vector2,Vector2>(u => u.YX()),
-                W = new Vector2(3, 2),
-            },
-            new
-            {
-                Op = new Func<Vector2,Vector2>(u => u.YY()),
-                W = new Vector2(3, 3),
-            },
-        };
-
-        foreach (var @case in tests)
-        {
-            var w = @case.Op(u);
-            Assert.Equal(@case.W, w);
-        }
+        var u = Vector2.Create(1.0, 2);
+        var v = Vector2.Create(1.0, 2);
+        var w = Vector2.Create(2.0, 2);
+        
+        Assert.Equal(u, v);
+        Assert.Equal(v, u);
+        
+        Assert.NotEqual(u, w);
+        Assert.NotEqual(v, w);
     }
 }

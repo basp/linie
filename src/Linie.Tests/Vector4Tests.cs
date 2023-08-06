@@ -1,193 +1,123 @@
-// Licensed under the MIT license. See LICENSE file in the samples root for full license information.
-
-namespace Linie.Tests;
-
-using System;
-using Xunit;
+﻿namespace Linie.Tests;
 
 public class Vector4Tests
 {
     [Fact]
-    public void TestPointWComponentIsOne()
+    public void TestCreation()
     {
-        var a = new Vector4(4.3, -4.2, 3.1, 1.0);
-        Assert.True(a.IsPosition);
-        Assert.False(a.IsDirection);
+        var u = Vector4.Create(1.0, 2, 3, 4);
+
+        Assert.Equal(1, u.X);
+        Assert.Equal(2, u.Y);
+        Assert.Equal(3, u.Z);
+        Assert.Equal(4, u.W);
     }
 
     [Fact]
-    public void TestVectorWComponentIsZero()
+    public void TestIndexing()
     {
-        var a = new Vector4(4.3, -4.2, 3.1, 0.0);
-        Assert.False(a.IsPosition);
-        Assert.True(a.IsDirection);
+        var u = Vector4.Create(1.0, 2, 3, 4);
+        
+        Assert.Equal(1, u[0]);
+        Assert.Equal(2, u[1]);
+        Assert.Equal(3, u[2]);
+        Assert.Equal(4, u[3]);
     }
 
     [Fact]
-    public void TestPointFactoryMethod()
+    public void TestEquality()
     {
-        var p = Vector4.CreatePosition(4, -4, 3);
-        var expected = new Vector4(4, -4, 3, 1);
-        Assert.Equal(expected, p);
+        var u = Vector4.Create(1.0, 2, 3, 4);
+        var v = Vector4.Create(1.0, 2, 3, 4);
+        var w = Vector4.Create(2.0, 3, 4, 5);
+
+        Assert.Equal(u, v);
+        Assert.Equal(v, u);
+
+        Assert.NotEqual(u, w);
+        Assert.NotEqual(v, w);
+
+        object o1 = new();
+        Assert.NotEqual(w, o1);
+
+        object o2 = Vector4.Create(2, 3, 4, 5);
+        Assert.NotEqual(w, o2);
+        
+        object o3 = Vector4.Create(2.0, 3, 4, 5);
+        Assert.Equal(w, o3);
     }
 
     [Fact]
-    public void TestVectorFactoryMethod()
+    public void TestGetHashCode()
     {
-        var v = Vector4.CreateDirection(4, -4, 3);
-        var expected = new Vector4(4, -4, 3, 0);
-        Assert.Equal(expected, v);
+        var u = Vector4.Create(1.0, 2, 3, 4);
+        var v = Vector4.Create(1.0, 2, 3, 4);
+        var w = Vector4.Create(2.0, 3, 4, 5);
+
+        Assert.Equal(u.GetHashCode(), v.GetHashCode());
+        
+        Assert.NotEqual(u.GetHashCode(), w.GetHashCode());
+        Assert.NotEqual(v.GetHashCode(), w.GetHashCode());
     }
 
     [Fact]
-    public void TestAddTwoVector4s()
+    public void TestToString()
     {
-        var a1 = new Vector4(3, -2, 5, 1);
-        var a2 = new Vector4(-2, 3, 1, 0);
-        var expected = new Vector4(1, 1, 6, 1);
-        Assert.Equal(expected, a1 + a2);
+        var u = Vector4.Create(1.0, 2, 3, 4);
+        var s = u.ToString();
+        Assert.Equal("(1 2 3 4)", s);
     }
 
     [Fact]
-    public void TestSubtractTwoPoints()
+    public void TestAddition()
     {
-        var p1 = Vector4.CreatePosition(3, 2, 1);
-        var p2 = Vector4.CreatePosition(5, 6, 7);
-        var expected = Vector4.CreateDirection(-2, -4, -6);
-        Assert.Equal(expected, p1 - p2);
+        var u = Vector4.Create(1.0, 2, 3, 4);
+        var v = Vector4.Create(0.0, 1, 2, 3);
+        
+        var w = Vector4.Add(u, v);
+        
+        Assert.Equal(1, w.X);
+        Assert.Equal(3, w.Y);
+        Assert.Equal(5, w.Z);
+        Assert.Equal(7, w.W);
     }
 
     [Fact]
-    public void TestSubtractVectorFromPoint()
+    public void TestSubtraction()
     {
-        var p = Vector4.CreatePosition(3, 2, 1);
-        var v = Vector4.CreateDirection(5, 6, 7);
-        var expected = Vector4.CreatePosition(-2, -4, -6);
-        Assert.Equal(expected, p - v);
+        var u = Vector4.Create(1.0, 2, 3, 4);
+        var v = Vector4.Create(0.0, 1, 2, 3);
+
+        var w = Vector4.Subtract(u, v);
+
+        Assert.Equal(1, w.X);
+        Assert.Equal(1, w.Y);
+        Assert.Equal(1, w.Z);
+        Assert.Equal(1, w.W);
     }
 
     [Fact]
-    public void TestSubtractTwoVectors()
+    public void TestMultiplication()
     {
-        var v1 = Vector4.CreateDirection(3, 2, 1);
-        var v2 = Vector4.CreateDirection(5, 6, 7);
-        var expected = Vector4.CreateDirection(-2, -4, -6);
-        Assert.Equal(expected, v1 - v2);
+        var u = Vector4.Create(1.0, 2, 3, 4);
+        
+        var v = Vector4.Multiply(u, 2);
+        var w = Vector4.Multiply(2, u);
+
+        Assert.Equal(v, w);
+        
+        Assert.Equal(2, w.X);
+        Assert.Equal(4, w.Y);
     }
 
     [Fact]
-    public void TestSubtractVectorFromZeroVector()
+    public void TestDivide()
     {
-        var zero = Vector4.CreateDirection(0, 0, 0);
-        var v = Vector4.CreateDirection(1, -2, 3);
-        var expected = Vector4.CreateDirection(-1, 2, -3);
-        Assert.Equal(expected, zero - v);
-    }
-
-    [Fact]
-    public void TestNegateVector4()
-    {
-        var a = new Vector4(1, -2, 3, -4);
-        var expected = new Vector4(-1, 2, -3, 4);
-        Assert.Equal(expected, -a);
-    }
-
-    [Fact]
-    public void TestMultiplyVector4ByScalar()
-    {
-        var a = new Vector4(1, -2, 3, -4);
-        var expected = new Vector4(3.5, -7, 10.5, -14);
-        Assert.Equal(expected, a * 3.5);
-    }
-
-    [Fact]
-    public void TestMultiplyVector4ByFraction()
-    {
-        var a = new Vector4(1, -2, 3, -4);
-        var expected = new Vector4(0.5, -1, 1.5, -2);
-        Assert.Equal(expected, a * 0.5);
-    }
-
-    [Fact]
-    public void TestDivideVector4ByScalar()
-    {
-        var a = new Vector4(1, -2, 3, -4);
-        var expected = new Vector4(0.5, -1, 1.5, -2);
-        Assert.Equal(expected, a / 2.0);
-    }
-
-    [Fact]
-    public void TestComputeMagnitude()
-    {
-        var cases = new[]
-        {
-                new { v = Vector4.CreateDirection(1, 0, 0), expected = 1.0 },
-                new { v = Vector4.CreateDirection(0, 1, 0), expected = 1.0 },
-                new { v = Vector4.CreateDirection(0, 0, 1), expected = 1.0 },
-                new { v = Vector4.CreateDirection(1, 2, 3), expected = Math.Sqrt(14) },
-                new { v = Vector4.CreateDirection(-1, -2, -3), expected = Math.Sqrt(14) },
-            };
-
-        Array.ForEach(cases, c => Assert.Equal(c.expected, c.v.Magnitude()));
-    }
-
-    [Fact]
-    public void TestMagnitudeOfNormalizedVector()
-    {
-        var v = Vector4.CreateDirection(1, 2, 3);
-        var norm = v.Normalize();
-        Assert.Equal(1, norm.Magnitude(), 6);
-    }
-
-    [Fact]
-    public void TestDotProductOfTwoVector4s()
-    {
-        var a = Vector4.CreateDirection(1, 2, 3);
-        var b = Vector4.CreateDirection(2, 3, 4);
-        Assert.Equal(20, a.Dot(b));
-    }
-
-    // [Fact]
-    // public void TestCrossProductOfTwoVectors()
-    // {
-    //     var a = Vector4.CreateDirection(1, 2, 3);
-    //     var b = Vector4.CreateDirection(2, 3, 4);
-    //     Assert.Equal(Vector4.CreateDirection(-1, 2, -1), a.Cross(b));
-    //     Assert.Equal(Vector4.CreateDirection(1, -2, 1), b.Cross(a));
-    // }
-
-    [Fact]
-    public void TestReflectVectorApproachingAt45Degrees()
-    {
-        var v = Vector4.CreateDirection(1, -1, 0);
-        var n = Vector4.CreateDirection(0, 1, 0);
-        var r = v.Reflect(n);
-        var expected = Vector4.CreateDirection(1, 1, 0);
-        Assert.Equal(expected, r);
-    }
-
-    [Fact]
-    public void TestReflectOfSlantedSurface()
-    {
-        var v = Vector4.CreateDirection(0, -1, 0);
-        var n = Vector4.CreateDirection(
-            Math.Sqrt(2) / 2,
-            Math.Sqrt(2) / 2,
-            0);
-        var r = v.Reflect(n);
-        var expected = Vector4.CreateDirection(1, 0, 0);
-        const double eps = 0.0000001;
-        var comparer = Vector4.GetComparer(eps);
-        Assert.Equal(expected, r, comparer);
-    }
-
-    [Fact]
-    public void TestExplicitToVector3()
-    {
-        var v = Vector4.CreatePosition(0, 1, 2);
-        var u = (Vector3)v;
-        Assert.Equal(0, u.X);
-        Assert.Equal(1, u.Y);
-        Assert.Equal(2, u.Z);
+        var u = Vector4.Create(1.0, 2.0, 3.0, 4.0);
+        var v = Vector4.Divide(u, 2.0);
+        Assert.Equal(0.5, v.X);
+        Assert.Equal(1.0, v.Y);
+        Assert.Equal(1.5, v.Z);
+        Assert.Equal(2.0, v.W);
     }
 }
