@@ -1,8 +1,12 @@
 # Linie
-A ray tracing bootstrapper library.
+Linie is a mathematics library that is very loosely based on [glm](https://github.com/) with an
+idiomatic .NET API. It is focussed on graphics in one to three dimensions. The
+main goal is to provide a foundation that can be easily integrated to your
+graphics related projects.
 
-## Rationale
-This was originally all part of **Pixie** and that was fine. However, when trying to experiment with different ray tracing algorithms it quickly became apparent I was writing the same classes over and over again. Sharing the actual code wasn't the best option (since it was hard to share improvements) so the basic math related classes were moved into **Linie** (this package).
+Linie is **not** a general purpose linear algebra library.
 
-## Goal
-The **Linie** package aims to provide a set of robust classes that are related to computer graphics and linear algebra. The main goal is to provide a solid base upon which to implement ray tracing and other gfx related algorithms. 
+## Features
+* Linie is 100% .NET, written in C# and has no dependencies.
+* It is tiny and can easily be included as source.
+* Geared towards beginners and educational purposes.
