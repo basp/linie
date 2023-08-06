@@ -65,4 +65,13 @@ public class Vector2Tests
         var w = Vector2.Subtract(u, v);
         Assert.Equal(Vector2.Create(-1, -1), w);
     }
+
+    [Fact]
+    public void TestAbs()
+    {
+        var u = Vector2.Create(-1, 2);
+        var v = Vector2.Abs(u);
+        Assert.Equal(1, v.X);
+        Assert.Equal(2, v.Y);
+    }
 }

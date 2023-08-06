@@ -43,4 +43,25 @@ public class Point2Tests
         Assert.NotEqual(a, c);
         Assert.NotEqual(b, c);
     }
+
+    [Fact]
+    public void TestAddition()
+    {
+        var a = Point2.Create(1.0, 2);
+        var u = Vector2.Create(-1.0, 2);
+        var b = Point2.Add(a, u);
+        Assert.Equal(0, b.X);
+        Assert.Equal(4, b.Y);
+    }
+    
+    [Fact]
+    public void TestSubtraction()
+    {
+        var a = Point2.Create(1.0, 2);
+        var u = Vector2.Create(2.0, 3);
+        var c = Point2.Subtract(a, u);
+
+        Assert.Equal(-1, c.X);
+        Assert.Equal(-1, c.Y);
+    }
 }

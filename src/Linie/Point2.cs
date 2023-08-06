@@ -60,6 +60,21 @@ public static class Point2
         where T : INumber<T> =>
         new(x, y);
 
+    /// <summary>
+    /// Adds a vector to a point.
+    /// </summary>
+    /// <param name="a">
+    /// A point.
+    /// </param>
+    /// <param name="u">
+    /// A vector.
+    /// </param>
+    /// <typeparam name="T">
+    /// The type of elements in the point and vector.
+    /// </typeparam>
+    /// <returns>
+    /// A new point created by adding the vector <c>u</c> to point <c>a</c>.
+    /// </returns>
     public static Point2<T> Add<T>(Point2<T> a, Vector2<T> u)
         where T : INumber<T> =>
         new(
@@ -68,5 +83,7 @@ public static class Point2
 
     public static Point2<T> Subtract<T>(Point2<T> a, Vector2<T> u)
         where T : INumber<T> =>
-        throw new NotImplementedException();
+        new(
+            a.X - u.X,
+            a.Y - u.Y);
 }
