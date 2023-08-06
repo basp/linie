@@ -47,4 +47,22 @@ public class Vector2Tests
         Assert.NotEqual(u, w);
         Assert.NotEqual(v, w);
     }
+
+    [Fact]
+    public void TestAddition()
+    {
+        var u = Vector2.Create(1, 2);
+        var v = Vector2.Create(2, 3);
+        var w = Vector2.Add(u, v);
+        Assert.Equal(Vector2.Create(3, 5), w);
+    }
+
+    [Fact]
+    public void TestSubtraction()
+    {
+        var u = Vector2.Create(1, 2);
+        var v = Vector2.Create(2, 3);
+        var w = Vector2.Subtract(u, v);
+        Assert.Equal(Vector2.Create(-1, -1), w);
+    }
 }
